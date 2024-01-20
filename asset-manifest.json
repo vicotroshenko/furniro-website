@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/furniro-website/static/css/main.50f09084.css",
+    "main.js": "/furniro-website/static/js/main.95e568c3.js",
+    "index.html": "/furniro-website/index.html",
+    "main.50f09084.css.map": "/furniro-website/static/css/main.50f09084.css.map",
+    "main.95e568c3.js.map": "/furniro-website/static/js/main.95e568c3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50f09084.css",
+    "static/js/main.95e568c3.js"
+  ]
+}
