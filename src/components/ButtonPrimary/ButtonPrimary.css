@@ -1,0 +1,35 @@
+.buttonPrimary{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-width: 100px;
+	background-color: var(--button-primary);
+	font-weight: 700;
+	color: var(--text-white);
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.5s linear;
+	
+}
+
+.buttonPrimary:hover {
+	background-color:#FFF3E3;
+	scale: 1.05;
+}
+
+.buttonPrimary::after{
+	content: '';
+	background: #2EC1AC;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	inset: 0;
+	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+	z-index: -1;    
+}
+
+.buttonPrimary:hover::after {
+	width: 100%;
+}

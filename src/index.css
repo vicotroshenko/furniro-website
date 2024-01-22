@@ -6,6 +6,7 @@
   --text-grey-2: #616161;
   --text-grey-3: #898989;
   --text-grey-4: #9F9F9F;
+  --text-grey-5: #B0B0B0;
   --text-white: #FFFFFF;
   --text-catching:#B88E2F;
   --button-primary: #B88E2F;
@@ -43,3 +44,9 @@ button {
   border: none;
 }
 
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
