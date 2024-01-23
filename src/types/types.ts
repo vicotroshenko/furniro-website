@@ -13,3 +13,18 @@ export interface IDiscountLableStyles {
 	background: string;
 	discountStatus: boolean;
 }
+
+export interface ISliderRadioButtonsProps {
+  onChange?: (value: string) => any;
+}
+
+export interface IFooterLinksProps {
+	title: string;
+	links: string[];
+}
+
+export interface IAdvantagesItemProps extends 
+	Pick<IFooterLinksProps, "title">, 
+	Pick<IButtonProps, "text"> {
+	icon: string;
+}

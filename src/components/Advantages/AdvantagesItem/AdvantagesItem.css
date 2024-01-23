@@ -1,0 +1,24 @@
+.advantageItem{
+	display: flex;
+	gap: 10px;
+}
+
+.advantageImage{
+	width: 60px;
+	height: 60px;
+}
+
+.advantageText > p:first-child{
+	margin-bottom: 2px;
+
+	font-size: 24px;
+	font-weight: 600;
+	color: var(--text-dark-2);
+	text-transform: capitalize;
+}
+
+.advantageText > p:last-child{
+	font-size: 20px;
+	font-weight: 500;
+	color: var(--text-grey-3);
+}

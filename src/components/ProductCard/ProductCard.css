@@ -7,6 +7,13 @@
 	cursor: pointer;
 }
 
+.prodCardDiscount{
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	transition: opacity .25s linear;
+}
+
 .prodCardImage {
 	width: 100%;
 	min-height: 301px;
@@ -75,6 +82,10 @@
 
 .prodCardContainer:hover .prodCardHoverItem{
 	transform: translateX(0);
+}
+
+.prodCardContainer:hover .prodCardDiscount{
+	opacity: 0;
 }
 
 .prodCardBtns {

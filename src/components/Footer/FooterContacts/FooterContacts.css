@@ -1,0 +1,10 @@
+.footerTitle{
+	margin-bottom: 50px;
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: capitalize;
+}
+.footerTitle ~ p {
+	max-width: 285px;
+	color: var(--text-grey-4);
+}

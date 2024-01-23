@@ -1,0 +1,48 @@
+.subTitle {
+	margin-bottom: 53px;
+	font-weight: 500;
+	color: var(--text-grey-4);
+}
+
+.subForm{
+	display: flex;
+}
+
+.footerEmailField{
+	width: 100%;
+	max-width: 200px;
+	min-width: 100px;
+	padding: 3px;
+	margin-right: 11px;
+	border: none;
+	border-bottom: 1px solid var(--text-dark-1);
+
+	font-size: 14px;
+	font-weight: 500;
+	transition: border .25s linear;
+}
+
+.footerEmailField:hover, .footerEmailField:focus {
+	outline: none;
+	border-bottom: 1px solid var(--button-primary);
+}
+
+.footerBtn{
+	padding: 3px;
+
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	border-bottom: 1px solid var(--text-dark-1);
+	cursor: pointer;
+	transition: all .25s linear;
+}
+
+.footerBtn:hover, .footerBtn:focus{
+	color: var(--button-primary);
+	border-bottom: 1px solid var(--button-primary);
+}
+
+.footerBtn:active {
+	letter-spacing: .4px;
+}

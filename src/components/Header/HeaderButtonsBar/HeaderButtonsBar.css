@@ -1,0 +1,23 @@
+.headerButtons {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	width: 247px;
+
+}
+
+.headerButtons > button {
+	width: 30px;
+	height: 30px;
+	padding: 3px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all .25s linear;
+}
+
+.headerButtons > button:active{
+	background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100%);
+}
+.headerButtons > button:hover{
+	filter: drop-shadow(3px 2px 1px var(--text-dark-2));
+}

@@ -1,10 +1,11 @@
-import ProductCard from "../ProductCard/ProductCard";
+import HeaderMain from "../Header/HeaderMain/HeaderMain";
+
 
 
 function App() {
   return (
     <div>
-      <ProductCard/>
+      <HeaderMain/>
     </div>
   );
 }

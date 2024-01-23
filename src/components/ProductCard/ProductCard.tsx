@@ -5,12 +5,16 @@ import { MdOutlineCompareArrows } from "react-icons/md";
 import { FaHeart, FaRegHeart } from "react-icons/fa6";
 import "./ProductCard.css";
 import { useState } from "react";
+import DiscountLabel from "../DiscountLabel/DiscountLabel";
 
 const ProductCard = () => {
   const [like, setLike] = useState<boolean>(false);
 
   return (
     <div className="prodCardContainer">
+			<div className="prodCardDiscount">
+				<DiscountLabel discount={30}/>
+			</div>
       <div className="prodCardImage">
         <img src={image3} alt="sofa" className="image" />
       </div>
