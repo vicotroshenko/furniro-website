@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Swivel Accent Armchair",
+    "description": "Simple silhouettes with clean lines and squared arms are complemented by plush cushions, creating a versatile aesthetic with all-over comfort. This modern swivel accent chair is a cool addition to any room in your home! No matter where your need it, whether it is your living room, family room, bedroom, or office, this chair is ideal for any need.",
+    "price": "624",
+    "tags": ["living", "armchair", "interior"],
+    "discount": "39",
+    "status": "discount",
+    "amount": "9",
+    "size": "",
+    "pictures": [],
+    "colors": ["#c5bcac", "#b4ab9e"],
+    "reviews": [{
+			"name": "Holly",
+			"review": "A nice chair, good size not too big not too small. Love the swivel. It is a nice light color, so I’m hoping that it holds up well to my kids and pets because it is supposed to be performance fabric. We will see!",
+			"date": "15.01.2023"
+		},
+		{
+			"name": "A Mom",
+			"review": "Favorite piece in our new living room. So comfy. Everyone fights for it.",
+			"date": "11.02.2023"
+		},
+		{
+			"name": "Mary",
+			"review": "We love these chairs!! Love the color!!",
+			"date": "01.03.2023"
+		}],
+    "rating": {
+      "number": "14",
+      "avarage": "4.8"
+    },
+    "general": {
+      "package": "Armchair",
+      "modelNumber": "JSPA839HK7G",
+      "secondMaterial": "wood",
+      "configuration": "Seat Cushion; Cover; Back Cushion",
+      "upholsteryMaterial": "Polyester",
+      "upholsteryColor": ""
+    },
+    "product": {
+      "fillingMaterial": "Foam; Polyester",
+      "finishType": "Armchair",
+      "maxLoadCapcity": "136",
+      "manufacture": "Germany"
+    },
+    "dimensions": {
+      "width": "76",
+      "height": "85",
+      "depth": "83",
+      "weight": "27",
+      "seatHeight": "53",
+      "legHeight": "48"
+    },
+    "warranty": {
+      "summary": "1 Year Manufacturing Warranty",
+      "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",
+      "covered": "Warranty Against Manufacturing Defect",
+      "notCovered": "The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.",
+      "domesticWarranty": "1 Year"
+    },
+    "category": "interior"
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Kempst 3 Piece Bedroom Set (Set of 3)",
+    "description": "This 3-piece modern bedroom set for the bedroom contains a 1-bed frame with a height adjustable headboard and an industrial nightstand set of 2. The upholstered platform bed is meticulously constructed with a solid frame made from premium steel and metal. The headboard features a combination of traditional button tufts and modern rectangular contours to give this low-profile platform bed a hint of vintage appeal. Unlike many traditional beds, our upgraded wooden slats are specifically designed to pair with most mattress types. No box spring is needed. The modern nightstand set with one drawable storage drawer is perfect for tucking away your latest reads and before-bed essentials.",
+    "price": "390.00",
+		"tags": ["bed", "bedroom", "interior"],
+    "discount": "17",
+    "status": "discount",
+    "amount": "9",
+    "size": "",
+    "pictures": [],
+    "colors": ["black", "brown", "white"],
+    "reviews": [{
+			"name": "Lovely",
+			"review": "Love the end tables apt size",
+			"date": "01.07.2023"
+		},
+		{
+			"name": "Tess",
+			"review": "Not worth the money at all. Super small, cheaply made, finish cracks at even slightest installation.",
+			"date": "14.06.2023"
+		},
+		{
+			"name": "Shadonna",
+			"review": "It was good instructions and easy to assemble. It is heavy and good material. It is small but fits in the small space that I need it for .",
+			"date": "01.06.2023"
+		}],
+    "rating": {
+      "number": "34",
+      "avarage": "4.4"
+    },
+    "general": {
+      "package": "Bed; Nightstand",
+      "modelNumber": "JG54GJ98J7",
+      "secondMaterial": "wood",
+      "configuration": "Bed and Nightstand",
+      "upholsteryMaterial": "Polyester Blend",
+      "upholsteryColor": "no"
+    },
+    "product": {
+      "fillingMaterial": "Foam",
+      "finishType": "",
+      "maxLoadCapcity": "300",
+      "manufacture": "China"
+    },
+    "dimensions": {
+      "width": "143",
+      "height": "",
+      "depth": "210",
+      "weight": "16",
+      "seatHeight": "",
+      "legHeight": ""
+    },
+    "warranty": {
+      "summary": "5 Year Manufacturing Warranty",
+      "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",
+      "covered": "Warranty Against Manufacturing Defect",
+      "notCovered": "The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.",
+      "domesticWarranty": "5 Year"
+    },
+    "category": "interior"
+  }
+]

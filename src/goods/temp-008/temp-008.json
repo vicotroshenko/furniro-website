@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Rolanda Coffee Table",
+    "description": "Rustic, robust, and refined: The coffee table has stable iron legs, which are additionally reinforced by round tubes. This means that the table will not give way if you place numerous party snacks and drinks on the top shelf, nor will it give up if you use it for many years.",
+    "price": "121.99",
+		"tags": ["dining", "table", "wood"],
+    "discount": "0",
+    "status": "new",
+    "amount": "10",
+    "size": "",
+    "pictures": [],
+    "colors": ["#6f5348"],
+    "reviews": [{
+			"name": "BARB",
+			"review": "Love the design and it only took fifteen minutes to assemble. Not thrilled with the color as it's darker than expected. I may apply vinyl to change the color as I have other pieces I own. Overall definitely a good purchase that only loses points on color.",
+			"date": "29.12.2022"
+		},
+		{
+			"name": "Donna",
+			"review": "Easy to put together, really smart looking piece…perfect size! Love it!",
+			"date": "23.11.2022"
+		},
+		{
+			"name": "Anonymous",
+			"review": "Cute little table! A little difficult lining up the screw holes to get the bottom ring on but with a little patience, all is good.",
+			"date": "02.11.2022"
+		}],
+    "rating": {
+      "number": "65",
+      "avarage": "4.7"
+    },
+    "general": {
+      "package": "Coffee Table",
+      "modelNumber": "JGQQWR5YYE",
+      "secondMaterial": "Steel",
+      "configuration": "table",
+      "upholsteryMaterial": "Wood",
+      "upholsteryColor": ""
+    },
+    "product": {
+      "fillingMaterial": "wood",
+      "finishType": "Coffee Table",
+      "maxLoadCapcity": "50",
+      "manufacture": "China"
+    },
+    "dimensions": {
+      "width": "80",
+      "height": "45",
+      "depth": "80",
+      "weight": "11",
+      "seatHeight": "",
+      "legHeight": ""
+    },
+    "warranty": {
+      "summary": "1 Year Manufacturing Warranty",
+      "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",
+      "covered": "Warranty Against Manufacturing Defect",
+      "notCovered": "The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.",
+      "domesticWarranty": "1 Year"
+    },
+    "category": "wood"
+  }
+]

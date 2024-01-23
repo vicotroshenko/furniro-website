@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Leavelle Nesting Coffee Table",
+    "description": "Brings serious luxury to any room in your home with this nesting coffee table set. It includes one oval coffee table and one matching circular end table. Selecting high-quality Eco-friendly P2 MDF makes the tabletop smooth and easy to clean. With good edge banding treatment and adjustable foot support, the coffee table set is stable and durable to use. The stunning detailing of the marble texture table top pairs perfectly with the glam aspects of the gold metal frame. Making the whole table set more elegant and beautiful, will definitely give your visitors a good impression of your home. What’s more, this pair of accent tables offer so much versatility: Nest them if you’re short on space and separate them when you’re entertaining and need more surfaces for drinks and snacks. Your options are only limited by your imagination. Flexibility by design!",
+    "price": "149.99",
+		"tags": ["dining", "table", "wood", "crafts"],
+    "discount": "0",
+    "status": "new",
+    "amount": "10",
+    "size": "",
+    "pictures": [],
+    "colors": ["#d1d4d3"],
+    "reviews": [{
+			"name": "BEVERLEY",
+			"review": "This table set is great! It was very easy to assemble and fit perfectly with my chair and rug.",
+			"date": "03.11.2023"
+		},
+		{
+			"name": "Jose",
+			"review": "The delivery was fine, the guys did a great job on delivering the sofa. They were fast to unload the sofa and assemble it. The problem is that I ordered two sofas, and they delivered just one. And the one delivered has a rip of about half an inch in the back, they said they will end a new part. The other sofa will be delivered on the 26 of December.",
+			"date": "21.12.2023"
+		},
+		{
+			"name": "Anonymous",
+			"review": "The material is horrible is a plastic , NOT RECOMMENDED IS YOU HAVE KIDS OR PETS I have to spend more money and put insurance",
+			"date": "16.12.2023"
+		}],
+    "rating": {
+      "number": "4",
+      "avarage": "4.4"
+    },
+    "general": {
+      "package": "Coffee Table",
+      "modelNumber": "QAP996HB9U",
+      "secondMaterial": "steel",
+      "configuration": "table",
+      "upholsteryMaterial": "wood",
+      "upholsteryColor": ""
+    },
+    "product": {
+      "fillingMaterial": "steel",
+      "finishType": "table",
+      "maxLoadCapcity": "68",
+      "manufacture": "China"
+    },
+    "dimensions": {
+      "width": "80",
+      "height": "45",
+      "depth": "38",
+      "weight": "10",
+      "seatHeight": "",
+      "legHeight": ""
+    },
+    "warranty": {
+      "summary": "0.5 Year Manufacturing Warranty",
+      "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",
+      "covered": "Warranty Against Manufacturing Defect",
+      "notCovered": "The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.",
+      "domesticWarranty": "0.5 Year"
+    },
+    "category": "crafts"
+  }
+]

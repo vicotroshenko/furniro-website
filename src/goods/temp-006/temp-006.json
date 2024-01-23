@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Solid + Manufactured Wood Abstract Wall Decor",
+    "description": "This wall decor makes a bold boho statement wherever you want to add some texture and depth. Both abstract and eclectic, this piece includes small orbs and longer beads that resemble feathers, all threaded along a wire in a symmetrical, tiered configuration like a necklace. It's made from solid and engineered wood in a neutral tone that matches almost any color scheme. At 18` tall and 13` across, this item isn't exceptionally large, but it's still able to turn heads whether hanging in your entryway or as part of a curated display.",
+    "price": "68.99",
+		"tags": ["living", "wood", "wall"],
+    "discount": "4",
+    "status": "discount",
+    "amount": "5",
+    "size": "",
+    "pictures": [],
+    "colors": [],
+    "reviews": [{
+			"name": "Cynthia",
+			"review": "I love this piece! I combined it with another piece to make one centerpiece and it’s gorgeous in my newly redone bedroom. It is hanging over my bed and I love it! Great quality piece. The beading is wonderful!",
+			"date": "18.10.2022"
+		},{
+			"name": "Anonymous",
+			"review": "So unique and different! A gorgeous random piece of wall art for our living room",
+			"date": "23.09.2023"
+		}],
+    "rating": {
+      "number": "23",
+      "avarage": "4.5"
+    },
+    "general": {
+      "package": "Solid + Manufactured Wood Abstract Wall Decor",
+      "modelNumber": "KH6GH8JG4F",
+      "secondMaterial": "no",
+      "configuration": "no",
+      "upholsteryMaterial": "wood",
+      "upholsteryColor": "no"
+    },
+    "product": {
+      "fillingMaterial": "wood",
+      "finishType": "The wall decor ",
+      "maxLoadCapcity": "no",
+      "manufacture": "Indonesia"
+    },
+    "dimensions": {
+      "width": "32",
+      "height": "47",
+      "depth": "no",
+      "weight": "0.55",
+      "seatHeight": "",
+      "legHeight": ""
+    },
+    "warranty": {
+      "summary": "0 Year Manufacturing Warranty",
+      "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",
+      "covered": "Warranty Against Manufacturing Defect",
+      "notCovered": "The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.",
+      "domesticWarranty": "0 Year"
+    },
+    "category": "wood"
+  }
+]

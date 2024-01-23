@@ -1,0 +1,49 @@
+[
+  {
+    "title": "Galaxy Home Furniture Matrix",
+    "description": "Lowest price for Galaxy Home Furniture Matrix is $729.59. This is currently the cheapest offer among 2 stores.",
+    "price": "729.59",
+    "tags": ["bed", "bedroom", "interior"],
+    "discount": "0",
+    "status": "new",
+    "amount": "6",
+    "size": "",
+    "pictures": [],
+    "colors": ["black", "grey"],
+    "reviews": [],
+    "rating": {
+      "number": "3",
+      "avarage": "4.5"
+    },
+    "general": {
+      "package": "1 bed with storage",
+      "modelNumber": "5UY8BJ400II",
+      "secondMaterial": "Wood",
+      "configuration": "Built-in Storage",
+      "upholsteryMaterial": "Wood",
+      "upholsteryColor": "Black"
+    },
+    "product": {
+      "fillingMaterial": "no",
+      "finishType": "Black and White collection",
+      "maxLoadCapcity": "300kg",
+      "manufacture": "China"
+    },
+    "dimensions": {
+      "width": "165cm",
+      "height": "210cm",
+      "depth": "",
+      "weight": "70kg",
+      "seatHeight": "60cm",
+      "legHeight": ""
+    },
+    "warranty": {
+      "summary": "1 Year Manufacturing Warranty",
+      "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",
+      "covered": "Warranty Against Manufacturing Defect",
+      "notCovered": "The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.",
+      "domesticWarranty": "1 Year"
+    },
+    "category": "interior"
+  }
+]
