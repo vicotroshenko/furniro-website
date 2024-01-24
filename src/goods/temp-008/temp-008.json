@@ -3,46 +3,87 @@
     "title": "Rolanda Coffee Table",
     "description": "Rustic, robust, and refined: The coffee table has stable iron legs, which are additionally reinforced by round tubes. This means that the table will not give way if you place numerous party snacks and drinks on the top shelf, nor will it give up if you use it for many years.",
     "price": "121.99",
-		"tags": ["dining", "table", "wood"],
+    "tags": ["dining", "table", "wood"],
     "discount": "0",
     "status": "new",
-    "amount": "10",
+    "amount": 10,
     "size": "",
-    "pictures": [],
+    "pictures": [
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-008/pic/tm8-1.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-008/pic/tm8-2.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-008/pic/tm8-3.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-008/pic/tm8-4.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-008/pic/tm8-5.webp"
+    ],
     "colors": ["#6f5348"],
-    "reviews": [{
-			"name": "BARB",
-			"review": "Love the design and it only took fifteen minutes to assemble. Not thrilled with the color as it's darker than expected. I may apply vinyl to change the color as I have other pieces I own. Overall definitely a good purchase that only loses points on color.",
-			"date": "29.12.2022"
-		},
-		{
-			"name": "Donna",
-			"review": "Easy to put together, really smart looking piece…perfect size! Love it!",
-			"date": "23.11.2022"
-		},
-		{
-			"name": "Anonymous",
-			"review": "Cute little table! A little difficult lining up the screw holes to get the bottom ring on but with a little patience, all is good.",
-			"date": "02.11.2022"
-		}],
+    "reviews": [
+      {
+        "id": "flldfvj438jf",
+        "name": "BARB",
+        "review": "Love the design and it only took fifteen minutes to assemble. Not thrilled with the color as it's darker than expected. I may apply vinyl to change the color as I have other pieces I own. Overall definitely a good purchase that only loses points on color.",
+        "date": "29.12.2022"
+      },
+      {
+        "id": "fgvfjfuj5740f",
+        "name": "Donna",
+        "review": "Easy to put together, really smart looking piece…perfect size! Love it!",
+        "date": "23.11.2022"
+      },
+      {
+        "id": "vknk483jnv093",
+        "name": "Anonymous",
+        "review": "Cute little table! A little difficult lining up the screw holes to get the bottom ring on but with a little patience, all is good.",
+        "date": "02.11.2022"
+      }
+    ],
     "rating": {
-      "number": "65",
-      "avarage": "4.7"
+      "number": 65,
+      "avarage": 4.7
     },
-    "general": {
-      "package": "Coffee Table",
-      "modelNumber": "JGQQWR5YYE",
-      "secondMaterial": "Steel",
-      "configuration": "table",
-      "upholsteryMaterial": "Wood",
-      "upholsteryColor": ""
-    },
-    "product": {
-      "fillingMaterial": "wood",
-      "finishType": "Coffee Table",
-      "maxLoadCapcity": "50",
-      "manufacture": "China"
-    },
+    "general": [
+      {
+        "title": "Sales Package",
+        "value": "Coffee Table"
+      },
+      {
+        "title": "Model Number",
+        "value": "JGQQWR5YYE"
+      },
+      {
+        "title": "Secondary Material",
+        "value": "Steel"
+      },
+      {
+        "title": "Configuration",
+        "value": "table"
+      },
+      {
+        "title": "Upholstery Material",
+        "value": ""
+      },
+      {
+        "title": "Upholstery Color",
+        "value": ""
+      }
+    ],
+    "product": [
+      {
+        "title": "Filling Material",
+        "value": "wood"
+      },
+      {
+        "title": "Finish Type",
+        "value": "Coffee Tabl"
+      },
+      {
+        "title": "Maximum Load Capacity",
+        "value": "50"
+      },
+      {
+        "title": "Origin of Manufacture",
+        "value": "China"
+      }
+    ],
     "dimensions": {
       "width": "80",
       "height": "45",

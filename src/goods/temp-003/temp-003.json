@@ -6,51 +6,113 @@
     "tags": ["living", "armchair", "interior"],
     "discount": "39",
     "status": "discount",
-    "amount": "9",
+    "amount": 9,
     "size": "",
-    "pictures": [],
+    "pictures": [
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-003/pic/tm2-1.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-003/pic/tm2-2.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-003/pic/tm2-3.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-003/pic/tm2-4.webp"
+    ],
     "colors": ["#c5bcac", "#b4ab9e"],
-    "reviews": [{
-			"name": "Holly",
-			"review": "A nice chair, good size not too big not too small. Love the swivel. It is a nice light color, so I’m hoping that it holds up well to my kids and pets because it is supposed to be performance fabric. We will see!",
-			"date": "15.01.2023"
-		},
-		{
-			"name": "A Mom",
-			"review": "Favorite piece in our new living room. So comfy. Everyone fights for it.",
-			"date": "11.02.2023"
-		},
-		{
-			"name": "Mary",
-			"review": "We love these chairs!! Love the color!!",
-			"date": "01.03.2023"
-		}],
+    "reviews": [
+      {
+        "id": "ikmfvj8ore83",
+        "name": "Holly",
+        "review": "A nice chair, good size not too big not too small. Love the swivel. It is a nice light color, so I’m hoping that it holds up well to my kids and pets because it is supposed to be performance fabric. We will see!",
+        "date": "15.01.2023"
+      },
+      {
+        "id": "vfdv37hoiiv809",
+        "name": "A Mom",
+        "review": "Favorite piece in our new living room. So comfy. Everyone fights for it.",
+        "date": "11.02.2023"
+      },
+      {
+        "id": "fvklfdv872ev",
+        "name": "Mary",
+        "review": "We love these chairs!! Love the color!!",
+        "date": "01.03.2023"
+      }
+    ],
     "rating": {
-      "number": "14",
-      "avarage": "4.8"
+      "number": 14,
+      "avarage": 4.8
     },
-    "general": {
-      "package": "Armchair",
-      "modelNumber": "JSPA839HK7G",
-      "secondMaterial": "wood",
-      "configuration": "Seat Cushion; Cover; Back Cushion",
-      "upholsteryMaterial": "Polyester",
-      "upholsteryColor": ""
-    },
-    "product": {
-      "fillingMaterial": "Foam; Polyester",
-      "finishType": "Armchair",
-      "maxLoadCapcity": "136",
-      "manufacture": "Germany"
-    },
-    "dimensions": {
-      "width": "76",
-      "height": "85",
-      "depth": "83",
-      "weight": "27",
-      "seatHeight": "53",
-      "legHeight": "48"
-    },
+    "general": [
+      {
+        "title": "Sales Package",
+        "value": "Armchair"
+      },
+      {
+        "title": "Model Number",
+        "value": "JSPA839HK7G"
+      },
+      {
+        "title": "Secondary Material",
+        "value": "wood"
+      },
+      {
+        "title": "Configuration",
+        "value": "Seat Cushion; Cover; Back Cushion"
+      },
+      {
+        "title": "Upholstery Material",
+        "value": "Polyester"
+      },
+      {
+        "title": "Upholstery Color",
+        "value": "no"
+      }
+    ],
+    "product": [
+      {
+        "title": "Filling Material",
+        "value": "Foam; Polyester"
+      },
+      {
+        "title": "Finish Type",
+        "value": "Armchair"
+      },
+      {
+        "title": "Adjustable Headrest",
+        "value": ""
+      },
+      {
+        "title": "Maximum Load Capacity",
+        "value": "136"
+      },
+      {
+        "title": "Origin of Manufacture",
+        "value": "Germany"
+      }
+    ],
+    "dimensions": [
+      {
+        "title": "width",
+        "value": "76"
+      },
+      {
+        "title": "height",
+        "value": "85"
+      },
+      {
+        "title": "depth",
+        "value": "80"
+      },
+      {
+        "title": "weight",
+        "value": "83"
+      },
+      {
+        "title": "Seat Height",
+        "value": "53"
+      },
+      {
+        "title": "Leg Height",
+        "value": "48"
+      }
+    ],
     "warranty": {
       "summary": "1 Year Manufacturing Warranty",
       "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",

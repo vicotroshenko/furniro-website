@@ -6,37 +6,95 @@
     "tags": ["bed", "bedroom", "interior"],
     "discount": "0",
     "status": "new",
-    "amount": "6",
+    "amount": 6,
     "size": "",
-    "pictures": [],
+    "pictures": [
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-001/pic/tm1-1.jpg?raw=true",
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-001/pic/tm1-2.jpg?raw=true",
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-001/pic/tm1-3.jpg?raw=true",
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-001/pic/tm1-4.jpg?raw=true",
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-001/pic/tm1-5.jpg?raw=true"
+    ],
     "colors": ["black", "grey"],
     "reviews": [],
     "rating": {
-      "number": "3",
-      "avarage": "4.5"
+      "number": 3,
+      "avarage": 4.5
     },
-    "general": {
-      "package": "1 bed with storage",
-      "modelNumber": "5UY8BJ400II",
-      "secondMaterial": "Wood",
-      "configuration": "Built-in Storage",
-      "upholsteryMaterial": "Wood",
-      "upholsteryColor": "Black"
-    },
-    "product": {
-      "fillingMaterial": "no",
-      "finishType": "Black and White collection",
-      "maxLoadCapcity": "300kg",
-      "manufacture": "China"
-    },
-    "dimensions": {
-      "width": "165cm",
-      "height": "210cm",
-      "depth": "",
-      "weight": "70kg",
-      "seatHeight": "60cm",
-      "legHeight": ""
-    },
+    "general": [
+      {
+        "title": "Sales Package",
+        "value": "1 bed with storage"
+      },
+      {
+        "title": "Model Number",
+        "value": "5UY8BJ400II"
+      },
+      {
+        "title": "Secondary Material",
+        "value": "Wood"
+      },
+      {
+        "title": "Configuration",
+        "value": "Built-in Storage"
+      },
+      {
+        "title": "Upholstery Material",
+        "value": "Wood"
+      },
+      {
+        "title": "Upholstery Color",
+        "value": "Black"
+      }
+    ],
+    "product": [
+      {
+        "title": "Filling Material",
+        "value": "no"
+      },
+      {
+        "title": "Finish Type",
+        "value": "Black and White collection"
+      },
+      {
+        "title": "Adjustable Headrest",
+        "value": ""
+      },
+      {
+        "title": "Maximum Load Capacity",
+        "value": "300"
+      },
+      {
+        "title": "Origin of Manufacture",
+        "value": "China"
+      }
+    ],
+    "dimensions": [
+      {
+        "title": "width",
+        "value": "165"
+      },
+      {
+        "title": "height",
+        "value": "210"
+      },
+      {
+        "title": "depth",
+        "value": ""
+      },
+      {
+        "title": "weight",
+        "value": "70"
+      },
+      {
+        "title": "Seat Height",
+        "value": "60"
+      },
+      {
+        "title": "Leg Height",
+        "value": ""
+      }
+    ],
     "warranty": {
       "summary": "1 Year Manufacturing Warranty",
       "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",

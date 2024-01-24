@@ -2,49 +2,103 @@
   {
     "title": "Solid Wood Wall 5 - Hook Wall Mounted Coat Rack",
     "description": "At first glance, you might not even realize that Picket is a handy wall-mounted coat rack thanks to its beveled pine wood dowels and beautiful shape. It has five flip hooks, each holding up to 5 lbs., which can be flipped up when not in use, creating a seamless profile that resembles modern wall art. For additional storage try hanging two or more Pickets side by side to create an eye-catching decor piece that instantly transforms into additional storage for all your hanging needs.",
-    "price": "$55.00",
+    "price": "55.00",
     "tags": ["living", "wood", "wall"],
     "discount": "0",
     "status": "new",
-    "amount": "6",
+    "amount": 6,
     "size": "",
-    "pictures": [],
+    "pictures": [
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-004/pic/tm4-1.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-004/pic/tm4-2.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-004/pic/tm4-3.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-004/pic/tm4-4.webp"
+    ],
     "colors": [],
-    "reviews": [{
-			"name": "Criss",
-			"review": "This is the perfect solution to put my daily outfits on. Living in a New York City apartment means you had to find small ways to make a big difference.",
-			"date": "15.01.2023"
-		},
-		{
-			"name": "Anonymous",
-			"review": "I got 2 and installed them next to each other. Looks like wall art when not in use and when friends and family come over they can pop their purse or jacket onto it ) Also works great as a photo opp for my macrame pieces )",
-			"date": "04.01.2023"
-		}],
+    "reviews": [
+      {
+        "id": "knvn2nv35rn",
+        "name": "Criss",
+        "review": "This is the perfect solution to put my daily outfits on. Living in a New York City apartment means you had to find small ways to make a big difference.",
+        "date": "15.01.2023"
+      },
+      {
+        "id": "azcvmner872",
+        "name": "Anonymous",
+        "review": "I got 2 and installed them next to each other. Looks like wall art when not in use and when friends and family come over they can pop their purse or jacket onto it ) Also works great as a photo opp for my macrame pieces )",
+        "date": "04.01.2023"
+      }
+    ],
     "rating": {
-      "number": "32",
-      "avarage": "4.7"
+      "number": 32,
+      "avarage": 4.7
     },
-    "general": {
-      "package": "Natural Wood Grain Colour Variation",
-      "modelNumber": "KDSO95G0J7",
-      "secondMaterial": "no",
-      "configuration": "Solid Wood Wall 5",
-      "upholsteryMaterial": "no",
-      "upholsteryColor": "no"
-    },
-    "product": {
-      "fillingMaterial": "wood",
-      "finishType": "",
-      "maxLoadCapcity": "11",
-      "manufacture": "China",
-			"maxLoadCapacityOnHook": "2"
-    },
-    "dimensions": {
-      "width": "16.8",
-      "height": "37.8",
-      "depth": "4.2",
-      "weight": "0.65"
-    },
+    "general": [
+      {
+        "title": "Natural Wood Grain Colour Variation",
+        "value": "KDSO95G0J7"
+      },
+      {
+        "title": "Model Number",
+        "value": "5UY8BJ400II"
+      },
+      {
+        "title": "Secondary Material",
+        "value": "no"
+      },
+      {
+        "title": "Configuration",
+        "value": "Solid Wood Wall 5"
+      },
+      {
+        "title": "Upholstery Material",
+        "value": "wood"
+      },
+      {
+        "title": "Upholstery Color",
+        "value": "natural"
+      }
+    ],
+    "product": [
+      {
+        "title": "Filling Material",
+        "value": "no"
+      },
+      {
+        "title": "Finish Type",
+        "value": "Wood Grain "
+      },
+      {
+        "title": "Maximum Load Capacity",
+        "value": "11"
+      },
+      {
+        "title": "Maximum Load Capacity on Hook",
+        "value": "2"
+      },
+      {
+        "title": "Origin of Manufacture",
+        "value": "China"
+      }
+    ],
+    "dimensions": [
+      {
+        "title": "width",
+        "value": "16.8"
+      },
+      {
+        "title": "height",
+        "value": "37.8"
+      },
+      {
+        "title": "depth",
+        "value": "4.2"
+      },
+      {
+        "title": "weight",
+        "value": "0.65"
+      }
+    ],
     "warranty": {
       "summary": "5 Year Manufacturing Warranty",
       "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",

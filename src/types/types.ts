@@ -15,7 +15,8 @@ export interface IDiscountLableStyles {
 }
 
 export interface ISliderRadioButtonsProps {
-  onChange?: (value: string) => any;
+  onChange: (value: React.ChangeEvent<HTMLInputElement>) => any;
+	slide: string;
 }
 
 export interface IFooterLinksProps {
@@ -27,4 +28,11 @@ export interface IAdvantagesItemProps extends
 	Pick<IFooterLinksProps, "title">, 
 	Pick<IButtonProps, "text"> {
 	icon: string;
+}
+
+export interface ISliderLink {
+	number: number | string;
+	place: string;
+	name: string;
+	link: string;
 }

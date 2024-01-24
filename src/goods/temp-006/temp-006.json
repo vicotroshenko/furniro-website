@@ -3,48 +3,98 @@
     "title": "Solid + Manufactured Wood Abstract Wall Decor",
     "description": "This wall decor makes a bold boho statement wherever you want to add some texture and depth. Both abstract and eclectic, this piece includes small orbs and longer beads that resemble feathers, all threaded along a wire in a symmetrical, tiered configuration like a necklace. It's made from solid and engineered wood in a neutral tone that matches almost any color scheme. At 18` tall and 13` across, this item isn't exceptionally large, but it's still able to turn heads whether hanging in your entryway or as part of a curated display.",
     "price": "68.99",
-		"tags": ["living", "wood", "wall"],
+    "tags": ["living", "wood", "wall"],
     "discount": "4",
     "status": "discount",
-    "amount": "5",
+    "amount": 5,
     "size": "",
-    "pictures": [],
+    "pictures": [
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-006/pic/t6-1.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-006/pic/t6-2.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-006/pic/t6-3.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-006/pic/t6-4.webp"
+    ],
     "colors": [],
-    "reviews": [{
-			"name": "Cynthia",
-			"review": "I love this piece! I combined it with another piece to make one centerpiece and it’s gorgeous in my newly redone bedroom. It is hanging over my bed and I love it! Great quality piece. The beading is wonderful!",
-			"date": "18.10.2022"
-		},{
-			"name": "Anonymous",
-			"review": "So unique and different! A gorgeous random piece of wall art for our living room",
-			"date": "23.09.2023"
-		}],
+    "reviews": [
+      {
+        "id": "484uufmfkv4",
+        "name": "Cynthia",
+        "review": "I love this piece! I combined it with another piece to make one centerpiece and it’s gorgeous in my newly redone bedroom. It is hanging over my bed and I love it! Great quality piece. The beading is wonderful!",
+        "date": "18.10.2022"
+      },
+      {
+        "id": "b040kw8hurc",
+        "name": "Anonymous",
+        "review": "So unique and different! A gorgeous random piece of wall art for our living room",
+        "date": "23.09.2023"
+      }
+    ],
     "rating": {
-      "number": "23",
-      "avarage": "4.5"
+      "number": 23,
+      "avarage": 4.5
     },
-    "general": {
-      "package": "Solid + Manufactured Wood Abstract Wall Decor",
-      "modelNumber": "KH6GH8JG4F",
-      "secondMaterial": "no",
-      "configuration": "no",
-      "upholsteryMaterial": "wood",
-      "upholsteryColor": "no"
-    },
-    "product": {
-      "fillingMaterial": "wood",
-      "finishType": "The wall decor ",
-      "maxLoadCapcity": "no",
-      "manufacture": "Indonesia"
-    },
-    "dimensions": {
-      "width": "32",
-      "height": "47",
-      "depth": "no",
-      "weight": "0.55",
-      "seatHeight": "",
-      "legHeight": ""
-    },
+    "general": [
+      {
+        "title": "Sales Package",
+        "value": "Manufactured Wood Abstract Wall Decor"
+      },
+      {
+        "title": "Model Number",
+        "value": "KH6GH8JG4F"
+      },
+      {
+        "title": "Secondary Material",
+        "value": "no"
+      },
+      {
+        "title": "Configuration",
+        "value": "Wood Wall"
+      },
+      {
+        "title": "Upholstery Material",
+        "value": "Wood"
+      },
+      {
+        "title": "Upholstery Color",
+        "value": "nutural"
+      }
+    ],
+    "product": [
+      {
+        "title": "Filling Material",
+        "value": "no"
+      },
+      {
+        "title": "Finish Type",
+        "value": "Wood Wall"
+      },
+      {
+        "title": "Maximum Load Capacity",
+        "value": "no"
+      },
+      {
+        "title": "Origin of Manufacture",
+        "value": "Indonesia"
+      }
+    ],
+    "dimensions": [
+      {
+        "title": "width",
+        "value": "32"
+      },
+      {
+        "title": "height",
+        "value": "47"
+      },
+      {
+        "title": "depth",
+        "value": ""
+      },
+      {
+        "title": "weight",
+        "value": "0.55"
+      }
+    ],
     "warranty": {
       "summary": "0 Year Manufacturing Warranty",
       "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",

@@ -4,40 +4,97 @@
     "description": "Oxy New is a stylish, modern and comfortable sofa that fits perfectly into the interior of a modern apartment and can be easily converted into a bed. The sofa consists of two sections and a niche for storing bedding. The transformation mechanism `Eurobook` will easily make a spacious bed out of a stylish and comfortable sofa. The softness of a product is characterized by both its appearance and filling. The Oxy New sofa has two types of additional cushions, which reduce the depth of the seat and add comfort during operation. A wide range of upholstery that is offered to choose from will help the Oxy New sofa become an integral part of the interior. Whether it is a substitute for leather or textiles - it's up to you.",
     "price": "455",
     "tags": ["living", "sofa", "interior"],
-    "discount": "10",
+    "discount": 10,
     "status": "discount",
     "amount": "7",
     "size": "",
-    "pictures": [],
+    "pictures": [
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-002/pic/tm2-1.png?raw=true",
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-002/pic/tm2-2.png?raw=true",
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-002/pic/tm2-3.png?raw=true",
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-002/pic/tm2-4.png?raw=true",
+      "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-002/pic/tm2-5.png?raw=true"
+    ],
     "colors": ["#09788a", "#a19e00", "#120b61"],
     "reviews": [],
     "rating": {
-      "number": "4",
-      "avarage": "4.5"
+      "number": 4,
+      "avarage": 4.5
     },
-    "general": {
-      "package": "Oxy New",
-      "modelNumber": "JH67YB9KL",
-      "secondMaterial": "Leather substitute, Textile",
-      "configuration": "spring-snake, spring block Pocket Spring, PPU",
-      "upholsteryMaterial": "",
-      "upholsteryColor": ""
-    },
-    "product": {
-      "fillingMaterial": "",
-      "finishType": "БМУR/1TM-1TM -ATM/БМУL",
-      "maxLoadCapcity": "350",
-      "manufacture": "China"
-    },
-    "dimensions": {
-      "width": "282",
-      "height": "69",
-      "depth": "193",
-      "weight": "145",
-      "seatHeight": "48",
-			"sleeperLeght": "168",
-      "legHeight": "48"
-    },
+    "general": [
+      {
+        "title": "Sales Package",
+        "value": "Oxy New"
+      },
+      {
+        "title": "Model Number",
+        "value": "JH67YB9KL"
+      },
+      {
+        "title": "Secondary Material",
+        "value": "Leather substitute, Textile"
+      },
+      {
+        "title": "Configuration",
+        "value": "spring-snake, spring block Pocket Spring, PPU"
+      },
+      {
+        "title": "Upholstery Material",
+        "value": ""
+      },
+      {
+        "title": "Upholstery Color",
+        "value": ""
+      }
+    ],
+    "product": [
+      {
+        "title": "Filling Material",
+        "value": "no"
+      },
+      {
+        "title": "Finish Type",
+        "value": "БМУR/1TM-1TM -ATM/БМУL"
+      },
+      {
+        "title": "Maximum Load Capacity",
+        "value": "350"
+      },
+      {
+        "title": "Origin of Manufacture",
+        "value": "China"
+      }
+    ],
+    "dimensions": [
+      {
+        "title": "width",
+        "value": "282"
+      },
+      {
+        "title": "height",
+        "value": "69"
+      },
+      {
+        "title": "depth",
+        "value": "193"
+      },
+      {
+        "title": "weight",
+        "value": "145"
+      },
+      {
+        "title": "Seat Height",
+        "value": "48"
+      },
+      {
+        "title": "Leg Height",
+        "value": "48"
+      },
+      {
+        "title": "Sleeper Length",
+        "value": "168"
+      }
+    ],
     "warranty": {
       "summary": "0.5 Year Manufacturing Warranty",
       "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",

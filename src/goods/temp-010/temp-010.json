@@ -1,56 +1,103 @@
 [
   {
     "title": "Square Arm Sofa",
-    "description": "Note: An earlier model of the sofa is 74". The New model of the sofa is 78". Please measure your space to ensure either product dimension can be accommodated. This collection features a timeless modern design to fit any room with the versatility you want. The storage pockets conveniently located on the armrests help you keep things like your remote control and magazines close, when and where you need them. All our sofa frames and legs are made with real Eucalyptus wood for sturdy support and a refined look. You will have your sofa in 5 simple, tool-free steps.",
+    "description": "Note: An earlier model of the sofa is 74`The New model of the sofa is 78`. Please measure your space to ensure either product dimension can be accommodated. This collection features a timeless modern design to fit any room with the versatility you want. The storage pockets conveniently located on the armrests help you keep things like your remote control and magazines close, when and where you need them. All our sofa frames and legs are made with real Eucalyptus wood for sturdy support and a refined look. You will have your sofa in 5 simple, tool-free steps.",
     "price": "929.99",
-		"tags": ["living", "sofa", "interior"],
+    "tags": ["living", "sofa", "interior"],
     "discount": "22",
     "status": "discount",
-    "amount": "6",
+    "amount": 6,
     "size": "",
-    "pictures": [],
+    "pictures": [
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-010/pic/tm010-1.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-010/pic/tm010-2.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-010/pic/tm010-3.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-010/pic/tm010-4.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-010/pic/tm010-5.webp"
+    ],
     "colors": ["#9e9588", "#707276", "#8b9caf"],
-    "reviews": [{
-			"name": "Stacy",
-			"review": "Shipped quickly and package arrived undamaged. Took me about an hour to assemble. I would suggest having help as I has trouble by myself getting the last arm side put together. It like “clips” together. It sits up a bit higher which I like. I am 5’3 and it doesn’t feel like I am getting up from the ground (if that makes sense). It is also a smaller size and fits perfect in my space. Very happy with price and product. Definitely recommend if you are looking for an inexpensive sofa.",
-			"date": "22.07.2023"
-		},
-		{
-			"name": "Alyssa",
-			"review": "Smaller than expected, but beautiful and great for the space. Very easy to assemble",
-			"date": "09.07.2023"
-		},
-		{
-			"name": "Marty",
-			"review": "This was a great buy! Nothing fancy, but comfortable and sturdy for my purposes! Surprised how easy it was to put together! Enjoying having it!",
-			"date": "08.06.2023"
-		}],
+    "reviews": [
+      {
+        "id": "fv8y2nj74bfv",
+        "name": "Stacy",
+        "review": "Shipped quickly and package arrived undamaged. Took me about an hour to assemble. I would suggest having help as I has trouble by myself getting the last arm side put together. It like “clips” together. It sits up a bit higher which I like. I am 5’3 and it doesn’t feel like I am getting up from the ground (if that makes sense). It is also a smaller size and fits perfect in my space. Very happy with price and product. Definitely recommend if you are looking for an inexpensive sofa.",
+        "date": "22.07.2023"
+      },
+      {
+        "id": "zgk4gbgrd3",
+        "name": "Alyssa",
+        "review": "Smaller than expected, but beautiful and great for the space. Very easy to assemble",
+        "date": "09.07.2023"
+      },
+      {
+        "id": "lmnuv3r89huvu",
+        "name": "Marty",
+        "review": "This was a great buy! Nothing fancy, but comfortable and sturdy for my purposes! Surprised how easy it was to put together! Enjoying having it!",
+        "date": "08.06.2023"
+      }
+    ],
     "rating": {
-      "number": "12",
-      "avarage": "4.3"
+      "number": 12,
+      "avarage": 4.3
     },
-    "general": {
-      "package": "sofa",
-      "modelNumber": "YREF3J5BH4D",
-      "secondMaterial": "Foam",
-      "configuration": "Multiple Cushion Seat",
-      "upholsteryMaterial": "Foam",
-      "upholsteryColor": ""
-    },
-    "product": {
-      "fillingMaterial": "Foam",
-      "finishType": "Standard",
-      "maxLoadCapcity": "340",
-      "manufacture": "China"
-    },
-    "dimensions": {
-      "width": "198",
-      "height": "81",
-      "depth": "81",
-      "weight": "40",
-      "seatHeight": "",
-      "legHeight": ""
-    },
+    "general": [
+      {
+        "title": "Sales Package",
+        "value": "1 sofa"
+      },
+      {
+        "title": "Model Number",
+        "value": "YREF3J5BH4D"
+      },
+      {
+        "title": "Secondary Material",
+        "value": "Foam"
+      },
+      {
+        "title": "Configuration",
+        "value": "Multiple Cushion Seat"
+      },
+      {
+        "title": "Upholstery Material",
+        "value": "Foam"
+      }
+    ],
+    "product": [
+      {
+        "title": "Filling Material",
+        "value": "Foam"
+      },
+      {
+        "title": "Finish Type",
+        "value": "Standard"
+      },
+      {
+        "title": "Maximum Load Capacity",
+        "value": "340"
+      },
+      {
+        "title": "Origin of Manufacture",
+        "value": "China"
+      }
+    ],
+    "dimensions": [
+      {
+        "title": "width",
+        "value": "198"
+      },
+      {
+        "title": "height",
+        "value": "81"
+      },
+      {
+        "title": "depth",
+        "value": "81"
+      },
+      {
+        "title": "weight",
+        "value": "40"
+      }
+    ],
     "warranty": {
       "summary": "3 Year Manufacturing Warranty",
       "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",

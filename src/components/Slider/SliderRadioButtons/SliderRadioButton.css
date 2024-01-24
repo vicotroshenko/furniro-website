@@ -38,5 +38,5 @@
 }
 
 .slideBtnContainer > input:checked + label::before {
-		background: center/cover no-repeat url(../../images/svg/active.svg) white;
+		background: center/cover no-repeat url(../../../images/svg/active.svg) white;
 }

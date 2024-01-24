@@ -3,55 +3,107 @@
     "title": "Montgomery Ribbon 24 in. x 48 in. Porcelain Ribbed Wood Look Wall Tile",
     "description": "With a beaded body, the Montgomery ribbon maple porcelain tile is a unique 3-dimensional, wood look that will add a distinctive touch to a design. This matte, tile mimics real maple wood with the appearance of a slight, grainy texture and pale colour. Use on walls or floors, indoors or out.",
     "price": "25.39",
-		"tags": ["living", "wood", "wall"],
+    "tags": ["living", "wood", "wall"],
     "discount": "13",
     "status": "discount",
-    "amount": "7",
+    "amount": 7,
     "size": "",
-    "pictures": [],
+    "pictures": [
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-005/pic/tp5-1.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-005/pic/tp5-2.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-005/pic/tp5-3.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-005/pic/tp5-4.webp",
+      "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-005/pic/tp5-5.webp"
+    ],
     "colors": ["#bda78f", "#505050", "#b0aaa3", "#e3ded4"],
-    "reviews": [{
-			"name": "Victor",
-			"review": "This tile is absolutely stunning! Superior quality and my tile guy said he enjoyed working with this tile, we recently put in a walk-in shower using this tile. We accented the Montgomery Ribbon Porcelain tile with some mosaic tile and it is absolutely beautiful, I highly recommend this tile for an upgrade such as a shower or tub surround we even did the ceiling in the shower with it!",
-			"date": "10.12.2022"
-		},
-		{
-			"name": "alisia",
-			"review": "Literally the best tile EVER. Used it in 2 diff colors in my new home and love them both so much. Used the grey actually for an entire fireplace and it’s GORGEOUS. Couldn’t be happier with quality and price. Shipping was fast too. Highly recommend!",
-			"date": "24.11.2022"
-		},
-		{
-			"name": "Sara",
-			"review": "You will not regret buying this tile! I wanted an earthy master shower rather than the basic marble look everyone does! And this make my dreams come true! HUGEEEE TILES. So beautiful!",
-			"date": "11.11.2022"
-		},
-		{
-			"name": "James",
-			"review": "Project results are pretty darn good. Love the look in our new shower. Plumber loved it so much he’s planning on doing the Sam tile in his renovation.",
-			"date": "11.09.2022"
-		}],
+    "reviews": [
+      {
+        "id": "oieunmvnjv632nfk9",
+        "name": "Victor",
+        "review": "This tile is absolutely stunning! Superior quality and my tile guy said he enjoyed working with this tile, we recently put in a walk-in shower using this tile. We accented the Montgomery Ribbon Porcelain tile with some mosaic tile and it is absolutely beautiful, I highly recommend this tile for an upgrade such as a shower or tub surround we even did the ceiling in the shower with it!",
+        "date": "10.12.2022"
+      },
+      {
+        "id": "42fve3r5fve",
+        "name": "alisia",
+        "review": "Literally the best tile EVER. Used it in 2 diff colors in my new home and love them both so much. Used the grey actually for an entire fireplace and it’s GORGEOUS. Couldn’t be happier with quality and price. Shipping was fast too. Highly recommend!",
+        "date": "24.11.2022"
+      },
+      {
+        "id": "kjadv578whwy2",
+        "name": "Sara",
+        "review": "You will not regret buying this tile! I wanted an earthy master shower rather than the basic marble look everyone does! And this make my dreams come true! HUGEEEE TILES. So beautiful!",
+        "date": "11.11.2022"
+      },
+      {
+        "id": "djv93kf03vrs",
+        "name": "James",
+        "review": "Project results are pretty darn good. Love the look in our new shower. Plumber loved it so much he’s planning on doing the Sam tile in his renovation.",
+        "date": "11.09.2022"
+      }
+    ],
     "rating": {
-      "number": "43",
-      "avarage": "4.8"
+      "number": 43,
+      "avarage": 4.8
     },
-    "general": {
-      "package": "Ribbed Wood Look Wall Tile",
-      "modelNumber": "FFKL96H5H",
-      "secondMaterial": "no",
-      "configuration": "",
-      "material": "Porcelain"
-    },
-    "product": {
-      "fillingMaterial": "Porcelain",
-      "finishType": "Singular Tile",
-      "manufacture": "Spain"
-    },
-    "dimensions": {
-      "width": "122",
-      "height": "60",
-      "depth": "10",
-      "weight": "33"
-    },
+    "general": [
+      {
+        "title": "Sales Package",
+        "value": "Ribbed Wood Look Wall Tile"
+      },
+      {
+        "title": "Model Number",
+        "value": "FFKL96H5H"
+      },
+      {
+        "title": "Secondary Material",
+        "value": "no"
+      },
+      {
+        "title": "Configuration",
+        "value": "Wood Wall"
+      },
+      {
+        "title": "Upholstery Material",
+        "value": "Wood"
+      },
+      {
+        "title": "Upholstery Color",
+        "value": "Porcelain"
+      }
+    ],
+    "product": [
+      {
+        "title": "Filling Material",
+        "value": "Porcelain"
+      },
+      {
+        "title": "Finish Type",
+        "value": "Singular Tile"
+      },
+      {
+        "title": "Origin of Manufacture",
+        "value": "Spain"
+      }
+    ],
+    "dimensions": [
+      {
+        "title": "width",
+        "value": "122"
+      },
+      {
+        "title": "height",
+        "value": "60"
+      },
+      {
+        "title": "depth",
+        "value": "10"
+      },
+      {
+        "title": "weight",
+        "value": "33"
+      }
+    ],
     "warranty": {
       "summary": "1 Year Manufacturing Warranty",
       "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",

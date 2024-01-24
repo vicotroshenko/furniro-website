@@ -1,11 +1,12 @@
-import HeaderMain from "../Header/HeaderMain/HeaderMain";
+
+import SliderMain from "../Slider/SliderMain/SliderMain";
 
 
 
 function App() {
   return (
-    <div>
-      <HeaderMain/>
+    <div style={{backgroundColor: "grey", height: "100vh"}}>
+      <SliderMain/>
     </div>
   );
 }

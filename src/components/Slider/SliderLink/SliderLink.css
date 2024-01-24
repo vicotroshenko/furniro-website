@@ -1,0 +1,60 @@
+.sliderItemIntro {
+	position: absolute;
+	bottom: 24px;
+	left: 24px;
+	width: 100%;
+	max-width: 217px;
+	min-width: 180px;
+	height: 130px;
+	padding: 32px 5px 32px 32px;
+	background: rgba(255, 255, 255, 0.72);
+	backdrop-filter: blur(1.5px);
+	text-transform: capitalize;
+}
+
+.sliderItemIntro > a {
+	position: absolute;
+	right: -48px;
+	bottom: 0;
+	display: block;
+	padding: 8px;
+	width: 48px;
+	height: 48px;
+	background-color: var(--button-primary);
+}
+
+.sliderArrow{
+	width: 100%;
+	height: 100%;
+	fill: var( --text-white);
+	transition: transform .25s linear;
+}
+
+.sliderItemIntro > a:hover .sliderArrow {
+	transform: scale(1.1);
+}
+
+.slideUpperText {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 8px;
+
+	color: var(--text-grey-2);
+	font-weight: 500;
+}
+
+.textDivider {
+	width: 100%;
+	max-width: 27px;
+	min-width: 5px;
+	height: 1px;
+	background-color: var(--text-grey-2);
+}
+
+.sliderItemIntro  > p {
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: var(--text-dark-3);
+}
