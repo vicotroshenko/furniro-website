@@ -1,12 +1,18 @@
-
-import SliderMain from "../Slider/SliderMain/SliderMain";
-
+import FooterMain from "../Footer/FooterMain/FooterMain";
+import HeaderMain from "../Header/HeaderMain/HeaderMain";
+import BrowseListSection from "../Main/BrowseTheRange/BrowseListSection/BrowseListSection";
+import HeroMain from "../Main/Hero/HeroMain/HeroMain";
+import SliderSectionMain from "../Main/SliderSection/SliderSectionMain/SliderSectionMain";
 
 
 function App() {
   return (
-    <div style={{backgroundColor: "grey", height: "100vh"}}>
-      <SliderMain/>
+    <div>
+      <HeaderMain/>
+      <HeroMain/>
+      <BrowseListSection/>
+      <SliderSectionMain/>
+      <FooterMain/>
     </div>
   );
 }

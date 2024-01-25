@@ -1,0 +1,26 @@
+.sliderSection{
+	width: 100%;
+	height: auto;
+	background-color: var(--bg-third);
+}
+
+.sliderSectionContainer{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	gap: 22px;
+	width: 100%;
+	max-width: 1440px;
+	min-height: 670px;
+	padding: 44px 0 44px 10px;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 980px) {
+	.sliderSectionContainer{
+		flex-direction: row;
+		gap: 42px;
+		padding: 44px 0 44px 100px;
+	}
+}

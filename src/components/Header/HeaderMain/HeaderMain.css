@@ -5,6 +5,7 @@
 	width: 100%;
 	height: auto;
 	z-index: 25;
+	background-color: rgba(255, 255, 255, 0.8);
 }
 
 .headerContainer {
@@ -13,8 +14,8 @@
 	width: 100%;
 	max-width: 1440px;
 	height: 100px;
+	margin: 0 auto;
 	padding: 29px 100px 29px 54px;
-	background-color: rgba(255, 255, 255, 0.3);
 }
 
 .headerLogo {

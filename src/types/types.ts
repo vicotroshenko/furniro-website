@@ -36,3 +36,9 @@ export interface ISliderLink {
 	name: string;
 	link: string;
 }
+
+export interface IRangeItemProps {
+	image: any;
+	text: string;
+	link: string;
+}

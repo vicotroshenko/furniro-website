@@ -1,10 +1,10 @@
-import { ISliderRadioButtonsProps } from "../../../types/types";
+import { ISliderRadioButtonsProps } from "../../../../../types/types";
 import "./SliderRadioButton.css";
 
 
 
 const SliderRadioButtons: React.FC<ISliderRadioButtonsProps> = ({
-  onChange, slide="slider-1"
+  onChange, slide="0"
 }) => {
 
 

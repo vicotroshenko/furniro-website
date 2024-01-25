@@ -1,0 +1,12 @@
+.hero {
+	width: 100%;
+	height: auto;
+}
+.heroContainer {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	min-height: 717px;
+	padding: 153px 58px 16px 58px;
+	background: center/cover no-repeat url(../../../../images/jpeg/hero.jpg);
+}

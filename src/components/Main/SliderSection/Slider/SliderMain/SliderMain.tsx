@@ -1,12 +1,13 @@
 import "./SliderMain.css";
-import image1 from "../../../images/jpeg/slider-1.jpg";
-import image2 from "../../../images/jpeg/slider-2.jpg";
-import image3 from "../../../images/jpeg/slider-3.jpg";
-import image4 from "../../../images/jpeg/slider-4.jpg";
+import image1 from "../../../../../images/jpeg/slider-1.jpg";
+import image2 from "../../../../../images/jpeg/slider-2.jpg";
+import image3 from "../../../../../images/jpeg/slider-3.jpg";
+import image4 from "../../../../../images/jpeg/slider-4.jpg";
 import SliderLink from "../SliderLink/SliderLink";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import SliderRadioButtons from "../SliderRadioButtons/SliderRadioButtons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { nanoid } from "nanoid";
 
 interface ISlides {
   slide: number;
@@ -51,12 +52,6 @@ const SliderMain = () => {
   const [slide, setSlide] = useState<string>("0");
   const [newArray, setNewArray] = useState<ISlides[]>(slides);
 
-
-	// useEffect(() => {
-		
-	// }, [])
-	
-
   const getArray = (position: number) => {
     if (position === 0) {
       setNewArray(slides);
@@ -96,7 +91,7 @@ const SliderMain = () => {
     <div className="slider">
       <ul className="sliderList">
         {newArray.map(({ slide, place, name, image, link }, index) => (
-          <li className="sliderItem" key={index}>
+          <li className="sliderItem" key={nanoid()}>
             <img src={image} alt={name} className="image" />
             <SliderLink name={name} place={place} link={link} number={slide} />
           </li>

@@ -34,9 +34,9 @@
 	height: 27px;
 	background: none;
 	border-radius: 50%;
-	transition: background .25s linear;
+	transition: background .35s linear;
 }
 
 .slideBtnContainer > input:checked + label::before {
-		background: center/cover no-repeat url(../../../images/svg/active.svg) white;
+		background: center/cover no-repeat url(../../../../../images/svg/active.svg) white;
 }
