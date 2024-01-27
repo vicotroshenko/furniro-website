@@ -1,20 +1,24 @@
+import { Link, useLocation } from "react-router-dom"
 import "./HeaderNav.css"
 
 const HeaderNav = () => {
+	const { pathname } = useLocation();
+
+
 	return (
 		<nav className='nav'>
 			<ul className='navList'>
 				<li>
-					<a href='/'>home</a>
+					<Link to={"/"} className={pathname === "/" ? "active" : ""}>home</Link>
 				</li>
 				<li>
-					<a href='/'>shop</a>
+					<Link to={"/shop"} className={pathname === "/shop" ? "active" : ""}>shop</Link>
 				</li>
 				<li>
-					<a href='/'>about</a>
+					<Link to={"/"} className={pathname === "/about" ? "active" : ""}>about</Link>
 				</li>
 				<li>
-					<a href='/'>contact</a>
+					<Link to={"/"} className={pathname === "/contact" ? "active" : ""}>contact</Link>
 				</li>
 			</ul>
 		</nav>

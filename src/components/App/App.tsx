@@ -1,26 +1,19 @@
-import FooterMain from "../Footer/FooterMain/FooterMain";
-import HeaderMain from "../Header/HeaderMain/HeaderMain";
-import BrowseListSection from "../Main/BrowseTheRange/BrowseListSection/BrowseListSection";
-import HeroMain from "../Main/Hero/HeroMain/HeroMain";
-import Products from "../Main/Products/Products";
-import SliderSectionMain from "../Main/SliderSection/SliderSectionMain/SliderSectionMain";
-
+import Main from "../../pages/Main";
+import { Routes, Route } from 'react-router-dom';
+import SharedLayout from "../SharedLayout/SharedLayout";
+import Shop from "../../pages/Shop";
 
 
 function App() {
-
-  
   
   return (
-    <div>
-      <HeaderMain/>
-      <HeroMain/>
-      <BrowseListSection/>
-      <Products/>
-      <SliderSectionMain/>
-      <FooterMain/>
-    </div>
-  );
+    <Routes>
+      <Route path="/" element={<SharedLayout/>}>
+        <Route index element={<Main/>} />
+        <Route path="shop" element={<Shop/>} />
+      </Route>
+    </Routes>
+  )
 }
 
 export default App;

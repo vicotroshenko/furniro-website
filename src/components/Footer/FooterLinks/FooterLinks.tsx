@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid'
 import "./FooterLinks.css";
 import { IFooterLinksProps } from '../../../types/types';
+import { Link } from 'react-router-dom';
 
 const FooterLinks:React.FC<IFooterLinksProps> = ({title, links=[]}) => {
 	return (
@@ -10,7 +11,7 @@ const FooterLinks:React.FC<IFooterLinksProps> = ({title, links=[]}) => {
 			</li>
 			{links.map((link)=> (
 				<li className="footerItem" key={nanoid()}>
-					<a href="/">{link}</a>
+					<Link to={"/"}>{link}</Link>
 				</li>
 			))}
 		</ul>

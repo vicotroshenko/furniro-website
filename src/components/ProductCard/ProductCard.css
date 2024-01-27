@@ -19,6 +19,10 @@
 	min-height: 301px;
 }
 
+.prodCardImage > img {
+	height: 100%;
+}
+
 .prodCardDesc {
 	width: 100%;
 	height: 145px;

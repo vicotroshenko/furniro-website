@@ -43,18 +43,27 @@ export interface IRangeItemProps {
 	link: string;
 }
 
-interface IGoodData {
+export interface IProductCardProps {
+  image: string;
+  discount: string | number;
+  title: string;
+  shortInfo: string;
+  firstPrice: string;
+  discountPrice: string;
+}
+
+export interface IGoodData {
   title: string;
   value: string;
 }
 
-interface IRating {
+export interface IRating {
   user: string;
   id: string;
   mark: number;
 }
 
-interface IReview {
+export interface IReview {
   id?: string;
   author?: string;
   name: string;

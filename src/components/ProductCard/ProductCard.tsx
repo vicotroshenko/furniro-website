@@ -1,4 +1,3 @@
-import image3 from "../../images/jpeg/image3.jpg";
 import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
 import { IoMdShare } from "react-icons/io";
 import { MdOutlineCompareArrows } from "react-icons/md";
@@ -6,15 +5,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa6";
 import "./ProductCard.css";
 import { useState } from "react";
 import DiscountLabel from "../DiscountLabel/DiscountLabel";
-
-interface IProductCardProps {
-  image: string;
-  discount: string | number;
-  title: string;
-  shortInfo: string;
-  firstPrice: string;
-  discountPrice: string;
-}
+import { IProductCardProps } from "../../types/types";
 
 const ProductCard: React.FC<IProductCardProps> = ({
   image,
@@ -22,15 +13,17 @@ const ProductCard: React.FC<IProductCardProps> = ({
   title,
   shortInfo,
   firstPrice,
-  discountPrice
+  discountPrice,
 }) => {
   const [like, setLike] = useState<boolean>(false);
 
   return (
     <div className="prodCardContainer">
-			{discount !== "0" && discount !== "" && discount !== 0 && <div className="prodCardDiscount">
-				<DiscountLabel discount={discount}/>
-			</div>}
+      {discount !== "0" && discount !== "" && discount !== 0 && (
+        <div className="prodCardDiscount">
+          <DiscountLabel discount={discount} />
+        </div>
+      )}
       <div className="prodCardImage">
         <img src={image} alt={title} className="image" />
       </div>

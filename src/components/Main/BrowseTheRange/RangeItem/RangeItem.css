@@ -16,7 +16,7 @@
 
 }
 
-.rangeItemImage:hover {
+.rangeItem:hover .rangeItemImage {
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 7px 18px, rgba(0, 0, 0, 0.22) 0px 5px 5px;
 }
 
@@ -26,9 +26,10 @@
 	transition: all .25s linear;
 }
 
-.rangeItem > a:hover, .rangeItem > a:focus{
-	text-shadow: var(--text-grey-1) 4px 4px 4px;
+.rangeItem:hover > a,  .rangeItem:focus > a{
+	text-shadow: var(--hover-text-shodow);
 }
+
 
 .rangeItemText {
 	font-size: 24px;

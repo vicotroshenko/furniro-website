@@ -19,5 +19,9 @@
 }
 
 .navList a:hover{
-	text-shadow: var(--text-grey-1) 4px 4px 4px;
+	text-shadow: var(--hover-text-shodow);
+}
+
+.navList .active {
+	color: var(--button-primary);
 }

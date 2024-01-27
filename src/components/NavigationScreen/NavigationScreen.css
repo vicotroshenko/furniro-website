@@ -1,0 +1,49 @@
+.navigationScreenSection{
+	width: 100%;
+	height: auto;
+}
+
+.navigationScreenContainer{
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	height: auto;
+	background: linear-gradient(90deg, rgba(211,211,211,0.5) 0%, rgba(211,211,211,0.5) 100%), center/cover no-repeat url(../../images/jpeg/pathScreen.webp) ;  
+}
+
+.blurBackContent{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 316px;
+	backdrop-filter: blur(3px);
+}
+
+.blurBackContent > h1 {
+	font-size: 48px;
+	font-weight: 500;
+	line-height: 1.5;
+	text-transform: capitalize;
+}
+
+.navigationScreenHistory {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2px;
+	text-transform: capitalize;
+}
+.navigationScreenHistory > a{
+	text-decoration: none;
+	color: inherit;
+}
+
+.navigationScreenHistory > a:first-child{
+	font-weight: 500;
+}
+
+.navigationScreenHistory > a:last-child{
+	font-weight: 300;
+}

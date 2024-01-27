@@ -19,6 +19,8 @@
   --bg-third: #FAF3EA;
   --bg-hero-hint: #FFF3E3;
   --bg-card: #F4F5F7;
+
+  --hover-text-shodow: rgba(102, 102, 102, 0.7) 4px 4px 4px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');

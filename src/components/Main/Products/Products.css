@@ -21,16 +21,7 @@
 	text-transform: capitalize;
 }
 
-.productsList{
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 285px);
-	grid-auto-rows: 446px;
-	gap: 32px;
-	margin: 0 auto;
-	justify-content: center;
-	align-items: center;
-	list-style-type: none;
-}
+
 
 .productsMoreButtonWrap{
 	width: 100%;
