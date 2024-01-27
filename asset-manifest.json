@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/furniro-website/static/css/main.362de300.css",
-    "main.js": "/furniro-website/static/js/main.7e093a3c.js",
+    "main.css": "/furniro-website/static/css/main.6368922e.css",
+    "main.js": "/furniro-website/static/js/main.5b4daedc.js",
     "static/media/slider-1.jpg": "/furniro-website/static/media/slider-1.ed3f766b3146d0491604.jpg",
     "static/media/slider-2.jpg": "/furniro-website/static/media/slider-2.272f809a7e024d7108d9.jpg",
     "static/media/slider-3.jpg": "/furniro-website/static/media/slider-3.090a03381ec91314b607.jpg",
@@ -13,11 +13,11 @@
     "static/media/range1.jpg": "/furniro-website/static/media/range1.c706a3fd1a01468c1e16.jpg",
     "index.html": "/furniro-website/index.html",
     "static/media/active.svg": "/furniro-website/static/media/active.ea4c956b43d98acfb642.svg",
-    "main.362de300.css.map": "/furniro-website/static/css/main.362de300.css.map",
-    "main.7e093a3c.js.map": "/furniro-website/static/js/main.7e093a3c.js.map"
+    "main.6368922e.css.map": "/furniro-website/static/css/main.6368922e.css.map",
+    "main.5b4daedc.js.map": "/furniro-website/static/js/main.5b4daedc.js.map"
   },
   "entrypoints": [
-    "static/css/main.362de300.css",
-    "static/js/main.7e093a3c.js"
+    "static/css/main.6368922e.css",
+    "static/js/main.5b4daedc.js"
   ]
 }
