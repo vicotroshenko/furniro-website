@@ -7,7 +7,7 @@
     "discount": "39",
     "status": "discount",
     "amount": 9,
-    "size": "",
+    "size": [],
     "pictures": [
       "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-003/pic/tm2-1.webp",
       "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-003/pic/tm2-2.webp",
@@ -35,10 +35,7 @@
         "date": "01.03.2023"
       }
     ],
-    "rating": {
-      "number": 14,
-      "avarage": 4.8
-    },
+    "rating": [],
     "general": [
       {
         "title": "Sales Package",
@@ -73,10 +70,6 @@
       {
         "title": "Finish Type",
         "value": "Armchair"
-      },
-      {
-        "title": "Adjustable Headrest",
-        "value": ""
       },
       {
         "title": "Maximum Load Capacity",

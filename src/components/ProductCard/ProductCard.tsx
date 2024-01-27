@@ -7,23 +7,39 @@ import "./ProductCard.css";
 import { useState } from "react";
 import DiscountLabel from "../DiscountLabel/DiscountLabel";
 
-const ProductCard = () => {
+interface IProductCardProps {
+  image: string;
+  discount: string | number;
+  title: string;
+  shortInfo: string;
+  firstPrice: string;
+  discountPrice: string;
+}
+
+const ProductCard: React.FC<IProductCardProps> = ({
+  image,
+  discount,
+  title,
+  shortInfo,
+  firstPrice,
+  discountPrice
+}) => {
   const [like, setLike] = useState<boolean>(false);
 
   return (
     <div className="prodCardContainer">
-			<div className="prodCardDiscount">
-				<DiscountLabel discount={30}/>
-			</div>
+			{discount !== "0" && discount !== "" && discount !== 0 && <div className="prodCardDiscount">
+				<DiscountLabel discount={discount}/>
+			</div>}
       <div className="prodCardImage">
-        <img src={image3} alt="sofa" className="image" />
+        <img src={image} alt={title} className="image" />
       </div>
       <div className="prodCardDesc">
-        <h3>Lolito</h3>
-        <p>Luxury big sofa</p>
+        <h3>{title}</h3>
+        <p>{shortInfo}</p>
         <div className="prodCardPrice">
-          <p>Rp 7.000.000</p>
-          <p>Rp 14.000.000</p>
+          <p>{discountPrice}</p>
+          <p>{firstPrice}</p>
         </div>
       </div>
       <div className="prodCardHoverItem">

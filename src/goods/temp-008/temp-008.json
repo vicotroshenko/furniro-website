@@ -7,7 +7,7 @@
     "discount": "0",
     "status": "new",
     "amount": 10,
-    "size": "",
+    "size": [],
     "pictures": [
       "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-008/pic/tm8-1.webp",
       "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-008/pic/tm8-2.webp",
@@ -36,10 +36,7 @@
         "date": "02.11.2022"
       }
     ],
-    "rating": {
-      "number": 65,
-      "avarage": 4.7
-    },
+    "rating": [],
     "general": [
       {
         "title": "Sales Package",
@@ -56,14 +53,6 @@
       {
         "title": "Configuration",
         "value": "table"
-      },
-      {
-        "title": "Upholstery Material",
-        "value": ""
-      },
-      {
-        "title": "Upholstery Color",
-        "value": ""
       }
     ],
     "product": [
@@ -84,14 +73,24 @@
         "value": "China"
       }
     ],
-    "dimensions": {
-      "width": "80",
-      "height": "45",
-      "depth": "80",
-      "weight": "11",
-      "seatHeight": "",
-      "legHeight": ""
-    },
+    "dimensions": [
+      {
+        "title": "width",
+        "value": "80"
+      },
+      {
+        "title": "height",
+        "value": "45"
+      },
+      {
+        "title": "depth",
+        "value": "80"
+      },
+      {
+        "title": "weight",
+        "value": "11"
+      }
+    ],
     "warranty": {
       "summary": "1 Year Manufacturing Warranty",
       "serviceType": "For Warranty Claims or Any Product Related Issues Please Email at operations@trevifurniture.com",

@@ -7,7 +7,7 @@
     "discount": "0",
     "status": "new",
     "amount": 6,
-    "size": "",
+    "size": [],
     "pictures": [
       "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-004/pic/tm4-1.webp",
       "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-004/pic/tm4-2.webp",
@@ -29,10 +29,11 @@
         "date": "04.01.2023"
       }
     ],
-    "rating": {
-      "number": 32,
-      "avarage": 4.7
-    },
+    "rating": [{
+      "user": "Anonymous",
+      "id": "fnvnuf7fduhvufdn",
+      "mark": "4"
+    }],
     "general": [
       {
         "title": "Natural Wood Grain Colour Variation",

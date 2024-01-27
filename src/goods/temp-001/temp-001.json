@@ -7,7 +7,7 @@
     "discount": "0",
     "status": "new",
     "amount": 6,
-    "size": "",
+    "size": [],
     "pictures": [
       "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-001/pic/tm1-1.jpg?raw=true",
       "https://github.com/vicotroshenko/furniro-website/blob/main/src/goods/temp-001/pic/tm1-2.jpg?raw=true",
@@ -17,10 +17,7 @@
     ],
     "colors": ["black", "grey"],
     "reviews": [],
-    "rating": {
-      "number": 3,
-      "avarage": 4.5
-    },
+    "rating": [],
     "general": [
       {
         "title": "Sales Package",
@@ -55,10 +52,6 @@
       {
         "title": "Finish Type",
         "value": "Black and White collection"
-      },
-      {
-        "title": "Adjustable Headrest",
-        "value": ""
       },
       {
         "title": "Maximum Load Capacity",

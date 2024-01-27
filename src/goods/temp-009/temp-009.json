@@ -7,7 +7,7 @@
     "discount": "0",
     "status": "new",
     "amount": 10,
-    "size": "",
+    "size": [],
     "pictures": [
       "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-009/pic/tm9-1.webp",
       "https://raw.githubusercontent.com/vicotroshenko/furniro-website/main/src/goods/temp-009/pic/tm9-2.webp",
@@ -35,10 +35,7 @@
         "date": "16.12.2023"
       }
     ],
-    "rating": {
-      "number": 4,
-      "avarage": 4.4
-    },
+    "rating": [],
     "general": [
       {
         "title": "Sales Package",

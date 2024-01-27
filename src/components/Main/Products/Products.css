@@ -1,0 +1,40 @@
+.productsSection{
+	width: 100%;
+	height: auto;
+}
+
+.productsContainer {
+	max-width: 1440px;
+	height: auto;
+	margin: 0 auto;
+	padding: 0 100px 69px 100px;
+}
+
+.productsContainer > h2 {
+	margin-bottom: 32px;
+
+	font-size: 40px;
+	line-height: 1.2;
+	font-weight: 700;
+	color: var(--text-dark-3);
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.productsList{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 285px);
+	grid-auto-rows: 446px;
+	gap: 32px;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+}
+
+.productsMoreButtonWrap{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-top: 32px;
+}

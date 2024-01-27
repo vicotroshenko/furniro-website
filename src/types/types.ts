@@ -42,3 +42,41 @@ export interface IRangeItemProps {
 	text: string;
 	link: string;
 }
+
+interface IGoodData {
+  title: string;
+  value: string;
+}
+
+interface IRating {
+  user: string;
+  id: string;
+  mark: number;
+}
+
+interface IReview {
+  id?: string;
+  author?: string;
+  name: string;
+  rewiew: string;
+  date?: Date;
+}
+export interface IDataSlice {
+  title: string;
+  description: string;
+  price: string;
+  tags?: string[];
+  discount: string;
+  status: string;
+  amount: number;
+  size: string;
+  pictures: string[];
+  colors: string[];
+  reviews: IReview[];
+  rating: IRating[];
+  general: IGoodData[];
+  product: IGoodData[];
+  dimensions: IGoodData[];
+  warranty: object;
+  category: string;
+}
