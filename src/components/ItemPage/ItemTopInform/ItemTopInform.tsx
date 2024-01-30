@@ -1,7 +1,5 @@
 import "./ItemTopInform.css";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { useParams } from "react-router-dom";
-import { IDataSlice } from "../../../types/types";
+import { IItemInnerProps } from "../../../types/types";
 import ItemImageParade from "./ItemImageParade/ItemImageParade";
 import ItemDescribe from "./ItemDescribe/ItemDescribe";
 import ItemSizeButtons from "./ItemSizeButtons/ItemSizeButtons";
@@ -9,11 +7,8 @@ import ItemColorBar from "./ItemColorBar/ItemColorBar";
 import ItemButtons from "./ItemButtons/ItemButtons";
 import ItemShortDesc from "./ItemShortDesc/ItemShortDesc";
 
-const ItemTopInform = () => {
-  const { id } = useParams();
-  const goods = useAppSelector((state) => state.goods.allGoods);
-  const [item] = goods.filter((element: IDataSlice) => element._id === id);
-  console.log("item: ", item);
+
+const ItemTopInform:React.FC<IItemInnerProps> = ({ item }) => {
 
   return (
     <div className="it-wrapper">

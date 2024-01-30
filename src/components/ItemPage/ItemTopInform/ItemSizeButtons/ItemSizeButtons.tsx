@@ -10,7 +10,7 @@ interface IItemsSizeButtons {
 const ItemSizeButtons:React.FC<IItemsSizeButtons> = ({ size, onSize }) => {
   const [sizeChose, setSizeChose] = useState<string>("");
 
-  const handleTypeOfSize = (e: any) => {
+  const handleTypeOfSize = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name } = e.target;
     console.log(e.target.name);
     setSizeChose(name);

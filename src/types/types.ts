@@ -67,8 +67,8 @@ export interface IReview {
   id?: string;
   author?: string;
   name: string;
-  rewiew: string;
-  date?: Date;
+  review: string;
+  date: string;
 }
 export interface IDataSlice {
   _id: string;
@@ -108,3 +108,8 @@ export interface IItemImageParadeProps {
 }
 
 export interface IItemShortDesc extends Pick<IDataSlice, "tags" | "category"> {}
+
+
+export interface IItemInnerProps {
+  item: IDataSlice;
+}
