@@ -1,0 +1,68 @@
+.cardManageBtuContainer{
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	width: 100%;
+	max-width: 581px;
+	margin-top: 32px;
+	margin-bottom: 60px;
+}
+
+.itemAmountButton {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex: 1 1 123px;
+	height: 64px;
+	border: 1px solid var(--text-grey-4);
+	border-radius: 10px;
+	transition: box-shadow .25s ease;
+}
+
+@media screen and (min-width: 980px){
+	.itemAmountButton {
+		margin-right: 8px;
+	}
+}
+
+.itemAmountButton:hover, .itemAmountButton:hover {
+	box-shadow: var(--hover-second-btn);
+}
+
+.itemAmountButton > button {
+	height: 100%;
+	padding: 12px 10px 12px 15px;
+	cursor: pointer;
+}
+
+.itemAmountButton > button:active {
+	background: linear-gradient(90deg, rgba(211,211,211, 0.2) 0%, rgba(211,211,211,0.2) 100%);
+}
+
+.itemAmountButton > button > svg {
+	vertical-align: sub;
+}
+
+.cardManageBtn {
+	width: 100%;
+	flex: 1 1 215px;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	border: 1px solid var(--text-dark-1);
+	border-radius: 10px;
+	text-transform: capitalize;
+	cursor: pointer;
+	transition: box-shadow .25s ease;
+}
+
+.cardManageBtn:hover, .cardManageBtn:focus {
+	box-shadow: var(--hover-second-btn);
+}
+
+.cardManageBtn:active {
+	background: linear-gradient(90deg, rgba(211,211,211, 0.2) 0%, rgba(211,211,211,0.2) 100%);
+}
+

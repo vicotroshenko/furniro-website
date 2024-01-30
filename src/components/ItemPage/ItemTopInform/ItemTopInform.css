@@ -1,0 +1,34 @@
+.it-wrapper {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 82px;
+	padding: 0 10px;
+}
+
+
+.it-info{
+	width: 80%;
+}
+
+.it-wrapper > div:first-child {
+	width: 530px;
+	height: 500px;
+	flex-shrink: 0;
+	position: relative;
+}
+
+
+@media screen and (min-width: 980px){
+	.it-wrapper {
+		flex-direction: row;
+		padding: 0 100px;
+	}
+	.it-info{
+		width: 100%;
+	}
+} 

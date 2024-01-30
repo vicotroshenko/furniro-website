@@ -1,46 +1,46 @@
 export interface IButtonProps {
-	width: number;
-	height: number;
-	text: string;
-	onClick?: ()=> any;
+  width: number;
+  height: number;
+  text: string;
+  onClick?: () => any;
 }
 
 export interface IDiscountLabelProps {
-	discount: string | number;
+  discount: string | number;
 }
 
 export interface IDiscountLableStyles {
-	background: string;
-	discountStatus: boolean;
+  background: string;
+  discountStatus: boolean;
 }
 
 export interface ISliderRadioButtonsProps {
   onChange: (value: React.ChangeEvent<HTMLInputElement>) => any;
-	slide: string;
+  slide: string;
 }
 
 export interface IFooterLinksProps {
-	title: string;
-	links: string[];
+  title: string;
+  links: string[];
 }
 
-export interface IAdvantagesItemProps extends 
-	Pick<IFooterLinksProps, "title">, 
-	Pick<IButtonProps, "text"> {
-	icon: string;
+export interface IAdvantagesItemProps
+  extends Pick<IFooterLinksProps, "title">,
+    Pick<IButtonProps, "text"> {
+  icon: string;
 }
 
 export interface ISliderLink {
-	number: number | string;
-	place: string;
-	name: string;
-	link: string;
+  number: number | string;
+  place: string;
+  name: string;
+  link: string;
 }
 
 export interface IRangeItemProps {
-	image: any;
-	text: string;
-	link: string;
+  image: any;
+  text: string;
+  link: string;
 }
 
 export interface IProductCardProps {
@@ -71,6 +71,7 @@ export interface IReview {
   date?: Date;
 }
 export interface IDataSlice {
+  _id: string;
   title: string;
   description: string;
   price: string;
@@ -89,3 +90,21 @@ export interface IDataSlice {
   warranty: object;
   category: string;
 }
+
+export interface IItemButtonsPros {
+  amount: number;
+  onAmount?: () => React.MouseEvent<HTMLButtonElement>;
+  onAdd?: () => React.MouseEvent<HTMLButtonElement>;
+  onCompare?: () => React.MouseEvent<HTMLButtonElement>;
+}
+
+export interface IItemDescribe
+  extends Pick<IDataSlice, "title" | "description" | "price" | "reviews"> {
+  rating?: number;
+}
+
+export interface IItemImageParadeProps {
+  pictures: string[];
+}
+
+export interface IItemShortDesc extends Pick<IDataSlice, "tags" | "category"> {}

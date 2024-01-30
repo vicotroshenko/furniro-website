@@ -1,0 +1,52 @@
+.is-container{
+	margin-top: 22px;
+}
+
+.itemSizeTitle {
+	margin-bottom: 12px;
+
+	font-size: 14px;
+	color: var(--text-grey-4);
+}
+
+.itemSizeField {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	background-color: var(--bg-hero-hint);
+	cursor: pointer;
+
+	text-transform: uppercase;
+	transition: all .25s linear;
+}
+
+
+.itemSizeBtnWrapper {
+	display: flex;
+	gap: 16px;
+}
+
+
+.itemSizeButton {
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	z-index: -1;
+}
+
+
+.itemSizeButton:checked + .itemSizeField {
+	background-color: var(--button-primary);
+	animation: checked .35s ease;
+}
+
+@keyframes checked {
+	0% {
+		background-color: var(--bg-hero-hint);
+	}
+	100% {
+		background-color: var(--button-primary);
+	}
+}

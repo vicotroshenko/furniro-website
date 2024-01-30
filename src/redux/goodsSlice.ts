@@ -13,7 +13,7 @@ const initialState: IProductsInitialState = {
 };
 
 const goodsSlice = createSlice({
-  name: "products",
+  name: "goods",
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {

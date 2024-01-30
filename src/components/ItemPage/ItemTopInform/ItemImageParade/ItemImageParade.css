@@ -1,0 +1,31 @@
+.itemImageContainer {
+	position: relative;
+	display: flex;
+	flex-direction: column-reverse;
+	list-style-type: none;
+	gap: 32px;
+}
+
+.itemImageContainer > li{
+	width: 76px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	cursor: pointer;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.itemImageContainer > li:hover{
+outline: 2px solid var(--button-primary);
+}
+
+.itemImageContainer > li:first-child {
+	position: absolute;
+	top: 0;
+	left: 90px;
+	width: 423px;
+	height: auto;
+	flex-grow: 1;
+	flex-shrink: 1;
+
+}
