@@ -1,0 +1,18 @@
+.cont-t-container{
+	width: 100%;
+	text-transform: capitalize;
+	text-align: center;
+}
+
+.cont-t-container > h1 {
+	margin-bottom: 7px;
+	font-size: 36px;
+	font-weight: 600;
+}
+
+.cont-t-container > p {
+	max-width: 644px;
+	margin: 0 auto;
+	color: var(--text-grey-4);
+	text-align: center;
+}

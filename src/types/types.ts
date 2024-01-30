@@ -1,7 +1,10 @@
+
+
 export interface IButtonProps {
   width: number;
   height: number;
   text: string;
+  type: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
   onClick?: () => any;
 }
 

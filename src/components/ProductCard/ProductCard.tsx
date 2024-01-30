@@ -36,7 +36,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
         </div>
       </div>
       <div className="prodCardHoverItem">
-        <ButtonSecondary width={202} height={48} text={"Add to cart"} />
+        <ButtonSecondary width={202} type="button" height={48} text={"Add to cart"} />
         <div className="prodCardBtns">
           <button type="button">
             <IoMdShare className="prodCardIconBtn" />

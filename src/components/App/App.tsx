@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import SharedLayout from "../SharedLayout/SharedLayout";
 import Shop from "../../pages/Shop";
 import ItemPage from "../../pages/ItemPage";
+import Contacts from "../../pages/Contacts";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route index element={<Main/>} />
         <Route path="shop" element={<Shop/>} />
         <Route path="shop/:id" element={<ItemPage/>} />
+        <Route path="contacts" element={<Contacts/>} />
       </Route>
     </Routes>
   )

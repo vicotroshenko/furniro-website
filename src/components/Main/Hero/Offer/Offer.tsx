@@ -8,7 +8,7 @@ const Offer = () => {
 			<span className="offerUptext">New Arrival</span>
 			<p className="offerTitle">Discover Our New collection</p>
 			<p className="offerUndertext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
-			<ButtonPrimary width={222} height={74} text="buy now"/>
+			<ButtonPrimary width={222} type="button" height={74} text="buy now"/>
 		</div>
 	)
 }

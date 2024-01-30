@@ -9,7 +9,7 @@ const SliderTitle = () => {
         Our designer already made a lot of beautiful prototipe of rooms that
         inspire you
       </p>
-      <ButtonPrimary width={176} height={48} text="Explore More" />
+      <ButtonPrimary width={176} type="button" height={48} text="Explore More" />
     </div>
   );
 };

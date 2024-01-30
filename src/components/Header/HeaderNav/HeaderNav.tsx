@@ -18,7 +18,7 @@ const HeaderNav = () => {
 					<Link to={"/"} className={pathname === "/about" ? "active" : ""}>about</Link>
 				</li>
 				<li>
-					<Link to={"/"} className={pathname === "/contact" ? "active" : ""}>contact</Link>
+					<Link to={"/contacts"} className={pathname === "/contacts" ? "active" : ""}>contact</Link>
 				</li>
 			</ul>
 		</nav>

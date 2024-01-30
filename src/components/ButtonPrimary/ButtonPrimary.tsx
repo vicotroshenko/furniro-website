@@ -5,11 +5,13 @@ const ButtonPrimary: React.FC<IButtonProps> = ({
   width,
   height,
   text,
+  type,
   onClick,
 }) => {
+
   return (
     <button
-      type="button"
+      type={type}
       style={{ maxWidth: width, height: height }}
       onClick={onClick}
       className="buttonPrimary"

@@ -48,6 +48,7 @@ const Products = () => {
         <ProductList items={partOfItems}/>
         <div className="productsMoreButtonWrap">
           <ButtonSecondary
+            type="button"
             width={245}
             height={48}
             text="Show more"
