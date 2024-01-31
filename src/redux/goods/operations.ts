@@ -8,7 +8,6 @@ export const getAllGoods = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/');
-			console.log(response);
       return response.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.response.status);

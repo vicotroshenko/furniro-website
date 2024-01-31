@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllGoods } from "./operations";
-import { IDataSlice } from "../types/types";
+import { getAllGoods } from "../goods/operations";
+import { IDataSlice } from "../../types/types";
 
 interface IProductsInitialState {
 	allGoods: IDataSlice[];
@@ -36,5 +36,5 @@ const goodsSlice = createSlice({
   },
 });
 
-const productReducer = goodsSlice.reducer;
-export default productReducer;
+const goodsReducer = goodsSlice.reducer;
+export default goodsReducer;

@@ -14,3 +14,9 @@
 .buttonSecondary:active {
 	background: var(--bg-primary) linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.250701) 100%);
 }
+
+.buttonSecondary:disabled{
+	border: 1px solid var(--text-grey-4);
+	color: var(--text-grey-4);
+	font-size: 16px;
+}

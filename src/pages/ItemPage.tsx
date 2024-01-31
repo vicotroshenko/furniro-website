@@ -10,7 +10,6 @@ const ItemPage = () => {
 	const { id } = useParams();
   const goods = useAppSelector((state) => state.goods.allGoods);
   const [item] = goods.filter((element: IDataSlice) => element._id === id);
-  console.log("item: ", item);
 
 	return (
 		<div>

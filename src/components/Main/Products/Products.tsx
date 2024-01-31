@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { getAllGoods } from "../../../redux/operations";
+import { getAllGoods } from "../../../redux/goods/operations";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { IDataSlice } from "../../../types/types";
 import "./Products.css";

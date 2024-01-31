@@ -57,3 +57,17 @@ button {
   width: 100%;
   height: auto;
 }
+
+::-webkit-scrollbar {
+  width: 10px;            
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);        
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(184, 142, 47, 0.9);    
+  border-radius: 20px;   
+
+}

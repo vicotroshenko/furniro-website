@@ -11,9 +11,10 @@
 	height: 30px;
 	padding: 3px;
 	border-radius: 50%;
-	cursor: pointer;
+	cursor:pointer;
 	transition: all .25s linear;
 }
+
 
 .headerButtons > button:active{
 	background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100%);

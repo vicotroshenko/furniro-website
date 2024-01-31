@@ -85,7 +85,7 @@
 	background-color: rgba(58, 58, 58, 0.72);
 	cursor: pointer;
 	transform: translateX(-110%);
-	transition: transform .45s cubic-bezier(.51,.92,.24,1.15);
+	transition: transform .45s ease-out;
 }
 
 .prodCardContainer:hover .prodCardHoverItem{

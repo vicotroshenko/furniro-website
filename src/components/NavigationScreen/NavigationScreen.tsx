@@ -14,7 +14,7 @@ const NavigationScreen = () => {
 				<div>
 					<img src={logo} alt="logo of company" />
 				</div>
-				<h1>blog</h1>
+				<h1>{currentPlace}</h1>
 				<div className="navigationScreenHistory">
 					<Link to={"/"}>home</Link>
 					<IoIosArrowForward />

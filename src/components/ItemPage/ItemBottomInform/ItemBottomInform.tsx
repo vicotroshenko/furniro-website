@@ -1,5 +1,4 @@
 import { nanoid } from "nanoid";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import "./ItemBottomInform.css";
 import { useState } from "react";
 import { IGoodData, IItemInnerProps, IReview } from '../../../types/types';

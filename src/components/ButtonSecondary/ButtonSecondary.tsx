@@ -7,6 +7,7 @@ const ButtonSecondary: React.FC<IButtonProps> = ({
   height,
   text,
   onClick,
+  disabled
 }) => {
   return (
     <button
@@ -14,6 +15,7 @@ const ButtonSecondary: React.FC<IButtonProps> = ({
       className="buttonSecondary"
       style={{ maxWidth: width, height }}
       onClick={onClick}
+      disabled={disabled}
     >
       {text}
     </button>

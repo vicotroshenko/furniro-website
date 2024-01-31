@@ -1,11 +1,10 @@
-
-
 export interface IButtonProps {
   width: number;
   height: number;
   text: string;
   type: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
   onClick?: () => any;
+  disabled?: boolean;
 }
 
 export interface IDiscountLabelProps {
@@ -47,12 +46,14 @@ export interface IRangeItemProps {
 }
 
 export interface IProductCardProps {
+  id: string;
   image: string;
   discount: string | number;
   title: string;
   shortInfo: string;
   firstPrice: string;
   discountPrice: string;
+  onClickAddToCard?: () => void;
 }
 
 export interface IGoodData {
@@ -112,7 +113,12 @@ export interface IItemImageParadeProps {
 
 export interface IItemShortDesc extends Pick<IDataSlice, "tags" | "category"> {}
 
-
 export interface IItemInnerProps {
   item: IDataSlice;
+}
+
+export interface ICart
+  extends Pick<IDataSlice, "_id" | "title" | "price" | "amount" | "pictures" | "discount"> {
+  buyAmoutn?: number;
+  date?: string;
 }

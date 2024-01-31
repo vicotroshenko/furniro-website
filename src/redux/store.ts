@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import goodsSlice from "./goodsSlice";
 import {
   persistStore,
   persistReducer,
@@ -11,6 +10,8 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import goodsReducer from "./goods/goodsSlice";
+import cartReducer from "./cart/cartSlice";
 
 
 
@@ -19,7 +20,11 @@ export const store = configureStore({
 		goods: persistReducer({
 			key: 'goods',
 			storage,
-		}, goodsSlice),
+		}, goodsReducer),
+		cart: persistReducer({
+			key: 'cart',
+			storage,
+		}, cartReducer),
 	},
 	middleware: (getDefaultMiddleware) => getDefaultMiddleware({
 		serializableCheck: {

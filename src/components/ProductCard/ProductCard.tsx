@@ -5,17 +5,30 @@ import { FaHeart, FaRegHeart } from "react-icons/fa6";
 import "./ProductCard.css";
 import { useState } from "react";
 import DiscountLabel from "../DiscountLabel/DiscountLabel";
-import { IProductCardProps } from "../../types/types";
+import { ICart, IProductCardProps } from "../../types/types";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 const ProductCard: React.FC<IProductCardProps> = ({
+  id,
   image,
   discount,
   title,
   shortInfo,
   firstPrice,
   discountPrice,
+  onClickAddToCard,
 }) => {
   const [like, setLike] = useState<boolean>(false);
+  const cart = useAppSelector(state => state.cart.goods);
+
+  const checkItem = (items: ICart[]) => {
+    const disabled = items.find((item) => item._id === id);
+    if(disabled){
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   return (
     <div className="prodCardContainer">
@@ -36,7 +49,14 @@ const ProductCard: React.FC<IProductCardProps> = ({
         </div>
       </div>
       <div className="prodCardHoverItem">
-        <ButtonSecondary width={202} type="button" height={48} text={"Add to cart"} />
+        <ButtonSecondary
+          width={202}
+          type="button"
+          height={48}
+          text={checkItem(cart) ? "Already in card" : "Add to cart"}
+          onClick={onClickAddToCard}
+          disabled={checkItem(cart)}
+        />
         <div className="prodCardBtns">
           <button type="button">
             <IoMdShare className="prodCardIconBtn" />
