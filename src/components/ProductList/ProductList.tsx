@@ -35,7 +35,7 @@ const ProductList:React.FC<IproductListProps> = ({ items }) => {
 
 	const handleAddToCard = (item: ICart) => {
 		const date = new Date();
-		const newCardItem = {...item, buyAmoutn: 1, date: date.getDate(), price: getPriceOfItem(item.price, item.discount)}
+		const newCardItem = {...item, buyAmount: 1, date: date.getDate(), price: getPriceOfItem(item.price, item.discount)}
 		dispatch(addToCart(newCardItem))
 	}
 

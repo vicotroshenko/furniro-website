@@ -1,7 +1,7 @@
 .sliderSection{
 	width: 100%;
 	height: auto;
-	background-color: var(--bg-third);
+	background-color: var(--bg-hero-hint);
 }
 
 .sliderSectionContainer{

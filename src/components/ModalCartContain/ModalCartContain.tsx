@@ -38,7 +38,7 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
           </button>
         </div>
         <ul className="mc-c-list">
-          {cart.map(({ pictures, title, price, buyAmoutn, _id }: ICart) => (
+          {cart.map(({ pictures, title, price, buyAmount, _id }: ICart) => (
             <li className="mc-c-item mc-c-flex" key={nanoid()}>
               <div className="mc-c-imageContainer">
                 <img src={pictures[0]} alt={title} className="image" />
@@ -46,7 +46,7 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
               <div className="mc-c-itemInfo">
                 <p>{title}</p>
                 <div className="mc-c-flex">
-                  <p>{buyAmoutn}</p>
+                  <p>{buyAmount}</p>
                   <p>x</p>
                   <p className="mc-c-price">${price}</p>
                 </div>

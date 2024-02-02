@@ -1,0 +1,68 @@
+.cp-item-elem-list {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	list-style: none;
+}
+
+.cp-item-elem:first-child {
+	display: none;
+	flex-shrink: 0;
+	margin-right: 34px;
+	width: 105px;
+	height: 105px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+
+.cp-item-elem:nth-child(2) {
+	width: 100%;
+	padding-right: 5px;
+	max-width: 177px;
+}
+
+.cp-item-elem:nth-child(3) {
+	width: 100%;
+	padding-right: 5px;
+	max-width: 196px;
+}
+
+.cp-item-elem:nth-child(4) {
+	width: 100%;
+	max-width: 32px;
+}
+
+.cp-item-elem:nth-child(5) {
+	width: 100%;
+	padding-left: 5px;
+	max-width: 178px;
+	text-align: center;
+}
+
+.cp-item-elem > input{
+	width: 32px;
+	height: 32px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.cp-item-elem:last-child > button {
+	width: 28px;
+	height: 28px;
+	padding: 2px;
+	fill: var(--button-primary);
+	border-radius: 30%;
+	cursor: pointer;
+	transition: all .25s linear;
+}
+
+.cp-item-elem:last-child > button:hover, .cp-item-elem:last-child > button:focus{
+	box-shadow: rgb(255, 217, 19) 0px 0px 0px 2px, rgb(255, 156, 85) 0px 0px 0px 4px;
+}
+
+@media screen and (min-width: 500px){
+	.cp-item-elem:first-child {
+		display: block;
+	}
+}

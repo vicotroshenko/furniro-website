@@ -14,7 +14,12 @@ const ButtonSecondary: React.FC<IButtonProps> = ({
       type="button"
       className="buttonSecondary"
       style={{ maxWidth: width, height }}
-      onClick={onClick}
+      onClick={(e) => {
+        e.preventDefault()
+        if(onClick){
+          return onClick()
+        }
+      }}
       disabled={disabled}
     >
       {text}

@@ -11,12 +11,12 @@
   --text-grey-7: #F4F5F7;
   --text-white: #FFFFFF;
   --text-catching:#B88E2F;
-  --button-primary: #B88E2F;
+  --button-primary: rgb(184, 142, 47);
   --discount-item: #E97171;
   --new-item: #2EC1AC;
   --bg-primary: #FFFFFF;
   --bg-secondary: #F9F1E7;
-  --bg-third: #FAF3EA;
+  --bg-third: #030303;
   --bg-hero-hint: #FFF3E3;
   --bg-card: #F4F5F7;
 

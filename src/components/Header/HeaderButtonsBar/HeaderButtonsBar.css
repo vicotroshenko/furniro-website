@@ -20,5 +20,5 @@
 	background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100%);
 }
 .headerButtons > button:hover{
-	filter: drop-shadow(3px 2px 1px var(--text-dark-2));
+	filter: drop-shadow(3px 3px 2px var(--text-dark-2));
 }

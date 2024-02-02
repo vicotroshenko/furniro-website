@@ -119,6 +119,19 @@ export interface IItemInnerProps {
 
 export interface ICart
   extends Pick<IDataSlice, "_id" | "title" | "price" | "amount" | "pictures" | "discount"> {
-  buyAmoutn?: number;
+  buyAmount?: number;
   date?: string;
+  totalPrice?: string;
+}
+
+export interface ICartPageItemProps extends Pick<IDataSlice, "title" | "price" > {
+  id: string;
+  picture: string;
+  buyAmount: number;
+  totalPrice: string;
+  onClick: () => void;
+}
+
+export interface ICartTotals {
+  goods: ICart[];
 }
