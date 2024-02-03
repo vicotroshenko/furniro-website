@@ -23,7 +23,7 @@ const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartMo
         </button>
       </div>
       <nav className="mobil-nav">
-        <ul className="mobil-navList">
+        <ul className="mobil-navList" onClick={onClick}>
           <li>
             <Link to={"/"} className={pathname === "/" ? "active" : ""}>
               home

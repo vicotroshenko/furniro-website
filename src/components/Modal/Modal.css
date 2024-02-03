@@ -17,15 +17,18 @@
 .modal-container{
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 50%;
+	transform: translateX(50%);
 	width: 100%;
 	max-width: 417px;
 	background-color: var(--bg-primary);
 	animation: modalShow .4s ease-out;
 }
+
 @media screen and (min-width: 980px) {
 	.modal-container {
 		right: 10%;
+		transform: translateX(0);
 	}
 }
 
@@ -39,14 +42,10 @@
 @keyframes modalShow {
 	0% {
 		top: -110%;
-		transform: scale(0.5);
 		opacity: 0;
 	}
-	90% {
+	100% {
 		top: 0;
 		opacity: 1;
-	}
-	100% {
-		transform: scale(1);
 	}
 }
