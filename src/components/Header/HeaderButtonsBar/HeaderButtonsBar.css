@@ -1,24 +1,23 @@
 .headerButtons {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	gap: 10px;
-	width: 247px;
-
+	width: 100%;
+	padding: 10px 0;
 }
 
-.headerButtons > button {
-	width: 30px;
-	height: 30px;
-	padding: 3px;
-	border-radius: 50%;
-	cursor:pointer;
-	transition: all .25s linear;
+.hidden {
+	display: none;
 }
 
-
-.headerButtons > button:active{
-	background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100%);
+@media screen and (min-width: 480px) {
+	.headerButtons.hidden {
+		display: flex;
+	}
 }
-.headerButtons > button:hover{
-	filter: drop-shadow(3px 3px 2px var(--text-dark-2));
+
+@media screen and (min-width: 980px) {
+	.headerButtons {
+		width: 247px;
+	}
 }

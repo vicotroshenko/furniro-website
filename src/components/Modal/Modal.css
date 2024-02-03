@@ -8,7 +8,6 @@
 	z-index: 40;
 	
 	display: none;
-
 }
 
 .backdrop.show{
@@ -18,12 +17,23 @@
 .modal-container{
 	position: absolute;
 	top: 0;
-	right: 10%;
+	right: 0;
 	width: 100%;
 	max-width: 417px;
-	max-height: 100vh;
 	background-color: var(--bg-primary);
 	animation: modalShow .4s ease-out;
+}
+@media screen and (min-width: 980px) {
+	.modal-container {
+		right: 10%;
+	}
+}
+
+@media (height < 746px){
+	.modal-container{
+		height: 100vh;
+		overflow-y: auto;
+	}
 }
 
 @keyframes modalShow {

@@ -11,28 +11,18 @@
 .headerContainer {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	width: 100%;
 	max-width: 1440px;
 	height: 100px;
 	margin: 0 auto;
-	padding: 29px 100px 29px 54px;
+	padding: 29px 10px 29px 10px;
 }
 
-.headerLogo {
-	display: flex;
-	align-items: center;
-	margin-right: 266px;
+
+@media screen and (min-width: 980px) {
+	.headerContainer {
+		padding: 29px 100px 29px 54px;
+	}
 }
 
-.headerLogo > div {
-	width: 50px;
-	height: 32px;
-}
-
-.headerLogo > p {
-	font-size: 34px;
-	font-weight: 700;
-	line-height: 1.22;
-	font-family: "Montserrat", sans-serif;
-	text-transform: capitalize;
-}

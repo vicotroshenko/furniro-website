@@ -1,5 +1,5 @@
 .nav {
-	margin-right: 158px;
+	display: none;
 }
 
 .navList {
@@ -18,10 +18,24 @@
 	transition: all .25s linear;
 }
 
-.navList a:hover{
+.navList a:hover, .navList a:focus{
 	text-shadow: var(--hover-text-shodow);
 }
 
 .navList .active {
 	color: var(--button-primary);
+}
+
+@media screen and (min-width: 980px) {
+	.nav {
+		display: block;
+		margin-left: 10px;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.nav {
+		margin-left: 0;
+		margin-right: 158px;
+	}
 }

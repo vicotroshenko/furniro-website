@@ -124,6 +124,8 @@ export interface ICart
   totalPrice?: string;
 }
 
+
+
 export interface ICartPageItemProps extends Pick<IDataSlice, "title" | "price" > {
   id: string;
   picture: string;
@@ -134,4 +136,16 @@ export interface ICartPageItemProps extends Pick<IDataSlice, "title" | "price" >
 
 export interface ICartTotals {
   goods: ICart[];
+}
+
+export interface IModalCartContainProps extends Pick<ICartPageItemProps, "onClick"> {}
+export interface IHeaderMobileButtonProps extends Pick<ICartPageItemProps, "onClick"> {
+  itemsAmount?: number;
+  hidden?: boolean;
+}
+
+export interface IMobileModal {
+  onClick: () => void;
+  itemsAmount?: number;
+  isOpenCartModal: () => void;
 }

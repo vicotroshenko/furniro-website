@@ -97,7 +97,7 @@ const SliderMain = () => {
           </li>
         ))}
       </ul>
-      <button type="button" className="sliderBtnNext" onClick={handleNextClick}>
+      <button type="button" className="sliderBtnNext" onClick={handleNextClick} aria-label="next slide button">
         <MdOutlineKeyboardArrowRight />
       </button>
       <div className="siderBtn">
