@@ -1,3 +1,34 @@
+export interface IDataSlice {
+  _id: string;
+  title: string;
+  description: string;
+  price: string;
+  tags?: string[];
+  discount: string;
+  status: string;
+  amount: number;
+  size: string;
+  pictures: string[];
+  colors: string[];
+  reviews: IReview[];
+  rating: IRating[];
+  general: IGoodData[];
+  product: IGoodData[];
+  dimensions: IGoodData[];
+  warranty: object;
+  category: string;
+}
+
+export interface ICart
+  extends Pick<
+    IDataSlice,
+    "_id" | "title" | "price" | "amount" | "pictures" | "discount"
+  > {
+  buyAmount?: number;
+  date?: string;
+  totalPrice?: string;
+}
+
 export interface IButtonProps {
   width: number;
   height: number;
@@ -45,7 +76,7 @@ export interface IRangeItemProps {
   link: string;
 }
 
-export interface IProductCardProps {
+export interface IProductCardProps  {
   id: string;
   image: string;
   discount: string | number;
@@ -54,6 +85,7 @@ export interface IProductCardProps {
   firstPrice: string;
   discountPrice: string;
   onClickAddToCard?: () => void;
+  item: IDataSlice;
 }
 
 export interface IGoodData {
@@ -74,32 +106,12 @@ export interface IReview {
   review: string;
   date: string;
 }
-export interface IDataSlice {
-  _id: string;
-  title: string;
-  description: string;
-  price: string;
-  tags?: string[];
-  discount: string;
-  status: string;
-  amount: number;
-  size: string;
-  pictures: string[];
-  colors: string[];
-  reviews: IReview[];
-  rating: IRating[];
-  general: IGoodData[];
-  product: IGoodData[];
-  dimensions: IGoodData[];
-  warranty: object;
-  category: string;
-}
 
 export interface IItemButtonsPros {
   amount: number;
-  onAmount?: () => React.MouseEvent<HTMLButtonElement>;
   onAdd?: () => React.MouseEvent<HTMLButtonElement>;
-  onCompare?: () => React.MouseEvent<HTMLButtonElement>;
+  onCompare?: () => void;
+  disabled?: boolean;
 }
 
 export interface IItemDescribe
@@ -117,16 +129,10 @@ export interface IItemInnerProps {
   item: IDataSlice;
 }
 
-export interface ICart
-  extends Pick<IDataSlice, "_id" | "title" | "price" | "amount" | "pictures" | "discount"> {
-  buyAmount?: number;
-  date?: string;
-  totalPrice?: string;
-}
 
 
-
-export interface ICartPageItemProps extends Pick<IDataSlice, "title" | "price" > {
+export interface ICartPageItemProps
+  extends Pick<IDataSlice, "title" | "price"> {
   id: string;
   picture: string;
   buyAmount: number;
@@ -138,14 +144,27 @@ export interface ICartTotals {
   goods: ICart[];
 }
 
-export interface IModalCartContainProps extends Pick<ICartPageItemProps, "onClick"> {}
-export interface IHeaderMobileButtonProps extends Pick<ICartPageItemProps, "onClick"> {
+export interface IModalCartContainProps
+  extends Pick<ICartPageItemProps, "onClick"> {}
+export interface IHeaderMobileButtonProps
+  extends Pick<ICartPageItemProps, "onClick"> {
   itemsAmount?: number;
   hidden?: boolean;
+  onToggleSearch?: () => void;
+  onToggleFavorite?: () => void;
 }
 
 export interface IMobileModal {
   onClick: () => void;
   itemsAmount?: number;
   isOpenCartModal: () => void;
+  onToggleSearch?: () => void;
 }
+
+export interface ISearchField extends Pick<ICartPageItemProps, "onClick"> {}
+
+export interface ISearchShowItemProps
+  extends Pick<IProductCardProps, "title" | "image" | "id"> {}
+
+
+  export interface IModalFavoriteProps extends Pick<IMobileModal, "onClick"> {}

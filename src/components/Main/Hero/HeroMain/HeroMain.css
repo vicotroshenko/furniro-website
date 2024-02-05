@@ -6,6 +6,8 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-end;
+	margin: 0 auto;
+	max-width: 1440px;
 	min-height: 717px;
 	padding: 153px 58px 16px 58px;
 	background: center/cover no-repeat url(../../../../images/jpeg/hero.jpg);

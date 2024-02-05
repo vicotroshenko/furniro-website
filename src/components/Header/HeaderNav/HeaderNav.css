@@ -1,5 +1,6 @@
 .nav {
 	display: none;
+	animation: searchShowUp .45s ease;
 }
 
 .navList {
@@ -33,9 +34,12 @@
 	}
 }
 
-@media screen and (min-width: 1440px) {
-	.nav {
-		margin-left: 0;
-		margin-right: 158px;
+
+@keyframes searchShowUp {
+	0% {
+		transform: scaleX(0);
+	}
+	100% {
+		transform: scaleX(1);
 	}
 }

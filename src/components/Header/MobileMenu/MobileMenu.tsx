@@ -6,7 +6,7 @@ import HeaderLogo from "../HeaderLogo/HeaderLogo";
 import ModalLinks from "../ModalLinks/ModalLinks";
 import HeaderButtonsBar from "../HeaderButtonsBar/HeaderButtonsBar";
 
-const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartModal }) => {
+const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartModal, onToggleSearch }) => {
   const { pathname } = useLocation();
 
   return (
@@ -49,7 +49,7 @@ const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartMo
           </li>
         </ul>
       </nav>
-			<HeaderButtonsBar onClick={isOpenCartModal} itemsAmount={itemsAmount} hidden={false}/>
+			<HeaderButtonsBar onClick={isOpenCartModal} onToggleSearch={onToggleSearch} itemsAmount={itemsAmount} hidden={false}/>
 			<ModalLinks onClick={onClick}/>
     </div>
   );

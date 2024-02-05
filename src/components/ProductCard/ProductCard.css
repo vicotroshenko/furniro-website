@@ -117,12 +117,16 @@
 }
 
 .prodCardBtns > button:hover, .prodCardBtns > button:focus {
-	color: var(--button-primary);
-	fill: var(--button-primary);
+	letter-spacing: 1px;
 }
 
 .prodCardBtns > button:active {
 	transform: translateY(-5px);
+}
+
+.prodCardBtns > .checked {
+	color: var(--button-primary);
+	fill: var(--button-primary);
 }
 
 .prodCardIconBtn{

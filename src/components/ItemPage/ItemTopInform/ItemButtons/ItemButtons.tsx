@@ -8,12 +8,13 @@ const plusButtonName = "add";
 
 const ItemButtons: React.FC<IItemButtonsPros> = ({
   amount,
-  onAmount,
   onAdd,
   onCompare,
+  disabled,
 }) => {
 
   const [amountItems, setAmountItems] = useState<number>(1);
+
 
   const getItemAmount = (event: React.MouseEvent<HTMLButtonElement>) => {
     const button: HTMLButtonElement = event.currentTarget;
@@ -36,6 +37,8 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
       });
     }
   };
+
+  
 
   return (
     <div className="cardManageBtuContainer">
@@ -62,8 +65,8 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
         name="compare"
         onClick={onCompare}
       >
-        <FiPlus />
-        compare
+        {disabled ? <FiMinus/> : <FiPlus />}
+        {disabled ? "Delete compare" : "compare"}
       </button>
     </div>
   );

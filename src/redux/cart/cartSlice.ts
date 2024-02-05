@@ -30,7 +30,7 @@ const cartSlice = createSlice({
 			})
 		},
 		deleteCartItem(state, action){
-			state.goods = state.goods.filter(item => item._id !== action.payload.id)
+			state.goods = state.goods.filter(item => item._id !== action.payload.id);
 		}
 	},
 });

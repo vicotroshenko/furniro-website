@@ -15,9 +15,3 @@
 	font-family: "Montserrat", sans-serif;
 	text-transform: capitalize;
 }
-
-@media screen and (min-width: 1440px) {
-	.headerLogo {
-		margin-right: 266px;
-	}
-}

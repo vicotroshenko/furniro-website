@@ -3,10 +3,17 @@ import { IoMdShare } from "react-icons/io";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { FaHeart, FaRegHeart } from "react-icons/fa6";
 import "./ProductCard.css";
-import { useState } from "react";
 import DiscountLabel from "../DiscountLabel/DiscountLabel";
-import { ICart, IProductCardProps } from "../../types/types";
+import { IDataSlice, IProductCardProps } from "../../types/types";
+import { useAppDispatch } from "../../hooks/useAppDispatch";
+import {
+  addToComparison,
+  addToFavorite,
+  deletFromComparison,
+  deletFromFavotite,
+} from "../../redux/goods/goodsSlice";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import { isInCollection } from "../../helpers/isInCollection";
 
 const ProductCard: React.FC<IProductCardProps> = ({
   id,
@@ -17,17 +24,26 @@ const ProductCard: React.FC<IProductCardProps> = ({
   firstPrice,
   discountPrice,
   onClickAddToCard,
+  item,
 }) => {
-  const [like, setLike] = useState<boolean>(false);
-  const cart = useAppSelector(state => state.cart.goods);
+  const dispatch = useAppDispatch();
+  const cart = useAppSelector((state) => state.cart.goods);
+  const { favorite, comparison } = useAppSelector((state) => state.goods);
 
-  const checkItem = (items: ICart[]) => {
-    const disabled = items.find((item) => item._id === id);
-    if(disabled){
-      return true;
-    } else {
-      return false;
+  const isCompare = (item: IDataSlice) => {
+    if (isInCollection(item._id, comparison)) {
+      dispatch(deletFromComparison({ id: item._id }));
+      return;
     }
+    dispatch(addToComparison(item));
+  };
+
+  const isFavorite = (item: IDataSlice) => {
+    if (isInCollection(item._id, favorite)) {
+      dispatch(deletFromFavotite({ id: item._id }));
+      return;
+    }
+    dispatch(addToFavorite(item));
   };
 
   return (
@@ -53,21 +69,35 @@ const ProductCard: React.FC<IProductCardProps> = ({
           width={202}
           type="button"
           height={48}
-          text={checkItem(cart) ? "Already in card" : "Add to cart"}
+          text={isInCollection(id, cart) ? "Already in card" : "Add to cart"}
           onClick={onClickAddToCard}
-          disabled={checkItem(cart)}
+          disabled={isInCollection(id, cart)}
         />
         <div className="prodCardBtns">
           <button type="button">
             <IoMdShare className="prodCardIconBtn" />
             Share
           </button>
-          <button type="button">
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              isCompare(item);
+            }}
+            className={isInCollection(id, comparison) ? "checked" : ""}
+          >
             <MdOutlineCompareArrows className="prodCardIconBtn" />
             Compare
           </button>
-          <button type="button" onClick={() => setLike(!like)}>
-            {like ? (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              isFavorite(item);
+            }}
+            className={isInCollection(id, favorite) ? "checked" : ""}
+          >
+            {isInCollection(id, favorite) ? (
               <FaHeart className="prodCardIconBtn" />
             ) : (
               <FaRegHeart className="prodCardIconBtn" />
