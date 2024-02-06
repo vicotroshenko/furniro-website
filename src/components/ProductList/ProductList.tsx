@@ -6,7 +6,6 @@ import { Link, useLocation } from "react-router-dom";
 import { addToCart } from "../../redux/cart/cartSlice";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { getPriceOfItem } from "../../helpers/getPriceOfItem";
-import { useAppSelector } from "../../hooks/useAppSelector";
 
 const isDiscount = (price: string, discount: string): string => {
   if (discount === "0" || discount === "") {

@@ -4,7 +4,6 @@ import "./CartPageItem.css";
 import { ICartPageItemProps } from "../../../types/types";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { updateCartItem } from "../../../redux/cart/cartSlice";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 
 const CartPageItem: React.FC<ICartPageItemProps> = ({
   id,

@@ -1,16 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { ICartTotals } from "../../../types/types";
+import { getSumPrice } from "../../../helpers/getSumPrice";
 import "./CartTotals.css";
-import { ICart, ICartTotals } from "../../../types/types";
 
 const CartTotals: React.FC<ICartTotals> = ({ goods }) => {
-  const getSumPrice = (cartItems: ICart[]): number => {
-    return cartItems.reduce((acc: number, item: ICart) => {
-      const price = item.totalPrice || item.price;
-      const sum = (item.buyAmount || 0) * +price;
-      acc = acc + Number(sum.toFixed(3));
-      return acc;
-    }, 0);
-  };
 
   return (
     <div className="cartTotalsContainer">

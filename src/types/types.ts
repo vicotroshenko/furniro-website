@@ -1,3 +1,5 @@
+import { ICity, ICountry, IState } from "country-state-city";
+
 export interface IDataSlice {
   _id: string;
   title: string;
@@ -168,3 +170,26 @@ export interface ISearchShowItemProps
 
 
   export interface IModalFavoriteProps extends Pick<IMobileModal, "onClick"> {}
+
+export interface ISelectData {
+  countries?: ICountry[];
+  states?: IState[];
+  cities?: ICity[];
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  nameList: string;
+  value: string;
+}
+
+export interface checkoutFormValues {
+  firstName: string;
+  lastName: string;
+  company: string;
+  country: string;
+  region: string;
+  city: string;
+  province: string;
+  zip: string;
+  phone: string;
+  email: string;
+  additional: string;
+}
