@@ -25,7 +25,6 @@ const CartPageItem: React.FC<ICartPageItemProps> = ({
     if(isNaN(+value)){
       return;
     }
-    console.log("sent");
     setValue(value);
     dispatch(updateCartItem({id, buyAmount: +value}))
   }

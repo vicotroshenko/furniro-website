@@ -3,8 +3,6 @@
 }
 
 .cartListContainer {
-	display: flex;
-	justify-content: space-between;
 	flex-wrap: wrap-reverse;
 	gap: 30px;
 	width: 100%;

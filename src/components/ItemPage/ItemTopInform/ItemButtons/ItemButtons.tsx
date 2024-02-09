@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import "./ItemButtons.css";
 import { IItemButtonsPros } from "../../../../types/types";
@@ -10,10 +10,17 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
   amount,
   onAdd,
   onCompare,
-  disabled,
+  isCompare,
+  isAdded,
+  getAmount
 }) => {
 
   const [amountItems, setAmountItems] = useState<number>(1);
+
+  useEffect(() => {
+    getAmount(amountItems);
+  }, [getAmount, amountItems])
+  
 
 
   const getItemAmount = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -29,7 +36,7 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
     }
     if (button.name === minusButtonName) {
       setAmountItems((prev) => {
-        if (prev < 1) {
+        if (prev <= 1) {
           return prev;
         } else {
           return prev - 1;
@@ -57,7 +64,7 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
         name="to card"
         onClick={onAdd}
       >
-        add to cart
+        {isAdded ? "delete from cart" : "add to cart"}
       </button>
       <button
         type="button"
@@ -65,8 +72,8 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
         name="compare"
         onClick={onCompare}
       >
-        {disabled ? <FiMinus/> : <FiPlus />}
-        {disabled ? "Delete compare" : "compare"}
+        {isCompare ? <FiMinus/> : <FiPlus />}
+        {isCompare ? "Delete compare" : "compare"}
       </button>
     </div>
   );

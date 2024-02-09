@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Country, State, City } from "country-state-city";
-import CheckoutFromsSelect from "../CheckoutFromsSelect/CheckoutFromsSelect";
+import CheckoutFromsSelect from "../CheckoutFormsSelect/CheckoutFormsSelect";
 import { checkoutFormValues } from "../../../types/types";
 import "./CheckoutForms.css";
 
@@ -28,7 +28,6 @@ const CheckoutForms = () => {
     email: "",
     additional: "",
   });
-  console.log(values);
 
   const handleFromValues = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;

@@ -79,15 +79,16 @@ export interface IRangeItemProps {
 }
 
 export interface IProductCardProps  {
-  id: string;
-  image: string;
-  discount: string | number;
-  title: string;
-  shortInfo: string;
-  firstPrice: string;
-  discountPrice: string;
   onClickAddToCard?: () => void;
   item: IDataSlice;
+}
+
+export interface IProductCardChildProps extends IProductCardProps {
+  isFavorite: (item: IDataSlice)=>any;
+  isCompare: (item: IDataSlice)=>any;
+  cart: ICart[];
+  favorite: IDataSlice[];
+  comparison: IDataSlice[]
 }
 
 export interface IGoodData {
@@ -111,9 +112,11 @@ export interface IReview {
 
 export interface IItemButtonsPros {
   amount: number;
-  onAdd?: () => React.MouseEvent<HTMLButtonElement>;
+  onAdd?: () => void;
   onCompare?: () => void;
-  disabled?: boolean;
+  isCompare?: boolean;
+  isAdded?: boolean;
+  getAmount:(amount:number) => void;
 }
 
 export interface IItemDescribe
@@ -131,8 +134,6 @@ export interface IItemInnerProps {
   item: IDataSlice;
 }
 
-
-
 export interface ICartPageItemProps
   extends Pick<IDataSlice, "title" | "price"> {
   id: string;
@@ -148,6 +149,7 @@ export interface ICartTotals {
 
 export interface IModalCartContainProps
   extends Pick<ICartPageItemProps, "onClick"> {}
+
 export interface IHeaderMobileButtonProps
   extends Pick<ICartPageItemProps, "onClick"> {
   itemsAmount?: number;
@@ -165,11 +167,13 @@ export interface IMobileModal {
 
 export interface ISearchField extends Pick<ICartPageItemProps, "onClick"> {}
 
-export interface ISearchShowItemProps
-  extends Pick<IProductCardProps, "title" | "image" | "id"> {}
+export interface ISearchShowItemProps {
+  title: string;
+  image: string;
+  id: string;
+}
 
-
-  export interface IModalFavoriteProps extends Pick<IMobileModal, "onClick"> {}
+export interface IModalFavoriteProps extends Pick<IMobileModal, "onClick"> {}
 
 export interface ISelectData {
   countries?: ICountry[];

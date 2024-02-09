@@ -7,7 +7,7 @@ const ProductsShopBook = () => {
 	return (
 		<section className="shopProductsSection">
 			<div className="shopProductsContainer">
-				<ProductList items={items}/>
+				<ProductList items={items} />
 			</div>
 		</section>
 	)

@@ -9,3 +9,15 @@
 	align-items: center;
 	list-style-type: none;
 }
+
+.productsListLine {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: 446px;
+	gap: 32px;
+	margin: 0 auto;
+	justify-content: flex-start;
+	align-items: center;
+	list-style-type: none;
+}

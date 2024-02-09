@@ -1,10 +1,11 @@
 import { nanoid } from "nanoid";
-import "./ItemImageParade.css";
 import { useEffect, useState } from "react";
 import { IItemImageParadeProps } from "../../../../types/types";
+import "./ItemImageParade.css";
 
 const ItemImageParade: React.FC<IItemImageParadeProps> = ({ pictures }) => {
   const [images, setImages] = useState<string[]>([]);
+
   useEffect(() => {
     if (images.length === 0) {
       setImages(pictures);
@@ -12,7 +13,6 @@ const ItemImageParade: React.FC<IItemImageParadeProps> = ({ pictures }) => {
   }, [images.length, pictures]);
 
   const handleImageClick = (index: number = 0) => {
-    console.log(index);
     if (index === 0) {
       return images;
     } else {

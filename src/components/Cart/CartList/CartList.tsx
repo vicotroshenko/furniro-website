@@ -5,8 +5,8 @@ import { ICart } from "../../../types/types";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { deleteCartItem } from "../../../redux/cart/cartSlice";
 import { nanoid } from "nanoid";
-import "./CartList.css";
 import CartTotals from "../CartTotals/CartTotals";
+import "./CartList.css";
 
 const CartList = () => {
   const cart = useAppSelector((state) => state.cart.goods);
@@ -25,7 +25,7 @@ const CartList = () => {
   };
   return (
     <section className="cartListSection">
-      <div className="cartListContainer">
+      <div className="cartListContainer mc-c-flex">
         <div>
           <CartLabel />
           <div className="cartList">

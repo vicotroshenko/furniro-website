@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { ISelectData } from "../../../types/types";
-import "./CheckoutFromsSelect.css";
+import "./CheckoutFormsSelect.css";
 
 const CheckoutFromsSelect: React.FC<ISelectData> = ({
   countries,
@@ -14,7 +14,7 @@ const CheckoutFromsSelect: React.FC<ISelectData> = ({
 
   return (
     <div className="custom-select">
-      <select onChange={onChange} name={nameList} value={value}>
+      <select onChange={onChange} name={nameList} value={value} className="checkout-select">
         <option></option>
         {data &&
           data.map((country) => (

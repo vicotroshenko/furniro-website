@@ -1,13 +1,19 @@
 .itemImageContainer {
 	position: relative;
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
 	list-style-type: none;
 	gap: 32px;
+	height: 100%;
+	width: 100%;
+	margin-top: 35px;
 }
 
 .itemImageContainer > li{
 	width: 76px;
+	height: 76px;
 	flex-grow: 0;
 	flex-shrink: 0;
 	cursor: pointer;
@@ -16,7 +22,7 @@
 }
 
 .itemImageContainer > li:hover{
-outline: 2px solid var(--button-primary);
+	outline: 2px solid var(--button-primary);
 }
 
 .itemImageContainer > li:first-child {
@@ -27,5 +33,12 @@ outline: 2px solid var(--button-primary);
 	height: auto;
 	flex-grow: 1;
 	flex-shrink: 1;
+}
 
+@media screen and (min-width: 980px){
+	.itemImageContainer {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
 }

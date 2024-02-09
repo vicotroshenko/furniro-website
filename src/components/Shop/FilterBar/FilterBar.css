@@ -1,0 +1,101 @@
+.filterBar-section {
+	width: 100%;
+}
+
+.fiterBar-icon{
+	width: 100%;
+	height: 100%;
+}
+
+.filterBar-container{
+	flex-direction: column-reverse;
+  gap: 17px;
+	width: 100%;
+	max-width: 1440px;
+	min-height: 100px;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: var(--bg-secondary);
+}
+
+.filterBar-container button {
+	width: 28px;
+	height: 28px;
+	cursor: pointer;
+	border-radius: 50%;
+	padding: 2px;
+}
+
+
+.filterBar-filterItem{
+	gap: 14px;
+	text-transform: capitalize;
+}
+
+.filterBar-gridBtn {
+	margin-left: 23px;
+}
+
+.filterBar-gridBtn + button {
+	margin-left: 24px;
+}
+
+.filterBar-divider{
+	height: 37px;
+	width: 1px;
+	margin-left: 30px;
+	margin-right: 34px;
+	background-color: var(--text-grey-4);
+}
+
+.filterBar-fieldContainer{
+	width: 100%;
+}
+
+.filterBar-field{
+	width: 55px;
+	min-height: 55px;
+	font-size: 20px;
+	color: var(--text-grey-4);
+	padding: 12px 17px;
+	margin-left: 17px;
+	border: none;
+}
+
+.filterBar-field:focus {
+	outline: none;
+	border: none;
+}
+
+.filterBar-selectContainer {
+	margin-left: 29px;
+	gap: 17px;
+}
+
+.filterBar-selectContainer > span {
+	text-wrap: nowrap;
+}
+
+.filterBar-select{
+	width: 100vw;
+	max-width: 188px;
+	min-height: 55px;
+	padding: 12px 5px 12px 30px;
+	border: none;
+	cursor: pointer;
+
+	font-size: 20px;
+	color: var(--text-grey-4);
+}
+
+@media screen and (min-width: 980px){
+	.filterBar-container{
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 1440px){
+	.filterBar-container{
+		padding: 0 100px;
+	}
+}

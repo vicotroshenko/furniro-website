@@ -1,23 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { getAllGoods } from "../../../redux/goods/operations";
 import { useAppSelector } from "../../../hooks/useAppSelector";
-import { IDataSlice } from "../../../types/types";
-import "./Products.css";
 import ButtonSecondary from "../../ButtonSecondary/ButtonSecondary";
 import ProductList from "../../ProductList/ProductList";
-
-
-
-const getPartOfItems = (
-  items: IDataSlice[] | [],
-  count: number
-): IDataSlice[] | [] => {
-  if (items.length <= count) {
-    return items;
-  }
-  return items.slice(0, count);
-};
+import "./Products.css";
 
 const Products = () => {
   const [showCount, setShowCount] = useState<number>(8);
@@ -26,8 +13,10 @@ const Products = () => {
   const items = useAppSelector((state) => state.goods.allGoods);
 
   useEffect(() => {
-    dispatch(getAllGoods());
-  }, [dispatch]);
+    if(items.length === 0){
+      dispatch(getAllGoods({}));
+    }
+  }, [dispatch, items.length]);
 
   const handleClick = () => {
     if (showCount > items.length) {
@@ -36,16 +25,12 @@ const Products = () => {
     setShowCount((prev) => prev + step);
   };
 
-  const partOfItems = useMemo(
-    () => getPartOfItems(items, showCount),
-    [items, showCount]
-  );
 
   return (
     <section className="productsSection">
       <div className="productsContainer">
         <h2>our products</h2>
-        <ProductList items={partOfItems}/>
+        <ProductList items={items}/>
         <div className="productsMoreButtonWrap">
           <ButtonSecondary
             type="button"

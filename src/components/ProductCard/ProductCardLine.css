@@ -1,0 +1,116 @@
+.prodCardContainerLine{
+	display: flex;
+	justify-content: center;
+
+	flex-wrap: wrap;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	cursor: pointer;
+	min-height: 301px;
+	min-width: 285px;
+	border: 1px solid var(--text-grey-4);
+}
+
+.prodCardImageLine {
+	flex-shrink: 1;
+	width: 100%;
+	max-width: 285px;
+	min-height: 301px;
+}
+
+.prodCardDescLine {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 1;
+	width: 100%;
+	padding: 16px 15px 30px 16px;
+	background-color: var(--text-grey-7);
+}
+
+.prodCardDescLine > h3 {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.2;
+	color: var(--text-dark-2);
+}
+
+.prodCardDescLine > p {
+	padding-top: 8px;
+	height: 100%;
+	max-height: 52px;
+	overflow: hidden;
+	font-weight: 500;
+	line-height: 1.5;
+	color: var(--text-grey-3);
+}
+
+.prodCardPriceLine {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 22px;
+	gap: 16px;
+	width: 100%;
+	padding-top: 8px;
+}
+
+.prodCardPriceLine > p:first-child {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.5;
+	color: var(--text-dark-2);
+}
+
+.prodCardPriceLine > p:last-child {
+	line-height: 1.5;
+	color: var(--text-grey-5);
+	text-decoration: line-through;
+}
+
+.prodCardBtnsLine {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 32px;
+	flex-wrap: wrap;
+	width: 100%;
+	max-width: 201px;
+	gap: 10px;
+}
+
+.prodCardBtnsLine > button {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	color: var(--text-dark-1);
+	fill: var(--text-dark-1);
+	cursor: pointer;
+	transition: all .25s ease;
+}
+
+.prodCardBtnsLine > button:hover, .prodCardBtnsLine > button:focus {
+	letter-spacing: 1px;
+}
+
+.prodCardBtnsLine > button:active {
+	transform: translateY(-5px);
+}
+
+.prodCardBtnsLine > .checked {
+	color: var(--button-primary);
+	fill: var(--button-primary);
+}
+
+@media screen and (min-width: 980px){
+	.prodCardContainerLine{
+		justify-content: flex-start;
+		flex-wrap: nowrap;
+	}
+	.prodCardDescLine > h3 {
+		text-overflow: ellipsis;
+		overflow: hidden; 
+		white-space: nowrap;
+	}
+} 

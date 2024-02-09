@@ -3,7 +3,7 @@
   position: relative;
 }
 
-select {
+.checkout-select {
   appearance: none;
   /*  safari  */
   -webkit-appearance: none;

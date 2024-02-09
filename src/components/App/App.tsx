@@ -1,6 +1,7 @@
-import Main from "../../pages/Main";
+import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import SharedLayout from "../SharedLayout/SharedLayout";
+import Main from "../../pages/Main";
 import Shop from "../../pages/Shop";
 import ItemPage from "../../pages/ItemPage";
 import Contacts from "../../pages/Contacts";

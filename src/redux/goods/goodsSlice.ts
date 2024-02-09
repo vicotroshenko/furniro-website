@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllGoods } from "../goods/operations";
+import { getAllGoods, getOneById } from "../goods/operations";
 import { IDataSlice } from "../../types/types";
 
 interface IProductsInitialState {
@@ -7,6 +7,7 @@ interface IProductsInitialState {
   status: "loading" | "success" | "error";
   favorite: IDataSlice[];
   comparison: IDataSlice[];
+  itemById: IDataSlice[] | [];
 }
 
 const initialState: IProductsInitialState = {
@@ -14,6 +15,7 @@ const initialState: IProductsInitialState = {
   status: "success",
   favorite: [],
   comparison: [],
+  itemById: [],
 };
 
 const goodsSlice = createSlice({
@@ -46,6 +48,22 @@ const goodsSlice = createSlice({
     );
     builder.addCase(
       getAllGoods.rejected,
+      (state, _action) => {
+        state.status = "error";
+      }
+    );
+    builder.addCase(getOneById.pending, (state, _action) => {
+      state.status = "loading";
+    });
+    builder.addCase(
+      getOneById.fulfilled,
+      (state, action) => {
+        state.itemById = action.payload;
+        state.status = "success";
+      }
+    );
+    builder.addCase(
+      getOneById.rejected,
       (state, _action) => {
         state.status = "error";
       }
