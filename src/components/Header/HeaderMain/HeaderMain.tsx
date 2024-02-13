@@ -24,7 +24,6 @@ const HeaderMain = () => {
 
   const toggle = (name:string) => {
     let visibleParams = {};
-    console.log(visible);
     for (const key in visible){
       if(visible.hasOwnProperty(key)){
         if(name === key){
@@ -34,7 +33,6 @@ const HeaderMain = () => {
         }
       }
     }
-    console.log("visibleParams", visibleParams);
     setVisible(visibleParams);
   }
 
