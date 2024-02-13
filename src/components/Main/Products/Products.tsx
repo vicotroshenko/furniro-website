@@ -1,22 +1,13 @@
-import { useEffect, useState } from "react";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { getAllGoods } from "../../../redux/goods/operations";
-import { useAppSelector } from "../../../hooks/useAppSelector";
+import { useState } from "react";
 import ButtonSecondary from "../../ButtonSecondary/ButtonSecondary";
 import ProductList from "../../ProductList/ProductList";
 import "./Products.css";
+import { useAppSelector } from "../../../hooks/useAppSelector";
 
 const Products = () => {
   const [showCount, setShowCount] = useState<number>(8);
   const step = 8;
-  const dispatch = useAppDispatch();
   const items = useAppSelector((state) => state.goods.allGoods);
-
-  useEffect(() => {
-    if(items.length === 0){
-      dispatch(getAllGoods({}));
-    }
-  }, [dispatch, items.length]);
 
   const handleClick = () => {
     if (showCount > items.length) {

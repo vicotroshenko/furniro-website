@@ -30,7 +30,7 @@ const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartMo
             </Link>
           </li>
           <li>
-            <Link to={"/shop"} className={pathname === "/shop" ? "active" : ""}>
+            <Link to={"/shop?view=grid"} className={pathname === "/shop" ? "active" : ""}>
               shop
             </Link>
           </li>

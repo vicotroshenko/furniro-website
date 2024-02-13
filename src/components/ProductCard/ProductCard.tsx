@@ -31,19 +31,22 @@ const isNewItem = (status: string, discount: string): string => {
   return discount;
 };
 
-
-interface IProductCardProps  {
+interface IProductCardProps {
   onClickAddToCard?: () => void;
   item: IDataSlice;
+  view?: string;
 }
 
-const ProductCard: React.FC<IProductCardProps> = ({ item, onClickAddToCard }) => {
+const ProductCard: React.FC<IProductCardProps> = ({
+  item,
+  onClickAddToCard,
+  view,
+}) => {
   const { _id, pictures, title, status, discount, price, description } = item;
 
-  const dispatch = useAppDispatch();  
+  const dispatch = useAppDispatch();
   const cart = useAppSelector((state) => state.cart.goods);
   const { favorite, comparison } = useAppSelector((state) => state.goods);
-  const { listView } = useAppSelector(state => state.user);
 
   const isCompare = (item: IDataSlice) => {
     if (isInCollection(_id, comparison)) {
@@ -61,13 +64,12 @@ const ProductCard: React.FC<IProductCardProps> = ({ item, onClickAddToCard }) =>
     dispatch(addToFavorite(item));
   };
 
-
   const checkDiscount = isNewItem(status, discount);
 
-  if(listView === "grid"){
+  if (view === "grid" || !view) {
     return (
       <div className="prodCardContainer">
-        {checkDiscount !== "0" && checkDiscount !== ""  && (
+        {checkDiscount !== "0" && checkDiscount !== "" && (
           <div className="prodCardDiscount">
             <DiscountLabel discount={checkDiscount} />
           </div>
@@ -80,7 +82,7 @@ const ProductCard: React.FC<IProductCardProps> = ({ item, onClickAddToCard }) =>
           <p>{description}</p>
           <div className="prodCardPrice">
             <p>{getPriceOfItem(price, discount)}</p>
-            <p>{isDiscount(price, discount)}</p>
+          {isDiscount(price, discount) && <p>{isDiscount(price, discount)}</p>}
           </div>
         </div>
         <div className="prodCardHoverItem">
@@ -130,7 +132,7 @@ const ProductCard: React.FC<IProductCardProps> = ({ item, onClickAddToCard }) =>
   } else {
     return (
       <div className="prodCardContainerLine">
-        {checkDiscount !== "0" && checkDiscount !== ""  && (
+        {checkDiscount !== "0" && checkDiscount !== "" && (
           <div className="prodCardDiscount">
             <DiscountLabel discount={checkDiscount} />
           </div>
@@ -143,7 +145,7 @@ const ProductCard: React.FC<IProductCardProps> = ({ item, onClickAddToCard }) =>
           <p>{description}</p>
           <div className="prodCardPriceLine">
             <p>{getPriceOfItem(price, discount)}</p>
-            <p>{isDiscount(price, discount)}</p>
+            {isDiscount(price, discount) && <p>{isDiscount(price, discount)}</p>}
           </div>
           <ButtonSecondary
             width={202}
@@ -187,8 +189,7 @@ const ProductCard: React.FC<IProductCardProps> = ({ item, onClickAddToCard }) =>
           </div>
         </div>
       </div>
-      
-    )
+    );
   }
 };
 

@@ -13,68 +13,60 @@ import SearchField from "../SearchField/SearchField";
 import ModalFavorite from "../ModalFavorite/ModalFavorite";
 
 const HeaderMain = () => {
-  const [visibleCart, setVisibleCart] = useState<boolean>(false);
-  const [visibleMobile, setVisibleMobile] = useState<boolean>(false);
-  const [visibleSearchField, setVisibleSearchField] = useState<boolean>(false);
-  const [visibleFavorite, setVisibleFavorite] = useState<boolean>(false);
+  const [visible, setVisible] = useState<{[x: string]:boolean}>({
+    cart:false,
+    mobile: false,
+    searchField:false,
+    favorite: false,
+  })
 
   const cart = useAppSelector((state) => state.cart.goods);
 
-  const toggleModalCart = () => {
-    setVisibleCart((prev) => !prev);
-    setVisibleMobile(false);
-    setVisibleSearchField(false);
-    setVisibleFavorite(false);
-  };
+  const toggle = (name:string) => {
+    let visibleParams = {};
+    console.log(visible);
+    for (const key in visible){
+      if(visible.hasOwnProperty(key)){
+        if(name === key){
+          visibleParams = {...visibleParams, [key]: !visible[key]};
+        } else {
+          visibleParams = {...visibleParams, [key]: false}
+        }
+      }
+    }
+    console.log("visibleParams", visibleParams);
+    setVisible(visibleParams);
+  }
 
-  const toggleMobile = () => {
-    setVisibleMobile((prev) => !prev);
-    setVisibleCart(false);
-    setVisibleSearchField(false);
-    setVisibleFavorite(false);
-  };
-
-  const toggleSearchField = () => {
-    setVisibleSearchField((prev) => !prev);
-    setVisibleMobile(false);
-    setVisibleCart(false);
-  };
-
-  const toggleFavorite = () => {
-    setVisibleFavorite((prev) => !prev);
-    setVisibleMobile(false);
-    setVisibleCart(false);
-    setVisibleSearchField(false);
-  };
 
   return (
     <header className="header">
-      <Modal visible={visibleCart} toggle={toggleModalCart}>
-        <ModalCartContain onClick={toggleModalCart} />
+      <Modal visible={visible.cart} toggle={()=> toggle("cart")}>
+        <ModalCartContain onClick={()=> toggle("cart")} />
       </Modal>
-      <Modal visible={visibleMobile} toggle={toggleMobile}>
+      <Modal visible={visible.mobile} toggle={()=> toggle("mobile")}>
         <MobileMenu
-          onClick={toggleMobile}
+          onClick={()=> toggle("mobile")}
           itemsAmount={cart.length}
-          isOpenCartModal={toggleModalCart}
-          onToggleSearch={toggleSearchField}
+          isOpenCartModal={()=> toggle("cart")}
+          onToggleSearch={() => toggle("searchField")}
         />
       </Modal>
-      <Modal visible={visibleFavorite} toggle={toggleFavorite}>
-        <ModalFavorite onClick={toggleFavorite} />
+      <Modal visible={visible.favorite} toggle={() => toggle("favorite")}>
+        <ModalFavorite onClick={() => toggle("favorite")} />
       </Modal>
       <div className="headerContainer">
         <HeaderLogo />
-        {!visibleSearchField && <HeaderNav />}
-        {visibleSearchField && <SearchField onClick={toggleSearchField} />}
+        {!visible.searchField && <HeaderNav />}
+        {visible.searchField && <SearchField onClick={() => toggle("searchField")} />}
         <HeaderButtonsBar
-          onClick={toggleModalCart}
-          onToggleSearch={toggleSearchField}
-          onToggleFavorite={toggleFavorite}
+          onClick={()=> toggle("cart")}
+          onToggleSearch={() => toggle("searchField")}
+          onToggleFavorite={()=> toggle("favorite")}
           itemsAmount={cart.length}
           hidden={true}
         />
-        <HeaderMobileButton onClick={toggleMobile} />
+        <HeaderMobileButton onClick={()=> toggle("mobile")} />
       </div>
     </header>
   );

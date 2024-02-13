@@ -7,9 +7,9 @@ interface ISort {
   page?: number;
   limit?: number;
   tags?: string;
-  status?: "new" | "discount";
+  status?: string;
   category?: string;
-  price?: 1 | -1;
+  price?: number;
 }
 
 
@@ -20,8 +20,9 @@ export const getAllGoods = createAsyncThunk(
     thunkAPI
   ) => {
     try {
+      console.log(status);
       const response = await axios.get(
-        `furnitures?page=${page}&limit=${limit || 8}&tags=${tags}&status=${status}&category=${category}&price=${price}`
+        `/furnitures?price=-1`
       );
 
       console.log("data", response.data);

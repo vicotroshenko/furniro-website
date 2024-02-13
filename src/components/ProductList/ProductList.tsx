@@ -2,11 +2,11 @@ import { nanoid } from "nanoid";
 import ProductCard from "../ProductCard/ProductCard";
 import { ICart, IDataSlice } from "../../types/types";
 import "./ProductList.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { addToCart } from "../../redux/cart/cartSlice";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { getPriceOfItem } from "../../helpers/getPriceOfItem";
-import { useAppSelector } from "../../hooks/useAppSelector";
+import { useMemo } from "react";
 
 interface IproductListProps {
   items: IDataSlice[] | [];
@@ -15,10 +15,14 @@ interface IproductListProps {
 const ProductList: React.FC<IproductListProps> = ({ items }) => {
   const location = useLocation();
   const path = location.pathname === "/" ? "/shop/" : "";
-
   const dispatch = useAppDispatch();
-  const { listView } = useAppSelector(state => state.user);
-  const grid = listView === "grid"
+
+  const [searchParams] = useSearchParams();
+
+  const { view } = useMemo(
+    () => Object.fromEntries([...searchParams]),
+    [searchParams]
+  );
 
   const handleAddToCard = (item: ICart) => {
     const date = new Date();
@@ -32,7 +36,7 @@ const ProductList: React.FC<IproductListProps> = ({ items }) => {
   };
 
   return (
-    <ul className={grid ? "productsList" : "productsListLine"}>
+    <ul className={(view === "grid" || !view) ? "productsList" : "productsListLine"}>
       {items.map(
         (
           { _id, pictures, title, price, amount, discount }: IDataSlice,
@@ -53,6 +57,7 @@ const ProductList: React.FC<IproductListProps> = ({ items }) => {
                   })
                 }
                 item={array[index]}
+                view={view}
               />
             </Link>
           </li>

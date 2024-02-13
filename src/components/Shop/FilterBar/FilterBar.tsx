@@ -3,23 +3,58 @@ import { BsGridFill } from "react-icons/bs";
 import { TbLayoutDistributeHorizontal } from "react-icons/tb";
 import "./FilterBar.css";
 import { useAppSelector } from "../../../hooks/useAppSelector";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { getAllGoods } from "../../../redux/goods/operations";
+import { useSearchParams } from "react-router-dom";
+import { useMemo } from "react";
 
-interface IFilterBarProps {
-  onClick: (e:React.MouseEvent<HTMLButtonElement>) => void
-}
+const removeParameter = (
+  params: { [x: string]: string },
+  values: string[]
+): any => {
+  let newParameters = {};
+  for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+      if (!values.includes(key)) {
+        newParameters = { ...newParameters, [key]: params[key] };
+      }
+    }
+  }
+  return newParameters;
+};
 
-const FilterBar:React.FC<IFilterBarProps> = ({onClick}) => {
+const FilterBar = () => {
+  const goods = useAppSelector((state) => state.goods.allGoods);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-	const goods = useAppSelector(state => state.goods.allGoods);
-  const dispatch = useAppDispatch();
+  const allParams = useMemo(
+    () => Object.fromEntries([...searchParams]),
+    [searchParams]
+  );
 
   const handleChangeSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
-    console.log(event.target.value);
-    dispatch(getAllGoods({[value]: value}))
-  }
+    let params = {};
+    if (value === "price") {
+      params = removeParameter({ ...allParams, price: "-1" }, ["status"]);
+    } else if (value === "new" || value === "discount") {
+      params = removeParameter({ ...allParams, status: value }, ["price"]);
+    } else {
+      params = removeParameter(allParams, ["price", "status"]);
+    }
+
+    setSearchParams(params);
+  };
+
+  const setUpListView = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const { name } = event.currentTarget;
+    let params = {};
+    if (name === "line") {
+      params = { view: "line" };
+    } else {
+      params = { view: "grid" };
+    }
+
+    setSearchParams({ ...allParams, ...params });
+  };
 
   return (
     <section className="filterBar-section">
@@ -39,7 +74,7 @@ const FilterBar:React.FC<IFilterBarProps> = ({onClick}) => {
           <button
             type="button"
             name="grid"
-						onClick={onClick}
+            onClick={setUpListView}
             aria-label="gid view"
             className="filterBar-gridBtn headerIconButtons"
           >
@@ -49,7 +84,7 @@ const FilterBar:React.FC<IFilterBarProps> = ({onClick}) => {
           <button
             type="button"
             name="line"
-						onClick={onClick}
+            onClick={setUpListView}
             aria-label="one item in line view"
             className="headerIconButtons"
           >
@@ -66,7 +101,7 @@ const FilterBar:React.FC<IFilterBarProps> = ({onClick}) => {
             <input
               type="text"
               name="showAmount"
-							defaultValue={goods.length}
+              defaultValue={goods.length}
               autoComplete="off"
               className="filterBar-field"
             />
