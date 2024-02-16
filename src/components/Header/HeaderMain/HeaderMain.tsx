@@ -4,13 +4,14 @@ import HeaderNav from "../HeaderNav/HeaderNav";
 import HeaderMobileButton from "../HeaderMobileButton/HeaderMobileButton";
 import "./HeaderMain.css";
 import Modal from "../../Modal/Modal";
-import ModalCartContain from "../../ModalCartContain/ModalCartContain";
+import ModalCartContain from "../../Modal/ModalCartContain/ModalCartContain";
 import { useState } from "react";
 import { useAppSelector } from "../../../hooks/useAppSelector";
-import MobileMenu from "../MobileMenu/MobileMenu";
+import MobileMenu from "../../Modal/MobileMenu/MobileMenu";
 import HeaderLogo from "../HeaderLogo/HeaderLogo";
 import SearchField from "../SearchField/SearchField";
-import ModalFavorite from "../ModalFavorite/ModalFavorite";
+import ModalFavorite from "../../Modal/ModalFavorite/ModalFavorite";
+import ModalNotification from "../../Modal/ModalNotification/ModalNotification";
 
 const HeaderMain = () => {
   const [visible, setVisible] = useState<{[x: string]:boolean}>({
@@ -39,6 +40,7 @@ const HeaderMain = () => {
 
   return (
     <header className="header">
+      <ModalNotification/>
       <Modal visible={visible.cart} toggle={()=> toggle("cart")}>
         <ModalCartContain onClick={()=> toggle("cart")} />
       </Modal>

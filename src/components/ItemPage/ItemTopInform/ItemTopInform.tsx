@@ -17,12 +17,14 @@ import {
 import { addToCart, deleteCartItem } from "../../../redux/cart/cartSlice";
 import { useRef } from "react";
 
-const ItemTopInform: React.FC<IItemInnerProps> = ({ item }) => {
+
+const ItemTopInform:React.FC<IItemInnerProps> = ({ item }) => {
   const amountRef = useRef<number>();
   const dispatch = useAppDispatch();
   
   const { comparison } = useAppSelector((state) => state.goods);
   const cart = useAppSelector((state) => state.cart.goods);
+
 
   const addToCompareItem = (item: ICart) => {
     if (isInCollection(item._id, comparison)) {
@@ -78,7 +80,7 @@ const ItemTopInform: React.FC<IItemInnerProps> = ({ item }) => {
         <ItemSizeButtons size={["l", "xl", "xxl"]} />
         <ItemColorBar colors={["red", "black", "violet"]} />
         <ItemButtons
-          amount={item.amount}
+          amount={item.amount || 0}
           onCompare={() => addToCompareItem(item)}
           onAdd={() => handleAddToCard(item)}
           isCompare={isInCollection(item._id, comparison)}

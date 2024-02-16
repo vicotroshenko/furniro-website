@@ -1,10 +1,13 @@
 import { nanoid } from "nanoid";
 import { useAppSelector } from "../../../hooks/useAppSelector";
-import { ICart } from "../../../types/types";
+import { ICart, ISubmit } from "../../../types/types";
 import { getSumPrice } from "../../../helpers/getSumPrice";
 import "./CheckoutOrder.css";
+import PlaceOrderBlank from "../PlaceOrderBlank/PlaceOrderBlank";
 
-const CheckoutOrder = () => {
+
+
+const CheckoutOrder:React.FC<ISubmit> = ({ onSubmit }) => {
   const cart = useAppSelector((state) => state.cart.goods);
 
   return (
@@ -29,6 +32,7 @@ const CheckoutOrder = () => {
         <p>total</p>
         <p>{getSumPrice(cart)}$</p>
       </div>
+      <PlaceOrderBlank onSubmit={onSubmit}/>
     </div>
   );
 };

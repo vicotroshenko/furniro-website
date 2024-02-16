@@ -13,6 +13,10 @@ const Main = () => {
 	const dispatch = useAppDispatch();
   const items = useAppSelector((state) => state.goods.allGoods);
 
+	useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+	
   useEffect(() => {
     if(items.length === 0){
       dispatch(getAllGoods({}));

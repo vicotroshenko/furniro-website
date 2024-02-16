@@ -4,7 +4,8 @@ import { TbLayoutDistributeHorizontal } from "react-icons/tb";
 import "./FilterBar.css";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { useSearchParams } from "react-router-dom";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
+import FilterConfig from "./FilterConfig/FilterConfig";
 
 const removeParameter = (
   params: { [x: string]: string },
@@ -22,6 +23,7 @@ const removeParameter = (
 };
 
 const FilterBar = () => {
+  const [showFilter, setShowFilter] = useState<boolean>(false);
   const goods = useAppSelector((state) => state.goods.allGoods);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -29,6 +31,12 @@ const FilterBar = () => {
     () => Object.fromEntries([...searchParams]),
     [searchParams]
   );
+
+  useEffect(() => {
+    if (allParams.show > goods.length) {
+      setSearchParams({ ...allParams, show: goods.length });
+    }
+  }, [allParams.show, allParams, setSearchParams, goods.length]);
 
   const handleChangeSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
@@ -56,15 +64,26 @@ const FilterBar = () => {
     setSearchParams({ ...allParams, ...params });
   };
 
+  const handleShowAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    if (+value > goods.length) {
+      setSearchParams({ ...allParams, show: goods.length });
+    } else {
+      setSearchParams({ ...allParams, show: value });
+    }
+  };
+
   return (
     <section className="filterBar-section">
       <div className="filterBar-container mc-c-flex">
+        {showFilter && <FilterConfig />}
         <div className="mc-c-flex filterBar-leftside">
           <div className="filterBar-filterItem mc-c-flex">
             <button
               type="button"
               aria-label="filter"
-              className="headerIconButtons"
+              className={showFilter ? "headerIconButtons filterBtnActive" : "headerIconButtons"}
+              onClick={() => setShowFilter((prev) => !prev)}
             >
               <VscSettings className="fiterBar-icon" />
             </button>
@@ -76,7 +95,7 @@ const FilterBar = () => {
             name="grid"
             onClick={setUpListView}
             aria-label="gid view"
-            className="filterBar-gridBtn headerIconButtons"
+            className = {allParams.view === "grid" ? "filterBar-gridBtn headerIconButtons filterBtnActive" : "filterBar-gridBtn headerIconButtons"}
           >
             <BsGridFill className="fiterBar-icon" />
           </button>
@@ -86,24 +105,29 @@ const FilterBar = () => {
             name="line"
             onClick={setUpListView}
             aria-label="one item in line view"
-            className="headerIconButtons"
+            className = {allParams.view === "line" ? "headerIconButtons filterBtnActive" : "headerIconButtons"}
           >
             <TbLayoutDistributeHorizontal className="fiterBar-icon" />
           </button>
 
           <div className="filterBar-divider"></div>
-          <div className="filterBar-showIform">Showing 1–16 of 32 results</div>
+          <div className="filterBar-showIform">
+            Showing 1–{allParams.show} of {goods.length} results
+          </div>
         </div>
 
         <div className="mc-c-flex">
           <label className="filterBar-fieldContainer ">
             <span>Show</span>
             <input
-              type="text"
+              type="number"
               name="showAmount"
-              defaultValue={goods.length}
+              value={allParams.show}
               autoComplete="off"
               className="filterBar-field"
+              min="0"
+              max={goods.length}
+              onChange={handleShowAmount}
             />
           </label>
           <div className="filterBar-selectContainer mc-c-flex">

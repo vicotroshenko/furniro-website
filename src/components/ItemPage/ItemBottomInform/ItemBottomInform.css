@@ -37,7 +37,7 @@
 }
 
 .ib-radio-field:checked + label {
-	color: var(--text-black-1);
+	color: var(--text-dark-1);
 	font-weight: 500;
 }
 
@@ -48,6 +48,7 @@
 
 .ib-text-desc{
 	color: var(--text-grey-4);
+	animation: formShowUp .4s ease;
 }
 
 .ib-add-info-list {
@@ -61,6 +62,7 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	flex-wrap: wrap;
+	animation: formShowUp .4s ease;
 }
 
 .ib-add-info-title{
@@ -97,6 +99,7 @@
 	width: 100%;
 	list-style-type: none;
 	color: var(--text-grey-4);
+	animation: formShowUp .4s ease;
 }
 
 .ib-review-item{
@@ -111,6 +114,29 @@
 
 .ib-review-item > div >p:first-child {
 	font-weight: 500;
+}
+
+.ib-createdRewieBtns {
+	margin-bottom: 22px;
+}
+
+.ib-createdRewieBtns > input {
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	z-index: -1;
+}
+
+.ib-createdRewieBtns > input:checked + label {
+	text-decoration: underline;
+	color: var(--text-dark-1);
+}
+
+.ib-createdRewieBtns > label {
+	font-weight: 500;
+	letter-spacing: 1.2px;
+	margin-left: 10px;
+	cursor: pointer;
 }
 
 @media screen and (min-width: 980px){

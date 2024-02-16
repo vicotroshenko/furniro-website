@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllGoods, getOneById } from "../goods/operations";
+import { getAllGoods, getAllTagsCategories, getOneById } from "../goods/operations";
 import { IDataSlice } from "../../types/types";
 
 interface IProductsInitialState {
@@ -7,7 +7,9 @@ interface IProductsInitialState {
   status: "loading" | "success" | "error";
   favorite: IDataSlice[];
   comparison: IDataSlice[];
-  itemById: IDataSlice[] | [];
+  itemById: IDataSlice | {};
+  tags: string[];
+  category: string[];
 }
 
 const initialState: IProductsInitialState = {
@@ -15,7 +17,9 @@ const initialState: IProductsInitialState = {
   status: "success",
   favorite: [],
   comparison: [],
-  itemById: [],
+  itemById: {},
+  tags:[],
+  category: [],
 };
 
 const goodsSlice = createSlice({
@@ -64,6 +68,23 @@ const goodsSlice = createSlice({
     );
     builder.addCase(
       getOneById.rejected,
+      (state, _action) => {
+        state.status = "error";
+      }
+    );
+    builder.addCase(getAllTagsCategories.pending, (state, _action) => {
+      state.status = "loading";
+    });
+    builder.addCase(
+      getAllTagsCategories.fulfilled,
+      (state, action) => {
+        const name = action.payload.name === "tags" ? "tags": "category";
+        state[name] = action.payload.data;
+        state.status = "success";
+      }
+    );
+    builder.addCase(
+      getAllTagsCategories.rejected,
       (state, _action) => {
         state.status = "error";
       }

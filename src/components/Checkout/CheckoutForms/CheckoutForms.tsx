@@ -1,7 +1,7 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Country, State, City } from "country-state-city";
 import CheckoutFromsSelect from "../CheckoutFormsSelect/CheckoutFormsSelect";
-import { checkoutFormValues } from "../../../types/types";
+import { ICheckoutFormValues, IGetData } from "../../../types/types";
 import "./CheckoutForms.css";
 
 const conuntries = Country.getAllCountries();
@@ -14,27 +14,26 @@ const getListOfCities = (isoCode: string, regionCode: string): any[] => {
   return City.getCitiesOfState(isoCode, regionCode);
 };
 
-const CheckoutForms = () => {
-  const [values, setValues] = useState<checkoutFormValues>({
+const CheckoutForms:React.FC<IGetData> = ({ getFormData }) => {
+  const [values, setValues] = useState<ICheckoutFormValues>({
     firstName: "",
     lastName: "",
     company: "",
     country: "",
     region: "",
     city: "",
-    province: "",
     zip: "",
     phone: "",
     email: "",
     additional: "",
   });
 
-  const handleFromValues = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setValues({ ...values, [name]: value });
-  };
+  useEffect(() => {
+    getFormData(values)
+  }, [values, getFormData])
+  
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleFormValues = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
     setValues({ ...values, [name]: value });
   };
@@ -61,7 +60,7 @@ const CheckoutForms = () => {
                 type="text"
                 name="firstName"
                 defaultValue={values.firstName}
-                onChange={handleFromValues}
+                onChange={handleFormValues}
                 className="checkoutField"
               />
             </label>
@@ -71,7 +70,7 @@ const CheckoutForms = () => {
                 type="text"
                 name="lastName"
                 defaultValue={values.lastName}
-                onChange={handleFromValues}
+                onChange={handleFormValues}
                 className="checkoutField"
               />
             </label>
@@ -82,14 +81,14 @@ const CheckoutForms = () => {
               type="text"
               name="company"
               defaultValue={values.company}
-              onChange={handleFromValues}
+              onChange={handleFormValues}
               className="checkoutField"
             />
           </label>
           <div className="checkoutLabel">
             <span>Country</span>
             <CheckoutFromsSelect
-              onChange={handleChange}
+              onChange={handleFormValues}
               countries={conuntries}
               nameList="country"
               value={values.country}
@@ -98,7 +97,7 @@ const CheckoutForms = () => {
           <div className="checkoutLabel">
             <span>region</span>
             <CheckoutFromsSelect
-              onChange={handleChange}
+              onChange={handleFormValues}
               states={states}
               nameList="region"
               value={values.region}
@@ -107,7 +106,7 @@ const CheckoutForms = () => {
           <div className="checkoutLabel">
             <span>city</span>
             <CheckoutFromsSelect
-              onChange={handleChange}
+              onChange={handleFormValues}
               cities={cities}
               nameList="city"
               value={values.city}
@@ -119,7 +118,7 @@ const CheckoutForms = () => {
               type="text"
               name="zip"
               defaultValue={values.zip}
-              onChange={handleFromValues}
+              onChange={handleFormValues}
               className="checkoutField"
             />
           </label>
@@ -129,7 +128,7 @@ const CheckoutForms = () => {
               type="tel"
               name="phone"
               defaultValue={values.phone}
-              onChange={handleFromValues}
+              onChange={handleFormValues}
               className="checkoutField"
             />
           </label>
@@ -139,7 +138,7 @@ const CheckoutForms = () => {
               type="email"
               name="email"
               defaultValue={values.email}
-              onChange={handleFromValues}
+              onChange={handleFormValues}
               className="checkoutField"
             />
           </label>
@@ -148,7 +147,7 @@ const CheckoutForms = () => {
               type="text"
               name="additional"
               defaultValue={values.additional}
-              onChange={handleFromValues}
+              onChange={handleFormValues}
               className="checkoutField"
               placeholder="Additional information"
             />

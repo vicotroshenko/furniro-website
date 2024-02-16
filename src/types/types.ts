@@ -8,16 +8,16 @@ export interface IDataSlice {
   tags?: string[];
   discount: string;
   status: string;
-  amount: number;
-  size: string;
+  amount?: number;
+  size?: string;
   pictures: string[];
-  colors: string[];
-  reviews: IReview[];
-  rating: IRating[];
-  general: IGoodData[];
-  product: IGoodData[];
-  dimensions: IGoodData[];
-  warranty: object;
+  colors?: string[];
+  reviews?: IReview[];
+  rating?: IRating[];
+  general?: IGoodData[];
+  product?: IGoodData[];
+  dimensions?: IGoodData[];
+  warranty?: object;
   category: string;
 }
 
@@ -56,7 +56,7 @@ export interface ISliderRadioButtonsProps {
 
 export interface IFooterLinksProps {
   title: string;
-  links: string[];
+  links?: string[];
 }
 
 export interface IAdvantagesItemProps
@@ -184,16 +184,23 @@ export interface ISelectData {
   value: string;
 }
 
-export interface checkoutFormValues {
+export interface ICheckoutFormValues {
   firstName: string;
   lastName: string;
   company: string;
   country: string;
   region: string;
   city: string;
-  province: string;
   zip: string;
   phone: string;
   email: string;
   additional: string;
+}
+
+export interface ISubmit {
+  onSubmit: (e:React.FormEvent<HTMLFormElement>) => void;
+}
+
+export interface IGetData {
+  getFormData: (data:ICheckoutFormValues) => void;
 }

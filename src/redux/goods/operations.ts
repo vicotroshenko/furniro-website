@@ -6,26 +6,50 @@ axios.defaults.baseURL = "https://furniro-website-backend.onrender.com/api/";
 interface ISort {
   page?: number;
   limit?: number;
-  tags?: string;
+  tags?: string[];
   status?: string;
-  category?: string;
-  price?: number;
+  category?: string[];
+  price?: string;
 }
-
 
 export const getAllGoods = createAsyncThunk(
   "goods/getAll",
   async (
-    { page = 1, limit = 8, tags, status, category, price }: ISort,
+    {
+      page = 1,
+      limit = 16,
+      tags = [],
+      status = "",
+      category = [],
+      price = "",
+    }: ISort,
     thunkAPI
   ) => {
     try {
-      console.log(status);
-      const response = await axios.get(
-        `/furnitures?price=-1`
-      );
+      const parmas = `page=${page}&limit=${limit}&price=${price}&status=${status}`;
+      let body = {};
+      if(tags.length !== 0){
+        body= {tags};
+      }
+      if(category.length !== 0){
+        body = {category}
+      }
+      console.log(body);
+      const response = await axios.get(`/furnitures?${parmas}`, {data:{...body}});
+      console.log(response);
+      
+      return response.data;
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue(error.response.status);
+    }
+  }
+);
 
-      console.log("data", response.data);
+export const getOneById = createAsyncThunk(
+  "goods/getById",
+  async ({ id }: { id: string }, thunkAPI) => {
+    try {
+      const response = await axios.get(`/furnitures/${id}`);
       return response.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.response.status);
@@ -34,17 +58,15 @@ export const getAllGoods = createAsyncThunk(
 );
 
 
-export const getOneById = createAsyncThunk(
-  "goods/getById",
-  async (
-    { id }:{id:string},
-    thunkAPI
-  ) => {
+export const getAllTagsCategories = createAsyncThunk(
+  "goods/getTagsCategories",
+  async ({ name }: { name: string }, thunkAPI) => {
     try {
-      const response = await axios.get(`furnitures/${id}`);
-      console.log("data", response.data);
-      return response.data;
+      const response = await axios.get(`/furnitures/info/${name}`);
+
+      return {name: name, data: response.data};
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.response.status);
     }
-  })
+  }
+);

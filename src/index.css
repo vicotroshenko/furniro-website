@@ -71,7 +71,7 @@ button {
 .headerIconButtons:active{
 	background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100%);
 }
-.headerIconButtons:hover, .headerIconButtons:focus{
+.headerIconButtons:hover{
 	filter: drop-shadow(3px 3px 2px var(--text-dark-2));
 }
 
@@ -95,4 +95,15 @@ button {
   background-color: rgba(184, 142, 47, 0.9);    
   border-radius: 20px;   
 
+}
+
+@keyframes formShowUp {
+	0% {
+		opacity: 0.5;
+		transform: translateY(30%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

@@ -42,4 +42,10 @@
 	border: 1px solid var(--text-grey-4);
 	border-radius: 10px;
 	font-size: 18px;
+	cursor: pointer;
+	transition: all .3s linear;
+}
+
+.checkoutField:hover, .checkoutField:focus {
+	box-shadow: var(--hover-second-btn);
 }

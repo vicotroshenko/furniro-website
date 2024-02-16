@@ -1,8 +1,8 @@
-
 .mc-c-container{
 	width: 100%;
 	padding: 28px 22px 28px 27px;
 	height: auto;
+	background-color: var(--bg-primary);
 }
 
 .mc-c-top {

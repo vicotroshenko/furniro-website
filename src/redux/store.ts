@@ -21,6 +21,7 @@ export const store = configureStore({
 		goods: persistReducer({
 			key: 'goods',
 			storage,
+			blacklist: ['itemById']
 		}, goodsReducer),
 		cart: persistReducer({
 			key: 'cart',
