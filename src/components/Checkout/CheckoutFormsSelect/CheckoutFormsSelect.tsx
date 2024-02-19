@@ -9,12 +9,20 @@ const CheckoutFromsSelect: React.FC<ISelectData> = ({
   onChange,
   nameList,
   value,
+  register,
+  errors,
 }) => {
   const data = countries || states || false;
 
   return (
     <div className="custom-select">
-      <select onChange={onChange} name={nameList} value={value} className="checkout-select">
+      <select
+        onChange={onChange}
+        {...register(nameList, { required: true, onChange })}
+        name={nameList}
+        value={value}
+        className="checkout-select"
+      >
         <option></option>
         {data &&
           data.map((country) => (
@@ -29,6 +37,9 @@ const CheckoutFromsSelect: React.FC<ISelectData> = ({
             </option>
           ))}
       </select>
+      {errors[nameList] && (
+        <span className="errorForms">*{nameList} is required</span>
+      )}
     </div>
   );
 };

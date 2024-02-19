@@ -1,75 +1,68 @@
+import { SubmitHandler, useForm } from "react-hook-form";
 import ButtonPrimary from "../../ButtonPrimary/ButtonPrimary";
 import "./ContactsForm.css";
-import { useState } from "react";
 
 interface IFormContacts {
-  [x: string]: string;
+  name: string,
+  email: string,
+  subject: string,
+  message: string,
 }
 
 const ContactsForm = () => {
-  const [data, setData] = useState<IFormContacts>({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
 
-  const handleInputData = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setData({ ...data, [name]: value });
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormContacts>();
 
-  const handleSubmitForm = () => {
-    const datJSON = JSON.stringify(data);
-    alert(datJSON);
+  const onSubmit: SubmitHandler<IFormContacts> = (data) => {
+    alert("Your message is sent");
   };
 
   return (
-    <form onSubmit={handleSubmitForm}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div role="group" className="contacts-f-formGroup">
         <label className="contacts-f-label">
-          <span>Your name</span>
+          <span>Your name*</span>
           <input
             type="text"
-            value={data.name}
-            name="name"
+            {...register("name", {required: true})}
             className="contacts-f-field"
             placeholder="Abc"
-            onChange={handleInputData}
           />
+          {errors.name && <span className="errorForms">*Name is required</span>}
         </label>
         <label className="contacts-f-label">
-          <span>Email address</span>
+          <span>Email address*</span>
           <input
             type="email"
-            value={data.email}
-            name="email"
+            {...register("email", {required: true})}
             className="contacts-f-field"
             placeholder="Abc@def.com"
-            onChange={handleInputData}
           />
+          {errors.email && <span className="errorForms">*Email is required</span>}
         </label>
         <label className="contacts-f-label">
-          <span>Subject</span>
+          <span>Subject*</span>
           <input
             type="text"
-            value={data.subject}
-            name="subject"
+            {...register("subject", {required: true})}
             className="contacts-f-field"
             placeholder="This is an optional"
-            onChange={handleInputData}
           />
+          {errors.subject && <span className="errorForms">*Subject is required</span>}
         </label>
         <label className="contacts-f-label">
-          <span>Message</span>
+          <span>Message*</span>
           <input
             type="text"
-            value={data.message}
-            name="message"
+            {...register("message", {required: true})}
             className="contacts-f-field"
             placeholder="Hi! i`d like to ask about"
-            onChange={handleInputData}
           />
+          {errors.message && <span className="errorForms">*Message is required</span>}
         </label>
         <ButtonPrimary text="submit" type="submit" width={237} height={55} />
       </div>

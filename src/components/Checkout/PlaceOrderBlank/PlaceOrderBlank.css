@@ -4,6 +4,7 @@
 }
 
 .placeOrderForm {
+	position: relative;
 	margin-top: 22px;
 }
 
@@ -47,6 +48,7 @@
 }
 
 .orderAgreement {
+	position: relative;
 	margin: 22px 0 39px 0;
 	font-weight: 500;
 }

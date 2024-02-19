@@ -6,9 +6,9 @@ axios.defaults.baseURL = "https://furniro-website-backend.onrender.com/api/";
 interface ISort {
   page?: number;
   limit?: number;
-  tags?: string[];
+  tags?: string;
   status?: string;
-  category?: string[];
+  category?: string;
   price?: string;
 }
 
@@ -18,25 +18,16 @@ export const getAllGoods = createAsyncThunk(
     {
       page = 1,
       limit = 16,
-      tags = [],
+      tags = "",
       status = "",
-      category = [],
+      category = "",
       price = "",
     }: ISort,
     thunkAPI
   ) => {
     try {
-      const parmas = `page=${page}&limit=${limit}&price=${price}&status=${status}`;
-      let body = {};
-      if(tags.length !== 0){
-        body= {tags};
-      }
-      if(category.length !== 0){
-        body = {category}
-      }
-      console.log(body);
-      const response = await axios.get(`/furnitures?${parmas}`, {data:{...body}});
-      console.log(response);
+      const params = `page=${page}&limit=${limit}&price=${price}&status=${status}&tags[]=${tags}&category[]=${category}`;
+      const response = await axios.get(`/furnitures?${params}`);
       
       return response.data;
     } catch (error: any) {

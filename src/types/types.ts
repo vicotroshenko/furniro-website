@@ -182,6 +182,8 @@ export interface ISelectData {
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   nameList: string;
   value: string;
+  register?: any;
+  errors?: any;
 }
 
 export interface ICheckoutFormValues {
@@ -197,10 +199,7 @@ export interface ICheckoutFormValues {
   additional: string;
 }
 
-export interface ISubmit {
-  onSubmit: (e:React.FormEvent<HTMLFormElement>) => void;
-}
-
-export interface IGetData {
-  getFormData: (data:ICheckoutFormValues) => void;
+export interface IReacHookProps {
+  register: any;
+  errors: any;
 }

@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Country, State, City } from "country-state-city";
 import CheckoutFromsSelect from "../CheckoutFormsSelect/CheckoutFormsSelect";
-import { ICheckoutFormValues, IGetData } from "../../../types/types";
+import { ICheckoutFormValues, IReacHookProps } from '../../../types/types';
 import "./CheckoutForms.css";
 
 const conuntries = Country.getAllCountries();
@@ -14,7 +14,7 @@ const getListOfCities = (isoCode: string, regionCode: string): any[] => {
   return City.getCitiesOfState(isoCode, regionCode);
 };
 
-const CheckoutForms:React.FC<IGetData> = ({ getFormData }) => {
+const CheckoutForms:React.FC<IReacHookProps> = ({ register, errors }) => {
   const [values, setValues] = useState<ICheckoutFormValues>({
     firstName: "",
     lastName: "",
@@ -28,10 +28,6 @@ const CheckoutForms:React.FC<IGetData> = ({ getFormData }) => {
     additional: "",
   });
 
-  useEffect(() => {
-    getFormData(values)
-  }, [values, getFormData])
-  
 
   const handleFormValues = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
@@ -51,109 +47,112 @@ const CheckoutForms:React.FC<IGetData> = ({ getFormData }) => {
   return (
     <div className="checkoutContainer">
       <h2 className="checkoutTitle">Billing details</h2>
-      <form className="checkoutForm">
+      <div className="checkoutForm">
         <div role="group">
           <div className="checkoutFormDivider">
             <label className="checkoutLabel">
-              <span>First Name</span>
+              <span>First Name*</span>
               <input
                 type="text"
-                name="firstName"
+                {...register("firstName", { required: true, onChange: () =>handleFormValues })}
                 defaultValue={values.firstName}
-                onChange={handleFormValues}
                 className="checkoutField"
               />
+            {errors.firstName && <span className="errorForms">*First Name is required</span>}
             </label>
             <label className="checkoutLabel">
-              <span>last Name</span>
+              <span>last Name*</span>
               <input
                 type="text"
-                name="lastName"
+                {...register("lastName", { required: true, onChange: () =>handleFormValues })}
                 defaultValue={values.lastName}
-                onChange={handleFormValues}
                 className="checkoutField"
               />
+              {errors.lastName && <span className="errorForms">*Last Name is required</span>}
             </label>
           </div>
           <label className="checkoutLabel">
             <span>Company Name (Optional)</span>
             <input
               type="text"
-              name="company"
+              {...register("company", {onChange: () =>handleFormValues})}
               defaultValue={values.company}
-              onChange={handleFormValues}
               className="checkoutField"
             />
           </label>
           <div className="checkoutLabel">
-            <span>Country</span>
+            <span>Country*</span>
             <CheckoutFromsSelect
               onChange={handleFormValues}
               countries={conuntries}
               nameList="country"
               value={values.country}
+              register={register}
+              errors={errors}
             />
           </div>
           <div className="checkoutLabel">
-            <span>region</span>
+            <span>region*</span>
             <CheckoutFromsSelect
               onChange={handleFormValues}
               states={states}
               nameList="region"
               value={values.region}
+              register={register}
+              errors={errors}
             />
           </div>
           <div className="checkoutLabel">
-            <span>city</span>
+            <span>city*</span>
             <CheckoutFromsSelect
               onChange={handleFormValues}
               cities={cities}
               nameList="city"
               value={values.city}
+              register={register}
+              errors={errors}
             />
           </div>
           <label className="checkoutLabel">
             <span>ZIP code</span>
             <input
               type="text"
-              name="zip"
+              {...register("zip", {onChange: () =>handleFormValues})}
               defaultValue={values.zip}
-              onChange={handleFormValues}
               className="checkoutField"
             />
           </label>
           <label className="checkoutLabel">
-            <span>phone</span>
+            <span>phone*</span>
             <input
               type="tel"
-              name="phone"
+              {...register("phone", { required: true, onChange: () =>handleFormValues })}
               defaultValue={values.phone}
-              onChange={handleFormValues}
               className="checkoutField"
             />
+            {errors.phone && <span className="errorForms">*Phone is required</span>}
           </label>
           <label className="checkoutLabel">
-            <span>email address</span>
+            <span>email address*</span>
             <input
               type="email"
-              name="email"
+              {...register("email", { required: true, onChange: () =>handleFormValues })}
               defaultValue={values.email}
-              onChange={handleFormValues}
               className="checkoutField"
             />
+            {errors.email && <span className="errorForms">*Email is required</span>}
           </label>
           <label className="checkoutLabel">
             <input
               type="text"
-              name="additional"
+              {...register("additional", {onChange: () =>handleFormValues})}
               defaultValue={values.additional}
-              onChange={handleFormValues}
               className="checkoutField"
               placeholder="Additional information"
             />
           </label>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

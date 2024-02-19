@@ -12,6 +12,11 @@
 	animation: filterMenuShowUp .45s ease-in;
 } 
 
+.configHidden {
+	opacity: 0;
+	transform: scaleY(0);
+}
+
 @media (height < 600px) {
 	.filterConfigContainer {
 		max-height: 600px;

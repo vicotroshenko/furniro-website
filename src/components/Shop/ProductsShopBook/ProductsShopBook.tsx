@@ -14,7 +14,7 @@ const ProductsShopBook = () => {
   );
 
 	const showItemAmount = (collection:any, num:string) => {
-		return collection.slice(1, +num+1);
+		return collection.slice(0, +num);
 	}
 
 	return (

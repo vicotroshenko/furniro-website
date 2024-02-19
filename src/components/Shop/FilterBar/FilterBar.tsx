@@ -24,6 +24,7 @@ const removeParameter = (
 
 const FilterBar = () => {
   const [showFilter, setShowFilter] = useState<boolean>(false);
+  const [value, setValue] = useState<string>("16");
   const goods = useAppSelector((state) => state.goods.allGoods);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -33,10 +34,13 @@ const FilterBar = () => {
   );
 
   useEffect(() => {
-    if (allParams.show > goods.length) {
-      setSearchParams({ ...allParams, show: goods.length });
+    if (+value > goods.length) {
+      setSearchParams({ ...allParams, show: goods.length});
+      setValue(goods.length)
+    } else {
+      setSearchParams({ ...allParams, show: value });
     }
-  }, [allParams.show, allParams, setSearchParams, goods.length]);
+  }, [allParams.show, allParams, setSearchParams, goods.length, value]);
 
   const handleChangeSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
@@ -64,26 +68,21 @@ const FilterBar = () => {
     setSearchParams({ ...allParams, ...params });
   };
 
-  const handleShowAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    if (+value > goods.length) {
-      setSearchParams({ ...allParams, show: goods.length });
-    } else {
-      setSearchParams({ ...allParams, show: value });
-    }
-  };
+  const configToggle = () => {
+    setShowFilter((prev) => !prev)
+  }
 
   return (
     <section className="filterBar-section">
       <div className="filterBar-container mc-c-flex">
-        {showFilter && <FilterConfig />}
+        <FilterConfig visible={showFilter}  />
         <div className="mc-c-flex filterBar-leftside">
           <div className="filterBar-filterItem mc-c-flex">
             <button
               type="button"
               aria-label="filter"
               className={showFilter ? "headerIconButtons filterBtnActive" : "headerIconButtons"}
-              onClick={() => setShowFilter((prev) => !prev)}
+              onClick={configToggle}
             >
               <VscSettings className="fiterBar-icon" />
             </button>
@@ -122,12 +121,12 @@ const FilterBar = () => {
             <input
               type="number"
               name="showAmount"
-              value={allParams.show}
+              value={value}
               autoComplete="off"
               className="filterBar-field"
               min="0"
               max={goods.length}
-              onChange={handleShowAmount}
+              onChange={(e) =>  setValue(e.target.value)}
             />
           </label>
           <div className="filterBar-selectContainer mc-c-flex">

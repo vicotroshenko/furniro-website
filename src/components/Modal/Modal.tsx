@@ -31,7 +31,7 @@ const Modal:React.FC<IModal> = ({ visible=false, children, toggle }) => {
   };
 
 	return createPortal(
-		<div className={visible ? "backdrop show" : "backdrop"} onClick={handleBackdropClick}>
+		<div className={visible ? "backdrop show" : "backdrop hide"} onClick={handleBackdropClick}>
 			<div className="modal-container">
 				{children}
 			</div>

@@ -1,13 +1,12 @@
 import { nanoid } from "nanoid";
 import { useAppSelector } from "../../../hooks/useAppSelector";
-import { ICart, ISubmit } from "../../../types/types";
+import { ICart, IReacHookProps } from "../../../types/types";
 import { getSumPrice } from "../../../helpers/getSumPrice";
-import "./CheckoutOrder.css";
 import PlaceOrderBlank from "../PlaceOrderBlank/PlaceOrderBlank";
+import "./CheckoutOrder.css";
 
 
-
-const CheckoutOrder:React.FC<ISubmit> = ({ onSubmit }) => {
+const CheckoutOrder: React.FC<IReacHookProps> = ({ register, errors }) => {
   const cart = useAppSelector((state) => state.cart.goods);
 
   return (
@@ -24,7 +23,9 @@ const CheckoutOrder:React.FC<ISubmit> = ({ onSubmit }) => {
               <p>x</p>
               <p>{buyAmount}</p>
             </div>
-            <p className="co-itemPrice">{(+price * (buyAmount || 0)).toFixed(2)}$</p>
+            <p className="co-itemPrice">
+              {(+price * (buyAmount || 0)).toFixed(2)}$
+            </p>
           </li>
         ))}
       </ul>
@@ -32,7 +33,7 @@ const CheckoutOrder:React.FC<ISubmit> = ({ onSubmit }) => {
         <p>total</p>
         <p>{getSumPrice(cart)}$</p>
       </div>
-      <PlaceOrderBlank onSubmit={onSubmit}/>
+      <PlaceOrderBlank register={register} errors={errors} />
     </div>
   );
 };

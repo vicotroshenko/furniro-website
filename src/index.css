@@ -82,6 +82,20 @@ button {
 	height: auto;
 }
 
+.errorForms {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  color: red;
+  text-align: left;
+  animation: errorShowUp .25s linear;
+}
+
 
 ::-webkit-scrollbar {
   width: 10px;            
@@ -106,4 +120,15 @@ button {
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+@keyframes errorShowUp {
+  0%{
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

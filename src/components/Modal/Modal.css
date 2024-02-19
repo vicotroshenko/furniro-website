@@ -6,29 +6,50 @@
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 400;
-	
-	display: none;
 }
 
-.backdrop.show{
-	display: block;
+.backdrop.show {
+	visibility: visible;
+	opacity: 1;
+	animation: modalShow .25s ease-out;
+}
+
+.backdrop.hide {
+	visibility: hidden;
+	opacity: 0;
+	animation: modalClose .25s ease-in;
 }
 
 .modal-container{
 	position: absolute;
 	top: 0;
 	right: 50%;
-	transform: translateX(50%);
+	width: 100%;
 	max-width: 417px;
 	max-height: 580px;
 	overflow-y: auto;
-	animation: modalShow .4s ease-out;
+	background-color: var(--bg-primary);
+	transition: transform .25s linear;
 }
+
+.backdrop.show .modal-container {
+	transform: translate(50%, 0);
+}
+
+.backdrop.hide .modal-container {
+	transform: translate(50%, -110%);
+}
+
 
 @media screen and (min-width: 980px) {
 	.modal-container {
 		right: 10%;
-		transform: translateX(0);
+	}
+	.backdrop.show .modal-container {
+		transform: translate(0, 0);
+	}
+	.backdrop.hide .modal-container {
+		transform: translate(0, -110%);
 	}
 }
 
@@ -41,11 +62,23 @@
 
 @keyframes modalShow {
 	0% {
-		top: -110%;
 		opacity: 0;
+		visibility: hidden;
 	}
 	100% {
-		top: 0;
 		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes modalClose {
+	0% {
+		opacity: 1;
+		visibility: visible;
+
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
 	}
 }

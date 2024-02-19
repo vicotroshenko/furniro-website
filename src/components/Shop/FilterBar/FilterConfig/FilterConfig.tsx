@@ -5,7 +5,11 @@ import { useEffect, useState } from "react";
 import { useAppDispatch } from "../../../../hooks/useAppDispatch";
 import { getAllGoods } from "../../../../redux/goods/operations";
 
-const FilterConfig = () => {
+interface IFilterConfig {
+  visible: boolean;
+}
+
+const FilterConfig:React.FC<IFilterConfig> = ({visible}) => {
   const [categoriesCheck, setCategoriesCheck] = useState<string[]>([]);
   const [tagsCheck, setTagsCheck] = useState<string[]>([]);
 
@@ -13,7 +17,7 @@ const FilterConfig = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getAllGoods({tags: tagsCheck, category: categoriesCheck}))
+    dispatch(getAllGoods({tags: tagsCheck.join(","), category: categoriesCheck.join(",")}))
   }, [dispatch, categoriesCheck, tagsCheck])
   
 
@@ -36,8 +40,10 @@ const FilterConfig = () => {
     }
   };
 
+
+
   return (
-    <div className="filterConfigContainer">
+    <div className={visible ? "filterConfigContainer" : "filterConfigContainer configHidden"}>
       <h3>Categories</h3>
       <ul className="filterConfigList">
         {category.map((item: string, index: number) => (

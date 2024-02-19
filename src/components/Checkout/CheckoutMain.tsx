@@ -1,41 +1,42 @@
 import CheckoutForms from "./CheckoutForms/CheckoutForms";
 import CheckoutOrder from "./CheckoutOrder/CheckoutOrder";
 import "./CheckoutMain.css";
-import { ICheckoutFormValues } from "../../types/types";
-import { useRef } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 
+type Inputs = {
+  firstName: string;
+  lastName: string;
+  company: string;
+  country: string;
+  region: string;
+  city: string;
+  zip: string;
+  phone: string;
+  email: string;
+  additional: string;
+  orderType: string;
+};
 
 const CheckoutMain = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
 
-  const paymentRef = useRef<ICheckoutFormValues | null>(null)
-
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const bank = e.currentTarget[0] as HTMLInputElement;
-    const cash = e.currentTarget[1] as HTMLInputElement;
-    let payment:string = "";
-
-    if(bank.checked){
-      payment = bank.value;
-    }
-    if(cash.checked){
-      payment = cash.value;
-    }
-
-    const customerData = {...paymentRef.current, payment}
-    alert(JSON.stringify(customerData))
-  }
-
-  const handleFormData = (data:ICheckoutFormValues) => {
-    paymentRef.current = data;
-  }
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    alert("Your order is being processed");
+  };
 
   return (
     <section className="checkout-section">
-      <div className="checkout-container mc-c-flex">
-        <CheckoutForms getFormData={handleFormData}/>
-        <CheckoutOrder onSubmit={handleSubmit}/>
-      </div>
+      <form
+        className="checkout-container mc-c-flex"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <CheckoutForms register={register} errors={errors} />
+        <CheckoutOrder register={register} errors={errors} />
+      </form>
     </section>
   );
 };
