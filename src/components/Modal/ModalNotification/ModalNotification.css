@@ -1,9 +1,7 @@
 .modalNotifyContainer {
 	width: 100%;
-	max-width: 300px;
 	text-align: center;
 	padding: 40px 15px;
-	border-radius: 25px;
 	background: linear-gradient(-45deg, #ee7752, #23a6d5, #b88e2f, #2EC1AC);
 	background-size: 200% 200%;
 	background-position: 0 0;

@@ -29,7 +29,7 @@ const ProductList: React.FC<IproductListProps> = ({ items }) => {
     const newCardItem = {
       ...item,
       buyAmount: 1,
-      date: date.getDate(),
+      date: date.toString(),
       price: getPriceOfItem(item.price, item.discount),
     };
     dispatch(addToCart(newCardItem));

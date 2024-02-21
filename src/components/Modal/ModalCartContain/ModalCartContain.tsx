@@ -8,13 +8,11 @@ import { deleteCartItem } from "../../../redux/cart/cartSlice";
 import ModalLinks from "../../Header/ModalLinks/ModalLinks";
 import { getSumPrice } from "../../../helpers/getSumPrice";
 import "./ModalCartContain.css";
-
-
+import { Tooltip } from "@mui/material";
 
 const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
   const cart = useAppSelector((state) => state.cart.goods);
   const dispatch = useAppDispatch();
-
 
   const deleteItemFromCart = (id: string) => {
     dispatch(deleteCartItem({ id }));
@@ -25,9 +23,11 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
       <div className="mc-c-container">
         <div className="mc-c-top mc-c-flex">
           <h2>shopping cart</h2>
-          <button type="button" onClick={onClick}>
-            <BsBagX style={{ width: "100%", height: "100%" }} />
-          </button>
+          <Tooltip title="Close" placement="bottom" arrow enterDelay={500}>
+            <button type="button" onClick={onClick}>
+              <BsBagX style={{ width: "100%", height: "100%" }} />
+            </button>
+          </Tooltip>
         </div>
         <ul className="mc-c-list">
           {cart.map(({ pictures, title, price, buyAmount, _id }: ICart) => (
@@ -43,11 +43,13 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
                   <p className="mc-c-price">${price}</p>
                 </div>
               </div>
-              <button type="button" onClick={() => deleteItemFromCart(_id)}>
-                <IoIosCloseCircle
-                  style={{ width: "20px", height: "20px", fill: "#9F9F9F" }}
-                />
-              </button>
+              <Tooltip title="Delete" placement="bottom" arrow enterDelay={500}>
+                <button type="button" onClick={() => deleteItemFromCart(_id)}>
+                  <IoIosCloseCircle
+                    style={{ width: "20px", height: "20px", fill: "#9F9F9F" }}
+                  />
+                </button>
+              </Tooltip>
             </li>
           ))}
         </ul>

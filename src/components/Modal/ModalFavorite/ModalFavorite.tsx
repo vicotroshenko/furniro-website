@@ -6,6 +6,7 @@ import "./ModalFavorite.css";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { deletFromFavotite } from "../../../redux/goods/goodsSlice";
 import { nanoid } from "nanoid";
+import { Tooltip } from "@mui/material";
 
 const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
   const favorite = useAppSelector((state) => state.goods.favorite);
@@ -20,14 +21,16 @@ const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
     <div className="modalFavoriteContainer">
       <div className="mf-top-title mc-c-flex">
         <h2>Favorite</h2>
-        <button
-          type="button"
-          aria-label="close modal favorite items"
-          className="mf-closeModalButton"
-          onClick={onClick}
-        >
-          <MdOutlineClose style={{ width: "100%", height: "100%" }} />
-        </button>
+        <Tooltip title="Close" placement="bottom" arrow enterDelay={500}>
+          <button
+            type="button"
+            aria-label="close modal favorite items"
+            className="mf-closeModalButton"
+            onClick={onClick}
+          >
+            <MdOutlineClose style={{ width: "100%", height: "100%" }} />
+          </button>
+        </Tooltip>
       </div>
       {favorite.length !== 0 ? (
         <ul>
@@ -45,16 +48,18 @@ const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
                 <h3>{item.title}</h3>
                 <p>${item.price}</p>
               </div>
-              <button
-                type="button"
-                aria-label="delete item from favorite"
-                className="mf-deleteButton"
-                onClick={() => deleteFavorite(item)}
-              >
-                <IoIosCloseCircle
-                  style={{ width: "20px", height: "20px", fill: "#9F9F9F" }}
-                />
-              </button>
+              <Tooltip title="Delete" placement="bottom" arrow enterDelay={500}>
+                <button
+                  type="button"
+                  aria-label="delete item from favorite"
+                  className="mf-deleteButton"
+                  onClick={() => deleteFavorite(item)}
+                >
+                  <IoIosCloseCircle
+                    style={{ width: "20px", height: "20px", fill: "#9F9F9F" }}
+                  />
+                </button>
+              </Tooltip>
             </li>
           ))}
         </ul>

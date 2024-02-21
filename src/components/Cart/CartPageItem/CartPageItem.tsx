@@ -4,6 +4,7 @@ import "./CartPageItem.css";
 import { ICartPageItemProps } from "../../../types/types";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { updateCartItem } from "../../../redux/cart/cartSlice";
+import { Tooltip } from "@mui/material";
 
 const CartPageItem: React.FC<ICartPageItemProps> = ({
   id,
@@ -17,17 +18,19 @@ const CartPageItem: React.FC<ICartPageItemProps> = ({
   const [value, setValue] = useState<string>(buyAmount.toString());
   const dispatch = useAppDispatch();
 
-  const handleChangeBuyAmount = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeBuyAmount = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { value } = event.target;
-    if(!value){
+    if (!value) {
       return;
     }
-    if(isNaN(+value)){
+    if (isNaN(+value)) {
       return;
     }
     setValue(value);
-    dispatch(updateCartItem({id, buyAmount: +value}))
-  }
+    dispatch(updateCartItem({ id, buyAmount: +value }));
+  };
 
   return (
     <ul className="cp-item-elem-list">
@@ -38,24 +41,42 @@ const CartPageItem: React.FC<ICartPageItemProps> = ({
         <span>{title}</span>
       </li>
       <li className="cp-item-elem">
-        <span>{price}</span>
+        <span>{price}{" "}$</span>
       </li>
       <li className="cp-item-elem">
-        <input
-          type="text"
-          name="amount"
-          defaultValue={value}
-          onChange={handleChangeBuyAmount}
-          autoComplete="off"
-        />
+        <Tooltip
+          title="Change quantity"
+          placement="bottom"
+          arrow
+          enterDelay={500}
+          leaveDelay={200}
+        >
+          <input
+            type="text"
+            name="amount"
+            defaultValue={value}
+            onChange={handleChangeBuyAmount}
+            autoComplete="off"
+          />
+        </Tooltip>
       </li>
       <li className="cp-item-elem">
-        <span>{totalPrice}</span>
+        <span>{totalPrice}{" "}$</span>
       </li>
       <li className="cp-item-elem">
-        <button type="button" onClick={onClick}>
-          <FaTrash style={{ width: "100%", height: "100%", fill: "inherit" }} />
-        </button>
+        <Tooltip
+          title="Delete from cart"
+          placement="bottom"
+          arrow
+          enterDelay={500}
+          leaveDelay={200}
+        >
+          <button type="button" onClick={onClick}>
+            <FaTrash
+              style={{ width: "100%", height: "100%", fill: "inherit" }}
+            />
+          </button>
+        </Tooltip>
       </li>
     </ul>
   );

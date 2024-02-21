@@ -13,6 +13,7 @@ import storage from 'redux-persist/lib/storage';
 import goodsReducer from "./goods/goodsSlice";
 import cartReducer from "./cart/cartSlice";
 import userReducer from "./user/userSlice";
+import ordersReducer from "./orders/ordersSlice";
 
 
 
@@ -31,6 +32,11 @@ export const store = configureStore({
 			key: 'user',
 			storage,
 		}, userReducer),
+		orders: persistReducer({
+			key: 'orders',
+			storage,
+			blacklist: ["status"]
+		}, ordersReducer),
 	},
 	middleware: (getDefaultMiddleware) => getDefaultMiddleware({
 		serializableCheck: {

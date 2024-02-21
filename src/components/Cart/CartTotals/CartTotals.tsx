@@ -11,11 +11,11 @@ const CartTotals: React.FC<ICartTotals> = ({ goods }) => {
       <div>
         <div className="cartTotalsSubtotal cartTotalsFlex">
           <p>subtotal</p>
-          <p>${getSumPrice(goods)}</p>
+          <p>{getSumPrice(goods)}{" "}$</p>
         </div>
         <div className="cartTotalsTotal cartTotalsFlex">
           <p>totla</p>
-          <p>${getSumPrice(goods)}</p>
+          <p>{getSumPrice(goods)}{" "}$</p>
         </div>
       </div>
       <NavLink to={"/checkout"} className="checkoutLink">
