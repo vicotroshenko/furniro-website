@@ -8,8 +8,7 @@ import { getPriceOfItem } from "../../helpers/getPriceOfItem";
 import { useMemo } from "react";
 import "./ProductList.css";
 
-
-const ProductList: React.FC<{items: IDataSlice[] | []}> = ({ items }) => {
+const ProductList: React.FC<{ items: IDataSlice[] | [] }> = ({ items }) => {
   const location = useLocation();
   const path = location.pathname === "/" ? "/shop/" : "";
   const dispatch = useAppDispatch();
@@ -33,31 +32,36 @@ const ProductList: React.FC<{items: IDataSlice[] | []}> = ({ items }) => {
   };
 
   return (
-    <ul className={(view === "grid" || !view) ? "productsList" : "productsListLine"}>
-      {items.length !== 0 && items.map(({ _id, pictures, title, price, amount, discount }: IDataSlice,
-          index,
-          array
-        ) => (
-          <li key={nanoid()}>
-            <Link to={`${path}${_id}`} style={{ textDecoration: "none" }}>
-              <ProductCard
-                onClickAddToCard={() =>
-                  handleAddToCard({
-                    _id,
-                    pictures,
-                    title,
-                    price,
-                    amount,
-                    discount,
-                  })
-                }
-                item={array[index]}
-                view={view}
-              />
-            </Link>
-          </li>
-        )
-      )}
+    <ul
+      className={view === "grid" || !view ? "productsList" : "productsListLine"}
+    >
+      {items.length !== 0 &&
+        items.map(
+          (
+            { _id, pictures, title, price, amount, discount }: IDataSlice,
+            index,
+            array
+          ) => (
+            <li key={nanoid()}>
+              <Link to={`${path}${_id}`} style={{ textDecoration: "none" }}>
+                <ProductCard
+                  onClickAddToCard={() =>
+                    handleAddToCard({
+                      _id,
+                      pictures,
+                      title,
+                      price,
+                      amount,
+                      discount,
+                    })
+                  }
+                  item={array[index]}
+                  view={view}
+                />
+              </Link>
+            </li>
+          )
+        )}
     </ul>
   );
 };
