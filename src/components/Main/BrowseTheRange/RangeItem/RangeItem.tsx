@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IRangeItemProps } from "../../../../types/types";
 import "./RangeItem.css";
 
@@ -6,15 +6,15 @@ import "./RangeItem.css";
 const RangeItem: React.FC<IRangeItemProps> = ({ image, text, link }) => {
   return (
     <li className="rangeItem">
-      <Link to={link}>
+      <NavLink to={link}>
         <div
           className="rangeItemImage"
           style={{ background: `center/cover no-repeat url(${image})` }}
         ></div>
-      </Link>
-      <Link to={link}>
+      </NavLink>
+      <NavLink to={link}>
         <p className="rangeItemText">{text}</p>
-      </Link>
+      </NavLink>
     </li>
   );
 };
