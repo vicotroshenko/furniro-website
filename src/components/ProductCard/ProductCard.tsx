@@ -16,7 +16,6 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { getPriceOfItem } from "../../helpers/getPriceOfItem";
 import "./ProductCard.css";
 import "./ProductCardLine.css";
-import { memo } from "react";
 
 const isDiscount = (price: string, discount: string): string => {
   if (discount === "0" || discount === "") {
@@ -38,11 +37,11 @@ interface IProductCardProps {
   view?: string;
 }
 
-const ProductCard: React.FC<IProductCardProps> = memo(function ProductCard({
+const ProductCard: React.FC<IProductCardProps> = ({
   item,
   onClickAddToCard,
   view,
-}){
+}) => {
   const { _id, pictures, title, status, discount, price, description } = item;
 
   const dispatch = useAppDispatch();
@@ -192,6 +191,6 @@ const ProductCard: React.FC<IProductCardProps> = memo(function ProductCard({
       </div>
     );
   }
-});
+};
 
 export default ProductCard;

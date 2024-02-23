@@ -1,14 +1,13 @@
 import { IoIosArrowRoundForward } from "react-icons/io";
-import "./SliderLink.css";
 import { ISliderLink } from "../../../../../types/types";
-import { memo } from "react";
+import "./SliderLink.css";
 
-const SliderLink: React.FC<ISliderLink> = memo(function SliderLink ({
+const SliderLink: React.FC<ISliderLink> = ({
   number = "01",
   place = "unknown",
   name = "unknown",
   link = "/",
-}) {
+}) => {
   return (
     <div className="sliderItemIntro">
       <div className="slideUpperText">
@@ -22,6 +21,6 @@ const SliderLink: React.FC<ISliderLink> = memo(function SliderLink ({
       </a>
     </div>
   );
-});
+};
 
 export default SliderLink;
