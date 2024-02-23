@@ -1,18 +1,15 @@
 import { nanoid } from "nanoid";
 import ProductCard from "../ProductCard/ProductCard";
 import { ICart, IDataSlice } from "../../types/types";
-import "./ProductList.css";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { addToCart } from "../../redux/cart/cartSlice";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { getPriceOfItem } from "../../helpers/getPriceOfItem";
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
+import "./ProductList.css";
 
-interface IproductListProps {
-  items: IDataSlice[] | [];
-}
 
-const ProductList: React.FC<IproductListProps> = memo(function ProductList({ items }){
+const ProductList: React.FC<{items: IDataSlice[] | []}> = ({ items }) => {
   const location = useLocation();
   const path = location.pathname === "/" ? "/shop/" : "";
   const dispatch = useAppDispatch();
@@ -65,6 +62,6 @@ const ProductList: React.FC<IproductListProps> = memo(function ProductList({ ite
       )}
     </ul>
   );
-});
+};
 
 export default ProductList;
