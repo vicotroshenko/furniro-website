@@ -12,29 +12,32 @@ const Shop = () => {
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams();
 
-  const params = useMemo(
+  const { status, price, tags, category, page="1", limit } = useMemo(
     () => Object.fromEntries([...searchParams]),
     [searchParams]
   );
-  const { status, price } = params;
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getAllTagsCategories({ name: "tags" }));
     dispatch(getAllTagsCategories({ name: "category" }));
-  }, [dispatch]);
+  }, [dispatch, page]);
 
   useEffect(() => {
     if (status) {
-      dispatch(getAllGoods({ status: status }));
+      dispatch(getAllGoods({ page, limit, status, tags, category }));
     }
     if (price) {
-      dispatch(getAllGoods({ price: "1" }));
+      dispatch(getAllGoods({ page, limit, price: "1", tags, category }));
     }
     if (!price && !status) {
-      dispatch(getAllGoods({}));
+      dispatch(getAllGoods({page, limit, tags, category}));
     }
-  }, [dispatch, status, price]);
+    if (tags || category) {
+      dispatch(getAllGoods({ page, limit, tags, category }));
+    }
+  }, [dispatch, status, price, tags, category, page, limit,]);
 
   return (
     <>

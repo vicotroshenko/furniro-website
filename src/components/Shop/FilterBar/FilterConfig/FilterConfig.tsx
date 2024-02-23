@@ -1,26 +1,32 @@
-import "./FilterConfig.css";
+import { useSearchParams } from "react-router-dom";
 import { useAppSelector } from "../../../../hooks/useAppSelector";
 import { nanoid } from "nanoid";
-import { useEffect, useState } from "react";
-import { useAppDispatch } from "../../../../hooks/useAppDispatch";
-import { getAllGoods } from "../../../../redux/goods/operations";
+import { useEffect, useMemo, useState } from "react";
+import "./FilterConfig.css";
 
-interface IFilterConfig {
-  visible: boolean;
-}
 
-const FilterConfig:React.FC<IFilterConfig> = ({visible}) => {
-  const [categoriesCheck, setCategoriesCheck] = useState<string[]>([]);
-  const [tagsCheck, setTagsCheck] = useState<string[]>([]);
+const FilterConfig: React.FC<{visible: boolean}> = ({ visible }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const allParams = useMemo(
+    () => Object.fromEntries([...searchParams]),
+    [searchParams]
+  );
+  const [categoriesCheck, setCategoriesCheck] = useState<string[]>(
+    allParams.category ? allParams.category.split(",") : []
+  );
+  const [tagsCheck, setTagsCheck] = useState<string[]>(
+    allParams.tags ? allParams.tags.split(",") : []
+  );
 
   const { category, tags } = useAppSelector((state) => state.goods);
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(getAllGoods({tags: tagsCheck.join(","), category: categoriesCheck.join(",")}))
-  }, [dispatch, categoriesCheck, tagsCheck])
-  
-
+    setSearchParams({
+      ...allParams,
+      tags: tagsCheck.join(","),
+      category: categoriesCheck.join(","),
+    });
+  }, [setSearchParams, tagsCheck, categoriesCheck, allParams]);
 
   const handleCheckItem = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked, name } = e.target;
@@ -40,10 +46,12 @@ const FilterConfig:React.FC<IFilterConfig> = ({visible}) => {
     }
   };
 
-
-
   return (
-    <div className={visible ? "filterConfigContainer" : "filterConfigContainer configHidden"}>
+    <div
+      className={
+        visible ? "filterConfigContainer" : "filterConfigContainer configHidden"
+      }
+    >
       <h3>Categories</h3>
       <ul className="filterConfigList">
         {category.map((item: string, index: number) => (

@@ -6,13 +6,13 @@ import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { addToCart } from "../../redux/cart/cartSlice";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { getPriceOfItem } from "../../helpers/getPriceOfItem";
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 
 interface IproductListProps {
   items: IDataSlice[] | [];
 }
 
-const ProductList: React.FC<IproductListProps> = ({ items }) => {
+const ProductList: React.FC<IproductListProps> = memo(function ProductList({ items }){
   const location = useLocation();
   const path = location.pathname === "/" ? "/shop/" : "";
   const dispatch = useAppDispatch();
@@ -65,6 +65,6 @@ const ProductList: React.FC<IproductListProps> = ({ items }) => {
       )}
     </ul>
   );
-};
+});
 
 export default ProductList;

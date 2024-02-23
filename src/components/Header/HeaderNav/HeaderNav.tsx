@@ -12,7 +12,7 @@ const HeaderNav = () => {
 					<Link to={"/"} className={pathname === "/" ? "active" : ""}>home</Link>
 				</li>
 				<li>
-					<Link to={"/shop?view=grid&show=16"} className={pathname === "/shop" ? "active" : ""}>shop</Link>
+					<Link to={"/shop?view=grid&page=1&limit=9"} className={pathname === "/shop" ? "active" : ""}>shop</Link>
 				</li>
 				<li>
 					<Link to={"/contacts"} className={pathname === "/contacts" ? "active" : ""}>contact</Link>

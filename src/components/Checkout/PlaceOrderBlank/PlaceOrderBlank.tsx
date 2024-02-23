@@ -2,7 +2,6 @@ import { useState } from "react";
 import { IReacHookProps } from "../../../types/types";
 import "./PlaceOrderBlank.css";
 
-
 const bank = "bank";
 const cash = "cash";
 

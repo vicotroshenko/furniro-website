@@ -14,7 +14,6 @@ const getSearchedData = (items: IDataSlice[], value: string) => {
 
 const SearchField: React.FC<ISearchField> = ({ onClick }) => {
   const [value, setValue] = useState<string>("");
-  console.log("value: ", value);
 
   const goods = useAppSelector((state) => state.goods.allGoods);
 
@@ -22,7 +21,6 @@ const SearchField: React.FC<ISearchField> = ({ onClick }) => {
     () => getSearchedData(goods, value),
     [goods, value]
   );
-
 
   return (
     <div className="searchFieldContainer">

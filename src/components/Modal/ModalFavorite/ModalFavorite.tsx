@@ -2,11 +2,11 @@ import { MdOutlineClose } from "react-icons/md";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { IDataSlice, IModalFavoriteProps } from "../../../types/types";
-import "./ModalFavorite.css";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { deletFromFavotite } from "../../../redux/goods/goodsSlice";
 import { nanoid } from "nanoid";
 import { Tooltip } from "@mui/material";
+import "./ModalFavorite.css";
 
 const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
   const favorite = useAppSelector((state) => state.goods.favorite);

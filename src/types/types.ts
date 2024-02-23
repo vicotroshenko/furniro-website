@@ -1,4 +1,5 @@
 import { ICity, ICountry, IState } from "country-state-city";
+import { ReactNode } from "react";
 
 export interface IDataSlice {
   _id: string;
@@ -202,4 +203,10 @@ export interface ICheckoutFormValues {
 export interface IReacHookProps {
   register: any;
   errors: any;
+}
+
+export interface IModal {
+	visible?: boolean;
+	children: ReactNode;
+	toggle: () => void;
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IRangeItemProps } from "../../../../types/types";
 import "./RangeItem.css";
 
@@ -5,15 +6,15 @@ import "./RangeItem.css";
 const RangeItem: React.FC<IRangeItemProps> = ({ image, text, link }) => {
   return (
     <li className="rangeItem">
-      <a href={link}>
+      <Link to={link}>
         <div
           className="rangeItemImage"
           style={{ background: `center/cover no-repeat url(${image})` }}
         ></div>
-      </a>
-      <a href={link}>
+      </Link>
+      <Link to={link}>
         <p className="rangeItemText">{text}</p>
-      </a>
+      </Link>
     </li>
   );
 };

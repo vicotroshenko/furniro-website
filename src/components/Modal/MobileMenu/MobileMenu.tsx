@@ -1,10 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import { IMobileModal } from "../../../types/types";
 import { GrClose } from "react-icons/gr";
-import "./MobileMenu.css";
 import HeaderLogo from "../../Header/HeaderLogo/HeaderLogo";
 import ModalLinks from "../../Header/ModalLinks/ModalLinks";
 import HeaderButtonsBar from "../../Header/HeaderButtonsBar/HeaderButtonsBar";
+import "./MobileMenu.css";
 
 
 const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartModal, onToggleSearch }) => {
@@ -31,7 +31,7 @@ const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartMo
             </Link>
           </li>
           <li>
-            <Link to={"/shop?view=grid&show=16"} className={pathname === "/shop" ? "active" : ""}>
+            <Link to={"/shop?view=grid&page=1&limit=9"} className={pathname === "/shop" ? "active" : ""}>
               shop
             </Link>
           </li>

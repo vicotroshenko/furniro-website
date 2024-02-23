@@ -1,8 +1,8 @@
 import { nanoid } from "nanoid";
-import "./ItemBottomInform.css";
 import { useState } from "react";
 import { IGoodData, IItemInnerProps, IReview } from "../../../types/types";
 import ItemReviewField from "../ItemReviewField/ItemReviewField";
+import "./ItemBottomInform.css";
 
 const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
   const [infoType, setInfoType] = useState<string>("description");
@@ -114,7 +114,7 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
                   onChange={handleReviewAction}
                   checked={reviewAction === "create"}
                 />
-                <label htmlFor="ib-create">Create review</label>
+                <label htmlFor="ib-create">Add review</label>
               </li>
               {reviewAction === "read" &&
                 item.reviews?.map((el: IReview) => (
@@ -130,7 +130,7 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
           )}
           {reviewAction === "create" && infoType === "reviews" && (
             <div>
-              <ItemReviewField />
+              <ItemReviewField id={item._id}/>
             </div>
           )}
         </div>

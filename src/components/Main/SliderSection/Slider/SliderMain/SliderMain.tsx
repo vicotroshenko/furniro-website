@@ -90,7 +90,7 @@ const SliderMain = () => {
   return (
     <div className="slider">
       <ul className="sliderList">
-        {newArray.map(({ slide, place, name, image, link }, index) => (
+        {newArray.map(({ slide, place, name, image, link }) => (
           <li className="sliderItem" key={nanoid()}>
             <img src={image} alt={name} className="image" />
             <SliderLink name={name} place={place} link={link} number={slide} />

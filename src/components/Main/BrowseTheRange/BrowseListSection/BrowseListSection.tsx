@@ -11,9 +11,9 @@ const BrowseListSection = () => {
 				<h2>Browse The Range</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 				<ul className="browseList">
-					<RangeItem image={rangeImage1} text="dining" link="/"/>
-					<RangeItem image={rangeImage2} text="living" link={"/"} />
-					<RangeItem image={rangeImage3} text="bedroom" link={"/"} />
+					<RangeItem image={rangeImage1} text="dining" link="/shop?view=grid&page=1&limit=9&tags=dining"/>
+					<RangeItem image={rangeImage2} text="living" link={"/shop?view=grid&page=1&limit=9&tags=living"} />
+					<RangeItem image={rangeImage3} text="bedroom" link={"/shop?view=grid&page=1&limit=9&tags=bedroom"} />
 				</ul>
 			</div>
 		</section>
