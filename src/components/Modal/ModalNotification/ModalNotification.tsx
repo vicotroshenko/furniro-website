@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Modal from "../Modal";
-import "./ModalNotification.css";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { IoClose } from "react-icons/io5";
+import "./ModalNotification.css";
 
 const ModalNotification = () => {
   const [visibility, setVisibility] = useState<boolean>(false);

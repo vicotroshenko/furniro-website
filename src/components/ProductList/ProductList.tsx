@@ -34,9 +34,7 @@ const ProductList: React.FC<{items: IDataSlice[] | []}> = ({ items }) => {
 
   return (
     <ul className={(view === "grid" || !view) ? "productsList" : "productsListLine"}>
-      {items.map(
-        (
-          { _id, pictures, title, price, amount, discount }: IDataSlice,
+      {items.length !== 0 && items.map(({ _id, pictures, title, price, amount, discount }: IDataSlice,
           index,
           array
         ) => (

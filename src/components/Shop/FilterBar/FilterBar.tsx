@@ -1,11 +1,11 @@
 import { VscSettings } from "react-icons/vsc";
 import { BsGridFill } from "react-icons/bs";
 import { TbLayoutDistributeHorizontal } from "react-icons/tb";
-import "./FilterBar.css";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { useSearchParams } from "react-router-dom";
-import { memo, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import FilterConfig from "./FilterConfig/FilterConfig";
+import "./FilterBar.css";
 
 const removeParameter = (
   params: { [x: string]: string },
@@ -22,7 +22,7 @@ const removeParameter = (
   return newParameters;
 };
 
-const FilterBar = memo(function FilterBar() {
+const FilterBar = () => {
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const { stats } = useAppSelector((state) => state.goods);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -168,6 +168,6 @@ const FilterBar = memo(function FilterBar() {
       </div>
     </section>
   );
-});
+};
 
 export default FilterBar;
