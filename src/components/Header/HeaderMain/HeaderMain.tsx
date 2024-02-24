@@ -50,6 +50,7 @@ const HeaderMain = () => {
           itemsAmount={cart.length}
           isOpenCartModal={()=> toggle("cart")}
           onToggleSearch={() => toggle("searchField")}
+          onToggleFavorite={() => toggle("favorite")}
         />
       </Modal>
       <Modal visible={visible.favorite} toggle={() => toggle("favorite")}>

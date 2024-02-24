@@ -7,7 +7,7 @@ import HeaderButtonsBar from "../../Header/HeaderButtonsBar/HeaderButtonsBar";
 import "./MobileMenu.css";
 
 
-const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartModal, onToggleSearch }) => {
+const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartModal, onToggleSearch, onToggleFavorite }) => {
   const { pathname } = useLocation();
 
   return (
@@ -45,7 +45,7 @@ const MobileMenu: React.FC<IMobileModal> = ({ onClick, itemsAmount, isOpenCartMo
           </li>
         </ul>
       </nav>
-			<HeaderButtonsBar onClick={isOpenCartModal} onToggleSearch={onToggleSearch} itemsAmount={itemsAmount} hidden={false}/>
+			<HeaderButtonsBar onClick={isOpenCartModal} onToggleSearch={onToggleSearch} onToggleFavorite={onToggleFavorite} itemsAmount={itemsAmount} hidden={false}/>
 			<ModalLinks onClick={onClick}/>
     </div>
   );

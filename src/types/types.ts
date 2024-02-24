@@ -164,6 +164,7 @@ export interface IMobileModal {
   itemsAmount?: number;
   isOpenCartModal: () => void;
   onToggleSearch?: () => void;
+  onToggleFavorite?: () => void;
 }
 
 export interface ISearchField extends Pick<ICartPageItemProps, "onClick"> {}

@@ -15,7 +15,7 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
   const dispatch = useAppDispatch();
 
   const deleteItemFromCart = (id: string) => {
-    dispatch(deleteCartItem([ id ]));
+    dispatch(deleteCartItem([id]));
   };
 
   return (
