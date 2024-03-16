@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { Country, State, City } from "country-state-city";
-import CheckoutFromsSelect from "../CheckoutFormsSelect/CheckoutFormsSelect";
-import { ICheckoutFormValues, IReacHookProps } from '../../../types/types';
+import CheckoutFormsSelect from "../CheckoutFormsSelect/CheckoutFormsSelect";
+import { ICheckoutFormValues, IReactHookProps } from '../../../types/types';
 import "./CheckoutForms.css";
 
-const conuntries = Country.getAllCountries();
+const countries = Country.getAllCountries();
 
 const getListOfStates = (isoCode: string): any[] => {
   return State.getStatesOfCountry(isoCode);
@@ -14,19 +14,21 @@ const getListOfCities = (isoCode: string, regionCode: string): any[] => {
   return City.getCitiesOfState(isoCode, regionCode);
 };
 
-const CheckoutForms:React.FC<IReacHookProps> = ({ register, errors }) => {
-  const [values, setValues] = useState<ICheckoutFormValues>({
-    firstName: "",
-    lastName: "",
-    company: "",
-    country: "",
-    region: "",
-    city: "",
-    zip: "",
-    phone: "",
-    email: "",
-    additional: "",
-  });
+const initialValues = {
+  firstName: "",
+  lastName: "",
+  company: "",
+  country: "",
+  region: "",
+  city: "",
+  zip: "",
+  phone: "",
+  email: "",
+  additional: "",
+};
+
+const CheckoutForms:React.FC<IReactHookProps> = ({ register, errors }) => {
+  const [values, setValues] = useState<ICheckoutFormValues>(initialValues);
 
 
   const handleFormValues = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -82,9 +84,9 @@ const CheckoutForms:React.FC<IReacHookProps> = ({ register, errors }) => {
           </label>
           <div className="checkoutLabel">
             <span>Country*</span>
-            <CheckoutFromsSelect
+            <CheckoutFormsSelect
               onChange={handleFormValues}
-              countries={conuntries}
+              countries={countries}
               nameList="country"
               value={values.country}
               register={register}
@@ -93,7 +95,7 @@ const CheckoutForms:React.FC<IReacHookProps> = ({ register, errors }) => {
           </div>
           <div className="checkoutLabel">
             <span>region*</span>
-            <CheckoutFromsSelect
+            <CheckoutFormsSelect
               onChange={handleFormValues}
               states={states}
               nameList="region"
@@ -104,7 +106,7 @@ const CheckoutForms:React.FC<IReacHookProps> = ({ register, errors }) => {
           </div>
           <div className="checkoutLabel">
             <span>city*</span>
-            <CheckoutFromsSelect
+            <CheckoutFormsSelect
               onChange={handleFormValues}
               cities={cities}
               nameList="city"

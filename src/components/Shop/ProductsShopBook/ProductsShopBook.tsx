@@ -1,15 +1,17 @@
 import { useMemo } from "react";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import ProductList from "../../ProductList/ProductList";
 import { useSearchParams } from "react-router-dom";
 import { Pagination } from "@mui/material";
 import "./ProductsShopBook.css";
+import { useGoodsContext } from "../../../hooks/useGoodsContext";
 
 
 const ProductsShopBook = () => {
-	const items = useAppSelector((state) => state.goods.allGoods);
+	const { goodsState } = useGoodsContext();
+	const items = goodsState.allGoods;
+	const stats = goodsState.stats;
+
 	const [searchParams, setSearchParams] = useSearchParams();
-	const stats = useAppSelector(state => state.goods.stats);
 
 	const allParams = useMemo(
     () => Object.fromEntries([...searchParams]),

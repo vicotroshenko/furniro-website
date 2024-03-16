@@ -1,21 +1,19 @@
 import { BsBagX } from "react-icons/bs";
 import { nanoid } from "nanoid";
 import { IoIosCloseCircle } from "react-icons/io";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import { ICart, IModalCartContainProps } from "../../../types/types";
-import { deleteCartItem } from "../../../redux/cart/cartSlice";
 import ModalLinks from "../../Header/ModalLinks/ModalLinks";
 import { getSumPrice } from "../../../helpers/getSumPrice";
 import "./ModalCartContain.css";
 import { Tooltip } from "@mui/material";
+import { useCartContext } from "../../../hooks/useCartContext";
 
 const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
-  const cart = useAppSelector((state) => state.cart.goods);
-  const dispatch = useAppDispatch();
+  const { cartState, setCartState } = useCartContext();
 
   const deleteItemFromCart = (id: string) => {
-    dispatch(deleteCartItem([id]));
+    const goods = cartState.goods.filter(item => item._id !== id);
+    setCartState({goods});
   };
 
   return (
@@ -30,7 +28,7 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
           </Tooltip>
         </div>
         <ul className="mc-c-list">
-          {cart.map(({ pictures, title, price, buyAmount, _id }: ICart) => (
+          {cartState.goods.map(({ pictures, title, price, buyAmount, _id }: ICart) => (
             <li className="mc-card-item mc-c-flex" key={nanoid()}>
               <div className="mc-c-imageContainer">
                 <img src={pictures[0]} alt={title} className="image" />
@@ -55,7 +53,7 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
         </ul>
         <div className="mc-c-sum mc-c-flex">
           <p>Subtotal</p>
-          <p>${getSumPrice(cart).toFixed(2)}</p>
+          <p>${getSumPrice(cartState.goods).toFixed(2)}</p>
         </div>
       </div>
       <ModalLinks onClick={onClick} />

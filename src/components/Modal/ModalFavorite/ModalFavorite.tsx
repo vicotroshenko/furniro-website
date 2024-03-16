@@ -1,20 +1,17 @@
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosCloseCircle } from "react-icons/io";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import { IDataSlice, IModalFavoriteProps } from "../../../types/types";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { deletFromFavotite } from "../../../redux/goods/goodsSlice";
 import { nanoid } from "nanoid";
 import { Tooltip } from "@mui/material";
 import "./ModalFavorite.css";
+import { useGoodsContext } from "../../../hooks/useGoodsContext";
 
 const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
-  const favorite = useAppSelector((state) => state.goods.favorite);
+  const { goodsState, setGoodsState } = useGoodsContext();
 
-  const dispatch = useAppDispatch();
-
-  const deleteFavorite = (item: IDataSlice) => {
-    dispatch(deletFromFavotite({ id: item._id }));
+  const deleteFavorite = (deleteItem: IDataSlice) => {
+    const favorite = goodsState.favorite.filter(item => item._id !== deleteItem._id);
+    setGoodsState({...goodsState, favorite});
   };
 
   return (
@@ -32,9 +29,9 @@ const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
           </button>
         </Tooltip>
       </div>
-      {favorite.length !== 0 ? (
+      {goodsState.favorite.length !== 0 ? (
         <ul>
-          {favorite.map((item: IDataSlice) => (
+          {goodsState.favorite.map((item: IDataSlice) => (
             <li className="mf-favoriteItem mc-c-flex" key={nanoid()}>
               <div className="mf-imageContainer">
                 <img

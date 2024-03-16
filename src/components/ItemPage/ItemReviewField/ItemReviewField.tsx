@@ -1,23 +1,19 @@
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { addReview } from "../../../redux/goods/operations";
 import "./ItemReviewField.css";
 
 const ItemReviewField:React.FC<{id:string}> = ({ id }) => {
 
-	const dispatch = useAppDispatch();
-
 	const handleReviewSubmit = (e:React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const name = e.currentTarget[0] as HTMLInputElement;
-		const review = e.currentTarget[2] as HTMLInputElement;
-		const date = new Date();
+		// const name = e.currentTarget[0] as HTMLInputElement;
+		// const review = e.currentTarget[2] as HTMLInputElement;
+		// const date = new Date();
 
-		dispatch(addReview({id, data:{
-			author: "unregister user",
-			name: name.value, 
-			review: review.value, 
-			date: date.toLocaleDateString(),
-		}}))
+		// dispatch(addReview({id, data:{
+		// 	author: "unregister user",
+		// 	name: name.value, 
+		// 	review: review.value, 
+		// 	date: date.toLocaleDateString(),
+		// }}))
 	}
 
 	

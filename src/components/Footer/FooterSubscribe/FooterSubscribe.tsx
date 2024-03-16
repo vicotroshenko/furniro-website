@@ -6,7 +6,6 @@ const FooterSubscribe = () => {
 
   const handleSubscribeSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		console.log(e);
 	};
 
   return (

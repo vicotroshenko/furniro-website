@@ -1,17 +1,16 @@
 import HeaderButtonsBar from "../HeaderButtonsBar/HeaderButtonsBar";
 import HeaderNav from "../HeaderNav/HeaderNav";
-
 import HeaderMobileButton from "../HeaderMobileButton/HeaderMobileButton";
 import "./HeaderMain.css";
 import Modal from "../../Modal/Modal";
 import ModalCartContain from "../../Modal/ModalCartContain/ModalCartContain";
 import { useState } from "react";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import MobileMenu from "../../Modal/MobileMenu/MobileMenu";
 import HeaderLogo from "../HeaderLogo/HeaderLogo";
 import SearchField from "../SearchField/SearchField";
 import ModalFavorite from "../../Modal/ModalFavorite/ModalFavorite";
 import ModalNotification from "../../Modal/ModalNotification/ModalNotification";
+import { useCartContext } from "../../../hooks/useCartContext";
 
 const HeaderMain = () => {
   const [visible, setVisible] = useState<{[x: string]:boolean}>({
@@ -19,9 +18,9 @@ const HeaderMain = () => {
     mobile: false,
     searchField:false,
     favorite: false,
-  })
+  });
 
-  const cart = useAppSelector((state) => state.cart.goods);
+  const { cartState } = useCartContext();
 
   const toggle = (name:string) => {
     let visibleParams = {};
@@ -47,7 +46,7 @@ const HeaderMain = () => {
       <Modal visible={visible.mobile} toggle={()=> toggle("mobile")}>
         <MobileMenu
           onClick={()=> toggle("mobile")}
-          itemsAmount={cart.length}
+          itemsAmount={cartState.goods.length}
           isOpenCartModal={()=> toggle("cart")}
           onToggleSearch={() => toggle("searchField")}
           onToggleFavorite={() => toggle("favorite")}
@@ -64,7 +63,7 @@ const HeaderMain = () => {
           onClick={()=> toggle("cart")}
           onToggleSearch={() => toggle("searchField")}
           onToggleFavorite={()=> toggle("favorite")}
-          itemsAmount={cart.length}
+          itemsAmount={cartState.goods.length}
           hidden={true}
         />
         <HeaderMobileButton onClick={()=> toggle("mobile")} />

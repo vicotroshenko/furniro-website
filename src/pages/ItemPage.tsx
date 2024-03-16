@@ -1,25 +1,33 @@
 import { useParams } from "react-router-dom";
 import ItemBottomInform from "../components/ItemPage/ItemBottomInform/ItemBottomInform";
 import ItemTopInform from "../components/ItemPage/ItemTopInform/ItemTopInform";
-import { useAppSelector } from "../hooks/useAppSelector";
 import Loader from "../components/Loader/Loader";
 import { useEffect } from "react";
-import { getOneById } from "../redux/goods/operations";
-import { useAppDispatch } from "../hooks/useAppDispatch";
 import { Puff } from "react-loader-spinner";
 import NotFoundPage from "../components/NotFoundPage/NotFoundPage";
+import { useGoodsContext } from "../hooks/useGoodsContext";
+import { getOneById } from "../api/goods";
 
 const ItemPage = () => {
   const { id } = useParams();
-  const dispatch = useAppDispatch();
-  const { itemById, status } = useAppSelector((state) => state.goods);
+
+  const { goodsState, setGoodsState } = useGoodsContext()
+  const { itemById, status } = goodsState;
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (id) {
-      dispatch(getOneById({ id }));
-    }
-  }, [dispatch, id]);
+    (async()=>{
+      setGoodsState(prev => ({...prev, status: "loading"}));
+      if(id){
+        const response = await getOneById({id});
+        if(response){
+          setGoodsState(prev => ({...prev, itemById: response, status: "loading"}));
+        } else {
+          setGoodsState(prev => ({...prev, status: "error"}));
+        }
+      }
+    })()
+  }, [id, setGoodsState]);
 
   if (itemById._id === id && status === "success") {
     return (

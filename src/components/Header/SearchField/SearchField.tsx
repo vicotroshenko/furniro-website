@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { IDataSlice, ISearchField } from "../../../types/types";
 import { IoMdClose } from "react-icons/io";
 import "./SearchField.css";
 import SearchShowItem from "../SearchShowItem/SearchShowItem";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import { nanoid } from "nanoid";
+import { useDebounce } from "../../../hooks/useDebounce";
+import { useGoodsContext } from "../../../hooks/useGoodsContext";
 
 const getSearchedData = (items: IDataSlice[], value: string) => {
   return items.filter((item) =>
@@ -14,13 +15,9 @@ const getSearchedData = (items: IDataSlice[], value: string) => {
 
 const SearchField: React.FC<ISearchField> = ({ onClick }) => {
   const [value, setValue] = useState<string>("");
+  const debouncedValue = useDebounce(value, 500);
 
-  const goods = useAppSelector((state) => state.goods.allGoods);
-
-  const searchedData = useMemo(
-    () => getSearchedData(goods, value),
-    [goods, value]
-  );
+  const { goodsState } = useGoodsContext();
 
   return (
     <div className="searchFieldContainer">
@@ -39,9 +36,9 @@ const SearchField: React.FC<ISearchField> = ({ onClick }) => {
       >
         <IoMdClose style={{ width: "100%", height: "100%" }} />
       </button>
-      {searchedData.length !== 0 && (
+      {getSearchedData(goodsState.allGoods, debouncedValue).length !== 0 && (
         <ul className="searchedResult">
-          {searchedData.map((item: IDataSlice) => (
+          {getSearchedData(goodsState.allGoods, debouncedValue).map((item: IDataSlice) => (
             <SearchShowItem
               key={nanoid()}
               title={item.title}

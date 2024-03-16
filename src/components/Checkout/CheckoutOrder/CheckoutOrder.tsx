@@ -1,13 +1,15 @@
 import { nanoid } from "nanoid";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { ICart, IReacHookProps } from "../../../types/types";
+import { ICart, IReactHookProps } from "../../../types/types";
 import { getSumPrice } from "../../../helpers/getSumPrice";
 import PlaceOrderBlank from "../PlaceOrderBlank/PlaceOrderBlank";
 import "./CheckoutOrder.css";
+import { useCartContext } from "../../../hooks/useCartContext";
 
 
-const CheckoutOrder: React.FC<IReacHookProps> = ({ register, errors }) => {
-  const cart = useAppSelector((state) => state.cart.goods);
+
+const CheckoutOrder: React.FC<IReactHookProps> = ({ register, errors }) => {
+  const { cartState } = useCartContext();
+  const cart = cartState.goods;
 
   return (
     <div className="co-container">

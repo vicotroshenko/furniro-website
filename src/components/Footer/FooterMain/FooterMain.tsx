@@ -13,7 +13,7 @@ const FooterMain = () => {
           <FooterContacts />
         </div>
         <div>
-          <FooterLinks title="links" />
+          <FooterLinks />
         </div>
         <div>
           <FooterSubscribe />

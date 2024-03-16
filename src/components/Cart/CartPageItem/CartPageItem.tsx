@@ -2,9 +2,8 @@ import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import "./CartPageItem.css";
 import { ICartPageItemProps } from "../../../types/types";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { updateCartItem } from "../../../redux/cart/cartSlice";
 import { Tooltip } from "@mui/material";
+import { useCartContext } from "../../../hooks/useCartContext";
 
 const CartPageItem: React.FC<ICartPageItemProps> = ({
   id,
@@ -16,7 +15,7 @@ const CartPageItem: React.FC<ICartPageItemProps> = ({
   onClick,
 }) => {
   const [value, setValue] = useState<string>(buyAmount.toString());
-  const dispatch = useAppDispatch();
+  const { cartState, setCartState } = useCartContext();
 
   const handleChangeBuyAmount = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -28,8 +27,17 @@ const CartPageItem: React.FC<ICartPageItemProps> = ({
     if (isNaN(+value)) {
       return;
     }
+
     setValue(value);
-    dispatch(updateCartItem({ id, buyAmount: +value }));
+
+    const goods = cartState.goods.map(item => {
+      if(item._id === id){
+        return {...item, id, buyAmount: +value}
+      } else {
+        return item;
+      }
+    })
+    setCartState({goods});
   };
 
   return (

@@ -2,22 +2,35 @@ import { useEffect, useState } from "react";
 import ButtonSecondary from "../../ButtonSecondary/ButtonSecondary";
 import ProductList from "../../ProductList/ProductList";
 import "./Products.css";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { getAllGoods } from "../../../redux/goods/operations";
+import { useGoodsContext } from "../../../hooks/useGoodsContext";
+import { getAllGoods } from "../../../api/goods";
 
 const Products = () => {
   const [showCount, setShowCount] = useState<string>("9");
   const step = 6;
-  const dispatch = useAppDispatch();
-  const items = useAppSelector((state) => state.goods.allGoods);
+  const { goodsState, setGoodsState } = useGoodsContext();
 
   useEffect(() => {
-    dispatch(getAllGoods({ page: "1", limit: showCount }));
-  }, [dispatch, showCount]);
+    (async () => {
+      setGoodsState((prev) => ({ ...prev, status: "loading" }));
+
+      const response = await getAllGoods({ page: "1", limit: showCount });
+      if (!response) {
+        setGoodsState((prev) => ({ ...prev, status: "error" }));
+        return;
+      }
+
+      setGoodsState((prev) => ({
+        ...prev,
+        allGoods: response.result,
+        stats: response.summary,
+        status: "success",
+      }));
+    })();
+  }, [setGoodsState, showCount]);
 
   const handleClick = () => {
-    if (showCount > items.length) {
+    if (+showCount > goodsState.allGoods.length) {
       return;
     }
     setShowCount((prev) => prev + step);
@@ -27,7 +40,7 @@ const Products = () => {
     <section className="productsSection">
       <div className="productsContainer">
         <h2>our products</h2>
-        <ProductList items={items} />
+        <ProductList items={goodsState.allGoods} />
         <div className="productsMoreButtonWrap">
           <ButtonSecondary
             type="button"

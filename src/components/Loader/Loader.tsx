@@ -1,8 +1,9 @@
-import { useAppSelector } from "../../hooks/useAppSelector";
+import { useGoodsContext } from "../../hooks/useGoodsContext";
 import "./Loader.css";
 
 const Loader = () => {
-  const { status } = useAppSelector(state => state.goods);
+  const { goodsState } = useGoodsContext();
+  const status = goodsState.status;
 
   if(status === "loading"){
     return (

@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 import { ISelectData } from "../../../types/types";
 import "./CheckoutFormsSelect.css";
 
-const CheckoutFromsSelect: React.FC<ISelectData> = ({
+const CheckoutFormsSelect: React.FC<ISelectData> = ({
   countries,
   states,
   cities,
@@ -44,4 +44,4 @@ const CheckoutFromsSelect: React.FC<ISelectData> = ({
   );
 };
 
-export default CheckoutFromsSelect;
+export default CheckoutFormsSelect;

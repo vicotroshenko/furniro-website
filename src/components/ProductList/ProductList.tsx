@@ -2,18 +2,17 @@ import { nanoid } from "nanoid";
 import ProductCard from "../ProductCard/ProductCard";
 import { ICart, IDataSlice } from "../../types/types";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
-import { addToCart } from "../../redux/cart/cartSlice";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { getPriceOfItem } from "../../helpers/getPriceOfItem";
 import { useMemo } from "react";
 import "./ProductList.css";
+import { useCartContext } from "../../hooks/useCartContext";
 
 const ProductList: React.FC<{ items: IDataSlice[] | [] }> = ({ items }) => {
   const location = useLocation();
   const path = location.pathname === "/" ? "/shop/" : "";
-  const dispatch = useAppDispatch();
 
   const [searchParams] = useSearchParams();
+  const { setCartState } = useCartContext();
 
   const { view } = useMemo(
     () => Object.fromEntries([...searchParams]),
@@ -28,7 +27,7 @@ const ProductList: React.FC<{ items: IDataSlice[] | [] }> = ({ items }) => {
       date: date.toString(),
       price: getPriceOfItem(item.price, item.discount),
     };
-    dispatch(addToCart(newCardItem));
+    setCartState(prev => ({goods:[...prev.goods, newCardItem]}));
   };
 
   return (

@@ -32,6 +32,17 @@ export interface ICart
   totalPrice?: string;
 }
 
+export interface IProductsInitialState {
+	allGoods: IDataSlice[];
+  status: "loading" | "success" | "error";
+  favorite: IDataSlice[];
+  comparison: IDataSlice[];
+  itemById: IDataSlice;
+  tags: string[];
+  category: string[];
+  stats: number;
+}
+
 export interface IButtonProps {
   width: number;
   height: number;
@@ -45,7 +56,7 @@ export interface IDiscountLabelProps {
   discount: string | number;
 }
 
-export interface IDiscountLableStyles {
+export interface IDiscountLabelStyles {
   background: string;
   discountStatus: boolean;
 }
@@ -55,19 +66,19 @@ export interface ISliderRadioButtonsProps {
   slide: string;
 }
 
-export interface IFooterLinksProps {
-  title: string;
-  links?: string[];
-}
+// export interface IFooterLinksProps {
+//   title: string;
+//   links?: string[];
+// }
 
 export interface IAdvantagesItemProps
-  extends Pick<IFooterLinksProps, "title">,
-    Pick<IButtonProps, "text"> {
+  extends Pick<IButtonProps, "text"> {
+  title: string;
   icon: string;
 }
 
 export interface ISliderLink {
-  number: number | string;
+  slide: number | string;
   place: string;
   name: string;
   link: string;
@@ -201,7 +212,7 @@ export interface ICheckoutFormValues {
   additional: string;
 }
 
-export interface IReacHookProps {
+export interface IReactHookProps {
   register: any;
   errors: any;
 }

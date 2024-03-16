@@ -1,19 +1,20 @@
 import CartLabel from "../CartLabel/CartLabel";
 import CartPageItem from "../CartPageItem/CartPageItem";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import { ICart } from "../../../types/types";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { deleteCartItem } from "../../../redux/cart/cartSlice";
 import { nanoid } from "nanoid";
 import CartTotals from "../CartTotals/CartTotals";
 import "./CartList.css";
+import { useCartContext } from "../../../hooks/useCartContext";
+
 
 const CartList = () => {
-  const cart = useAppSelector((state) => state.cart.goods);
-  const dispatch = useAppDispatch();
+  const { cartState, setCartState } = useCartContext();
+  const cart = cartState.goods;
+
 
   const handleDeleteItem = (id: string) => {
-    dispatch(deleteCartItem({ id }));
+    const goods = cart.filter(item => item._id !== id);
+    setCartState({goods});
   };
 
   const getTotalPrice = (buyAmount: number, price: string) => {

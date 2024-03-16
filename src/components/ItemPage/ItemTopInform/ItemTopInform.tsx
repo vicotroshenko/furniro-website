@@ -1,66 +1,62 @@
-import { ICart, IItemInnerProps } from "../../../types/types";
+import { IDataSlice, IItemInnerProps } from "../../../types/types";
 import ItemImageParade from "./ItemImageParade/ItemImageParade";
 import ItemDescribe from "./ItemDescribe/ItemDescribe";
 import ItemSizeButtons from "./ItemSizeButtons/ItemSizeButtons";
 import ItemColorBar from "./ItemColorBar/ItemColorBar";
 import ItemButtons from "./ItemButtons/ItemButtons";
 import ItemShortDesc from "./ItemShortDesc/ItemShortDesc";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import { isInCollection } from "../../../helpers/isInCollection";
 import "./ItemTopInform.css";
-
-import {
-  addToComparison,
-  deletFromComparison,
-} from "../../../redux/goods/goodsSlice";
-import { addToCart, deleteCartItem } from "../../../redux/cart/cartSlice";
 import { useRef } from "react";
+import { useGoodsContext } from "../../../hooks/useGoodsContext";
+import { useCartContext } from "../../../hooks/useCartContext";
 
 
 const ItemTopInform:React.FC<IItemInnerProps> = ({ item }) => {
   const amountRef = useRef<number>();
-  const dispatch = useAppDispatch();
   
-  const { comparison } = useAppSelector((state) => state.goods);
-  const cart = useAppSelector((state) => state.cart.goods);
+  const { goodsState, setGoodsState } = useGoodsContext();
+  const { cartState, setCartState } = useCartContext();
+
+  const cart = cartState.goods;
 
 
-  const addToCompareItem = (item: ICart) => {
-    if (isInCollection(item._id, comparison)) {
-      dispatch(deletFromComparison({ id: item._id }));
-      return;
+  const addToCompareItem = (comparingItem: IDataSlice) => {
+    if (isInCollection(comparingItem._id, goodsState.comparison)) {
+      const comparison = goodsState.comparison.filter(item => item._id !== comparingItem._id);
+      setGoodsState(prev => ({...prev, comparison}));
+    } else {
+      setGoodsState(prev => ({...prev, comparison:[...prev.comparison, comparingItem]}));
     }
-    dispatch(addToComparison(item));
   };
 
   const getAmountFromUser = (amount: number) => {
     amountRef.current = amount;
   };
 
-  const handleAddToCard = (item: ICart) => {
+  const handleAddToCard = (item: IDataSlice) => {
     if (isInCollection(item._id, cart)) {
-      dispatch(deleteCartItem({ id: item._id }));
-      return;
+      const goods = cart.filter(el => el._id !==item._id);
+      setCartState(prev => ({...prev, goods}));
     }
     const { _id, title, price, amount, pictures, discount } = item;
     const buyAmount = amountRef.current;
     const date = new Date();
     if (buyAmount) {
       const totalPrice = (+price * buyAmount).toFixed(2);
-      dispatch(
-        addToCart({
-          _id,
-          title,
-          price,
-          amount,
-          pictures,
-          discount,
-          buyAmount,
-          date: date.getDate(),
-          totalPrice,
-        })
-      );
+      const newCartItem = {
+        _id,
+        title,
+        price,
+        amount,
+        pictures,
+        discount,
+        buyAmount,
+        date: date.getDate().toString(),
+        totalPrice,
+      };
+
+      setCartState(prev => ({...prev, goods: [...prev.goods, newCartItem]}));
     }
   };
 
@@ -83,7 +79,7 @@ const ItemTopInform:React.FC<IItemInnerProps> = ({ item }) => {
           amount={item.amount || 0}
           onCompare={() => addToCompareItem(item)}
           onAdd={() => handleAddToCard(item)}
-          isCompare={isInCollection(item._id, comparison)}
+          isCompare={isInCollection(item._id, goodsState.comparison)}
           isAdded={isInCollection(item._id, cart)}
           getAmount={getAmountFromUser}
         />

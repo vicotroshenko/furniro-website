@@ -3,7 +3,7 @@ import { ISliderLink } from "../../../../../types/types";
 import "./SliderLink.css";
 
 const SliderLink: React.FC<ISliderLink> = ({
-  number = "01",
+  slide = "01",
   place = "unknown",
   name = "unknown",
   link = "/",
@@ -11,7 +11,7 @@ const SliderLink: React.FC<ISliderLink> = ({
   return (
     <div className="sliderItemIntro">
       <div className="slideUpperText">
-        <p className="slideNumber">{number}</p>
+        <p className="slideNumber">{slide}</p>
         <div className="textDivider"></div>
         <p>{place}</p>
       </div>

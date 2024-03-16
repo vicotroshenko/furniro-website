@@ -1,10 +1,10 @@
 import { GoCheckCircleFill } from "react-icons/go";
 import "./OrderFinalized.css"
 import { NavLink } from "react-router-dom";
-import { useAppSelector } from "../../hooks/useAppSelector";
+import { useOrderContext } from "../../hooks/useOrderContext";
 
 const OrderFinalized = () => {
-	const orders = useAppSelector(state => state.orders.orders);
+	const { orderState } = useOrderContext();
 
 	return (
 		<section className="orderFinalSection">
@@ -14,8 +14,8 @@ const OrderFinalized = () => {
 					<GoCheckCircleFill/>
 				</div>
 				<p className="orderFinalGratitude">Thank you. Your order has been placed!</p>
-				<p className="orderFinalInfo">Your order number is - <span>{orders.orderNumber}</span>.</p>
-				<NavLink to={"/shop"} className="orderFinalLink">Continue shoping</NavLink>
+				<p className="orderFinalInfo">Your order number is - <span>{orderState.orders?.orderNumber}</span>.</p>
+				<NavLink to={"/shop"} className="orderFinalLink">Continue shopping</NavLink>
 			</div>
 		</section>
 	)

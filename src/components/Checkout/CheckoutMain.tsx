@@ -2,13 +2,11 @@ import CheckoutForms from "./CheckoutForms/CheckoutForms";
 import CheckoutOrder from "./CheckoutOrder/CheckoutOrder";
 import "./CheckoutMain.css";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { addOrder } from "../../redux/orders/operations";
 import { getSumPrice } from "../../helpers/getSumPrice";
 import { useNavigate } from "react-router-dom";
-import { deleteCartItem } from "../../redux/cart/cartSlice";
-import { ICart } from "../../types/types";
+import { useCartContext } from "../../hooks/useCartContext";
+import { useOrderContext } from "../../hooks/useOrderContext";
+import { addOrder } from "../../api/orders";
 
 type Inputs = {
   firstName: string;
@@ -31,29 +29,27 @@ const CheckoutMain = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const cart = useAppSelector((state) => state.cart.goods);
-  const ordersStutus = useAppSelector((state) => state.orders.status);
+  const { cartState, setCartState } = useCartContext();
+  const { setOrderState } = useOrderContext();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    dispatch(
-      addOrder({
-        ...data,
-        totalPrice: getSumPrice(cart).toString(),
-        order: cart,
-      })
-    );
-    if (ordersStutus === "success") {
-      const ids = cart.reduce((acc: string[], item: ICart) => {
-        acc = [...acc, item._id];
-        return acc;
-      }, []);
+  const cart = cartState.goods;
 
-      dispatch(deleteCartItem([...ids]));
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setOrderState(prev => ({...prev, status: "success"}));
+
+    const response = await addOrder({...data, totalPrice: getSumPrice(cart).toString(), order: cart});
+    console.log('response checkoutMain: ', response);
+
+    if(response){
+      setOrderState({orders: response, status: "success"})
+      setCartState({goods:[]});
       navigate("/checkout/order");
+    } else{
+      setOrderState(prev => ({...prev, status: "error"}));
     }
   };
+
 
   return (
     <section className="checkout-section">

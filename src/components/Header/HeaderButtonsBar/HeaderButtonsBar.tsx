@@ -5,7 +5,8 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { Badge, Tooltip } from "@mui/material";
 import { IHeaderMobileButtonProps } from "../../../types/types";
 import "./HeaderButtonsBar.css";
-import { useAppSelector } from "../../../hooks/useAppSelector";
+import { useGoodsContext } from "../../../hooks/useGoodsContext";
+
 
 const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
   onClick,
@@ -14,7 +15,8 @@ const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
   itemsAmount,
   hidden,
 }) => {
-  const favorite = useAppSelector((state) => state.goods.favorite);
+  const { goodsState } = useGoodsContext();
+  
   return (
     <>
       <div className={hidden ? "headerButtons hidden" : "headerButtons"}>
@@ -57,9 +59,9 @@ const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
             onClick={onToggleFavorite}
           >
             <Badge
-              badgeContent={favorite.length}
+              badgeContent={goodsState.favorite.length}
               color="primary"
-              sx={{ width: "100%", heigth: "100%" }}
+              sx={{ width: "100%", height: "100%" }}
             >
               <FaRegHeart style={{ width: "100%", height: "100%" }} />
             </Badge>
@@ -76,7 +78,7 @@ const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
             <Badge
               badgeContent={itemsAmount}
               color="primary"
-              sx={{ width: "100%", heigth: "100%" }}
+              sx={{ width: "100%", height: "100%" }}
             >
               <MdOutlineShoppingCart
                 style={{ width: "100%", height: "100%" }}

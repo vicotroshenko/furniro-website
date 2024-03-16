@@ -1,8 +1,8 @@
 import { useSearchParams } from "react-router-dom";
-import { useAppSelector } from "../../../../hooks/useAppSelector";
 import { nanoid } from "nanoid";
 import { useEffect, useMemo, useState } from "react";
 import "./FilterConfig.css";
+import { useGoodsContext } from "../../../../hooks/useGoodsContext";
 
 
 const FilterConfig: React.FC<{visible: boolean}> = ({ visible }) => {
@@ -11,14 +11,16 @@ const FilterConfig: React.FC<{visible: boolean}> = ({ visible }) => {
     () => Object.fromEntries([...searchParams]),
     [searchParams]
   );
+
   const [categoriesCheck, setCategoriesCheck] = useState<string[]>(
     allParams.category ? allParams.category.split(",") : []
   );
+
   const [tagsCheck, setTagsCheck] = useState<string[]>(
     allParams.tags ? allParams.tags.split(",") : []
   );
-
-  const { category, tags } = useAppSelector((state) => state.goods);
+  const { goodsState } = useGoodsContext();
+  const { category, tags } = goodsState;
 
   useEffect(() => {
     setSearchParams({

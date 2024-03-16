@@ -1,12 +1,11 @@
 import "./FooterLinks.css";
-import { IFooterLinksProps } from '../../../types/types';
 import { Link } from 'react-router-dom';
 
-const FooterLinks:React.FC<IFooterLinksProps> = ({title}) => {
+const FooterLinks = () => {
 	return (
 		<ul className='footerList'>
 			<li className="footerItem linkTitle">
-				{title}
+				links
 			</li>
 			<li className="footerItem">
 					<Link to={"/"}>Home</Link>

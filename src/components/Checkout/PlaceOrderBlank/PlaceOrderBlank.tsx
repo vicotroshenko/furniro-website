@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { IReacHookProps } from "../../../types/types";
+import { IReactHookProps } from "../../../types/types";
 import "./PlaceOrderBlank.css";
 
 const bank = "bank";
 const cash = "cash";
 
 
-const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
+const PlaceOrderBlank: React.FC<IReactHookProps> = ({ register, errors }) => {
   const [value, setValue] = useState<string | null>(null);
 
   const labelStyles = (element: string, value: string | null): string => {
     if (value === element) {
-      return "orderRadioLable";
+      return "orderRadioLabel";
     } else {
-      return "orderRadioLable orederDisabled";
+      return "orderRadioLabel orderDisabled";
     }
   };
 
@@ -60,7 +60,7 @@ const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
             Cash On Delivery
           </label>
           {value === cash && (
-            <p>Pay for the order upon receipt of the goodsю</p>
+            <p>Pay for the order upon receipt of the goods</p>
           )}
         </div>
         <p className="orderAgreement">
@@ -71,7 +71,7 @@ const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
             <span className="errorForms">*You must choose payment method</span>
           )}
         </p>
-        <button type="submit" className="orederSubmitBtn">
+        <button type="submit" className="orderSubmitBtn">
           Place order
         </button>
       </div>

@@ -1,12 +1,4 @@
 import { IDataSlice } from "../../types/types";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import {
-  addToComparison,
-  addToFavorite,
-  deletFromComparison,
-  deletFromFavotite,
-} from "../../redux/goods/goodsSlice";
-import { useAppSelector } from "../../hooks/useAppSelector";
 import { isInCollection } from "../../helpers/isInCollection";
 import DiscountLabel from "../DiscountLabel/DiscountLabel";
 import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
@@ -16,6 +8,8 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { getPriceOfItem } from "../../helpers/getPriceOfItem";
 import "./ProductCard.css";
 import "./ProductCardLine.css";
+import { useCartContext } from "../../hooks/useCartContext";
+import { useGoodsContext } from "../../hooks/useGoodsContext";
 
 const isDiscount = (price: string, discount: string): string => {
   if (discount === "0" || discount === "") {
@@ -44,24 +38,25 @@ const ProductCard: React.FC<IProductCardProps> = ({
 }) => {
   const { _id, pictures, title, status, discount, price, description } = item;
 
-  const dispatch = useAppDispatch();
-  const cart = useAppSelector((state) => state.cart.goods);
-  const { favorite, comparison } = useAppSelector((state) => state.goods);
+  const { cartState } = useCartContext();
+  const { goodsState, setGoodsState } = useGoodsContext();
 
-  const isCompare = (item: IDataSlice) => {
-    if (isInCollection(_id, comparison)) {
-      dispatch(deletFromComparison({ id: _id }));
-      return;
+  const isCompare = (comparingItem: IDataSlice) => {
+    if (isInCollection(_id, goodsState.comparison)) {
+      const comparison = goodsState.comparison.filter(item => item._id !== comparingItem._id);
+      setGoodsState(prev => ({...prev, comparison}));
+    } else {
+      setGoodsState(prev => ({...prev, comparison:[...prev.comparison, comparingItem]}));
     }
-    dispatch(addToComparison(item));
   };
 
-  const isFavorite = (item: IDataSlice) => {
-    if (isInCollection(_id, favorite)) {
-      dispatch(deletFromFavotite({ id: _id }));
-      return;
+  const isFavorite = (favoriteItem: IDataSlice) => {
+    if (isInCollection(_id, goodsState.favorite)) {
+      const favorite = goodsState.favorite.filter(item => item._id !== favoriteItem._id);
+      setGoodsState(prev => ({...prev, favorite}));
+    } else {
+      setGoodsState(prev => ({...prev, favorite:[...prev.favorite, favoriteItem]}));
     }
-    dispatch(addToFavorite(item));
   };
 
   const checkDiscount = isNewItem(status, discount);
@@ -90,9 +85,9 @@ const ProductCard: React.FC<IProductCardProps> = ({
             width={202}
             type="button"
             height={48}
-            text={isInCollection(_id, cart) ? "Already in card" : "Add to cart"}
+            text={isInCollection(_id, cartState.goods) ? "Already in card" : "Add to cart"}
             onClick={onClickAddToCard}
-            disabled={isInCollection(_id, cart)}
+            disabled={isInCollection(_id, cartState.goods)}
           />
           <div className="prodCardBtns">
             <button type="button">
@@ -105,7 +100,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
                 e.preventDefault();
                 isCompare(item);
               }}
-              className={isInCollection(_id, comparison) ? "checked" : ""}
+              className={isInCollection(_id, goodsState.comparison) ? "checked" : ""}
             >
               <MdOutlineCompareArrows className="prodCardIconBtn" />
               Compare
@@ -116,9 +111,9 @@ const ProductCard: React.FC<IProductCardProps> = ({
                 e.preventDefault();
                 isFavorite(item);
               }}
-              className={isInCollection(_id, favorite) ? "checked" : ""}
+              className={isInCollection(_id, goodsState.favorite) ? "checked" : ""}
             >
-              {isInCollection(_id, favorite) ? (
+              {isInCollection(_id, goodsState.favorite) ? (
                 <FaHeart className="prodCardIconBtn" />
               ) : (
                 <FaRegHeart className="prodCardIconBtn" />
@@ -151,9 +146,9 @@ const ProductCard: React.FC<IProductCardProps> = ({
             width={202}
             type="button"
             height={48}
-            text={isInCollection(_id, cart) ? "Already in card" : "Add to cart"}
+            text={isInCollection(_id, cartState.goods) ? "Already in card" : "Add to cart"}
             onClick={onClickAddToCard}
-            disabled={isInCollection(_id, cart)}
+            disabled={isInCollection(_id, cartState.goods)}
           />
           <div className="prodCardBtnsLine">
             <button type="button">
@@ -166,7 +161,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
                 e.preventDefault();
                 isCompare(item);
               }}
-              className={isInCollection(_id, comparison) ? "checked" : ""}
+              className={isInCollection(_id, goodsState.comparison) ? "checked" : ""}
             >
               <MdOutlineCompareArrows className="prodCardIconBtn" />
               Compare
@@ -177,9 +172,9 @@ const ProductCard: React.FC<IProductCardProps> = ({
                 e.preventDefault();
                 isFavorite(item);
               }}
-              className={isInCollection(_id, favorite) ? "checked" : ""}
+              className={isInCollection(_id, goodsState.favorite) ? "checked" : ""}
             >
-              {isInCollection(_id, favorite) ? (
+              {isInCollection(_id, goodsState.favorite) ? (
                 <FaHeart className="prodCardIconBtn" />
               ) : (
                 <FaRegHeart className="prodCardIconBtn" />

@@ -14,7 +14,7 @@ const CartTotals: React.FC<ICartTotals> = ({ goods }) => {
           <p>{getSumPrice(goods)}{" "}$</p>
         </div>
         <div className="cartTotalsTotal cartTotalsFlex">
-          <p>totla</p>
+          <p>total</p>
           <p>{getSumPrice(goods)}{" "}$</p>
         </div>
       </div>

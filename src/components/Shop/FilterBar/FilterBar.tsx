@@ -1,11 +1,11 @@
 import { VscSettings } from "react-icons/vsc";
 import { BsGridFill } from "react-icons/bs";
 import { TbLayoutDistributeHorizontal } from "react-icons/tb";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import FilterConfig from "./FilterConfig/FilterConfig";
 import "./FilterBar.css";
+import { useGoodsContext } from "../../../hooks/useGoodsContext";
 
 const removeParameter = (
   params: { [x: string]: string },
@@ -24,7 +24,8 @@ const removeParameter = (
 
 const FilterBar = () => {
   const [showFilter, setShowFilter] = useState<boolean>(false);
-  const { stats } = useAppSelector((state) => state.goods);
+  const { goodsState } = useGoodsContext();
+  const stats = goodsState.stats;
   const [searchParams, setSearchParams] = useSearchParams();
 
   const allParams = useMemo(
@@ -33,13 +34,9 @@ const FilterBar = () => {
   );
 
   useEffect(() => {
-    let limit =
-    stats < allParams.limit
-        ? stats
-        : allParams.limit;
+    let limit = stats < +allParams.limit ? stats.toString() : allParams.limit;
     setSearchParams({ ...allParams, limit });
-
-  }, [allParams, setSearchParams, allParams.limit, stats])
+  }, [allParams, setSearchParams, allParams.limit, stats]);
 
   const handleChangeSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
@@ -80,10 +77,7 @@ const FilterBar = () => {
 
   const configPageLimit = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    let limit =
-    stats < value
-        ? stats
-        : value;
+    let limit = stats < +value ? stats.toString() : value;
     setSearchParams({ ...allParams, limit });
   };
 
@@ -138,8 +132,7 @@ const FilterBar = () => {
 
           <div className="filterBar-divider"></div>
           <div className="filterBar-showIform">
-            Showing 1–{allParams.limit} of {stats}{" "}
-            results
+            Showing 1–{allParams.limit} of {stats} results
           </div>
         </div>
 
