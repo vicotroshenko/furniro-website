@@ -1,17 +1,11 @@
 {
   "files": {
-    "main.css": "/furniro-website/static/css/main.5d00b84f.css",
-    "main.js": "/furniro-website/static/js/main.5e0b82dd.js",
-    "static/media/Montserrat-VariableFont_wght.ttf": "/furniro-website/static/media/Montserrat-VariableFont_wght.7e687123cd4528224ce5.ttf",
+    "main.css": "/furniro-website/static/css/main.f92ee01c.css",
+    "main.js": "/furniro-website/static/js/main.ee8b2495.js",
     "static/media/slider-1.jpg": "/furniro-website/static/media/slider-1.ed3f766b3146d0491604.jpg",
     "static/media/slider-2.jpg": "/furniro-website/static/media/slider-2.272f809a7e024d7108d9.jpg",
     "static/media/slider-3.jpg": "/furniro-website/static/media/slider-3.090a03381ec91314b607.jpg",
     "static/media/slider-4.jpg": "/furniro-website/static/media/slider-4.622e360601b1db1a131a.jpg",
-    "static/media/Poppins-Regular.ttf": "/furniro-website/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
-    "static/media/Poppins-Medium.ttf": "/furniro-website/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
-    "static/media/Poppins-SemiBold.ttf": "/furniro-website/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
-    "static/media/Poppins-Bold.ttf": "/furniro-website/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
-    "static/media/Poppins-ExtraBold.ttf": "/furniro-website/static/media/Poppins-ExtraBold.01849ee091e1762a5dd5.ttf",
     "static/media/pathScreen.webp": "/furniro-website/static/media/pathScreen.f637b40036c01f37b3b1.webp",
     "static/media/hero.jpg": "/furniro-website/static/media/hero.eb9eebb43e9e2976114c.jpg",
     "static/media/logo.svg": "/furniro-website/static/media/logo.d6a5479ec94d8d51f1b3267abd5b94b6.svg",
@@ -25,11 +19,11 @@
     "static/media/checkbox.svg": "/furniro-website/static/media/checkbox.5ba131363fea3a4b8630.svg",
     "index.html": "/furniro-website/index.html",
     "static/media/active.svg": "/furniro-website/static/media/active.ea4c956b43d98acfb642.svg",
-    "main.5d00b84f.css.map": "/furniro-website/static/css/main.5d00b84f.css.map",
-    "main.5e0b82dd.js.map": "/furniro-website/static/js/main.5e0b82dd.js.map"
+    "main.f92ee01c.css.map": "/furniro-website/static/css/main.f92ee01c.css.map",
+    "main.ee8b2495.js.map": "/furniro-website/static/js/main.ee8b2495.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d00b84f.css",
-    "static/js/main.5e0b82dd.js"
+    "static/css/main.f92ee01c.css",
+    "static/js/main.ee8b2495.js"
   ]
 }
