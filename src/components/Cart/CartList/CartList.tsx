@@ -1,10 +1,10 @@
-import CartLabel from "../CartLabel/CartLabel";
-import CartPageItem from "../CartPageItem/CartPageItem";
+import { nanoid } from "nanoid";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { ICart } from "../../../types/types";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { deleteCartItem } from "../../../redux/cart/cartSlice";
-import { nanoid } from "nanoid";
+import CartLabel from "../CartLabel/CartLabel";
+import CartPageItem from "../CartPageItem/CartPageItem";
 import CartTotals from "../CartTotals/CartTotals";
 import "./CartList.css";
 

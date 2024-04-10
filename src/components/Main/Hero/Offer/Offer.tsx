@@ -1,6 +1,6 @@
+import { useNavigate } from "react-router-dom"
 import ButtonPrimary from "../../../ButtonPrimary/ButtonPrimary"
 import "./Offer.css"
-import { useNavigate } from "react-router-dom"
 
 const Offer = () => {
 	const navigate = useNavigate();

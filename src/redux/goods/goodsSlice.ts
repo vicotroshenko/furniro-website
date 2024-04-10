@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addReview, getAllGoods, getAllTagsCategories, getOneById } from "../goods/operations";
 import { IDataSlice } from "../../types/types";
+import { addReview, getAllGoods, getAllTagsCategories, getOneById } from "../goods/operations";
 
 interface IProductsInitialState {
 	allGoods: IDataSlice[];

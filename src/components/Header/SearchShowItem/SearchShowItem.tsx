@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "./SearchShowItem.css";
 import { ISearchShowItemProps } from "../../../types/types";
+import "./SearchShowItem.css";
 
 const SearchShowItem: React.FC<ISearchShowItemProps> = ({
   title,

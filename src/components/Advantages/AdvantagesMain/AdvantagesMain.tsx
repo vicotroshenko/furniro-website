@@ -1,8 +1,8 @@
-import AdvantagesItem from "../AdvantagesItem/AdvantagesItem";
 import iconQuality from "../../../images/svg/cup.svg";
 import iconGuarantee from "../../../images/svg/guarantee.svg";
 import iconShipping from "../../../images/svg/shipping.svg";
 import iconSupport from "../../../images/svg/support.svg";
+import AdvantagesItem from "../AdvantagesItem/AdvantagesItem";
 import "./AdvantagesMain.css";
 
 const AdvantagesMain = () => {

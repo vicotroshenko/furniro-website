@@ -1,13 +1,13 @@
-import "./SliderMain.css";
+import { useState } from "react";
+import { nanoid } from "nanoid";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import image1 from "../../../../../images/jpeg/slider-1.jpg";
 import image2 from "../../../../../images/jpeg/slider-2.jpg";
 import image3 from "../../../../../images/jpeg/slider-3.jpg";
 import image4 from "../../../../../images/jpeg/slider-4.jpg";
 import SliderLink from "../SliderLink/SliderLink";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import SliderRadioButtons from "../SliderRadioButtons/SliderRadioButtons";
-import { useState } from "react";
-import { nanoid } from "nanoid";
+import "./SliderMain.css";
 
 interface ISlides {
   slide: number;

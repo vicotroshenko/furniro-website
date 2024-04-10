@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Country, State, City } from "country-state-city";
-import CheckoutFromsSelect from "../CheckoutFormsSelect/CheckoutFormsSelect";
 import { ICheckoutFormValues, IReacHookProps } from '../../../types/types';
+import CheckoutFromsSelect from "../CheckoutFormsSelect/CheckoutFormsSelect";
 import "./CheckoutForms.css";
 
 const conuntries = Country.getAllCountries();

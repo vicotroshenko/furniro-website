@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
-import "./ItemButtons.css";
 import { IItemButtonsPros } from "../../../../types/types";
+import "./ItemButtons.css";
 
 const minusButtonName = "substruct";
 const plusButtonName = "add";

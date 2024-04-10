@@ -1,7 +1,7 @@
 import "./NavigationScreen.css";
 import { IoIosArrowForward } from "react-icons/io";
-import logo from "../../images/svg/logo.svg"
 import { Link, useLocation } from "react-router-dom";
+import logo from "../../images/svg/logo.svg"
 
 const NavigationScreen = () => {
 	const { pathname } = useLocation();

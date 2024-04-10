@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
-import { IDataSlice, ISearchField } from "../../../types/types";
-import { IoMdClose } from "react-icons/io";
-import "./SearchField.css";
-import SearchShowItem from "../SearchShowItem/SearchShowItem";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import { nanoid } from "nanoid";
+import { IoMdClose } from "react-icons/io";
+import { IDataSlice, ISearchField } from "../../../types/types";
+import { useAppSelector } from "../../../hooks/useAppSelector";
+import SearchShowItem from "../SearchShowItem/SearchShowItem";
+import "./SearchField.css";
 
 const getSearchedData = (items: IDataSlice[], value: string) => {
   return items.filter((item) =>

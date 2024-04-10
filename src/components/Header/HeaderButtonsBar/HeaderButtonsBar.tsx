@@ -4,8 +4,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Badge, Tooltip } from "@mui/material";
 import { IHeaderMobileButtonProps } from "../../../types/types";
-import "./HeaderButtonsBar.css";
 import { useAppSelector } from "../../../hooks/useAppSelector";
+import "./HeaderButtonsBar.css";
 
 const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
   onClick,

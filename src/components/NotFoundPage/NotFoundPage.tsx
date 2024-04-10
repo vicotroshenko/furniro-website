@@ -1,7 +1,7 @@
 import { FaRegSadCry } from "react-icons/fa";
 import { FaRegFaceSadTear } from "react-icons/fa6";
-import "./NotFoundPage.css";
 import { useNavigate } from "react-router-dom";
+import "./NotFoundPage.css";
 
 interface INotFoundPage {
   status: "not-found" | "error";

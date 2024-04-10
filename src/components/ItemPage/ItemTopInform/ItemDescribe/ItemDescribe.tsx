@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./ItemDescribe.css";
 import { Rating } from "@mui/material";
 import { IItemDescribe } from "../../../../types/types";
+import "./ItemDescribe.css";
 
 const ItemDescribe: React.FC<IItemDescribe> = ({ rating = 0, title, description, price, reviews=[] }) => {
   const [value, setValue] = useState<number | null>(null);

@@ -1,14 +1,14 @@
 import { BsBagX } from "react-icons/bs";
 import { nanoid } from "nanoid";
 import { IoIosCloseCircle } from "react-icons/io";
+import { Tooltip } from "@mui/material";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { ICart, IModalCartContainProps } from "../../../types/types";
 import { deleteCartItem } from "../../../redux/cart/cartSlice";
-import ModalLinks from "../../Header/ModalLinks/ModalLinks";
 import { getSumPrice } from "../../../helpers/getSumPrice";
+import ModalLinks from "../../Header/ModalLinks/ModalLinks";
 import "./ModalCartContain.css";
-import { Tooltip } from "@mui/material";
 
 const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
   const cart = useAppSelector((state) => state.cart.goods);

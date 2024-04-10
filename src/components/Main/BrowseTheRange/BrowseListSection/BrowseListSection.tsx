@@ -1,8 +1,8 @@
-import "./BrowseListSection.css";
 import rangeImage1 from "../../../../images/jpeg/range1.jpg";
 import rangeImage2 from "../../../../images/jpeg/range2.jpg";
 import rangeImage3 from "../../../../images/jpeg/range3.jpg";
 import RangeItem from "../RangeItem/RangeItem";
+import "./BrowseListSection.css";
 
 const BrowseListSection = () => {
 	return (

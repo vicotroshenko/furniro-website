@@ -1,6 +1,6 @@
-import ContactsDataItem from "./ContactsDataItem/ContactsDataItem"
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt, FaClock  } from "react-icons/fa";
+import ContactsDataItem from "./ContactsDataItem/ContactsDataItem"
 import "./ContactsData.css"
 
 const ContactsData = () => {

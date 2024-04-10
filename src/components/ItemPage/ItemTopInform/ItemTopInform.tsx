@@ -1,13 +1,13 @@
 import { ICart, IItemInnerProps } from "../../../types/types";
+import { useAppDispatch } from "../../../hooks/useAppDispatch";
+import { useAppSelector } from "../../../hooks/useAppSelector";
+import { isInCollection } from "../../../helpers/isInCollection";
 import ItemImageParade from "./ItemImageParade/ItemImageParade";
 import ItemDescribe from "./ItemDescribe/ItemDescribe";
 import ItemSizeButtons from "./ItemSizeButtons/ItemSizeButtons";
 import ItemColorBar from "./ItemColorBar/ItemColorBar";
 import ItemButtons from "./ItemButtons/ItemButtons";
 import ItemShortDesc from "./ItemShortDesc/ItemShortDesc";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { isInCollection } from "../../../helpers/isInCollection";
 import "./ItemTopInform.css";
 
 import {

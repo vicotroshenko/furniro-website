@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import ProductList from "../../ProductList/ProductList";
 import { useSearchParams } from "react-router-dom";
 import { Pagination } from "@mui/material";
+import { useAppSelector } from "../../../hooks/useAppSelector";
+import ProductList from "../../ProductList/ProductList";
 import "./ProductsShopBook.css";
 
 

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import ButtonSecondary from "../../ButtonSecondary/ButtonSecondary";
-import ProductList from "../../ProductList/ProductList";
-import "./Products.css";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { getAllGoods } from "../../../redux/goods/operations";
+import ButtonSecondary from "../../ButtonSecondary/ButtonSecondary";
+import ProductList from "../../ProductList/ProductList";
+import "./Products.css";
 
 const Products = () => {
   const [showCount, setShowCount] = useState<string>("9");

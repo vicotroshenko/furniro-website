@@ -1,11 +1,11 @@
 import { nanoid } from "nanoid";
-import ProductCard from "../ProductCard/ProductCard";
-import { ICart, IDataSlice } from "../../types/types";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { useMemo } from "react";
+import { ICart, IDataSlice } from "../../types/types";
 import { addToCart } from "../../redux/cart/cartSlice";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { getPriceOfItem } from "../../helpers/getPriceOfItem";
-import { useMemo } from "react";
+import ProductCard from "../ProductCard/ProductCard";
 import "./ProductList.css";
 
 const ProductList: React.FC<{ items: IDataSlice[] | [] }> = ({ items }) => {

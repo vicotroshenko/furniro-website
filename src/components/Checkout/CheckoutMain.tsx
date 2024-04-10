@@ -1,14 +1,14 @@
-import CheckoutForms from "./CheckoutForms/CheckoutForms";
-import CheckoutOrder from "./CheckoutOrder/CheckoutOrder";
-import "./CheckoutMain.css";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { addOrder } from "../../redux/orders/operations";
 import { getSumPrice } from "../../helpers/getSumPrice";
-import { useNavigate } from "react-router-dom";
 import { deleteCartItem } from "../../redux/cart/cartSlice";
 import { ICart } from "../../types/types";
+import CheckoutForms from "./CheckoutForms/CheckoutForms";
+import CheckoutOrder from "./CheckoutOrder/CheckoutOrder";
+import "./CheckoutMain.css";
 
 type Inputs = {
   firstName: string;

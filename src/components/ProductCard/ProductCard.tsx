@@ -1,3 +1,6 @@
+import { IoMdShare } from "react-icons/io";
+import { MdOutlineCompareArrows } from "react-icons/md";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { IDataSlice } from "../../types/types";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import {
@@ -8,12 +11,9 @@ import {
 } from "../../redux/goods/goodsSlice";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { isInCollection } from "../../helpers/isInCollection";
+import { getPriceOfItem } from "../../helpers/getPriceOfItem";
 import DiscountLabel from "../DiscountLabel/DiscountLabel";
 import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
-import { IoMdShare } from "react-icons/io";
-import { MdOutlineCompareArrows } from "react-icons/md";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { getPriceOfItem } from "../../helpers/getPriceOfItem";
 import "./ProductCard.css";
 import "./ProductCardLine.css";
 

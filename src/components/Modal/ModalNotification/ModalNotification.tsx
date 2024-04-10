@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Modal from "../Modal";
-import { useAppSelector } from "../../../hooks/useAppSelector";
 import { IoClose } from "react-icons/io5";
+import { useAppSelector } from "../../../hooks/useAppSelector";
+import Modal from "../Modal";
 import "./ModalNotification.css";
 
 const ModalNotification = () => {

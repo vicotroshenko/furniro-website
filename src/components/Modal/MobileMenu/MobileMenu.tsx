@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { IMobileModal } from "../../../types/types";
 import { GrClose } from "react-icons/gr";
+import { IMobileModal } from "../../../types/types";
 import HeaderLogo from "../../Header/HeaderLogo/HeaderLogo";
 import ModalLinks from "../../Header/ModalLinks/ModalLinks";
 import HeaderButtonsBar from "../../Header/HeaderButtonsBar/HeaderButtonsBar";

@@ -1,9 +1,9 @@
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { TbLayoutDistributeHorizontal } from "react-icons/tb";
 import { VscSettings } from "react-icons/vsc";
 import { BsGridFill } from "react-icons/bs";
-import { TbLayoutDistributeHorizontal } from "react-icons/tb";
 import { useAppSelector } from "../../../hooks/useAppSelector";
-import { useSearchParams } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
 import FilterConfig from "./FilterConfig/FilterConfig";
 import "./FilterBar.css";
 

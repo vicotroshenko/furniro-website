@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
-import { useAppSelector } from "../../../../hooks/useAppSelector";
 import { nanoid } from "nanoid";
 import { useEffect, useMemo, useState } from "react";
+import { useAppSelector } from "../../../../hooks/useAppSelector";
 import "./FilterConfig.css";
 
 

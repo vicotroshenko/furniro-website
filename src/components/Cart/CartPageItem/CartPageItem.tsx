@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { Tooltip } from "@mui/material";
 import { FaTrash } from "react-icons/fa";
-import "./CartPageItem.css";
 import { ICartPageItemProps } from "../../../types/types";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { updateCartItem } from "../../../redux/cart/cartSlice";
-import { Tooltip } from "@mui/material";
+import "./CartPageItem.css";
 
 const CartPageItem: React.FC<ICartPageItemProps> = ({
   id,

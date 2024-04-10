@@ -1,17 +1,16 @@
-import HeaderButtonsBar from "../HeaderButtonsBar/HeaderButtonsBar";
-import HeaderNav from "../HeaderNav/HeaderNav";
-
-import HeaderMobileButton from "../HeaderMobileButton/HeaderMobileButton";
-import "./HeaderMain.css";
-import Modal from "../../Modal/Modal";
-import ModalCartContain from "../../Modal/ModalCartContain/ModalCartContain";
 import { useState } from "react";
 import { useAppSelector } from "../../../hooks/useAppSelector";
-import MobileMenu from "../../Modal/MobileMenu/MobileMenu";
-import HeaderLogo from "../HeaderLogo/HeaderLogo";
-import SearchField from "../SearchField/SearchField";
 import ModalFavorite from "../../Modal/ModalFavorite/ModalFavorite";
 import ModalNotification from "../../Modal/ModalNotification/ModalNotification";
+import Modal from "../../Modal/Modal";
+import ModalCartContain from "../../Modal/ModalCartContain/ModalCartContain";
+import MobileMenu from "../../Modal/MobileMenu/MobileMenu";
+import HeaderButtonsBar from "../HeaderButtonsBar/HeaderButtonsBar";
+import HeaderNav from "../HeaderNav/HeaderNav";
+import HeaderMobileButton from "../HeaderMobileButton/HeaderMobileButton";
+import HeaderLogo from "../HeaderLogo/HeaderLogo";
+import SearchField from "../SearchField/SearchField";
+import "./HeaderMain.css";
 
 const HeaderMain = () => {
   const [visible, setVisible] = useState<{[x: string]:boolean}>({

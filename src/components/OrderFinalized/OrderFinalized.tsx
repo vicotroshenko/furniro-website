@@ -1,7 +1,7 @@
 import { GoCheckCircleFill } from "react-icons/go";
-import "./OrderFinalized.css"
 import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import "./OrderFinalized.css"
 
 const OrderFinalized = () => {
 	const orders = useAppSelector(state => state.orders.orders);

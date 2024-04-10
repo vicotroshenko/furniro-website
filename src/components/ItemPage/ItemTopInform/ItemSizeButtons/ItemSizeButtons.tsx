@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./ItemSizeButtons.css";
 import { nanoid } from "nanoid";
+import "./ItemSizeButtons.css";
 
 interface IItemsSizeButtons {
 	size: string[];
