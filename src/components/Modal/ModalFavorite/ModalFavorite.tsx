@@ -1,12 +1,13 @@
-import { MdOutlineClose } from "react-icons/md";
-import { IoIosCloseCircle } from "react-icons/io";
-import { nanoid } from "nanoid";
-import { Tooltip } from "@mui/material";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { IDataSlice, IModalFavoriteProps } from "../../../types/types";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { deletFromFavotite } from "../../../redux/goods/goodsSlice";
-import "./ModalFavorite.css";
+import { Tooltip } from '@mui/material';
+import { nanoid } from 'nanoid';
+import { IoIosCloseCircle } from 'react-icons/io';
+import { MdOutlineClose } from 'react-icons/md';
+
+import { useAppDispatch } from '../../../hooks/useAppDispatch';
+import { useAppSelector } from '../../../hooks/useAppSelector';
+import { deletFromFavotite } from '../../../redux/goods/goodsSlice';
+import { IDataSlice, IModalFavoriteProps } from '../../../types/types';
+import './ModalFavorite.css';
 
 const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
   const favorite = useAppSelector((state) => state.goods.favorite);
@@ -21,21 +22,29 @@ const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
     <div className="modalFavoriteContainer">
       <div className="mf-top-title mc-c-flex">
         <h2>Favorite</h2>
-        <Tooltip title="Close" placement="bottom" arrow enterDelay={500}>
+        <Tooltip
+          title="Close"
+          placement="bottom"
+          arrow
+          enterDelay={500}
+        >
           <button
             type="button"
             aria-label="close modal favorite items"
             className="mf-closeModalButton"
             onClick={onClick}
           >
-            <MdOutlineClose style={{ width: "100%", height: "100%" }} />
+            <MdOutlineClose style={{ width: '100%', height: '100%' }} />
           </button>
         </Tooltip>
       </div>
       {favorite.length !== 0 ? (
         <ul>
           {favorite.map((item: IDataSlice) => (
-            <li className="mf-favoriteItem mc-c-flex" key={nanoid()}>
+            <li
+              className="mf-favoriteItem mc-c-flex"
+              key={nanoid()}
+            >
               <div className="mf-imageContainer">
                 <img
                   src={item.pictures[0]}
@@ -48,7 +57,12 @@ const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
                 <h3>{item.title}</h3>
                 <p>${item.price}</p>
               </div>
-              <Tooltip title="Delete" placement="bottom" arrow enterDelay={500}>
+              <Tooltip
+                title="Delete"
+                placement="bottom"
+                arrow
+                enterDelay={500}
+              >
                 <button
                   type="button"
                   aria-label="delete item from favorite"
@@ -56,7 +70,7 @@ const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
                   onClick={() => deleteFavorite(item)}
                 >
                   <IoIosCloseCircle
-                    style={{ width: "20px", height: "20px", fill: "#9F9F9F" }}
+                    style={{ width: '20px', height: '20px', fill: '#9F9F9F' }}
                   />
                 </button>
               </Tooltip>

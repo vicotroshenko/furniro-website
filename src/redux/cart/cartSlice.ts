@@ -1,38 +1,37 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { ICart } from "../../types/types";
+import { createSlice } from '@reduxjs/toolkit';
 
-
-
+import { ICart } from '../../types/types';
 
 interface ICartSliceState {
-	goods: ICart[];
+  goods: ICart[];
 }
 
 const initialState: ICartSliceState = {
-	goods:[]
-}
-
+  goods: [],
+};
 
 const cartSlice = createSlice({
-  name: "cart",
+  name: 'cart',
   initialState,
   reducers: {
-		addToCart(state, action) {
-			state.goods = [...state.goods, action.payload];
-		},
-		updateCartItem(state, action){
-			state.goods = state.goods.map(item => {
-				if(item._id === action.payload.id){
-					return {...item, ...action.payload}
-				} else {
-					return item;
-				}
-			})
-		},
-		deleteCartItem(state, action){
-			state.goods = state.goods.filter(item => !action.payload.includes(item._id));
-		}
-	},
+    addToCart(state, action) {
+      state.goods = [...state.goods, action.payload];
+    },
+    updateCartItem(state, action) {
+      state.goods = state.goods.map((item) => {
+        if (item._id === action.payload.id) {
+          return { ...item, ...action.payload };
+        } else {
+          return item;
+        }
+      });
+    },
+    deleteCartItem(state, action) {
+      state.goods = state.goods.filter(
+        (item) => !action.payload.includes(item._id)
+      );
+    },
+  },
 });
 
 const cartReducer = cartSlice.reducer;

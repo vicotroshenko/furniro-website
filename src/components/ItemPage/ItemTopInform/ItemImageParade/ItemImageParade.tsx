@@ -1,7 +1,8 @@
-import { nanoid } from "nanoid";
-import { useEffect, useState } from "react";
-import { IItemImageParadeProps } from "../../../../types/types";
-import "./ItemImageParade.css";
+import { nanoid } from 'nanoid';
+import { useEffect, useState } from 'react';
+
+import { IItemImageParadeProps } from '../../../../types/types';
+import './ItemImageParade.css';
 
 const ItemImageParade: React.FC<IItemImageParadeProps> = ({ pictures }) => {
   const [images, setImages] = useState<string[]>([]);
@@ -28,7 +29,10 @@ const ItemImageParade: React.FC<IItemImageParadeProps> = ({ pictures }) => {
   return (
     <ul className="itemImageContainer">
       {images.map((item, index) => (
-        <li key={nanoid()} onClick={() => handleImageClick(index)}>
+        <li
+          key={nanoid()}
+          onClick={() => handleImageClick(index)}
+        >
           <img
             src={item}
             alt="describe goods"

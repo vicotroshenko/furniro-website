@@ -1,152 +1,151 @@
 .prodCardContainer {
-	position: relative;
-	width: 100%;
-	max-width: 285px;
-	margin: 20px;
-	overflow: hidden;
-	cursor: pointer;
+  position: relative;
+  width: 100%;
+  max-width: 285px;
+  margin: 20px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.prodCardDiscount{
-	position: absolute;
-	top: 24px;
-	right: 24px;
-	transition: opacity .25s linear;
+.prodCardDiscount {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  transition: opacity 0.25s linear;
 }
 
 .prodCardImage {
-	width: 100%;
-	min-height: 301px;
+  width: 100%;
+  min-height: 301px;
 }
 
 .prodCardImage > img {
-	height: 100%;
+  height: 100%;
 }
 
 .prodCardDesc {
-	width: 100%;
-	height: 145px;
-	padding: 16px 15px 30px 16px;
-	background-color: var(--text-grey-7);
+  width: 100%;
+  height: 145px;
+  padding: 16px 15px 30px 16px;
+  background-color: var(--text-grey-7);
 }
 
 .prodCardDesc > h3 {
-	font-size: 24px;
-	font-weight: 600;
-	line-height: 1.2;
-	color: var(--text-dark-2);
-	text-overflow: ellipsis;
-  overflow: hidden; 
-	white-space: nowrap;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-dark-2);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .prodCardDesc > p {
-	position: relative;
-	--max-lines: 2;
-	--line-height: 1.5;
-	--text-size: 16px;
-	margin-top: 8px;
-	max-height: calc(var(--text-size) * var(--line-height) * var(--max-lines));
-	overflow: hidden;
+  position: relative;
+  --max-lines: 2;
+  --line-height: 1.5;
+  --text-size: 16px;
+  margin-top: 8px;
+  max-height: calc(var(--text-size) * var(--line-height) * var(--max-lines));
+  overflow: hidden;
 
-	font-size: var(--text-size);
-	font-weight: 500;
-	line-height: var(--line-height);
-	color: var(--text-grey-3);
+  font-size: var(--text-size);
+  font-weight: 500;
+  line-height: var(--line-height);
+  color: var(--text-grey-3);
 }
 
 .prodCardPrice {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 16px;
-	width: 100%;
-	padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  padding-top: 8px;
 }
 
 .prodCardPrice > p:last-child {
-	line-height: 1.5;
-	color: var(--text-grey-5);
-	text-decoration: line-through;
+  line-height: 1.5;
+  color: var(--text-grey-5);
+  text-decoration: line-through;
 }
 
 .prodCardPrice > p:first-child {
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 1.5;
-	color: var(--text-dark-2);
-	text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-dark-2);
+  text-decoration: none;
 }
 
-
-
 .prodCardPrice > p::after {
-	content: "$";
-	margin-left: 3px;
+  content: '$';
+  margin-left: 3px;
 }
 
 .prodCardHoverItem {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 24px;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(58, 58, 58, 0.72);
-	cursor: pointer;
-	transform: translateX(-110%);
-	transition: transform .45s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(58, 58, 58, 0.72);
+  cursor: pointer;
+  transform: translateX(-110%);
+  transition: transform 0.45s ease-out;
 }
 
-.prodCardContainer:hover .prodCardHoverItem{
-	transform: translateX(0);
+.prodCardContainer:hover .prodCardHoverItem {
+  transform: translateX(0);
 }
 
-.prodCardContainer:hover .prodCardDiscount{
-	opacity: 0;
+.prodCardContainer:hover .prodCardDiscount {
+  opacity: 0;
 }
 
 .prodCardBtns {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	width: 100%;
-	max-width: 201px;
-	gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 201px;
+  gap: 10px;
 }
 
 .prodCardBtns > button {
-	display: flex;
-	align-items: center;
-	gap: 2px;
-	color: var(--bg-primary);
-	fill: var(--bg-primary);
-	cursor: pointer;
-	transition: all .25s ease;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--bg-primary);
+  fill: var(--bg-primary);
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.prodCardBtns > button:hover, .prodCardBtns > button:focus {
-	letter-spacing: 1px;
+.prodCardBtns > button:hover,
+.prodCardBtns > button:focus {
+  letter-spacing: 1px;
 }
 
 .prodCardBtns > button:active {
-	transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .prodCardBtns > .checked {
-	color: var(--button-primary);
-	fill: var(--button-primary);
+  color: var(--button-primary);
+  fill: var(--button-primary);
 }
 
-.prodCardIconBtn{
-	width: 16px;
-	height: 16px;
-	fill: inherit;
-	cursor: pointer;
+.prodCardIconBtn {
+  width: 16px;
+  height: 16px;
+  fill: inherit;
+  cursor: pointer;
 }

@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
-import { Country, State, City } from "country-state-city";
+import { City, Country, State } from 'country-state-city';
+import { useMemo, useState } from 'react';
+
 import { ICheckoutFormValues, IReacHookProps } from '../../../types/types';
-import CheckoutFromsSelect from "../CheckoutFormsSelect/CheckoutFormsSelect";
-import "./CheckoutForms.css";
+import CheckoutFromsSelect from '../CheckoutFormsSelect/CheckoutFormsSelect';
+import './CheckoutForms.css';
 
 const conuntries = Country.getAllCountries();
 
@@ -14,22 +15,23 @@ const getListOfCities = (isoCode: string, regionCode: string): any[] => {
   return City.getCitiesOfState(isoCode, regionCode);
 };
 
-const CheckoutForms:React.FC<IReacHookProps> = ({ register, errors }) => {
+const CheckoutForms: React.FC<IReacHookProps> = ({ register, errors }) => {
   const [values, setValues] = useState<ICheckoutFormValues>({
-    firstName: "",
-    lastName: "",
-    company: "",
-    country: "",
-    region: "",
-    city: "",
-    zip: "",
-    phone: "",
-    email: "",
-    additional: "",
+    firstName: '',
+    lastName: '',
+    company: '',
+    country: '',
+    region: '',
+    city: '',
+    zip: '',
+    phone: '',
+    email: '',
+    additional: '',
   });
 
-
-  const handleFormValues = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleFormValues = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = event.target;
     setValues({ ...values, [name]: value });
   };
@@ -54,28 +56,38 @@ const CheckoutForms:React.FC<IReacHookProps> = ({ register, errors }) => {
               <span>First Name*</span>
               <input
                 type="text"
-                {...register("firstName", { required: true, onChange: () =>handleFormValues })}
+                {...register('firstName', {
+                  required: true,
+                  onChange: () => handleFormValues,
+                })}
                 defaultValue={values.firstName}
                 className="checkoutField"
               />
-            {errors.firstName && <span className="errorForms">*First Name is required</span>}
+              {errors.firstName && (
+                <span className="errorForms">*First Name is required</span>
+              )}
             </label>
             <label className="checkoutLabel">
               <span>last Name*</span>
               <input
                 type="text"
-                {...register("lastName", { required: true, onChange: () =>handleFormValues })}
+                {...register('lastName', {
+                  required: true,
+                  onChange: () => handleFormValues,
+                })}
                 defaultValue={values.lastName}
                 className="checkoutField"
               />
-              {errors.lastName && <span className="errorForms">*Last Name is required</span>}
+              {errors.lastName && (
+                <span className="errorForms">*Last Name is required</span>
+              )}
             </label>
           </div>
           <label className="checkoutLabel">
             <span>Company Name (Optional)</span>
             <input
               type="text"
-              {...register("company", {onChange: () =>handleFormValues})}
+              {...register('company', { onChange: () => handleFormValues })}
               defaultValue={values.company}
               className="checkoutField"
             />
@@ -117,7 +129,7 @@ const CheckoutForms:React.FC<IReacHookProps> = ({ register, errors }) => {
             <span>ZIP code</span>
             <input
               type="text"
-              {...register("zip", {onChange: () =>handleFormValues})}
+              {...register('zip', { onChange: () => handleFormValues })}
               defaultValue={values.zip}
               className="checkoutField"
             />
@@ -126,26 +138,36 @@ const CheckoutForms:React.FC<IReacHookProps> = ({ register, errors }) => {
             <span>phone*</span>
             <input
               type="tel"
-              {...register("phone", { required: true, onChange: () =>handleFormValues })}
+              {...register('phone', {
+                required: true,
+                onChange: () => handleFormValues,
+              })}
               defaultValue={values.phone}
               className="checkoutField"
             />
-            {errors.phone && <span className="errorForms">*Phone is required</span>}
+            {errors.phone && (
+              <span className="errorForms">*Phone is required</span>
+            )}
           </label>
           <label className="checkoutLabel">
             <span>email address*</span>
             <input
               type="email"
-              {...register("email", { required: true, onChange: () =>handleFormValues })}
+              {...register('email', {
+                required: true,
+                onChange: () => handleFormValues,
+              })}
               defaultValue={values.email}
               className="checkoutField"
             />
-            {errors.email && <span className="errorForms">*Email is required</span>}
+            {errors.email && (
+              <span className="errorForms">*Email is required</span>
+            )}
           </label>
           <label className="checkoutLabel">
             <input
               type="text"
-              {...register("additional", {onChange: () =>handleFormValues})}
+              {...register('additional', { onChange: () => handleFormValues })}
               defaultValue={values.additional}
               className="checkoutField"
               placeholder="Additional information"

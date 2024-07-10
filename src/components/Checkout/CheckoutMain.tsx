@@ -1,14 +1,15 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { addOrder } from "../../redux/orders/operations";
-import { getSumPrice } from "../../helpers/getSumPrice";
-import { deleteCartItem } from "../../redux/cart/cartSlice";
-import { ICart } from "../../types/types";
-import CheckoutForms from "./CheckoutForms/CheckoutForms";
-import CheckoutOrder from "./CheckoutOrder/CheckoutOrder";
-import "./CheckoutMain.css";
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+
+import { getSumPrice } from '../../helpers/getSumPrice';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { deleteCartItem } from '../../redux/cart/cartSlice';
+import { addOrder } from '../../redux/orders/operations';
+import { ICart } from '../../types/types';
+import CheckoutForms from './CheckoutForms/CheckoutForms';
+import './CheckoutMain.css';
+import CheckoutOrder from './CheckoutOrder/CheckoutOrder';
 
 type Inputs = {
   firstName: string;
@@ -44,14 +45,14 @@ const CheckoutMain = () => {
         order: cart,
       })
     );
-    if (ordersStutus === "success") {
+    if (ordersStutus === 'success') {
       const ids = cart.reduce((acc: string[], item: ICart) => {
         acc = [...acc, item._id];
         return acc;
       }, []);
 
       dispatch(deleteCartItem([...ids]));
-      navigate("/checkout/order");
+      navigate('/checkout/order');
     }
   };
 
@@ -61,8 +62,14 @@ const CheckoutMain = () => {
         className="checkout-container mc-c-flex"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <CheckoutForms register={register} errors={errors} />
-        <CheckoutOrder register={register} errors={errors} />
+        <CheckoutForms
+          register={register}
+          errors={errors}
+        />
+        <CheckoutOrder
+          register={register}
+          errors={errors}
+        />
       </form>
     </section>
   );

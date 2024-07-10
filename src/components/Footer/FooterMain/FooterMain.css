@@ -1,24 +1,23 @@
-.footer{
-	width: 100%;
+.footer {
+  width: 100%;
 }
 
-.footerContainer{
-	width: 100%;
-	max-width: 1440px;
-	margin: 0 auto;
-	padding: 0 100px 0 100px; 
-	
+.footerContainer {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 100px 0 100px;
 }
 
 .fotterTop {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap-reverse;
-	gap: 10px;
-	padding: 48px 0 48px 0; 
-	border-bottom: 1px solid var(--text-grey-5);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  gap: 10px;
+  padding: 48px 0 48px 0;
+  border-bottom: 1px solid var(--text-grey-5);
 }
-.fotterBottom{
-	padding-top: 35px;
+.fotterBottom {
+  padding-top: 35px;
 }

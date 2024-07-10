@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { IoClose } from "react-icons/io5";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import Modal from "../Modal";
-import "./ModalNotification.css";
+import { useEffect, useState } from 'react';
+import { IoClose } from 'react-icons/io5';
+
+import { useAppSelector } from '../../../hooks/useAppSelector';
+import Modal from '../Modal';
+import './ModalNotification.css';
 
 const ModalNotification = () => {
   const [visibility, setVisibility] = useState<boolean>(false);
@@ -11,13 +12,13 @@ const ModalNotification = () => {
 
   useEffect(() => {
     let timerId: any = null;
-    if (status === "loading") {
+    if (status === 'loading') {
       timerId = setInterval(() => setTimer((prev) => prev + 1), 1000);
       if (timer > 10 && timer <= 11) {
         setVisibility(true);
       }
     }
-    if (status === "success") {
+    if (status === 'success') {
       setVisibility(false);
     }
     return () => clearInterval(timerId);
@@ -28,7 +29,10 @@ const ModalNotification = () => {
   };
 
   return (
-    <Modal toggle={toggle} visible={visibility}>
+    <Modal
+      toggle={toggle}
+      visible={visibility}
+    >
       <div className="modalNotifyContainer">
         <button
           type="button"

@@ -1,34 +1,33 @@
-.ic-container{
-	width: 100%;
-	margin-top: 18px;
+.ic-container {
+  width: 100%;
+  margin-top: 18px;
 }
 
 .itemColorTitle {
-	margin-bottom: 12px;
-	color: var(--text-grey-4);
+  margin-bottom: 12px;
+  color: var(--text-grey-4);
 }
 
-.itemColorBtnWrapper{
-	display: flex;
-	gap: 16px;
+.itemColorBtnWrapper {
+  display: flex;
+  gap: 16px;
 }
 
 .itemColorField {
-	position: absolute;
-	visibility: hidden;
-	opacity: 0;
-	z-index: -1;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
 }
 
 .itemColorLable {
-	display: block;
-	width: 30px;
-	height: 30px;
-	border-radius: 5px;
-	cursor: pointer;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.itemColorField:checked + .itemColorLable{
-	border: 2px solid var(--button-primary);
+.itemColorField:checked + .itemColorLable {
+  border: 2px solid var(--button-primary);
 }
-

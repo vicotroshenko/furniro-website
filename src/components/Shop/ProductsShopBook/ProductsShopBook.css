@@ -1,14 +1,14 @@
 .shopProductsSection {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .shopProductsContainer {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	max-width: 1440px;
-	margin: 0 auto;
-	padding: 63px 100px 85px 100px;
-	overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 63px 100px 85px 100px;
+  overflow: hidden;
 }

@@ -1,21 +1,20 @@
 .headerButtons {
-	display: flex;
-	justify-content: space-evenly;
-	gap: 10px;
-	width: 100%;
-	padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 @media screen and (min-width: 980px) {
-	.headerButtons.hidden {
-		display: flex;
-	}
-	.headerButtons {
-		width: 247px;
-	}
+  .headerButtons.hidden {
+    display: flex;
+  }
+  .headerButtons {
+    width: 247px;
+  }
 }
-

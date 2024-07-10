@@ -1,14 +1,14 @@
-import Offer from "../Offer/Offer";
-import "./HeroMain.css";
+import Offer from '../Offer/Offer';
+import './HeroMain.css';
 
 const HeroMain = () => {
-	return (
-		<section className="hero">
-			<div className="heroContainer">
-				<Offer/>
-			</div>
-		</section>
-	)
-}
+  return (
+    <section className="hero">
+      <div className="heroContainer">
+        <Offer />
+      </div>
+    </section>
+  );
+};
 
-export default HeroMain
+export default HeroMain;

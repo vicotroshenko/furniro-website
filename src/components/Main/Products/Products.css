@@ -1,31 +1,29 @@
-.productsSection{
-	width: 100%;
-	height: auto;
+.productsSection {
+  width: 100%;
+  height: auto;
 }
 
 .productsContainer {
-	max-width: 1440px;
-	height: auto;
-	margin: 0 auto;
-	padding: 0 100px 69px 100px;
+  max-width: 1440px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 100px 69px 100px;
 }
 
 .productsContainer > h2 {
-	margin-bottom: 32px;
+  margin-bottom: 32px;
 
-	font-size: 40px;
-	line-height: 1.2;
-	font-weight: 700;
-	color: var(--text-dark-3);
-	text-align: center;
-	text-transform: capitalize;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-dark-3);
+  text-align: center;
+  text-transform: capitalize;
 }
 
-
-
-.productsMoreButtonWrap{
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	padding-top: 32px;
+.productsMoreButtonWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
 }

@@ -1,13 +1,14 @@
-import { useState } from "react";
-import { nanoid } from "nanoid";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import image1 from "../../../../../images/jpeg/slider-1.jpg";
-import image2 from "../../../../../images/jpeg/slider-2.jpg";
-import image3 from "../../../../../images/jpeg/slider-3.jpg";
-import image4 from "../../../../../images/jpeg/slider-4.jpg";
-import SliderLink from "../SliderLink/SliderLink";
-import SliderRadioButtons from "../SliderRadioButtons/SliderRadioButtons";
-import "./SliderMain.css";
+import { nanoid } from 'nanoid';
+import { useState } from 'react';
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+
+import image1 from '../../../../../images/jpeg/slider-1.jpg';
+import image2 from '../../../../../images/jpeg/slider-2.jpg';
+import image3 from '../../../../../images/jpeg/slider-3.jpg';
+import image4 from '../../../../../images/jpeg/slider-4.jpg';
+import SliderLink from '../SliderLink/SliderLink';
+import SliderRadioButtons from '../SliderRadioButtons/SliderRadioButtons';
+import './SliderMain.css';
 
 interface ISlides {
   slide: number;
@@ -20,36 +21,36 @@ interface ISlides {
 const slides = [
   {
     slide: 1,
-    place: "Bed Room 1",
-    name: "Inner Place 1",
+    place: 'Bed Room 1',
+    name: 'Inner Place 1',
     image: image1,
-    link: "/",
+    link: '/',
   },
   {
     slide: 2,
-    place: "Bed Room 2",
-    name: "Inner Place 2",
+    place: 'Bed Room 2',
+    name: 'Inner Place 2',
     image: image2,
-    link: "/",
+    link: '/',
   },
   {
     slide: 3,
-    place: "Bed Room 3",
-    name: "Inner Place 3",
+    place: 'Bed Room 3',
+    name: 'Inner Place 3',
     image: image3,
-    link: "/",
+    link: '/',
   },
   {
     slide: 4,
-    place: "Bed Room 4",
-    name: "Inner Place 4",
+    place: 'Bed Room 4',
+    name: 'Inner Place 4',
     image: image4,
-    link: "/",
+    link: '/',
   },
 ];
 
 const SliderMain = () => {
-  const [slide, setSlide] = useState<string>("0");
+  const [slide, setSlide] = useState<string>('0');
   const [newArray, setNewArray] = useState<ISlides[]>(slides);
 
   const getArray = (position: number) => {
@@ -79,7 +80,7 @@ const SliderMain = () => {
     setSlide((prev) => {
       if (+prev >= slides.length - 1) {
         getArray(0);
-        return "0";
+        return '0';
       } else {
         getArray(+prev + 1);
         return (+prev + 1).toString();
@@ -91,17 +92,37 @@ const SliderMain = () => {
     <div className="slider">
       <ul className="sliderList">
         {newArray.map(({ slide, place, name, image, link }) => (
-          <li className="sliderItem" key={nanoid()}>
-            <img src={image} alt={name} className="image" />
-            <SliderLink name={name} place={place} link={link} number={slide} />
+          <li
+            className="sliderItem"
+            key={nanoid()}
+          >
+            <img
+              src={image}
+              alt={name}
+              className="image"
+            />
+            <SliderLink
+              name={name}
+              place={place}
+              link={link}
+              number={slide}
+            />
           </li>
         ))}
       </ul>
-      <button type="button" className="sliderBtnNext" onClick={handleNextClick} aria-label="next slide button">
+      <button
+        type="button"
+        className="sliderBtnNext"
+        onClick={handleNextClick}
+        aria-label="next slide button"
+      >
         <MdOutlineKeyboardArrowRight />
       </button>
       <div className="siderBtn">
-        <SliderRadioButtons onChange={handleSlideNumber} slide={slide} />
+        <SliderRadioButtons
+          onChange={handleSlideNumber}
+          slide={slide}
+        />
       </div>
     </div>
   );

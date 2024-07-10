@@ -1,14 +1,15 @@
-import { BsBagX } from "react-icons/bs";
-import { nanoid } from "nanoid";
-import { IoIosCloseCircle } from "react-icons/io";
-import { Tooltip } from "@mui/material";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { ICart, IModalCartContainProps } from "../../../types/types";
-import { deleteCartItem } from "../../../redux/cart/cartSlice";
-import { getSumPrice } from "../../../helpers/getSumPrice";
-import ModalLinks from "../../Header/ModalLinks/ModalLinks";
-import "./ModalCartContain.css";
+import { Tooltip } from '@mui/material';
+import { nanoid } from 'nanoid';
+import { BsBagX } from 'react-icons/bs';
+import { IoIosCloseCircle } from 'react-icons/io';
+
+import { getSumPrice } from '../../../helpers/getSumPrice';
+import { useAppDispatch } from '../../../hooks/useAppDispatch';
+import { useAppSelector } from '../../../hooks/useAppSelector';
+import { deleteCartItem } from '../../../redux/cart/cartSlice';
+import { ICart, IModalCartContainProps } from '../../../types/types';
+import ModalLinks from '../../Header/ModalLinks/ModalLinks';
+import './ModalCartContain.css';
 
 const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
   const cart = useAppSelector((state) => state.cart.goods);
@@ -23,17 +24,32 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
       <div className="mc-c-container">
         <div className="mc-c-top mc-c-flex">
           <h2>shopping cart</h2>
-          <Tooltip title="Close" placement="bottom" arrow enterDelay={500}>
-            <button type="button" onClick={onClick}>
-              <BsBagX style={{ width: "100%", height: "100%" }} />
+          <Tooltip
+            title="Close"
+            placement="bottom"
+            arrow
+            enterDelay={500}
+          >
+            <button
+              type="button"
+              onClick={onClick}
+            >
+              <BsBagX style={{ width: '100%', height: '100%' }} />
             </button>
           </Tooltip>
         </div>
         <ul className="mc-c-list">
           {cart.map(({ pictures, title, price, buyAmount, _id }: ICart) => (
-            <li className="mc-card-item mc-c-flex" key={nanoid()}>
+            <li
+              className="mc-card-item mc-c-flex"
+              key={nanoid()}
+            >
               <div className="mc-c-imageContainer">
-                <img src={pictures[0]} alt={title} className="image" />
+                <img
+                  src={pictures[0]}
+                  alt={title}
+                  className="image"
+                />
               </div>
               <div className="mc-c-itemInfo">
                 <p>{title}</p>
@@ -43,10 +59,18 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
                   <p className="mc-c-price">${price}</p>
                 </div>
               </div>
-              <Tooltip title="Delete" placement="bottom" arrow enterDelay={500}>
-                <button type="button" onClick={() => deleteItemFromCart(_id)}>
+              <Tooltip
+                title="Delete"
+                placement="bottom"
+                arrow
+                enterDelay={500}
+              >
+                <button
+                  type="button"
+                  onClick={() => deleteItemFromCart(_id)}
+                >
                   <IoIosCloseCircle
-                    style={{ width: "20px", height: "20px", fill: "#9F9F9F" }}
+                    style={{ width: '20px', height: '20px', fill: '#9F9F9F' }}
                   />
                 </button>
               </Tooltip>

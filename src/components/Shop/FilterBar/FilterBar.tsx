@@ -1,11 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { TbLayoutDistributeHorizontal } from "react-icons/tb";
-import { VscSettings } from "react-icons/vsc";
-import { BsGridFill } from "react-icons/bs";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import FilterConfig from "./FilterConfig/FilterConfig";
-import "./FilterBar.css";
+import { useEffect, useMemo, useState } from 'react';
+import { BsGridFill } from 'react-icons/bs';
+import { TbLayoutDistributeHorizontal } from 'react-icons/tb';
+import { VscSettings } from 'react-icons/vsc';
+import { useSearchParams } from 'react-router-dom';
+
+import { useAppSelector } from '../../../hooks/useAppSelector';
+import './FilterBar.css';
+import FilterConfig from './FilterConfig/FilterConfig';
 
 const removeParameter = (
   params: { [x: string]: string },
@@ -33,29 +34,25 @@ const FilterBar = () => {
   );
 
   useEffect(() => {
-    let limit =
-    stats < allParams.limit
-        ? stats
-        : allParams.limit;
+    let limit = stats < allParams.limit ? stats : allParams.limit;
     setSearchParams({ ...allParams, limit });
-
-  }, [allParams, setSearchParams, allParams.limit, stats])
+  }, [allParams, setSearchParams, allParams.limit, stats]);
 
   const handleChangeSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
     let params = {};
-    if (value === "price") {
-      params = removeParameter({ ...allParams, page: "1", price: "-1" }, [
-        "status",
+    if (value === 'price') {
+      params = removeParameter({ ...allParams, page: '1', price: '-1' }, [
+        'status',
       ]);
-    } else if (value === "new" || value === "discount") {
-      params = removeParameter({ ...allParams, page: "1", status: value }, [
-        "price",
+    } else if (value === 'new' || value === 'discount') {
+      params = removeParameter({ ...allParams, page: '1', status: value }, [
+        'price',
       ]);
     } else {
-      params = removeParameter({ ...allParams, page: "1" }, [
-        "price",
-        "status",
+      params = removeParameter({ ...allParams, page: '1' }, [
+        'price',
+        'status',
       ]);
     }
 
@@ -65,10 +62,10 @@ const FilterBar = () => {
   const setUpListView = (event: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = event.currentTarget;
     let params = {};
-    if (name === "line") {
-      params = { view: "line" };
+    if (name === 'line') {
+      params = { view: 'line' };
     } else {
-      params = { view: "grid" };
+      params = { view: 'grid' };
     }
 
     setSearchParams({ ...allParams, ...params });
@@ -80,10 +77,7 @@ const FilterBar = () => {
 
   const configPageLimit = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    let limit =
-    stats < value
-        ? stats
-        : value;
+    let limit = stats < value ? stats : value;
     setSearchParams({ ...allParams, limit });
   };
 
@@ -98,8 +92,8 @@ const FilterBar = () => {
               aria-label="filter"
               className={
                 showFilter
-                  ? "headerIconButtons filterBtnActive"
-                  : "headerIconButtons"
+                  ? 'headerIconButtons filterBtnActive'
+                  : 'headerIconButtons'
               }
               onClick={configToggle}
             >
@@ -114,9 +108,9 @@ const FilterBar = () => {
             onClick={setUpListView}
             aria-label="gid view"
             className={
-              allParams.view === "grid"
-                ? "filterBar-gridBtn headerIconButtons filterBtnActive"
-                : "filterBar-gridBtn headerIconButtons"
+              allParams.view === 'grid'
+                ? 'filterBar-gridBtn headerIconButtons filterBtnActive'
+                : 'filterBar-gridBtn headerIconButtons'
             }
           >
             <BsGridFill className="fiterBar-icon" />
@@ -128,9 +122,9 @@ const FilterBar = () => {
             onClick={setUpListView}
             aria-label="one item in line view"
             className={
-              allParams.view === "line"
-                ? "headerIconButtons filterBtnActive"
-                : "headerIconButtons"
+              allParams.view === 'line'
+                ? 'headerIconButtons filterBtnActive'
+                : 'headerIconButtons'
             }
           >
             <TbLayoutDistributeHorizontal className="fiterBar-icon" />
@@ -138,8 +132,7 @@ const FilterBar = () => {
 
           <div className="filterBar-divider"></div>
           <div className="filterBar-showIform">
-            Showing 1–{allParams.limit} of {stats}{" "}
-            results
+            Showing 1–{allParams.limit} of {stats} results
           </div>
         </div>
 
@@ -157,7 +150,10 @@ const FilterBar = () => {
           </label>
           <div className="filterBar-selectContainer mc-c-flex">
             <span>Sort by</span>
-            <select className="filterBar-select" onChange={handleChangeSort}>
+            <select
+              className="filterBar-select"
+              onChange={handleChangeSort}
+            >
               <option value="default">Default</option>
               <option value="price">Price</option>
               <option value="new">New</option>

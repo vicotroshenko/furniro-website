@@ -1,41 +1,44 @@
 .rangeItem {
-	width: 100%;
-	max-width: 381px;
-	min-width: 250px;
-	list-style-type: none;
+  width: 100%;
+  max-width: 381px;
+  min-width: 250px;
+  list-style-type: none;
 }
 
 .rangeItemImage {
-	width: 100%;
-	height: 100%;
-	min-height: 480px;
-	border-radius: 8px;
-	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-	overflow: hidden;
-	transition: all .25s linear;
-
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border-radius: 8px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  overflow: hidden;
+  transition: all 0.25s linear;
 }
 
 .rangeItem:hover .rangeItemImage {
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 7px 18px, rgba(0, 0, 0, 0.22) 0px 5px 5px;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 7px 18px,
+    rgba(0, 0, 0, 0.22) 0px 5px 5px;
 }
 
 .rangeItem > a {
-	display: block;
-	text-decoration: none;
-	transition: all .25s linear;
+  display: block;
+  text-decoration: none;
+  transition: all 0.25s linear;
 }
 
-.rangeItem:hover > a,  .rangeItem:focus > a{
-	text-shadow: var(--hover-text-shodow);
+.rangeItem:hover > a,
+.rangeItem:focus > a {
+  text-shadow: var(--hover-text-shodow);
 }
-
 
 .rangeItemText {
-	font-size: 24px;
-	font-weight: 600;
-	padding-top: 30px;
-	color: var(--text-dark-2);
-	text-align: center;
-	text-transform: capitalize;
+  font-size: 24px;
+  font-weight: 600;
+  padding-top: 30px;
+  color: var(--text-dark-2);
+  text-align: center;
+  text-transform: capitalize;
 }

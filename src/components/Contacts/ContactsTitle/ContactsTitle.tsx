@@ -1,4 +1,4 @@
-import "./ContactsTitle.css";
+import './ContactsTitle.css';
 
 const ContactsTitle = () => {
   return (

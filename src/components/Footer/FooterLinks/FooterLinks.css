@@ -1,25 +1,24 @@
-.footerList{
-	list-style-type: none;
-	text-transform: capitalize;
+.footerList {
+  list-style-type: none;
+  text-transform: capitalize;
 }
 
 .footerItem + .footerItem {
-	margin-top: 46px;
+  margin-top: 46px;
 }
 
-.footerItem > a{
-	text-decoration: none;
-	font-weight: 500;
-	color: inherit;
-	transition: all .25s linear;
+.footerItem > a {
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit;
+  transition: all 0.25s linear;
 }
 
 .footerItem > a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
-
-.linkTitle{
-	color: var(--text-grey-4);
-	font-weight: 500;
+.linkTitle {
+  color: var(--text-grey-4);
+  font-weight: 500;
 }

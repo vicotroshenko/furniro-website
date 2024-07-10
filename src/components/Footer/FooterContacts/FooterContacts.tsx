@@ -1,4 +1,5 @@
-import "./FooterContacts.css"
+import './FooterContacts.css';
+
 const FooterContacts = () => {
   return (
     <>

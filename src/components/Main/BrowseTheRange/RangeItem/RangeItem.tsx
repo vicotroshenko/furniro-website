@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
-import { IRangeItemProps } from "../../../../types/types";
-import "./RangeItem.css";
+import { NavLink } from 'react-router-dom';
 
+import { IRangeItemProps } from '../../../../types/types';
+import './RangeItem.css';
 
 const RangeItem: React.FC<IRangeItemProps> = ({ image, text, link }) => {
   return (

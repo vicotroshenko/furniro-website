@@ -1,14 +1,15 @@
-import { useState } from "react";
-import { nanoid } from "nanoid";
-import "./ItemSizeButtons.css";
+import { nanoid } from 'nanoid';
+import { useState } from 'react';
+
+import './ItemSizeButtons.css';
 
 interface IItemsSizeButtons {
-	size: string[];
-	onSize?: () => string;
+  size: string[];
+  onSize?: () => string;
 }
 
-const ItemSizeButtons:React.FC<IItemsSizeButtons> = ({ size, onSize }) => {
-  const [sizeChose, setSizeChose] = useState<string>("");
+const ItemSizeButtons: React.FC<IItemsSizeButtons> = ({ size, onSize }) => {
+  const [sizeChose, setSizeChose] = useState<string>('');
 
   const handleTypeOfSize = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name } = e.target;
@@ -30,7 +31,11 @@ const ItemSizeButtons:React.FC<IItemsSizeButtons> = ({ size, onSize }) => {
               className="itemSizeButton"
               checked={sizeChose === item}
             />
-            <label key={nanoid()} htmlFor={item} className="itemSizeField">
+            <label
+              key={nanoid()}
+              htmlFor={item}
+              className="itemSizeField"
+            >
               {item}
             </label>
           </div>

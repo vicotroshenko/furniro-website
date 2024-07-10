@@ -1,13 +1,13 @@
-import NotFoundPage from "../components/NotFoundPage/NotFoundPage"
+import NotFoundPage from '../components/NotFoundPage/NotFoundPage';
 
-const status = "not-found"
+const status = 'not-found';
 
 const NotFound = () => {
-	return (
-		<>
-			<NotFoundPage status={status}/>
-		</>
-	)
-}
+  return (
+    <>
+      <NotFoundPage status={status} />
+    </>
+  );
+};
 
-export default NotFound
+export default NotFound;

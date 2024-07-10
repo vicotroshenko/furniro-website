@@ -1,44 +1,44 @@
 .itemImageContainer {
-	position: relative;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: flex-end;
-	list-style-type: none;
-	gap: 32px;
-	height: 100%;
-	width: 100%;
-	margin-top: 35px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  list-style-type: none;
+  gap: 32px;
+  height: 100%;
+  width: 100%;
+  margin-top: 35px;
 }
 
-.itemImageContainer > li{
-	width: 76px;
-	height: 76px;
-	flex-grow: 0;
-	flex-shrink: 0;
-	cursor: pointer;
-	border-radius: 8px;
-	overflow: hidden;
+.itemImageContainer > li {
+  width: 76px;
+  height: 76px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.itemImageContainer > li:hover{
-	outline: 2px solid var(--button-primary);
+.itemImageContainer > li:hover {
+  outline: 2px solid var(--button-primary);
 }
 
 .itemImageContainer > li:first-child {
-	position: absolute;
-	top: 0;
-	left: 90px;
-	width: 423px;
-	height: auto;
-	flex-grow: 1;
-	flex-shrink: 1;
+  position: absolute;
+  top: 0;
+  left: 90px;
+  width: 423px;
+  height: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
-@media screen and (min-width: 980px){
-	.itemImageContainer {
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
-	}
+@media screen and (min-width: 980px) {
+  .itemImageContainer {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }

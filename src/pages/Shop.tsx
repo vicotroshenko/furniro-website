@@ -1,27 +1,31 @@
-import { useEffect, useMemo } from "react";
-import AdvantagesMain from "../components/Advantages/AdvantagesMain/AdvantagesMain";
-import Loader from "../components/Loader/Loader";
-import NavigationScreen from "../components/NavigationScreen/NavigationScreen";
-import FilterBar from "../components/Shop/FilterBar/FilterBar";
-import ProductsShopBook from "../components/Shop/ProductsShopBook/ProductsShopBook";
-import { useAppDispatch } from "../hooks/useAppDispatch";
-import { useSearchParams } from "react-router-dom";
-import { getAllGoods, getAllTagsCategories } from "../redux/goods/operations";
+import { useEffect, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
+import AdvantagesMain from '../components/Advantages/AdvantagesMain/AdvantagesMain';
+import Loader from '../components/Loader/Loader';
+import NavigationScreen from '../components/NavigationScreen/NavigationScreen';
+import FilterBar from '../components/Shop/FilterBar/FilterBar';
+import ProductsShopBook from '../components/Shop/ProductsShopBook/ProductsShopBook';
+import { useAppDispatch } from '../hooks/useAppDispatch';
+import { getAllGoods, getAllTagsCategories } from '../redux/goods/operations';
 
 const Shop = () => {
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams();
 
-  const { status, price, tags, category, page="1", limit } = useMemo(
-    () => Object.fromEntries([...searchParams]),
-    [searchParams]
-  );
-
+  const {
+    status,
+    price,
+    tags,
+    category,
+    page = '1',
+    limit,
+  } = useMemo(() => Object.fromEntries([...searchParams]), [searchParams]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(getAllTagsCategories({ name: "tags" }));
-    dispatch(getAllTagsCategories({ name: "category" }));
+    dispatch(getAllTagsCategories({ name: 'tags' }));
+    dispatch(getAllTagsCategories({ name: 'category' }));
   }, [dispatch, page]);
 
   useEffect(() => {
@@ -29,15 +33,15 @@ const Shop = () => {
       dispatch(getAllGoods({ page, limit, status, tags, category }));
     }
     if (price) {
-      dispatch(getAllGoods({ page, limit, price: "1", tags, category }));
+      dispatch(getAllGoods({ page, limit, price: '1', tags, category }));
     }
     if (!price && !status) {
-      dispatch(getAllGoods({page, limit, tags, category}));
+      dispatch(getAllGoods({ page, limit, tags, category }));
     }
     if (tags || category) {
       dispatch(getAllGoods({ page, limit, tags, category }));
     }
-  }, [dispatch, status, price, tags, category, page, limit,]);
+  }, [dispatch, status, price, tags, category, page, limit]);
 
   return (
     <>

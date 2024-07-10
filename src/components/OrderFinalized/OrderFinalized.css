@@ -1,76 +1,75 @@
-.orderFinalSection{
-	width: 100%;
-	height: calc(100vh - 100px);
+.orderFinalSection {
+  width: 100%;
+  height: calc(100vh - 100px);
 }
 
 .orderFinalContainer {
-	width: 100%;
-	max-width: 1440px;
-	margin: 0 auto;
-	padding: 22px 10px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 22px 10px;
 }
 
 .orderFinalContainer > h1 {
-	margin-bottom: 22px;
-	text-align: center;
-	font-size: 34px;
-	font-weight: 500;
+  margin-bottom: 22px;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 500;
 }
 
-.orderFinalImageContainer{
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	margin: 16px auto;
+.orderFinalImageContainer {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 16px auto;
 }
 
 .orderFinalImageContainer > svg {
-	width: 100%;
-	height: 100%;
-	fill: var(--button-primary);
+  width: 100%;
+  height: 100%;
+  fill: var(--button-primary);
 }
 
 .orderFinalGratitude {
-	margin-bottom: 5px;
-	text-align: center;
-	font-size: 18px;
-	letter-spacing: .5px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.5px;
 }
 
-.orderFinalInfo{
-	margin-bottom: 15px;
-	font-weight: 300;
-	text-align: center;
+.orderFinalInfo {
+  margin-bottom: 15px;
+  font-weight: 300;
+  text-align: center;
 }
 
-.orderFinalInfo > span{
-	font-weight: 500;
-	color: var(--button-primary);
+.orderFinalInfo > span {
+  font-weight: 500;
+  color: var(--button-primary);
 }
 
 .orderFinalLink {
-	display: block;
-	width: 100%;
-	max-width: 176px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: 1px solid black;
-	padding: 10px;
-	cursor: pointer;
+  display: block;
+  width: 100%;
+  max-width: 176px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
 
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .orderFinalLink:hover {
-	box-shadow: var(--hover-second-btn);
+  box-shadow: var(--hover-second-btn);
 }
 
-
-@media screen and (min-width: 980px){
-	.orderFinalContainer {
-		padding: 22px 100px;
-	}
+@media screen and (min-width: 980px) {
+  .orderFinalContainer {
+    padding: 22px 100px;
+  }
 }

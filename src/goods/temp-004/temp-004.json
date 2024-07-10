@@ -29,11 +29,13 @@
         "date": "04.01.2023"
       }
     ],
-    "rating": [{
-      "user": "Anonymous",
-      "id": "fnvnuf7fduhvufdn",
-      "mark": "4"
-    }],
+    "rating": [
+      {
+        "user": "Anonymous",
+        "id": "fnvnuf7fduhvufdn",
+        "mark": "4"
+      }
+    ],
     "general": [
       {
         "title": "Natural Wood Grain Colour Variation",

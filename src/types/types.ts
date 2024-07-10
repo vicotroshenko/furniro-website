@@ -1,5 +1,5 @@
-import { ICity, ICountry, IState } from "country-state-city";
-import { ReactNode } from "react";
+import { ICity, ICountry, IState } from 'country-state-city';
+import { ReactNode } from 'react';
 
 export interface IDataSlice {
   _id: string;
@@ -25,7 +25,7 @@ export interface IDataSlice {
 export interface ICart
   extends Pick<
     IDataSlice,
-    "_id" | "title" | "price" | "amount" | "pictures" | "discount"
+    '_id' | 'title' | 'price' | 'amount' | 'pictures' | 'discount'
   > {
   buyAmount?: number;
   date?: string;
@@ -36,7 +36,7 @@ export interface IButtonProps {
   width: number;
   height: number;
   text: string;
-  type: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+  type: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
   onClick?: () => any;
   disabled?: boolean;
 }
@@ -61,8 +61,8 @@ export interface IFooterLinksProps {
 }
 
 export interface IAdvantagesItemProps
-  extends Pick<IFooterLinksProps, "title">,
-    Pick<IButtonProps, "text"> {
+  extends Pick<IFooterLinksProps, 'title'>,
+    Pick<IButtonProps, 'text'> {
   icon: string;
 }
 
@@ -79,17 +79,17 @@ export interface IRangeItemProps {
   link: string;
 }
 
-export interface IProductCardProps  {
+export interface IProductCardProps {
   onClickAddToCard?: () => void;
   item: IDataSlice;
 }
 
 export interface IProductCardChildProps extends IProductCardProps {
-  isFavorite: (item: IDataSlice)=>any;
-  isCompare: (item: IDataSlice)=>any;
+  isFavorite: (item: IDataSlice) => any;
+  isCompare: (item: IDataSlice) => any;
   cart: ICart[];
   favorite: IDataSlice[];
-  comparison: IDataSlice[]
+  comparison: IDataSlice[];
 }
 
 export interface IGoodData {
@@ -117,11 +117,11 @@ export interface IItemButtonsPros {
   onCompare?: () => void;
   isCompare?: boolean;
   isAdded?: boolean;
-  getAmount:(amount:number) => void;
+  getAmount: (amount: number) => void;
 }
 
 export interface IItemDescribe
-  extends Pick<IDataSlice, "title" | "description" | "price" | "reviews"> {
+  extends Pick<IDataSlice, 'title' | 'description' | 'price' | 'reviews'> {
   rating?: number;
 }
 
@@ -129,14 +129,14 @@ export interface IItemImageParadeProps {
   pictures: string[];
 }
 
-export interface IItemShortDesc extends Pick<IDataSlice, "tags" | "category"> {}
+export interface IItemShortDesc extends Pick<IDataSlice, 'tags' | 'category'> {}
 
 export interface IItemInnerProps {
   item: IDataSlice;
 }
 
 export interface ICartPageItemProps
-  extends Pick<IDataSlice, "title" | "price"> {
+  extends Pick<IDataSlice, 'title' | 'price'> {
   id: string;
   picture: string;
   buyAmount: number;
@@ -149,10 +149,10 @@ export interface ICartTotals {
 }
 
 export interface IModalCartContainProps
-  extends Pick<ICartPageItemProps, "onClick"> {}
+  extends Pick<ICartPageItemProps, 'onClick'> {}
 
 export interface IHeaderMobileButtonProps
-  extends Pick<ICartPageItemProps, "onClick"> {
+  extends Pick<ICartPageItemProps, 'onClick'> {
   itemsAmount?: number;
   hidden?: boolean;
   onToggleSearch?: () => void;
@@ -167,7 +167,7 @@ export interface IMobileModal {
   onToggleFavorite?: () => void;
 }
 
-export interface ISearchField extends Pick<ICartPageItemProps, "onClick"> {}
+export interface ISearchField extends Pick<ICartPageItemProps, 'onClick'> {}
 
 export interface ISearchShowItemProps {
   title: string;
@@ -175,7 +175,7 @@ export interface ISearchShowItemProps {
   id: string;
 }
 
-export interface IModalFavoriteProps extends Pick<IMobileModal, "onClick"> {}
+export interface IModalFavoriteProps extends Pick<IMobileModal, 'onClick'> {}
 
 export interface ISelectData {
   countries?: ICountry[];
@@ -207,7 +207,7 @@ export interface IReacHookProps {
 }
 
 export interface IModal {
-	visible?: boolean;
-	children: ReactNode;
-	toggle: () => void;
+  visible?: boolean;
+  children: ReactNode;
+  toggle: () => void;
 }

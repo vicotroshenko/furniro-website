@@ -1,12 +1,13 @@
-import { nanoid } from "nanoid";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { ICart } from "../../../types/types";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { deleteCartItem } from "../../../redux/cart/cartSlice";
-import CartLabel from "../CartLabel/CartLabel";
-import CartPageItem from "../CartPageItem/CartPageItem";
-import CartTotals from "../CartTotals/CartTotals";
-import "./CartList.css";
+import { nanoid } from 'nanoid';
+
+import { useAppDispatch } from '../../../hooks/useAppDispatch';
+import { useAppSelector } from '../../../hooks/useAppSelector';
+import { deleteCartItem } from '../../../redux/cart/cartSlice';
+import { ICart } from '../../../types/types';
+import CartLabel from '../CartLabel/CartLabel';
+import CartPageItem from '../CartPageItem/CartPageItem';
+import CartTotals from '../CartTotals/CartTotals';
+import './CartList.css';
 
 const CartList = () => {
   const cart = useAppSelector((state) => state.cart.goods);
@@ -45,7 +46,7 @@ const CartList = () => {
             )}
           </div>
         </div>
-				<CartTotals goods={cart}/>
+        <CartTotals goods={cart} />
       </div>
     </section>
   );

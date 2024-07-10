@@ -1,9 +1,16 @@
-import { useState } from "react";
-import { Rating } from "@mui/material";
-import { IItemDescribe } from "../../../../types/types";
-import "./ItemDescribe.css";
+import { Rating } from '@mui/material';
+import { useState } from 'react';
 
-const ItemDescribe: React.FC<IItemDescribe> = ({ rating = 0, title, description, price, reviews=[] }) => {
+import { IItemDescribe } from '../../../../types/types';
+import './ItemDescribe.css';
+
+const ItemDescribe: React.FC<IItemDescribe> = ({
+  rating = 0,
+  title,
+  description,
+  price,
+  reviews = [],
+}) => {
   const [value, setValue] = useState<number | null>(null);
   return (
     <div className="itemDescribeContaner">
@@ -17,14 +24,17 @@ const ItemDescribe: React.FC<IItemDescribe> = ({ rating = 0, title, description,
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
-          style={{ margin: "0 18px 0 0" }}
+          style={{ margin: '0 18px 0 0' }}
         />
         <div className="divider"></div>
-        <button type="button" name="divider">{reviews.length} Customer Review</button>
+        <button
+          type="button"
+          name="divider"
+        >
+          {reviews.length} Customer Review
+        </button>
       </div>
-      <p className="itemDescribeText">
-        {description}
-      </p>
+      <p className="itemDescribeText">{description}</p>
     </div>
   );
 };

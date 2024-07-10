@@ -1,84 +1,82 @@
 .backdrop {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	z-index: 400;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 400;
 }
 
 .backdrop.show {
-	visibility: visible;
-	opacity: 1;
-	animation: modalShow .25s ease-out;
+  visibility: visible;
+  opacity: 1;
+  animation: modalShow 0.25s ease-out;
 }
 
 .backdrop.hide {
-	visibility: hidden;
-	opacity: 0;
-	animation: modalClose .25s ease-in;
+  visibility: hidden;
+  opacity: 0;
+  animation: modalClose 0.25s ease-in;
 }
 
-.modal-container{
-	position: absolute;
-	top: 0;
-	right: 50%;
-	width: 100%;
-	max-width: 417px;
-	max-height: 580px;
-	overflow-y: auto;
-	background-color: var(--bg-primary);
-	transition: transform .25s linear;
+.modal-container {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 100%;
+  max-width: 417px;
+  max-height: 580px;
+  overflow-y: auto;
+  background-color: var(--bg-primary);
+  transition: transform 0.25s linear;
 }
 
 .backdrop.show .modal-container {
-	transform: translate(50%, 0);
+  transform: translate(50%, 0);
 }
 
 .backdrop.hide .modal-container {
-	transform: translate(50%, -110%);
+  transform: translate(50%, -110%);
 }
-
 
 @media screen and (min-width: 980px) {
-	.modal-container {
-		right: 10%;
-	}
-	.backdrop.show .modal-container {
-		transform: translate(0, 0);
-	}
-	.backdrop.hide .modal-container {
-		transform: translate(0, -110%);
-	}
+  .modal-container {
+    right: 10%;
+  }
+  .backdrop.show .modal-container {
+    transform: translate(0, 0);
+  }
+  .backdrop.hide .modal-container {
+    transform: translate(0, -110%);
+  }
 }
 
-@media (height < 570px){
-	.modal-container{
-		height: 100%;
-		overflow-y: auto;
-	}
+@media (height < 570px) {
+  .modal-container {
+    height: 100%;
+    overflow-y: auto;
+  }
 }
 
 @keyframes modalShow {
-	0% {
-		opacity: 0;
-		visibility: hidden;
-	}
-	100% {
-		opacity: 1;
-		visibility: visible;
-	}
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes modalClose {
-	0% {
-		opacity: 1;
-		visibility: visible;
-
-	}
-	100% {
-		opacity: 0;
-		visibility: hidden;
-	}
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

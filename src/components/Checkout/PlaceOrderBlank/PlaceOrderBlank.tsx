@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { IReacHookProps } from "../../../types/types";
-import "./PlaceOrderBlank.css";
+import { useState } from 'react';
 
-const bank = "bank";
-const cash = "cash";
+import { IReacHookProps } from '../../../types/types';
+import './PlaceOrderBlank.css';
 
+const bank = 'bank';
+const cash = 'cash';
 
 const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
   const [value, setValue] = useState<string | null>(null);
 
   const labelStyles = (element: string, value: string | null): string => {
     if (value === element) {
-      return "orderRadioLable";
+      return 'orderRadioLable';
     } else {
-      return "orderRadioLable orederDisabled";
+      return 'orderRadioLable orederDisabled';
     }
   };
 
@@ -25,14 +25,17 @@ const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
             type="radio"
             id="radio-bank"
             className="orderRadioField"
-            {...register("orderType", {
+            {...register('orderType', {
               required: true,
               onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
                 setValue(e.target.value),
             })}
             value={bank}
           />
-          <label htmlFor="radio-bank" className={labelStyles(bank, value)}>
+          <label
+            htmlFor="radio-bank"
+            className={labelStyles(bank, value)}
+          >
             Direct Bank Transfer
           </label>
           {value === bank && (
@@ -49,14 +52,17 @@ const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
             type="radio"
             id="radio-cash"
             className="orderRadioField"
-            {...register("orderType", {
+            {...register('orderType', {
               required: true,
               onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
                 setValue(e.target.value),
             })}
             value={cash}
           />
-          <label htmlFor="radio-cash" className={labelStyles(cash, value)}>
+          <label
+            htmlFor="radio-cash"
+            className={labelStyles(cash, value)}
+          >
             Cash On Delivery
           </label>
           {value === cash && (
@@ -71,7 +77,10 @@ const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
             <span className="errorForms">*You must choose payment method</span>
           )}
         </p>
-        <button type="submit" className="orederSubmitBtn">
+        <button
+          type="submit"
+          className="orederSubmitBtn"
+        >
           Place order
         </button>
       </div>

@@ -1,16 +1,17 @@
-import { FaRegSadCry } from "react-icons/fa";
-import { FaRegFaceSadTear } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
-import "./NotFoundPage.css";
+import { FaRegSadCry } from 'react-icons/fa';
+import { FaRegFaceSadTear } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
+
+import './NotFoundPage.css';
 
 interface INotFoundPage {
-  status: "not-found" | "error";
+  status: 'not-found' | 'error';
 }
 
 const NotFoundPage: React.FC<INotFoundPage> = ({ status }) => {
   const navigate = useNavigate();
 
-  const notFound = status === "not-found";
+  const notFound = status === 'not-found';
 
   return (
     <section className="notFoundSection">
@@ -20,10 +21,13 @@ const NotFoundPage: React.FC<INotFoundPage> = ({ status }) => {
         </div>
         <h1>{notFound ? 404 : 500}</h1>
         <p className="notFoundNotification">
-          {notFound ? "Page not found!" : "Internal Sever Error"}
+          {notFound ? 'Page not found!' : 'Internal Sever Error'}
         </p>
         {notFound && <p>The Page you are looking for doesn't exist.</p>}
-        <button onClick={() => navigate(-1)} className="orderFinalLink">
+        <button
+          onClick={() => navigate(-1)}
+          className="orderFinalLink"
+        >
           Back
         </button>
       </div>

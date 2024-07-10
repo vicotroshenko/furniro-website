@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
-import { FiPlus, FiMinus } from "react-icons/fi";
-import { IItemButtonsPros } from "../../../../types/types";
-import "./ItemButtons.css";
+import { useEffect, useState } from 'react';
+import { FiMinus, FiPlus } from 'react-icons/fi';
 
-const minusButtonName = "substruct";
-const plusButtonName = "add";
+import { IItemButtonsPros } from '../../../../types/types';
+import './ItemButtons.css';
+
+const minusButtonName = 'substruct';
+const plusButtonName = 'add';
 
 const ItemButtons: React.FC<IItemButtonsPros> = ({
   amount,
@@ -12,16 +13,13 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
   onCompare,
   isCompare,
   isAdded,
-  getAmount
+  getAmount,
 }) => {
-
   const [amountItems, setAmountItems] = useState<number>(1);
 
   useEffect(() => {
     getAmount(amountItems);
-  }, [getAmount, amountItems])
-  
-
+  }, [getAmount, amountItems]);
 
   const getItemAmount = (event: React.MouseEvent<HTMLButtonElement>) => {
     const button: HTMLButtonElement = event.currentTarget;
@@ -45,16 +43,22 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
     }
   };
 
-  
-
   return (
     <div className="cardManageBtuContainer">
       <div className="itemAmountButton">
-        <button type="button" name={minusButtonName} onClick={getItemAmount}>
+        <button
+          type="button"
+          name={minusButtonName}
+          onClick={getItemAmount}
+        >
           <FiMinus />
         </button>
         <span>{amountItems}</span>
-        <button type="button" name={plusButtonName} onClick={getItemAmount}>
+        <button
+          type="button"
+          name={plusButtonName}
+          onClick={getItemAmount}
+        >
           <FiPlus />
         </button>
       </div>
@@ -64,7 +68,7 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
         name="to card"
         onClick={onAdd}
       >
-        {isAdded ? "delete from cart" : "add to cart"}
+        {isAdded ? 'delete from cart' : 'add to cart'}
       </button>
       <button
         type="button"
@@ -72,8 +76,8 @@ const ItemButtons: React.FC<IItemButtonsPros> = ({
         name="compare"
         onClick={onCompare}
       >
-        {isCompare ? <FiMinus/> : <FiPlus />}
-        {isCompare ? "Delete compare" : "compare"}
+        {isCompare ? <FiMinus /> : <FiPlus />}
+        {isCompare ? 'Delete compare' : 'compare'}
       </button>
     </div>
   );

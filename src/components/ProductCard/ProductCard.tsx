@@ -1,31 +1,32 @@
-import { IoMdShare } from "react-icons/io";
-import { MdOutlineCompareArrows } from "react-icons/md";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { IDataSlice } from "../../types/types";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { IoMdShare } from 'react-icons/io';
+import { MdOutlineCompareArrows } from 'react-icons/md';
+
+import { getPriceOfItem } from '../../helpers/getPriceOfItem';
+import { isInCollection } from '../../helpers/isInCollection';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useAppSelector } from '../../hooks/useAppSelector';
 import {
   addToComparison,
   addToFavorite,
   deletFromComparison,
   deletFromFavotite,
-} from "../../redux/goods/goodsSlice";
-import { useAppSelector } from "../../hooks/useAppSelector";
-import { isInCollection } from "../../helpers/isInCollection";
-import { getPriceOfItem } from "../../helpers/getPriceOfItem";
-import DiscountLabel from "../DiscountLabel/DiscountLabel";
-import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
-import "./ProductCard.css";
-import "./ProductCardLine.css";
+} from '../../redux/goods/goodsSlice';
+import { IDataSlice } from '../../types/types';
+import ButtonSecondary from '../ButtonSecondary/ButtonSecondary';
+import DiscountLabel from '../DiscountLabel/DiscountLabel';
+import './ProductCard.css';
+import './ProductCardLine.css';
 
 const isDiscount = (price: string, discount: string): string => {
-  if (discount === "0" || discount === "") {
-    return "";
+  if (discount === '0' || discount === '') {
+    return '';
   }
   return price;
 };
 
 const isNewItem = (status: string, discount: string): string => {
-  if (discount === "0" || discount === "") {
+  if (discount === '0' || discount === '') {
     return status;
   }
   return discount;
@@ -66,23 +67,30 @@ const ProductCard: React.FC<IProductCardProps> = ({
 
   const checkDiscount = isNewItem(status, discount);
 
-  if (view === "grid" || !view) {
+  if (view === 'grid' || !view) {
     return (
       <div className="prodCardContainer">
-        {checkDiscount !== "0" && checkDiscount !== "" && (
+        {checkDiscount !== '0' && checkDiscount !== '' && (
           <div className="prodCardDiscount">
             <DiscountLabel discount={checkDiscount} />
           </div>
         )}
         <div className="prodCardImage">
-          <img src={pictures[0]} alt={title} className="image" loading="lazy" />
+          <img
+            src={pictures[0]}
+            alt={title}
+            className="image"
+            loading="lazy"
+          />
         </div>
         <div className="prodCardDesc">
           <h3>{title}</h3>
           <p>{description}</p>
           <div className="prodCardPrice">
             <p>{getPriceOfItem(price, discount)}</p>
-          {isDiscount(price, discount) && <p>{isDiscount(price, discount)}</p>}
+            {isDiscount(price, discount) && (
+              <p>{isDiscount(price, discount)}</p>
+            )}
           </div>
         </div>
         <div className="prodCardHoverItem">
@@ -90,7 +98,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
             width={202}
             type="button"
             height={48}
-            text={isInCollection(_id, cart) ? "Already in card" : "Add to cart"}
+            text={isInCollection(_id, cart) ? 'Already in card' : 'Add to cart'}
             onClick={onClickAddToCard}
             disabled={isInCollection(_id, cart)}
           />
@@ -105,7 +113,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
                 e.preventDefault();
                 isCompare(item);
               }}
-              className={isInCollection(_id, comparison) ? "checked" : ""}
+              className={isInCollection(_id, comparison) ? 'checked' : ''}
             >
               <MdOutlineCompareArrows className="prodCardIconBtn" />
               Compare
@@ -116,7 +124,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
                 e.preventDefault();
                 isFavorite(item);
               }}
-              className={isInCollection(_id, favorite) ? "checked" : ""}
+              className={isInCollection(_id, favorite) ? 'checked' : ''}
             >
               {isInCollection(_id, favorite) ? (
                 <FaHeart className="prodCardIconBtn" />
@@ -132,26 +140,33 @@ const ProductCard: React.FC<IProductCardProps> = ({
   } else {
     return (
       <div className="prodCardContainerLine">
-        {checkDiscount !== "0" && checkDiscount !== "" && (
+        {checkDiscount !== '0' && checkDiscount !== '' && (
           <div className="prodCardDiscount">
             <DiscountLabel discount={checkDiscount} />
           </div>
         )}
         <div className="prodCardImageLine">
-          <img src={pictures[0]} alt={title} className="image" loading="lazy" />
+          <img
+            src={pictures[0]}
+            alt={title}
+            className="image"
+            loading="lazy"
+          />
         </div>
         <div className="prodCardDescLine">
           <h3>{title}</h3>
           <p>{description}</p>
           <div className="prodCardPriceLine">
             <p>{getPriceOfItem(price, discount)}</p>
-            {isDiscount(price, discount) && <p>{isDiscount(price, discount)}</p>}
+            {isDiscount(price, discount) && (
+              <p>{isDiscount(price, discount)}</p>
+            )}
           </div>
           <ButtonSecondary
             width={202}
             type="button"
             height={48}
-            text={isInCollection(_id, cart) ? "Already in card" : "Add to cart"}
+            text={isInCollection(_id, cart) ? 'Already in card' : 'Add to cart'}
             onClick={onClickAddToCard}
             disabled={isInCollection(_id, cart)}
           />
@@ -166,7 +181,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
                 e.preventDefault();
                 isCompare(item);
               }}
-              className={isInCollection(_id, comparison) ? "checked" : ""}
+              className={isInCollection(_id, comparison) ? 'checked' : ''}
             >
               <MdOutlineCompareArrows className="prodCardIconBtn" />
               Compare
@@ -177,7 +192,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
                 e.preventDefault();
                 isFavorite(item);
               }}
-              className={isInCollection(_id, favorite) ? "checked" : ""}
+              className={isInCollection(_id, favorite) ? 'checked' : ''}
             >
               {isInCollection(_id, favorite) ? (
                 <FaHeart className="prodCardIconBtn" />

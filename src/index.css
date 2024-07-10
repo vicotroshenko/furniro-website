@@ -1,27 +1,29 @@
 :root {
   --text-dark-1: #000000;
   --text-dark-2: #333333;
-  --text-dark-3: #3A3A3A;
+  --text-dark-3: #3a3a3a;
   --text-grey-1: #666666;
   --text-grey-2: #616161;
   --text-grey-3: #898989;
-  --text-grey-4: #9F9F9F;
-  --text-grey-5: #B0B0B0;
-  --text-grey-6: #D8D8D8;
-  --text-grey-7: #F4F5F7;
-  --text-white: #FFFFFF;
-  --text-catching:#B88E2F;
+  --text-grey-4: #9f9f9f;
+  --text-grey-5: #b0b0b0;
+  --text-grey-6: #d8d8d8;
+  --text-grey-7: #f4f5f7;
+  --text-white: #ffffff;
+  --text-catching: #b88e2f;
   --button-primary: #b88e2f;
-  --discount-item: #E97171;
-  --new-item: #2EC1AC;
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F9F1E7;
+  --discount-item: #e97171;
+  --new-item: #2ec1ac;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f1e7;
   --bg-third: #030303;
-  --bg-hero-hint: #FFF3E3;
-  --bg-card: #F4F5F7;
+  --bg-hero-hint: #fff3e3;
+  --bg-card: #f4f5f7;
 
   --hover-text-shodow: rgba(102, 102, 102, 0.7) 4px 4px 4px;
-  --hover-second-btn: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  --hover-second-btn: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
@@ -32,17 +34,18 @@ body {
   margin-top: 100px;
   padding: 0;
   font-size: 16px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.5;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-
 
 button {
   margin: 0;
@@ -51,7 +54,6 @@ button {
   border: none;
 }
 
-
 .image {
   display: block;
   width: 100%;
@@ -59,27 +61,30 @@ button {
 }
 
 .headerIconButtons {
-	width: 30px;
-	height: 30px;
-	padding: 3px;
-	border-radius: 50%;
-	cursor:pointer;
-	transition: all .25s linear;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s linear;
 }
 
-
-.headerIconButtons:active{
-	background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100%);
+.headerIconButtons:active {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
 }
-.headerIconButtons:hover{
-	filter: drop-shadow(3px 3px 2px var(--text-dark-2));
+.headerIconButtons:hover {
+  filter: drop-shadow(3px 3px 2px var(--text-dark-2));
 }
 
 .mc-c-flex {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
 }
 
 .errorForms {
@@ -93,41 +98,39 @@ button {
   font-weight: 400;
   color: red;
   text-align: left;
-  animation: errorShowUp .25s linear;
+  animation: errorShowUp 0.25s linear;
 }
 
-
 ::-webkit-scrollbar {
-  width: 10px;            
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);        
+  background: rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(184, 142, 47, 0.9);    
-  border-radius: 20px;   
-
+  background-color: rgba(184, 142, 47, 0.9);
+  border-radius: 20px;
 }
 
 @keyframes formShowUp {
-	0% {
-		opacity: 0.5;
-		transform: translateY(30%);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
+  0% {
+    opacity: 0.5;
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes errorShowUp {
-  0%{
+  0% {
     opacity: 0;
     transform: translateY(-100%);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0);
   }

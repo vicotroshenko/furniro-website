@@ -1,84 +1,83 @@
-.mc-c-container{
-	width: 100%;
-	padding: 28px 22px 28px 27px;
-	height: auto;
-	background-color: var(--bg-primary);
+.mc-c-container {
+  width: 100%;
+  padding: 28px 22px 28px 27px;
+  height: auto;
+  background-color: var(--bg-primary);
 }
 
 .mc-c-top {
-	padding-bottom: 26px;
-	border-bottom: 1px solid var(--text-grey-4);
-	font-size: 24px;
-	text-transform: capitalize;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--text-grey-4);
+  font-size: 24px;
+  text-transform: capitalize;
 }
 
 .mc-c-top > button {
-	width: 19px;
-	height: 19px;
-	border-radius: 50%;
-	cursor: pointer;
-	transition: all .25s ease;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-
 .mc-c-top > button:hover {
-	box-shadow: var(--hover-second-btn);
+  box-shadow: var(--hover-second-btn);
 }
 
 .mc-c-list {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	height: 300px;
-	overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 300px;
+  overflow-y: auto;
 }
 
 .mc-card-item {
-	gap: 32px;
-	width: 100%;
+  gap: 32px;
+  width: 100%;
 }
 
-.mc-card-item:first-child{
-	padding-top: 42px;
+.mc-card-item:first-child {
+  padding-top: 42px;
 }
 
-.mc-c-imageContainer{
-	width: 105px;
-	height: 105px;
-	border-radius: 10px;
-	overflow: hidden;
+.mc-c-imageContainer {
+  width: 105px;
+  height: 105px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .mc-c-itemInfo > p {
-	text-overflow: ellipsis;
-  overflow: hidden; 
-	white-space: nowrap;
-	max-width: 140px;
-	font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 140px;
+  font-weight: 500;
 }
 
 .mc-c-itemInfo > div {
-	margin-top: 8px;
-	max-width: 130px;
-	width: 100%;
+  margin-top: 8px;
+  max-width: 130px;
+  width: 100%;
 }
 
-.mc-card-item > button{
-	width: 20px;
-	height: 20px;
-	cursor: pointer;
-	margin-right: 10px;
+.mc-card-item > button {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
-.mc-c-sum{
-	padding: 23px 0 0 0;
+.mc-c-sum {
+  padding: 23px 0 0 0;
 }
 
-.mc-c-sum > p:first-child{
-	font-weight: 500;
+.mc-c-sum > p:first-child {
+  font-weight: 500;
 }
 
-.mc-c-price, .mc-c-sum > p:last-child{
-	color: var(--button-primary);
+.mc-c-price,
+.mc-c-sum > p:last-child {
+  color: var(--button-primary);
 }
-

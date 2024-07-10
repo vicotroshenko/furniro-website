@@ -1,17 +1,17 @@
 .headerLogo {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .headerLogo > div {
-	width: 50px;
-	height: 32px;
+  width: 50px;
+  height: 32px;
 }
 
 .headerLogo > p {
-	font-size: 34px;
-	font-weight: 700;
-	line-height: 1.22;
-	font-family: "Montserrat", sans-serif;
-	text-transform: capitalize;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.22;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: capitalize;
 }

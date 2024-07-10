@@ -1,32 +1,32 @@
 .browseSection {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 .browseSectionContainer {
-	width: 100%;
-	max-width: 1440px;
-	padding: 56px 100px;
-	margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  padding: 56px 100px;
+  margin: 0 auto;
 }
 
 .browseSectionContainer > h2 {
-	font-size: 32px;
-	font-weight: 700;
-	color: var(--text-dark-2);
-	text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark-2);
+  text-align: center;
 }
 
 .browseSectionContainer > p {
-	margin-bottom: 62px;
-	font-size: 20px;
-	color: var(--text-grey-2);
-	text-align: center;
+  margin-bottom: 62px;
+  font-size: 20px;
+  color: var(--text-grey-2);
+  text-align: center;
 }
 
-.browseList{
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 20px;
-	margin: 0 auto;
+.browseList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 auto;
 }

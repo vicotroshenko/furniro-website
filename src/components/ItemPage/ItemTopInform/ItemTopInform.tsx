@@ -1,30 +1,28 @@
-import { ICart, IItemInnerProps } from "../../../types/types";
-import { useAppDispatch } from "../../../hooks/useAppDispatch";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import { isInCollection } from "../../../helpers/isInCollection";
-import ItemImageParade from "./ItemImageParade/ItemImageParade";
-import ItemDescribe from "./ItemDescribe/ItemDescribe";
-import ItemSizeButtons from "./ItemSizeButtons/ItemSizeButtons";
-import ItemColorBar from "./ItemColorBar/ItemColorBar";
-import ItemButtons from "./ItemButtons/ItemButtons";
-import ItemShortDesc from "./ItemShortDesc/ItemShortDesc";
-import "./ItemTopInform.css";
+import { useRef } from 'react';
 
+import { isInCollection } from '../../../helpers/isInCollection';
+import { useAppDispatch } from '../../../hooks/useAppDispatch';
+import { useAppSelector } from '../../../hooks/useAppSelector';
+import { addToCart, deleteCartItem } from '../../../redux/cart/cartSlice';
 import {
   addToComparison,
   deletFromComparison,
-} from "../../../redux/goods/goodsSlice";
-import { addToCart, deleteCartItem } from "../../../redux/cart/cartSlice";
-import { useRef } from "react";
+} from '../../../redux/goods/goodsSlice';
+import { ICart, IItemInnerProps } from '../../../types/types';
+import ItemButtons from './ItemButtons/ItemButtons';
+import ItemColorBar from './ItemColorBar/ItemColorBar';
+import ItemDescribe from './ItemDescribe/ItemDescribe';
+import ItemImageParade from './ItemImageParade/ItemImageParade';
+import ItemShortDesc from './ItemShortDesc/ItemShortDesc';
+import ItemSizeButtons from './ItemSizeButtons/ItemSizeButtons';
+import './ItemTopInform.css';
 
-
-const ItemTopInform:React.FC<IItemInnerProps> = ({ item }) => {
+const ItemTopInform: React.FC<IItemInnerProps> = ({ item }) => {
   const amountRef = useRef<number>();
   const dispatch = useAppDispatch();
-  
+
   const { comparison } = useAppSelector((state) => state.goods);
   const cart = useAppSelector((state) => state.cart.goods);
-
 
   const addToCompareItem = (item: ICart) => {
     if (isInCollection(item._id, comparison)) {
@@ -77,8 +75,8 @@ const ItemTopInform:React.FC<IItemInnerProps> = ({ item }) => {
           price={item.price}
           reviews={item.reviews}
         />
-        <ItemSizeButtons size={["l", "xl", "xxl"]} />
-        <ItemColorBar colors={["red", "black", "violet"]} />
+        <ItemSizeButtons size={['l', 'xl', 'xxl']} />
+        <ItemColorBar colors={['red', 'black', 'violet']} />
         <ItemButtons
           amount={item.amount || 0}
           onCompare={() => addToCompareItem(item)}
@@ -87,7 +85,10 @@ const ItemTopInform:React.FC<IItemInnerProps> = ({ item }) => {
           isAdded={isInCollection(item._id, cart)}
           getAmount={getAmountFromUser}
         />
-        <ItemShortDesc category={item.category} tags={item.tags} />
+        <ItemShortDesc
+          category={item.category}
+          tags={item.tags}
+        />
       </div>
     </div>
   );

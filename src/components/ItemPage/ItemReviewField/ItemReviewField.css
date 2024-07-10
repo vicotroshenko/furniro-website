@@ -1,54 +1,54 @@
 .itemReviewLabel,
 .itemReviewLabelArea {
-	display: block;
-	width: 100%;
-	height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .itemReviewLabel {
-	height: 72px;
+  height: 72px;
 }
 
 .itemReviewField,
 .itemReviewFieldArea {
-	width: 100%;
-	padding: 10px;
-	font-size: 16px;
-	line-height: 1.5;
-	font-family: "Poppins", sans-serif;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
 }
 
 .itemReviewField {
-	align-self: flex-end;
-	height: 48px;
-	border-top-left-radius: 15px;
-	border-bottom-left-radius: 15px;
-	transition: box-shadow .3s ease;
+  align-self: flex-end;
+  height: 48px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  transition: box-shadow 0.3s ease;
 }
 
 .itemReviewFieldArea {
-	resize: none;
-	min-height: 78px;
-	border-radius: 15px;
-	transition: box-shadow .3s ease;
+  resize: none;
+  min-height: 78px;
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
 }
 
 .revieAutorContainer {
-	display: flex;
-	margin-bottom: 12px;
+  display: flex;
+  margin-bottom: 12px;
 }
 
 .itemReviewButton {
-	display: block;
-	align-self: flex-end;
-	width: 72px;
-	height: 48px;
-	border: 2px solid var(--text-dark-1);
-	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
-	margin-left: 5px;
-	cursor: pointer;
-	transition: box-shadow .3s ease;
+  display: block;
+  align-self: flex-end;
+  width: 72px;
+  height: 48px;
+  border: 2px solid var(--text-dark-1);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 
 .itemReviewField:hover,
@@ -57,20 +57,20 @@
 .itemReviewFieldArea:focus,
 .itemReviewButton:hover,
 .itemReviewButton:focus {
-	box-shadow: var(--hover-second-btn);
+  box-shadow: var(--hover-second-btn);
 }
 
 .itemReviewForm {
-	animation: formShowUp .4s ease;
+  animation: formShowUp 0.4s ease;
 }
 
 @keyframes formShowUp {
-	0% {
-		opacity: 0.5;
-		transform: translateY(30%);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
+  0% {
+    opacity: 0.5;
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

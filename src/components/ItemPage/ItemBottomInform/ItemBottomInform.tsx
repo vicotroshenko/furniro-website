@@ -1,12 +1,13 @@
-import { nanoid } from "nanoid";
-import { useState } from "react";
-import { IGoodData, IItemInnerProps, IReview } from "../../../types/types";
-import ItemReviewField from "../ItemReviewField/ItemReviewField";
-import "./ItemBottomInform.css";
+import { nanoid } from 'nanoid';
+import { useState } from 'react';
+
+import { IGoodData, IItemInnerProps, IReview } from '../../../types/types';
+import ItemReviewField from '../ItemReviewField/ItemReviewField';
+import './ItemBottomInform.css';
 
 const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
-  const [infoType, setInfoType] = useState<string>("description");
-  const [reviewAction, setReviewAction] = useState<string>("read");
+  const [infoType, setInfoType] = useState<string>('description');
+  const [reviewAction, setReviewAction] = useState<string>('read');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInfoType(event.target.value);
@@ -27,7 +28,7 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
             value="description"
             name="item-info"
             className="ib-radio-field"
-            checked={infoType === "description"}
+            checked={infoType === 'description'}
             onChange={handleInputChange}
           />
           <label htmlFor="desc">description</label>
@@ -38,7 +39,7 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
             value="add-info"
             name="item-info"
             className="ib-radio-field"
-            checked={infoType === "add-info"}
+            checked={infoType === 'add-info'}
             onChange={handleInputChange}
           />
           <label htmlFor="add-info">Additional Information</label>
@@ -49,19 +50,19 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
             value="reviews"
             name="item-info"
             className="ib-radio-field"
-            checked={infoType === "reviews"}
+            checked={infoType === 'reviews'}
             onChange={handleInputChange}
           />
           <label htmlFor="reviews">Reviews {[item.reviews?.length || 0]}</label>
         </div>
         <div className="ib-contain-container">
-          {infoType === "description" && (
+          {infoType === 'description' && (
             <div>
               <p className="ib-text-desc">{item.description}</p>
             </div>
           )}
 
-          {infoType === "add-info" && (
+          {infoType === 'add-info' && (
             <div className="ib-add-info-container">
               <ul className="ib-add-info-list">
                 <li className="ib-add-info-title">general</li>
@@ -96,7 +97,7 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
             </div>
           )}
 
-          {infoType === "reviews" && (
+          {infoType === 'reviews' && (
             <ul className="ib-review-list">
               <li className="ib-createdRewieBtns">
                 <input
@@ -104,7 +105,7 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
                   name="read"
                   id="ib-read"
                   onChange={handleReviewAction}
-                  checked={reviewAction === "read"}
+                  checked={reviewAction === 'read'}
                 />
                 <label htmlFor="ib-read">All reviews</label>
                 <input
@@ -112,13 +113,16 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
                   name="create"
                   id="ib-create"
                   onChange={handleReviewAction}
-                  checked={reviewAction === "create"}
+                  checked={reviewAction === 'create'}
                 />
                 <label htmlFor="ib-create">Add review</label>
               </li>
-              {reviewAction === "read" &&
+              {reviewAction === 'read' &&
                 item.reviews?.map((el: IReview) => (
-                  <li className="ib-review-item" key={nanoid()}>
+                  <li
+                    className="ib-review-item"
+                    key={nanoid()}
+                  >
                     <div>
                       <p>{el.name}</p>
                       <p>{el.date}</p>
@@ -128,9 +132,9 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
                 ))}
             </ul>
           )}
-          {reviewAction === "create" && infoType === "reviews" && (
+          {reviewAction === 'create' && infoType === 'reviews' && (
             <div>
-              <ItemReviewField id={item._id}/>
+              <ItemReviewField id={item._id} />
             </div>
           )}
         </div>

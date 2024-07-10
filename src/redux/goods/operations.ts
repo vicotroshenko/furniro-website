@@ -1,7 +1,7 @@
-import axios from "axios";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-axios.defaults.baseURL = "https://furniro-website-backend.onrender.com/api/";
+axios.defaults.baseURL = 'https://furniro-website-backend.onrender.com/api/';
 
 interface ISort {
   page?: string;
@@ -13,15 +13,15 @@ interface ISort {
 }
 
 export const getAllGoods = createAsyncThunk(
-  "goods/getAll",
+  'goods/getAll',
   async (
     {
-      page = "1",
-      limit = "9",
-      tags = "",
-      status = "",
-      category = "",
-      price = "",
+      page = '1',
+      limit = '9',
+      tags = '',
+      status = '',
+      category = '',
+      price = '',
     }: ISort,
     thunkAPI
   ) => {
@@ -37,7 +37,7 @@ export const getAllGoods = createAsyncThunk(
 );
 
 export const getOneById = createAsyncThunk(
-  "goods/getById",
+  'goods/getById',
   async ({ id }: { id: string }, thunkAPI) => {
     try {
       const response = await axios.get(`/furnitures/${id}`);
@@ -48,14 +48,13 @@ export const getOneById = createAsyncThunk(
   }
 );
 
-
 export const getAllTagsCategories = createAsyncThunk(
-  "goods/getTagsCategories",
+  'goods/getTagsCategories',
   async ({ name }: { name: string }, thunkAPI) => {
     try {
       const response = await axios.get(`/furnitures/info/${name}`);
 
-      return {name: name, data: response.data};
+      return { name: name, data: response.data };
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.response.status);
     }
@@ -71,8 +70,8 @@ interface IReview {
 }
 
 export const addReview = createAsyncThunk(
-  "goods/addReviw",
-  async ({id, data}:{id:string, data:IReview}, thunkAPI) => {
+  'goods/addReviw',
+  async ({ id, data }: { id: string; data: IReview }, thunkAPI) => {
     try {
       const response = await axios.post(`/furnitures/${id}/review`, data);
       return response.data;

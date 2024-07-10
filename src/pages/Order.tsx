@@ -1,18 +1,17 @@
-import { useEffect } from "react";
-import OrderFinalized from "../components/OrderFinalized/OrderFinalized"
+import { useEffect } from 'react';
 
+import OrderFinalized from '../components/OrderFinalized/OrderFinalized';
 
 const Order = () => {
-
-	useEffect(() => {
-    window.scrollTo(0, 0)
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
-	return (
-		<>
-			<OrderFinalized/>
-		</>
-	)
-}
+  return (
+    <>
+      <OrderFinalized />
+    </>
+  );
+};
 
-export default Order
+export default Order;

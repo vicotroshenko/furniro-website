@@ -1,5 +1,5 @@
-import { IButtonProps } from "../../types/types";
-import "./ButtonPrimary.css";
+import { IButtonProps } from '../../types/types';
+import './ButtonPrimary.css';
 
 const ButtonPrimary: React.FC<IButtonProps> = ({
   width,
@@ -8,7 +8,6 @@ const ButtonPrimary: React.FC<IButtonProps> = ({
   type,
   onClick,
 }) => {
-
   return (
     <button
       type={type}

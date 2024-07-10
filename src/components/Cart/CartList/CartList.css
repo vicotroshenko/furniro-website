@@ -1,30 +1,29 @@
 .cartListSection {
-	width: 100%;
+  width: 100%;
 }
 
 .cartListContainer {
-	flex-wrap: wrap-reverse;
-	gap: 30px;
-	width: 100%;
-	max-width: 1440px;
-	margin: 0 auto;
-	padding: 72px 10px 63px 10px;
+  flex-wrap: wrap-reverse;
+  gap: 30px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 72px 10px 63px 10px;
 }
 
 .cartListContainer > div:first-child {
-	width: 100%;
-	max-width: 817px;
+  width: 100%;
+  max-width: 817px;
 }
 
-@media screen and (min-width: 980px){
-	.cartListContainer {
-		padding: 72px 100px 63px 100px;
-	}
+@media screen and (min-width: 980px) {
+  .cartListContainer {
+    padding: 72px 100px 63px 100px;
+  }
 }
 
-
-.cartList{
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

@@ -1,21 +1,21 @@
-.productsList{
-	width: 100%;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 285px);
-	gap: 32px;
-	margin: 0 auto;
-	justify-content: center;
-	align-items: center;
-	list-style-type: none;
+.productsList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 285px);
+  gap: 32px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
 }
 
 .productsListLine {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 32px;
-	margin: 0 auto;
-	justify-content: flex-start;
-	align-items: center;
-	list-style-type: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: center;
+  list-style-type: none;
 }

@@ -1,36 +1,33 @@
-.itemShortInfoList{
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	padding-top: 41px;
-	border-top: 1px solid var(--text-grey-4);
-	color: var(--text-grey-4);
-	text-transform: capitalize;
+.itemShortInfoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 41px;
+  border-top: 1px solid var(--text-grey-4);
+  color: var(--text-grey-4);
+  text-transform: capitalize;
 }
 
 .itemShortInfoList > li {
-	display: flex;
-	justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.itemShortInfoList > li > p:first-child{
-	flex-basis: 91px;
+.itemShortInfoList > li > p:first-child {
+  flex-basis: 91px;
 }
 
-.itemShortInfoList > li > p:nth-child(2){
-	margin-right: 12px;
+.itemShortInfoList > li > p:nth-child(2) {
+  margin-right: 12px;
 }
 
 .itemShortInfoList a {
-	display: block;
-	width: 20px;
-	height: 20px;
+  display: block;
+  width: 20px;
+  height: 20px;
 }
 
-.itemShortNetworks{
-	display: flex;
-	gap: 25px;
+.itemShortNetworks {
+  display: flex;
+  gap: 25px;
 }
-
-
-

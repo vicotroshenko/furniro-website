@@ -1,19 +1,20 @@
-import { useMemo, useState } from "react";
-import { nanoid } from "nanoid";
-import { IoMdClose } from "react-icons/io";
-import { IDataSlice, ISearchField } from "../../../types/types";
-import { useAppSelector } from "../../../hooks/useAppSelector";
-import SearchShowItem from "../SearchShowItem/SearchShowItem";
-import "./SearchField.css";
+import { nanoid } from 'nanoid';
+import { useMemo, useState } from 'react';
+import { IoMdClose } from 'react-icons/io';
+
+import { useAppSelector } from '../../../hooks/useAppSelector';
+import { IDataSlice, ISearchField } from '../../../types/types';
+import SearchShowItem from '../SearchShowItem/SearchShowItem';
+import './SearchField.css';
 
 const getSearchedData = (items: IDataSlice[], value: string) => {
   return items.filter((item) =>
-    item.title.toLowerCase().split(" ").includes(value)
+    item.title.toLowerCase().split(' ').includes(value)
   );
 };
 
 const SearchField: React.FC<ISearchField> = ({ onClick }) => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>('');
 
   const goods = useAppSelector((state) => state.goods.allGoods);
 
@@ -37,7 +38,7 @@ const SearchField: React.FC<ISearchField> = ({ onClick }) => {
         className="headerIconButtons searchCloseBtn"
         onClick={onClick}
       >
-        <IoMdClose style={{ width: "100%", height: "100%" }} />
+        <IoMdClose style={{ width: '100%', height: '100%' }} />
       </button>
       {searchedData.length !== 0 && (
         <ul className="searchedResult">

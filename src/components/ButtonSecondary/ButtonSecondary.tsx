@@ -1,13 +1,14 @@
-import React from "react";
-import { IButtonProps } from "../../types/types";
-import "./ButtonSecondary.css";
+import React from 'react';
+
+import { IButtonProps } from '../../types/types';
+import './ButtonSecondary.css';
 
 const ButtonSecondary: React.FC<IButtonProps> = ({
   width,
   height,
   text,
   onClick,
-  disabled
+  disabled,
 }) => {
   return (
     <button
@@ -15,9 +16,9 @@ const ButtonSecondary: React.FC<IButtonProps> = ({
       className="buttonSecondary"
       style={{ maxWidth: width, height }}
       onClick={(e) => {
-        e.preventDefault()
-        if(onClick){
-          return onClick()
+        e.preventDefault();
+        if (onClick) {
+          return onClick();
         }
       }}
       disabled={disabled}

@@ -1,40 +1,40 @@
-.notFoundSection{
-	width: 100%;
-	height: calc(100vh - 100px);
+.notFoundSection {
+  width: 100%;
+  height: calc(100vh - 100px);
 }
 
 .notFoundContainer {
-	width: 100%;
-	max-width: 1440px;
-	margin: 0 auto;
-	padding: 10px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .notFoundImageContainer {
-	width: 200px;
-	height: 200px;
-	margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
 }
 
 .notFoundImageContainer > svg {
-	width: 100%;
-	height: 100%;
-	fill: var(--button-primary);
+  width: 100%;
+  height: 100%;
+  fill: var(--button-primary);
 }
 
 .notFoundContainer > h1 {
-	font-size: 88px;
-	color: var(--button-primary);
-	text-align: center;
+  font-size: 88px;
+  color: var(--button-primary);
+  text-align: center;
 }
 
 .notFoundContainer > p {
-	text-align: center;
-	width: 100%;
-	margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .notFoundNotification {
-	font-size: 18px;
-	font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
 }

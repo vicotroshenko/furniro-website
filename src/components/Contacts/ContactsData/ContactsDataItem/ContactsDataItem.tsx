@@ -1,5 +1,6 @@
-import { ReactNode } from "react";
-import "./ContactsDataItem.css";
+import { ReactNode } from 'react';
+
+import './ContactsDataItem.css';
 
 interface IContactsDataItemProps {
   children: ReactNode;

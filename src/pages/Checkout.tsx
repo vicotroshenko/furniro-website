@@ -1,19 +1,17 @@
-import { useEffect } from "react"
-import CheckoutMain from "../components/Checkout/CheckoutMain"
+import { useEffect } from 'react';
 
-
+import CheckoutMain from '../components/Checkout/CheckoutMain';
 
 const Checkout = () => {
-
-	useEffect(() => {
-    window.scrollTo(0, 0)
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
-	return (
-		<>
-			<CheckoutMain/>
-		</>
-	)
-}
+  return (
+    <>
+      <CheckoutMain />
+    </>
+  );
+};
 
-export default Checkout
+export default Checkout;

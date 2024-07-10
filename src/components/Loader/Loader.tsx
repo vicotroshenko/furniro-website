@@ -1,10 +1,10 @@
-import { useAppSelector } from "../../hooks/useAppSelector";
-import "./Loader.css";
+import { useAppSelector } from '../../hooks/useAppSelector';
+import './Loader.css';
 
 const Loader = () => {
-  const { status } = useAppSelector(state => state.goods);
+  const { status } = useAppSelector((state) => state.goods);
 
-  if(status === "loading"){
+  if (status === 'loading') {
     return (
       <div className="spinner-wrapper">
         <div className="spinner">
@@ -18,7 +18,7 @@ const Loader = () => {
       </div>
     );
   } else {
-    return (<></>);
+    return <></>;
   }
 };
 

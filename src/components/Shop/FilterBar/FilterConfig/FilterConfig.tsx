@@ -1,21 +1,21 @@
-import { useSearchParams } from "react-router-dom";
-import { nanoid } from "nanoid";
-import { useEffect, useMemo, useState } from "react";
-import { useAppSelector } from "../../../../hooks/useAppSelector";
-import "./FilterConfig.css";
+import { nanoid } from 'nanoid';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
+import { useAppSelector } from '../../../../hooks/useAppSelector';
+import './FilterConfig.css';
 
-const FilterConfig: React.FC<{visible: boolean}> = ({ visible }) => {
+const FilterConfig: React.FC<{ visible: boolean }> = ({ visible }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const allParams = useMemo(
     () => Object.fromEntries([...searchParams]),
     [searchParams]
   );
   const [categoriesCheck, setCategoriesCheck] = useState<string[]>(
-    allParams.category ? allParams.category.split(",") : []
+    allParams.category ? allParams.category.split(',') : []
   );
   const [tagsCheck, setTagsCheck] = useState<string[]>(
-    allParams.tags ? allParams.tags.split(",") : []
+    allParams.tags ? allParams.tags.split(',') : []
   );
 
   const { category, tags } = useAppSelector((state) => state.goods);
@@ -23,21 +23,21 @@ const FilterConfig: React.FC<{visible: boolean}> = ({ visible }) => {
   useEffect(() => {
     setSearchParams({
       ...allParams,
-      tags: tagsCheck.join(","),
-      category: categoriesCheck.join(","),
+      tags: tagsCheck.join(','),
+      category: categoriesCheck.join(','),
     });
   }, [setSearchParams, tagsCheck, categoriesCheck, allParams]);
 
   const handleCheckItem = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked, name } = e.target;
-    if (name === "category") {
+    if (name === 'category') {
       if (checked) {
         setCategoriesCheck([...categoriesCheck, value]);
       } else {
         setCategoriesCheck(categoriesCheck.filter((item) => item !== value));
       }
     }
-    if (name === "tags") {
+    if (name === 'tags') {
       if (checked) {
         setTagsCheck([...tagsCheck, value]);
       } else {
@@ -49,13 +49,16 @@ const FilterConfig: React.FC<{visible: boolean}> = ({ visible }) => {
   return (
     <div
       className={
-        visible ? "filterConfigContainer" : "filterConfigContainer configHidden"
+        visible ? 'filterConfigContainer' : 'filterConfigContainer configHidden'
       }
     >
       <h3>Categories</h3>
       <ul className="filterConfigList">
         {category.map((item: string, index: number) => (
-          <li key={nanoid()} className="filterConfigItem">
+          <li
+            key={nanoid()}
+            className="filterConfigItem"
+          >
             <input
               type="checkbox"
               name="category"
@@ -71,7 +74,10 @@ const FilterConfig: React.FC<{visible: boolean}> = ({ visible }) => {
       <h3>Tags</h3>
       <ul className="filterConfigList">
         {tags.map((item: string) => (
-          <li key={nanoid()} className="filterConfigItem">
+          <li
+            key={nanoid()}
+            className="filterConfigItem"
+          >
             <input
               type="checkbox"
               name="tags"

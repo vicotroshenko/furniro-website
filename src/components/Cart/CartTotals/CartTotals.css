@@ -1,57 +1,58 @@
-.cartTotalsContainer{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	max-width: 393px;
-	min-width: 250px;
-	min-height: 390px;
-	padding: 15px 15px 80px 15px;
-	background-color: var(--bg-secondary);
-	text-transform: capitalize;
+.cartTotalsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 393px;
+  min-width: 250px;
+  min-height: 390px;
+  padding: 15px 15px 80px 15px;
+  background-color: var(--bg-secondary);
+  text-transform: capitalize;
 }
 
 .cartTotalsContainer > h2 {
-	font-size: 32px;
-	font-weight: 600;
+  font-size: 32px;
+  font-weight: 600;
 }
 
-.cartTotalsFlex{
-	display: flex;
-	width: 241px;
-	justify-content: space-between;
-	gap: 10px;
+.cartTotalsFlex {
+  display: flex;
+  width: 241px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .cartTotalsSubtotal > p:first-child,
-.cartTotalsTotal > p:first-child {	
-	font-weight: 500;
+.cartTotalsTotal > p:first-child {
+  font-weight: 500;
 }
 
-.cartTotalsSubtotal > p:nth-child(2){
-	color: var(--text-grey-4);
+.cartTotalsSubtotal > p:nth-child(2) {
+  color: var(--text-grey-4);
 }
 
 .cartTotalsTotal {
-	margin-top: 31px;
+  margin-top: 31px;
 }
 
-.cartTotalsTotal > p:nth-child(2){
-	font-size: 20px;
-	font-weight: 500;
-	color: var(--button-primary);
+.cartTotalsTotal > p:nth-child(2) {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--button-primary);
 }
 
-.checkoutLink{
-	border: 1px solid var(--text-dark-1);
-	border-radius: 15px;
-	padding: 14px 58px;
-	color: inherit;
-	text-decoration: none;
-	transition: all .25s ease;
+.checkoutLink {
+  border: 1px solid var(--text-dark-1);
+  border-radius: 15px;
+  padding: 14px 58px;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
 
-.checkoutLink:hover, .checkoutLink:focus {
-	box-shadow: var(--hover-second-btn);
+.checkoutLink:hover,
+.checkoutLink:focus {
+  box-shadow: var(--hover-second-btn);
 }
