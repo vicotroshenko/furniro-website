@@ -8,10 +8,10 @@ const ContactsData = () => {
   return (
     <div className="cont-d-container">
       <ContactsDataItem
-        title="adress"
+        title="address"
         text1="236 5th SE Avenue, New York NY10000, United States"
       >
-        <FaLocationDot style={{ width: '30px', height: '30px' }} />
+        <FaLocationDot className="cont-d-icon-sizes" />
       </ContactsDataItem>
 
       <ContactsDataItem
@@ -19,7 +19,7 @@ const ContactsData = () => {
         text1="Mobile: +(84) 546-6789"
         text2="Mobile: +(84) 446-6789"
       >
-        <FaPhoneAlt style={{ width: '30px', height: '30px' }} />
+        <FaPhoneAlt className="cont-d-icon-sizes" />
       </ContactsDataItem>
 
       <ContactsDataItem
@@ -27,7 +27,7 @@ const ContactsData = () => {
         text1="Monday-Friday: 9:00 - 22:00"
         text2="Saturday-Sunday: 9:00 - 21:00"
       >
-        <FaClock style={{ width: '30px', height: '30px' }} />
+        <FaClock className="cont-d-icon-sizes" />
       </ContactsDataItem>
     </div>
   );

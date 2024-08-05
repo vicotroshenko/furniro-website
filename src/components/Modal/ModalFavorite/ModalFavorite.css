@@ -57,6 +57,12 @@
   margin-right: 10px;
 }
 
+.mf-deleteButton svg {
+  width: 20px;
+  height: 20px;
+  fill: #9f9f9f;
+}
+
 .mf-absence {
   padding-top: 10px;
   font-size: 20px;

@@ -4,8 +4,17 @@ import { FaTrash } from 'react-icons/fa';
 
 import { useAppDispatch } from '../../../hooks/useAppDispatch';
 import { updateCartItem } from '../../../redux/cart/cartSlice';
-import { ICartPageItemProps } from '../../../types/types';
 import './CartPageItem.css';
+
+export interface ICartPageItemProps {
+  title: string;
+  price: string;
+  id: string;
+  picture: string;
+  buyAmount: number;
+  totalPrice: string;
+  onClick: () => void;
+}
 
 const CartPageItem: React.FC<ICartPageItemProps> = ({
   id,

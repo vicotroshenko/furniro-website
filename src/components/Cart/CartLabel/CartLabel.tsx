@@ -1,12 +1,14 @@
+import { nanoid } from 'nanoid';
+
 import './CartLabel.css';
 
+const labels = ['Product', 'Price', 'Quantity', 'Subtotal'];
 const CartLabel = () => {
   return (
     <ul className="cl-list">
-      <li>Product</li>
-      <li>Price</li>
-      <li>Quantity</li>
-      <li>Subtotal</li>
+      {labels.map((label) => (
+        <li key={nanoid()}>{label}</li>
+      ))}
     </ul>
   );
 };

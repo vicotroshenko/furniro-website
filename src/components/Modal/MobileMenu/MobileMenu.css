@@ -4,7 +4,7 @@
   background-color: var(--bg-primary);
 }
 
-.mobiuleMenu-top-container {
+.mobileMenu-top-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -17,6 +17,11 @@
   height: 30px;
   padding: 4px;
   border-radius: 50%;
+}
+
+.mobile-button-close > svg {
+  width: 100%;
+  height: 100%;
 }
 
 .mobile-button-close:hover,

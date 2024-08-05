@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 
+import { RoutKey } from '../../../constants';
 import './HeaderNav.css';
 
 const HeaderNav = () => {
@@ -10,24 +11,24 @@ const HeaderNav = () => {
       <ul className="navList">
         <li>
           <Link
-            to={'/'}
-            className={pathname === '/' ? 'active' : ''}
+            to={RoutKey.HOME}
+            className={pathname === RoutKey.HOME ? 'active' : ''}
           >
             home
           </Link>
         </li>
         <li>
           <Link
-            to={'/shop?view=grid&page=1&limit=9'}
-            className={pathname === '/shop' ? 'active' : ''}
+            to={RoutKey.SHOP + RoutKey.SHOP_GRID}
+            className={pathname === RoutKey.SHOP ? 'active' : ''}
           >
             shop
           </Link>
         </li>
         <li>
           <Link
-            to={'/contacts'}
-            className={pathname === '/contacts' ? 'active' : ''}
+            to={RoutKey.CONTACTS}
+            className={pathname === RoutKey.CONTACTS ? 'active' : ''}
           >
             contact
           </Link>

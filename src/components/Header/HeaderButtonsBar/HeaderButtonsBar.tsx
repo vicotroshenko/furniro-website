@@ -1,12 +1,20 @@
 import { Badge, Tooltip } from '@mui/material';
+import classNames from 'classnames';
 import { CiSearch } from 'react-icons/ci';
 import { FaRegHeart } from 'react-icons/fa';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { TbUserExclamation } from 'react-icons/tb';
 
 import { useAppSelector } from '../../../hooks/useAppSelector';
-import { IHeaderMobileButtonProps } from '../../../types/types';
 import './HeaderButtonsBar.css';
+
+interface IHeaderMobileButtonProps {
+  itemsAmount?: number;
+  hidden?: boolean;
+  onToggleSearch?: () => void;
+  onToggleFavorite?: () => void;
+  onClick: () => void;
+}
 
 const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
   onClick,
@@ -18,7 +26,7 @@ const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
   const favorite = useAppSelector((state) => state.goods.favorite);
   return (
     <>
-      <div className={hidden ? 'headerButtons hidden' : 'headerButtons'}>
+      <div className={classNames('headerButtons', { hidden: hidden })}>
         <Tooltip
           title="Login"
           placement="bottom"
@@ -31,7 +39,7 @@ const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
             className="headerIconButtons"
             aria-label="user login button"
           >
-            <TbUserExclamation style={{ width: '100%', height: '100%' }} />
+            <TbUserExclamation className="headerButtons_icon-size" />
           </button>
         </Tooltip>
         <Tooltip
@@ -47,7 +55,7 @@ const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
             className="headerIconButtons"
             aria-label="search button"
           >
-            <CiSearch style={{ width: '100%', height: '100%' }} />
+            <CiSearch className="headerButtons_icon-size" />
           </button>
         </Tooltip>
         <Tooltip
@@ -65,9 +73,9 @@ const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
             <Badge
               badgeContent={favorite.length}
               color="primary"
-              sx={{ width: '100%', heigth: '100%' }}
+              sx={{ width: '100%', height: '100%' }}
             >
-              <FaRegHeart style={{ width: '100%', height: '100%' }} />
+              <FaRegHeart className="headerButtons_icon-size" />
             </Badge>
           </button>
         </Tooltip>
@@ -87,11 +95,9 @@ const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
             <Badge
               badgeContent={itemsAmount}
               color="primary"
-              sx={{ width: '100%', heigth: '100%' }}
+              sx={{ width: '100%', height: '100%' }}
             >
-              <MdOutlineShoppingCart
-                style={{ width: '100%', height: '100%' }}
-              />
+              <MdOutlineShoppingCart className="headerButtons_icon-size" />
             </Badge>
           </button>
         </Tooltip>

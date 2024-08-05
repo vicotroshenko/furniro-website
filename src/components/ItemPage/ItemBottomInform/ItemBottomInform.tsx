@@ -1,9 +1,19 @@
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
 
-import { IGoodData, IItemInnerProps, IReview } from '../../../types/types';
+import { IDataSlice, IGoodData, IReview } from '../../../types/types';
 import ItemReviewField from '../ItemReviewField/ItemReviewField';
 import './ItemBottomInform.css';
+
+enum AccordionName {
+  DESCRIPTION = 'description',
+  ADD_INFO = 'add_info',
+  REVIEWS = 'reviews',
+}
+
+interface IItemInnerProps {
+  item: IDataSlice;
+}
 
 const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
   const [infoType, setInfoType] = useState<string>('description');
@@ -24,45 +34,49 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
         <div className="ib-inform-btnTitles">
           <input
             type="radio"
-            id="desc"
-            value="description"
+            id={AccordionName.DESCRIPTION}
+            value={AccordionName.DESCRIPTION}
             name="item-info"
             className="ib-radio-field"
-            checked={infoType === 'description'}
+            checked={infoType === AccordionName.DESCRIPTION}
             onChange={handleInputChange}
           />
-          <label htmlFor="desc">description</label>
+          <label htmlFor={AccordionName.DESCRIPTION}>
+            {AccordionName.DESCRIPTION}
+          </label>
 
           <input
             type="radio"
-            id="add-info"
-            value="add-info"
+            id={AccordionName.ADD_INFO}
+            value={AccordionName.ADD_INFO}
             name="item-info"
             className="ib-radio-field"
-            checked={infoType === 'add-info'}
+            checked={infoType === AccordionName.ADD_INFO}
             onChange={handleInputChange}
           />
-          <label htmlFor="add-info">Additional Information</label>
+          <label htmlFor={AccordionName.ADD_INFO}>Additional Information</label>
 
           <input
             type="radio"
-            id="reviews"
-            value="reviews"
+            id={AccordionName.REVIEWS}
+            value={AccordionName.REVIEWS}
             name="item-info"
             className="ib-radio-field"
-            checked={infoType === 'reviews'}
+            checked={infoType === AccordionName.REVIEWS}
             onChange={handleInputChange}
           />
-          <label htmlFor="reviews">Reviews {[item.reviews?.length || 0]}</label>
+          <label htmlFor={AccordionName.REVIEWS}>
+            Reviews {[item.reviews?.length || 0]}
+          </label>
         </div>
         <div className="ib-contain-container">
-          {infoType === 'description' && (
+          {infoType === AccordionName.DESCRIPTION && (
             <div>
               <p className="ib-text-desc">{item.description}</p>
             </div>
           )}
 
-          {infoType === 'add-info' && (
+          {infoType === AccordionName.ADD_INFO && (
             <div className="ib-add-info-container">
               <ul className="ib-add-info-list">
                 <li className="ib-add-info-title">general</li>
@@ -97,7 +111,7 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
             </div>
           )}
 
-          {infoType === 'reviews' && (
+          {infoType === AccordionName.REVIEWS && (
             <ul className="ib-review-list">
               <li className="ib-createdRewieBtns">
                 <input

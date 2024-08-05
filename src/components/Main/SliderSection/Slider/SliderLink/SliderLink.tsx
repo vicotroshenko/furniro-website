@@ -1,13 +1,20 @@
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
-import { ISliderLink } from '../../../../../types/types';
+import { RoutKey } from '../../../../../constants';
 import './SliderLink.css';
+
+interface ISliderLink {
+  number: number | string;
+  place: string;
+  name: string;
+  link: string;
+}
 
 const SliderLink: React.FC<ISliderLink> = ({
   number = '01',
   place = 'unknown',
   name = 'unknown',
-  link = '/',
+  link = RoutKey.HOME,
 }) => {
   return (
     <div className="sliderItemIntro">

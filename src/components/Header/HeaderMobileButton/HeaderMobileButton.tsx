@@ -1,7 +1,10 @@
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-import { IHeaderMobileButtonProps } from '../../../types/types';
 import './HeaderMobileButton.css';
+
+interface IHeaderMobileButtonProps {
+  onClick: () => void;
+}
 
 const HeaderMobileButton: React.FC<IHeaderMobileButtonProps> = ({
   onClick,
@@ -13,7 +16,7 @@ const HeaderMobileButton: React.FC<IHeaderMobileButtonProps> = ({
       aria-label="mobil menu button"
       onClick={onClick}
     >
-      <GiHamburgerMenu style={{ width: 28, height: 28 }} />
+      <GiHamburgerMenu className="burger-menu-button_icon" />
     </button>
   );
 };

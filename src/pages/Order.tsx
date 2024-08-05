@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import OrderFinalized from '../components/OrderFinalized/OrderFinalized';
+import { OrderFinalized } from '../components';
 
 const Order = () => {
   useEffect(() => {

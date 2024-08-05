@@ -18,13 +18,13 @@
   z-index: -1;
 }
 
-.orderRadioLable {
+.orderRadioLabel {
   cursor: pointer;
   font-weight: 500;
   text-transform: capitalize;
 }
 
-.orderRadioLable::before {
+.orderRadioLabel::before {
   content: '';
   display: inline-block;
   width: 14px;
@@ -35,11 +35,11 @@
   transition: all 0.3s linear;
 }
 
-.orderRadioField:checked + .orderRadioLable::before {
+.orderRadioField:checked + .orderRadioLabel::before {
   background-color: var(--text-dark-1);
 }
 
-.orederDisabled {
+.orderDisabled {
   color: var(--text-grey-4);
 }
 
@@ -55,7 +55,7 @@
   font-weight: 500;
 }
 
-.orederSubmitBtn {
+.orderSubmitBtn {
   width: 100%;
   max-width: 318px;
   min-width: 150px;
@@ -74,11 +74,11 @@
   transition: box-shadow 0.3s ease;
 }
 
-.orederSubmitBtn:hover,
-.orederSubmitBtn:focus {
+.orderSubmitBtn:hover,
+.orderSubmitBtn:focus {
   box-shadow: var(--hover-second-btn);
 }
 
-.orederSubmitBtn:active {
+.orderSubmitBtn:active {
   background-color: rgba(0, 0, 0, 0.1);
 }

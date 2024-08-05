@@ -20,7 +20,7 @@
   z-index: -1;
 }
 
-.itemColorLable {
+.itemColorLabel {
   display: block;
   width: 30px;
   height: 30px;
@@ -28,6 +28,6 @@
   cursor: pointer;
 }
 
-.itemColorField:checked + .itemColorLable {
+.itemColorField:checked + .itemColorLabel {
   border: 2px solid var(--button-primary);
 }

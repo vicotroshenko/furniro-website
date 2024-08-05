@@ -1,22 +1,20 @@
+import classNames from 'classnames';
 import { useState } from 'react';
 
-import { IReacHookProps } from '../../../types/types';
 import './PlaceOrderBlank.css';
 
-const bank = 'bank';
-const cash = 'cash';
+enum PaymentMethod {
+  BANK = 'bank',
+  CASH = 'cash',
+}
 
-const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
+export interface IReactHookProps {
+  register: any;
+  errors: any;
+}
+
+const PlaceOrderBlank: React.FC<IReactHookProps> = ({ register, errors }) => {
   const [value, setValue] = useState<string | null>(null);
-
-  const labelStyles = (element: string, value: string | null): string => {
-    if (value === element) {
-      return 'orderRadioLable';
-    } else {
-      return 'orderRadioLable orederDisabled';
-    }
-  };
-
   return (
     <div className="placeOrderForm">
       <div role="group">
@@ -30,15 +28,17 @@ const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
               onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
                 setValue(e.target.value),
             })}
-            value={bank}
+            value={PaymentMethod.BANK}
           />
           <label
             htmlFor="radio-bank"
-            className={labelStyles(bank, value)}
+            className={classNames('orderRadioLabel', {
+              orderDisabled: PaymentMethod.BANK !== value,
+            })}
           >
             Direct Bank Transfer
           </label>
-          {value === bank && (
+          {value === PaymentMethod.BANK && (
             <p>
               Make your payment directly into our bank account. Please use your
               Order ID as the payment reference. Your order will not be shipped
@@ -57,16 +57,18 @@ const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
               onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
                 setValue(e.target.value),
             })}
-            value={cash}
+            value={PaymentMethod.CASH}
           />
           <label
             htmlFor="radio-cash"
-            className={labelStyles(cash, value)}
+            className={classNames('orderRadioLabel', {
+              orderDisabled: PaymentMethod.CASH !== value,
+            })}
           >
             Cash On Delivery
           </label>
-          {value === cash && (
-            <p>Pay for the order upon receipt of the goodsю</p>
+          {value === PaymentMethod.CASH && (
+            <p>Pay for the order upon receipt of the goods</p>
           )}
         </div>
         <p className="orderAgreement">
@@ -79,7 +81,7 @@ const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
         </p>
         <button
           type="submit"
-          className="orederSubmitBtn"
+          className="orderSubmitBtn"
         >
           Place order
         </button>

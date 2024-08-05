@@ -1,11 +1,17 @@
+import classNames from 'classnames';
 import { nanoid } from 'nanoid';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
+import { DynamicParam } from '../../../../constants';
 import { useAppSelector } from '../../../../hooks/useAppSelector';
 import './FilterConfig.css';
 
-const FilterConfig: React.FC<{ visible: boolean }> = ({ visible }) => {
+interface FilterConfigProps {
+  visible: boolean;
+}
+
+const FilterConfig: React.FC<FilterConfigProps> = ({ visible }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const allParams = useMemo(
     () => Object.fromEntries([...searchParams]),
@@ -30,14 +36,14 @@ const FilterConfig: React.FC<{ visible: boolean }> = ({ visible }) => {
 
   const handleCheckItem = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked, name } = e.target;
-    if (name === 'category') {
+    if (name === DynamicParam.CATEGORY) {
       if (checked) {
         setCategoriesCheck([...categoriesCheck, value]);
       } else {
         setCategoriesCheck(categoriesCheck.filter((item) => item !== value));
       }
     }
-    if (name === 'tags') {
+    if (name === DynamicParam.TAGS) {
       if (checked) {
         setTagsCheck([...tagsCheck, value]);
       } else {
@@ -48,9 +54,9 @@ const FilterConfig: React.FC<{ visible: boolean }> = ({ visible }) => {
 
   return (
     <div
-      className={
-        visible ? 'filterConfigContainer' : 'filterConfigContainer configHidden'
-      }
+      className={classNames('filterConfigContainer', {
+        configHidden: !visible,
+      })}
     >
       <h3>Categories</h3>
       <ul className="filterConfigList">

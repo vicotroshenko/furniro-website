@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 
-import CartList from '../components/Cart/CartList/CartList';
-import Loader from '../components/Loader/Loader';
-import NavigationScreen from '../components/NavigationScreen/NavigationScreen';
+import { CartList, Loader, NavigationScreen } from '../components';
 
 const Cart = () => {
   useEffect(() => {

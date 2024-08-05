@@ -1,3 +1,5 @@
+import { ViewParam } from '../../../../constants';
+import { createUrl } from '../../../../helpers';
 import rangeImage1 from '../../../../images/jpeg/range1.jpg';
 import rangeImage2 from '../../../../images/jpeg/range2.jpg';
 import rangeImage3 from '../../../../images/jpeg/range3.jpg';
@@ -14,17 +16,32 @@ const BrowseListSection = () => {
           <RangeItem
             image={rangeImage1}
             text="dining"
-            link="/shop?view=grid&page=1&limit=9&tags=dining"
+            link={createUrl({
+              view: ViewParam.GRID,
+              page: 1,
+              limit: 9,
+              tags: 'dining',
+            })}
           />
           <RangeItem
             image={rangeImage2}
             text="living"
-            link={'/shop?view=grid&page=1&limit=9&tags=living'}
+            link={createUrl({
+              view: ViewParam.GRID,
+              page: 1,
+              limit: 9,
+              tags: 'living',
+            })}
           />
           <RangeItem
             image={rangeImage3}
             text="bedroom"
-            link={'/shop?view=grid&page=1&limit=9&tags=bedroom'}
+            link={createUrl({
+              view: ViewParam.GRID,
+              page: 1,
+              limit: 9,
+              tags: 'bedroom',
+            })}
           />
         </ul>
       </div>

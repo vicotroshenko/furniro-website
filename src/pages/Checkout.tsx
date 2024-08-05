@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import CheckoutMain from '../components/Checkout/CheckoutMain';
+import { CheckoutMain } from '../components';
 
 const Checkout = () => {
   useEffect(() => {

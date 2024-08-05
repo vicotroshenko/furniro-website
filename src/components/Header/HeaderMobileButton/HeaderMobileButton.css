@@ -2,4 +2,9 @@
   .burger-menu-button {
     display: none;
   }
+
+  .burger-menu-button_icon {
+    width: 28px;
+    height: 28px;
+  }
 }

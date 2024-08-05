@@ -2,10 +2,12 @@ import { useEffect } from 'react';
 import { Puff } from 'react-loader-spinner';
 import { useParams } from 'react-router-dom';
 
-import ItemBottomInform from '../components/ItemPage/ItemBottomInform/ItemBottomInform';
-import ItemTopInform from '../components/ItemPage/ItemTopInform/ItemTopInform';
-import Loader from '../components/Loader/Loader';
-import NotFoundPage from '../components/NotFoundPage/NotFoundPage';
+import {
+  ItemBottomInform,
+  ItemTopInform,
+  Loader,
+  NotFoundPage,
+} from '../components';
 import { useAppDispatch } from '../hooks/useAppDispatch';
 import { useAppSelector } from '../hooks/useAppSelector';
 import { getOneById } from '../redux/goods/operations';

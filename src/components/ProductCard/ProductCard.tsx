@@ -2,6 +2,7 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { IoMdShare } from 'react-icons/io';
 import { MdOutlineCompareArrows } from 'react-icons/md';
 
+import { ViewParam } from '../../constants';
 import { getPriceOfItem } from '../../helpers/getPriceOfItem';
 import { isInCollection } from '../../helpers/isInCollection';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
@@ -33,15 +34,15 @@ const isNewItem = (status: string, discount: string): string => {
 };
 
 interface IProductCardProps {
-  onClickAddToCard?: () => void;
   item: IDataSlice;
   view?: string;
+  onClickAddToCard?: () => void;
 }
 
 const ProductCard: React.FC<IProductCardProps> = ({
   item,
-  onClickAddToCard,
   view,
+  onClickAddToCard,
 }) => {
   const { _id, pictures, title, status, discount, price, description } = item;
 
@@ -67,7 +68,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
 
   const checkDiscount = isNewItem(status, discount);
 
-  if (view === 'grid' || !view) {
+  if (view === ViewParam.GRID || !view) {
     return (
       <div className="prodCardContainer">
         {checkDiscount !== '0' && checkDiscount !== '' && (

@@ -1,20 +1,23 @@
 import { Route, Routes } from 'react-router-dom';
 
-import Cart from '../../pages/Cart';
-import Checkout from '../../pages/Checkout';
-import Contacts from '../../pages/Contacts';
-import ItemPage from '../../pages/ItemPage';
-import Main from '../../pages/Main';
-import NotFound from '../../pages/NotFound';
-import Order from '../../pages/Order';
-import Shop from '../../pages/Shop';
+import { RoutKey } from '../../constants';
+import {
+  Cart,
+  Checkout,
+  Contacts,
+  ItemPage,
+  Main,
+  NotFound,
+  Order,
+  Shop,
+} from '../../pages';
 import SharedLayout from '../SharedLayout/SharedLayout';
 
 function App() {
   return (
     <Routes>
       <Route
-        path="/"
+        path={RoutKey.HOME}
         element={<SharedLayout />}
       >
         <Route
@@ -22,31 +25,31 @@ function App() {
           element={<Main />}
         />
         <Route
-          path="shop"
+          path={RoutKey.SHOP}
           element={<Shop />}
         />
         <Route
-          path="shop/:id"
+          path={RoutKey.SHOP_ID}
           element={<ItemPage />}
         />
         <Route
-          path="contacts"
+          path={RoutKey.CONTACTS}
           element={<Contacts />}
         />
         <Route
-          path="cart"
+          path={RoutKey.CART}
           element={<Cart />}
         />
         <Route
-          path="checkout"
+          path={RoutKey.CHECKOUT}
           element={<Checkout />}
         />
         <Route
-          path="checkout/order"
+          path={RoutKey.CHECKOUT_ORDER}
           element={<Order />}
         />
         <Route
-          path="*"
+          path={RoutKey.NOT_FOUND}
           element={<NotFound />}
         />
       </Route>

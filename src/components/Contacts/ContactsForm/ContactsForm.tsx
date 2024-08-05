@@ -3,11 +3,11 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import ButtonPrimary from '../../ButtonPrimary/ButtonPrimary';
 import './ContactsForm.css';
 
-interface IFormContacts {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
+enum FormKey {
+  name = 'name',
+  email = 'email',
+  subject = 'subject',
+  message = 'message',
 }
 
 const ContactsForm = () => {
@@ -15,9 +15,9 @@ const ContactsForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormContacts>();
+  } = useForm<typeof FormKey>();
 
-  const onSubmit: SubmitHandler<IFormContacts> = (data) => {
+  const onSubmit: SubmitHandler<typeof FormKey> = (data) => {
     alert('Your message is sent');
   };
 
@@ -31,7 +31,7 @@ const ContactsForm = () => {
           <span>Your name*</span>
           <input
             type="text"
-            {...register('name', { required: true })}
+            {...register(FormKey.name, { required: true })}
             className="contacts-f-field"
             placeholder="Abc"
           />
@@ -41,7 +41,7 @@ const ContactsForm = () => {
           <span>Email address*</span>
           <input
             type="email"
-            {...register('email', { required: true })}
+            {...register(FormKey.email, { required: true })}
             className="contacts-f-field"
             placeholder="Abc@def.com"
           />
@@ -53,7 +53,7 @@ const ContactsForm = () => {
           <span>Subject*</span>
           <input
             type="text"
-            {...register('subject', { required: true })}
+            {...register(FormKey.subject, { required: true })}
             className="contacts-f-field"
             placeholder="This is an optional"
           />
@@ -65,7 +65,7 @@ const ContactsForm = () => {
           <span>Message*</span>
           <input
             type="text"
-            {...register('message', { required: true })}
+            {...register(FormKey.message, { required: true })}
             className="contacts-f-field"
             placeholder="Hi! i`d like to ask about"
           />

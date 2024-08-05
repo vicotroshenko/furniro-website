@@ -1,4 +1,4 @@
-import NotFoundPage from '../components/NotFoundPage/NotFoundPage';
+import { NotFoundPage } from '../components';
 
 const status = 'not-found';
 

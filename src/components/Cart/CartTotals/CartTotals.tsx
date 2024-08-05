@@ -1,25 +1,31 @@
 import { NavLink } from 'react-router-dom';
 
+import { RoutKey } from '../../../constants';
 import { getSumPrice } from '../../../helpers/getSumPrice';
-import { ICartTotals } from '../../../types/types';
+import { ICart } from '../../../types/types';
 import './CartTotals.css';
 
+interface ICartTotals {
+  goods: ICart[];
+}
+
 const CartTotals: React.FC<ICartTotals> = ({ goods }) => {
+  const sumPrice = getSumPrice(goods);
   return (
     <div className="cartTotalsContainer">
       <h2>cart totals</h2>
       <div>
         <div className="cartTotalsSubtotal cartTotalsFlex">
           <p>subtotal</p>
-          <p>{getSumPrice(goods)} $</p>
+          <p>{sumPrice} $</p>
         </div>
         <div className="cartTotalsTotal cartTotalsFlex">
-          <p>totla</p>
-          <p>{getSumPrice(goods)} $</p>
+          <p>total</p>
+          <p>{sumPrice} $</p>
         </div>
       </div>
       <NavLink
-        to={'/checkout'}
+        to={RoutKey.CHECKOUT}
         className="checkoutLink"
       >
         Check Out

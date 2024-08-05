@@ -2,11 +2,16 @@ import { nanoid } from 'nanoid';
 
 import { getSumPrice } from '../../../helpers/getSumPrice';
 import { useAppSelector } from '../../../hooks/useAppSelector';
-import { ICart, IReacHookProps } from '../../../types/types';
+import { ICart } from '../../../types/types';
 import PlaceOrderBlank from '../PlaceOrderBlank/PlaceOrderBlank';
 import './CheckoutOrder.css';
 
-const CheckoutOrder: React.FC<IReacHookProps> = ({ register, errors }) => {
+interface IReactHookProps {
+  register: any;
+  errors: any;
+}
+
+const CheckoutOrder: React.FC<IReactHookProps> = ({ register, errors }) => {
   const cart = useAppSelector((state) => state.cart.goods);
 
   return (

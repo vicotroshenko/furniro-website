@@ -13,17 +13,11 @@ const CartList = () => {
   const cart = useAppSelector((state) => state.cart.goods);
   const dispatch = useAppDispatch();
 
-  const handleDeleteItem = (id: string) => {
-    dispatch(deleteCartItem({ id }));
-  };
+  const handleDeleteItem = (id: string) => dispatch(deleteCartItem({ id }));
 
-  const getTotalPrice = (buyAmount: number, price: string) => {
-    if (buyAmount === 1) {
-      return price;
-    } else {
-      return (buyAmount * +price).toFixed(2).toString();
-    }
-  };
+  const getTotalPrice = (buyAmount: number, price: string) =>
+    (buyAmount * +price).toFixed(2).toString();
+
   return (
     <section className="cartListSection">
       <div className="cartListContainer mc-c-flex">

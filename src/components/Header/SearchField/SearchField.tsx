@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 
 import { useAppSelector } from '../../../hooks/useAppSelector';
-import { IDataSlice, ISearchField } from '../../../types/types';
+import { IDataSlice } from '../../../types/types';
 import SearchShowItem from '../SearchShowItem/SearchShowItem';
 import './SearchField.css';
 
@@ -13,7 +13,10 @@ const getSearchedData = (items: IDataSlice[], value: string) => {
   );
 };
 
-const SearchField: React.FC<ISearchField> = ({ onClick }) => {
+interface SearchFieldProps {
+  onClick: () => void;
+}
+const SearchField: React.FC<SearchFieldProps> = ({ onClick }) => {
   const [value, setValue] = useState<string>('');
 
   const goods = useAppSelector((state) => state.goods.allGoods);

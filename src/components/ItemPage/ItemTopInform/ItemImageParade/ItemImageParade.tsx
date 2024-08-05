@@ -1,8 +1,11 @@
 import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
 
-import { IItemImageParadeProps } from '../../../../types/types';
 import './ItemImageParade.css';
+
+export interface IItemImageParadeProps {
+  pictures: string[];
+}
 
 const ItemImageParade: React.FC<IItemImageParadeProps> = ({ pictures }) => {
   const [images, setImages] = useState<string[]>([]);

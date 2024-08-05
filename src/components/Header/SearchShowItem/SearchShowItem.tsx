@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 
-import { ISearchShowItemProps } from '../../../types/types';
+import { RoutKey } from '../../../constants';
 import './SearchShowItem.css';
+
+interface ISearchShowItemProps {
+  title: string;
+  image: string;
+  id: string;
+}
 
 const SearchShowItem: React.FC<ISearchShowItemProps> = ({
   title,
@@ -10,7 +16,7 @@ const SearchShowItem: React.FC<ISearchShowItemProps> = ({
 }) => {
   return (
     <li className="searchItem">
-      <Link to={`/shop/${id}`}>
+      <Link to={RoutKey.SHOP + `/${id}`}>
         <div>
           <img
             src={image}

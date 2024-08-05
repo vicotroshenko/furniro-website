@@ -29,7 +29,7 @@ const ItemColorBar: React.FC<IItemColorBar> = ({ colors = [] }) => {
             />
             <label
               htmlFor={item}
-              className="itemColorLable"
+              className="itemColorLabel"
               style={{ backgroundColor: item }}
             ></label>
           </div>

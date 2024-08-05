@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 
-import ContactsMain from '../components/Contacts/ContactsMain/ContactsMain';
-import Loader from '../components/Loader/Loader';
-import NavigationScreen from '../components/NavigationScreen/NavigationScreen';
+import { ContactsMain, Loader, NavigationScreen } from '../components';
 
 const Contacts = () => {
   useEffect(() => {
