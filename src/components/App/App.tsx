@@ -1,13 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 
-import Cart from '../../pages/Cart';
-import Checkout from '../../pages/Checkout';
-import Contacts from '../../pages/Contacts';
-import ItemPage from '../../pages/ItemPage';
-import Main from '../../pages/Main';
-import NotFound from '../../pages/NotFound';
-import Order from '../../pages/Order';
-import Shop from '../../pages/Shop';
+import {
+  Cart,
+  Checkout,
+  Contacts,
+  ItemPage,
+  Main,
+  NotFound,
+  Order,
+  Shop,
+} from '../../pages';
 import SharedLayout from '../SharedLayout/SharedLayout';
 
 function App() {

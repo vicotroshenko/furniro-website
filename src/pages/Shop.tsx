@@ -1,11 +1,13 @@
 import { useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import AdvantagesMain from '../components/Advantages/AdvantagesMain/AdvantagesMain';
-import Loader from '../components/Loader/Loader';
-import NavigationScreen from '../components/NavigationScreen/NavigationScreen';
-import FilterBar from '../components/Shop/FilterBar/FilterBar';
-import ProductsShopBook from '../components/Shop/ProductsShopBook/ProductsShopBook';
+import {
+  AdvantagesMain,
+  FilterBar,
+  Loader,
+  NavigationScreen,
+  ProductsShopBook,
+} from '../components';
 import { useAppDispatch } from '../hooks/useAppDispatch';
 import { getAllGoods, getAllTagsCategories } from '../redux/goods/operations';
 
