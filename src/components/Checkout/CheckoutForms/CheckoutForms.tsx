@@ -1,8 +1,7 @@
 import { City, Country, State } from 'country-state-city';
 import { useMemo, useState } from 'react';
 
-import { ICheckoutFormValues, IReacHookProps } from '../../../types/types';
-import CheckoutFromsSelect from '../CheckoutFormsSelect/CheckoutFormsSelect';
+import CheckoutFormsSelect from '../CheckoutFormsSelect/CheckoutFormsSelect';
 import './CheckoutForms.css';
 
 const conuntries = Country.getAllCountries();
@@ -15,7 +14,25 @@ const getListOfCities = (isoCode: string, regionCode: string): any[] => {
   return City.getCitiesOfState(isoCode, regionCode);
 };
 
-const CheckoutForms: React.FC<IReacHookProps> = ({ register, errors }) => {
+interface IReactHookProps {
+  register: any;
+  errors: any;
+}
+
+interface ICheckoutFormValues {
+  firstName: string;
+  lastName: string;
+  company: string;
+  country: string;
+  region: string;
+  city: string;
+  zip: string;
+  phone: string;
+  email: string;
+  additional: string;
+}
+
+const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
   const [values, setValues] = useState<ICheckoutFormValues>({
     firstName: '',
     lastName: '',
@@ -94,7 +111,7 @@ const CheckoutForms: React.FC<IReacHookProps> = ({ register, errors }) => {
           </label>
           <div className="checkoutLabel">
             <span>Country*</span>
-            <CheckoutFromsSelect
+            <CheckoutFormsSelect
               onChange={handleFormValues}
               countries={conuntries}
               nameList="country"
@@ -105,7 +122,7 @@ const CheckoutForms: React.FC<IReacHookProps> = ({ register, errors }) => {
           </div>
           <div className="checkoutLabel">
             <span>region*</span>
-            <CheckoutFromsSelect
+            <CheckoutFormsSelect
               onChange={handleFormValues}
               states={states}
               nameList="region"
@@ -116,7 +133,7 @@ const CheckoutForms: React.FC<IReacHookProps> = ({ register, errors }) => {
           </div>
           <div className="checkoutLabel">
             <span>city*</span>
-            <CheckoutFromsSelect
+            <CheckoutFormsSelect
               onChange={handleFormValues}
               cities={cities}
               nameList="city"

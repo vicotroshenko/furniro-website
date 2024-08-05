@@ -1,9 +1,20 @@
+import { ICity, ICountry, IState } from 'country-state-city';
 import { nanoid } from 'nanoid';
 
-import { ISelectData } from '../../../types/types';
 import './CheckoutFormsSelect.css';
 
-const CheckoutFromsSelect: React.FC<ISelectData> = ({
+interface ISelectData {
+  countries?: ICountry[];
+  states?: IState[];
+  cities?: ICity[];
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  nameList: string;
+  value: string;
+  register?: any;
+  errors?: any;
+}
+
+const CheckoutFormsSelect: React.FC<ISelectData> = ({
   countries,
   states,
   cities,
@@ -51,4 +62,4 @@ const CheckoutFromsSelect: React.FC<ISelectData> = ({
   );
 };
 
-export default CheckoutFromsSelect;
+export default CheckoutFormsSelect;

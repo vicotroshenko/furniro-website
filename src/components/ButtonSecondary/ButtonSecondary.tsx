@@ -1,27 +1,30 @@
 import React from 'react';
 
-import { IButtonProps } from '../../types/types';
 import './ButtonSecondary.css';
+
+export interface IButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
+  width: number;
+  height: number;
+  text: string;
+}
 
 const ButtonSecondary: React.FC<IButtonProps> = ({
   width,
   height,
   text,
   onClick,
-  disabled,
+  ...props
 }) => {
+  const handleMouseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    onClick?.(e)
+  }
   return (
     <button
-      type="button"
       className="buttonSecondary"
       style={{ maxWidth: width, height }}
-      onClick={(e) => {
-        e.preventDefault();
-        if (onClick) {
-          return onClick();
-        }
-      }}
-      disabled={disabled}
+      onClick={handleMouseClick}
+      {...props}
     >
       {text}
     </button>

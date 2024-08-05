@@ -1,5 +1,10 @@
-import { IAdvantagesItemProps } from '../../../types/types';
 import './AdvantagesItem.css';
+
+interface IAdvantagesItemProps {
+  icon:string;
+  title: string;
+  text: string;
+}
 
 const AdvantagesItem: React.FC<IAdvantagesItemProps> = ({
   icon,

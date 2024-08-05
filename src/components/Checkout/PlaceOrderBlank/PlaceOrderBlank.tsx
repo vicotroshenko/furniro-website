@@ -1,12 +1,19 @@
 import { useState } from 'react';
 
-import { IReacHookProps } from '../../../types/types';
+
+
 import './PlaceOrderBlank.css';
+
 
 const bank = 'bank';
 const cash = 'cash';
 
-const PlaceOrderBlank: React.FC<IReacHookProps> = ({ register, errors }) => {
+export interface IReactHookProps {
+  register: any;
+  errors: any;
+}
+
+const PlaceOrderBlank: React.FC<IReactHookProps> = ({ register, errors }) => {
   const [value, setValue] = useState<string | null>(null);
 
   const labelStyles = (element: string, value: string | null): string => {

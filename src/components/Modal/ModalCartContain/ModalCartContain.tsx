@@ -7,9 +7,14 @@ import { getSumPrice } from '../../../helpers/getSumPrice';
 import { useAppDispatch } from '../../../hooks/useAppDispatch';
 import { useAppSelector } from '../../../hooks/useAppSelector';
 import { deleteCartItem } from '../../../redux/cart/cartSlice';
-import { ICart, IModalCartContainProps } from '../../../types/types';
+import { ICart } from '../../../types/types';
 import ModalLinks from '../../Header/ModalLinks/ModalLinks';
 import './ModalCartContain.css';
+
+
+export interface IModalCartContainProps {
+  onClick: () => void;
+}
 
 const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
   const cart = useAppSelector((state) => state.cart.goods);

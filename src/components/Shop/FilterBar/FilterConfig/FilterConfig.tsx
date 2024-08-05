@@ -5,7 +5,11 @@ import { useSearchParams } from 'react-router-dom';
 import { useAppSelector } from '../../../../hooks/useAppSelector';
 import './FilterConfig.css';
 
-const FilterConfig: React.FC<{ visible: boolean }> = ({ visible }) => {
+interface FilterConfigProps {
+  visible: boolean;
+}
+
+const FilterConfig: React.FC<FilterConfigProps> = ({ visible }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const allParams = useMemo(
     () => Object.fromEntries([...searchParams]),

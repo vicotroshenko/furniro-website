@@ -1,7 +1,13 @@
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
-import { ISliderLink } from '../../../../../types/types';
 import './SliderLink.css';
+
+interface ISliderLink {
+  number: number | string;
+  place: string;
+  name: string;
+  link: string;
+}
 
 const SliderLink: React.FC<ISliderLink> = ({
   number = '01',

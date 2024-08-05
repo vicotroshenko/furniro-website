@@ -1,15 +1,20 @@
 import { Rating } from '@mui/material';
 import { useState } from 'react';
 
-import { IItemDescribe } from '../../../../types/types';
+import { IDataSlice } from '../../../../types/types';
 import './ItemDescribe.css';
 
+export interface IItemDescribe
+  extends Pick<IDataSlice, 'title' | 'description' | 'price' | 'reviews'> {
+  rating?: number;
+}
+
 const ItemDescribe: React.FC<IItemDescribe> = ({
-  rating = 0,
   title,
   description,
   price,
   reviews = [],
+  rating = 0,
 }) => {
   const [value, setValue] = useState<number | null>(null);
   return (

@@ -1,18 +1,26 @@
 import { useEffect, useState } from 'react';
 import { FiMinus, FiPlus } from 'react-icons/fi';
 
-import { IItemButtonsPros } from '../../../../types/types';
 import './ItemButtons.css';
 
 const minusButtonName = 'substruct';
 const plusButtonName = 'add';
 
+interface IItemButtonsPros {
+  amount: number;
+  isCompare?: boolean;
+  isAdded?: boolean;
+  onAdd?: () => void;
+  onCompare?: () => void;
+  getAmount: (amount: number) => void;
+}
+
 const ItemButtons: React.FC<IItemButtonsPros> = ({
   amount,
-  onAdd,
-  onCompare,
   isCompare,
   isAdded,
+  onAdd,
+  onCompare,
   getAmount,
 }) => {
   const [amountItems, setAmountItems] = useState<number>(1);

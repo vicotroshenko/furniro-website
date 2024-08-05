@@ -8,7 +8,7 @@ import {
   addToComparison,
   deletFromComparison,
 } from '../../../redux/goods/goodsSlice';
-import { ICart, IItemInnerProps } from '../../../types/types';
+import { ICart, IDataSlice } from '../../../types/types';
 import ItemButtons from './ItemButtons/ItemButtons';
 import ItemColorBar from './ItemColorBar/ItemColorBar';
 import ItemDescribe from './ItemDescribe/ItemDescribe';
@@ -17,6 +17,9 @@ import ItemShortDesc from './ItemShortDesc/ItemShortDesc';
 import ItemSizeButtons from './ItemSizeButtons/ItemSizeButtons';
 import './ItemTopInform.css';
 
+interface IItemInnerProps {
+  item: IDataSlice;
+}
 const ItemTopInform: React.FC<IItemInnerProps> = ({ item }) => {
   const amountRef = useRef<number>();
   const dispatch = useAppDispatch();

@@ -6,8 +6,12 @@ import { MdOutlineClose } from 'react-icons/md';
 import { useAppDispatch } from '../../../hooks/useAppDispatch';
 import { useAppSelector } from '../../../hooks/useAppSelector';
 import { deletFromFavotite } from '../../../redux/goods/goodsSlice';
-import { IDataSlice, IModalFavoriteProps } from '../../../types/types';
+import { IDataSlice } from '../../../types/types';
 import './ModalFavorite.css';
+
+interface IModalFavoriteProps {
+  onClick: () => void;
+}
 
 const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
   const favorite = useAppSelector((state) => state.goods.favorite);

@@ -8,7 +8,7 @@ const ContactsData = () => {
   return (
     <div className="cont-d-container">
       <ContactsDataItem
-        title="adress"
+        title="address"
         text1="236 5th SE Avenue, New York NY10000, United States"
       >
         <FaLocationDot style={{ width: '30px', height: '30px' }} />

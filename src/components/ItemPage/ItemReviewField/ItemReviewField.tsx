@@ -2,7 +2,11 @@ import { useAppDispatch } from '../../../hooks/useAppDispatch';
 import { addReview } from '../../../redux/goods/operations';
 import './ItemReviewField.css';
 
-const ItemReviewField: React.FC<{ id: string }> = ({ id }) => {
+interface ItemReviewFieldProps {
+  id: string;
+}
+
+const ItemReviewField: React.FC<ItemReviewFieldProps> = ({ id }) => {
   const dispatch = useAppDispatch();
 
   const handleReviewSubmit = (e: React.FormEvent<HTMLFormElement>) => {

@@ -1,7 +1,14 @@
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-import { IHeaderMobileButtonProps } from '../../../types/types';
 import './HeaderMobileButton.css';
+
+interface IHeaderMobileButtonProps {
+  itemsAmount?: number;
+  hidden?: boolean;
+  onToggleSearch?: () => void;
+  onToggleFavorite?: () => void;
+  onClick: () => void;
+}
 
 const HeaderMobileButton: React.FC<IHeaderMobileButtonProps> = ({
   onClick,

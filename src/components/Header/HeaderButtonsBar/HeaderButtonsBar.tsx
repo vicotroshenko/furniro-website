@@ -5,8 +5,15 @@ import { MdOutlineShoppingCart } from 'react-icons/md';
 import { TbUserExclamation } from 'react-icons/tb';
 
 import { useAppSelector } from '../../../hooks/useAppSelector';
-import { IHeaderMobileButtonProps } from '../../../types/types';
 import './HeaderButtonsBar.css';
+
+interface IHeaderMobileButtonProps {
+  itemsAmount?: number;
+  hidden?: boolean;
+  onToggleSearch?: () => void;
+  onToggleFavorite?: () => void;
+  onClick: () => void;
+}
 
 const HeaderButtonsBar: React.FC<IHeaderMobileButtonProps> = ({
   onClick,

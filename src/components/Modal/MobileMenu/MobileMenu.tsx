@@ -1,11 +1,19 @@
 import { GrClose } from 'react-icons/gr';
 import { Link, useLocation } from 'react-router-dom';
 
-import { IMobileModal } from '../../../types/types';
 import HeaderButtonsBar from '../../Header/HeaderButtonsBar/HeaderButtonsBar';
 import HeaderLogo from '../../Header/HeaderLogo/HeaderLogo';
 import ModalLinks from '../../Header/ModalLinks/ModalLinks';
 import './MobileMenu.css';
+
+
+interface IMobileModal {
+  onClick: () => void;
+  itemsAmount?: number;
+  isOpenCartModal: () => void;
+  onToggleSearch?: () => void;
+  onToggleFavorite?: () => void;
+}
 
 const MobileMenu: React.FC<IMobileModal> = ({
   onClick,

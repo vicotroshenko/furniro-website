@@ -1,8 +1,12 @@
 import { NavLink } from 'react-router-dom';
 
 import { getSumPrice } from '../../../helpers/getSumPrice';
-import { ICartTotals } from '../../../types/types';
+import { ICart } from '../../../types/types';
 import './CartTotals.css';
+
+interface ICartTotals {
+  goods: ICart[];
+}
 
 const CartTotals: React.FC<ICartTotals> = ({ goods }) => {
   return (

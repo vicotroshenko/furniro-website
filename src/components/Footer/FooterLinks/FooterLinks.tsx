@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 
-import { IFooterLinksProps } from '../../../types/types';
 import './FooterLinks.css';
+
+export interface IFooterLinksProps {
+  title: string;
+  links?: string[];
+}
 
 const FooterLinks: React.FC<IFooterLinksProps> = ({ title }) => {
   return (

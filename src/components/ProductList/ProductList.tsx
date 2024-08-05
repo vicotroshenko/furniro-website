@@ -9,7 +9,11 @@ import { ICart, IDataSlice } from '../../types/types';
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductList.css';
 
-const ProductList: React.FC<{ items: IDataSlice[] | [] }> = ({ items }) => {
+interface ProductListProps {
+  items: IDataSlice[] | [];
+}
+
+const ProductList: React.FC<ProductListProps> = ({ items }) => {
   const location = useLocation();
   const path = location.pathname === '/' ? '/shop/' : '';
   const dispatch = useAppDispatch();

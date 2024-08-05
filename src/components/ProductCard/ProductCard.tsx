@@ -33,15 +33,15 @@ const isNewItem = (status: string, discount: string): string => {
 };
 
 interface IProductCardProps {
-  onClickAddToCard?: () => void;
   item: IDataSlice;
   view?: string;
+  onClickAddToCard?: () => void;
 }
 
 const ProductCard: React.FC<IProductCardProps> = ({
   item,
-  onClickAddToCard,
   view,
+  onClickAddToCard,
 }) => {
   const { _id, pictures, title, status, discount, price, description } = item;
 

@@ -1,5 +1,9 @@
-import { ISliderRadioButtonsProps } from '../../../../../types/types';
 import './SliderRadioButton.css';
+
+interface ISliderRadioButtonsProps {
+  onChange: (value: React.ChangeEvent<HTMLInputElement>) => any;
+  slide: string;
+}
 
 const SliderRadioButtons: React.FC<ISliderRadioButtonsProps> = ({
   onChange,

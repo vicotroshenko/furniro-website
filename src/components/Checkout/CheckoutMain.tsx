@@ -35,7 +35,7 @@ const CheckoutMain = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const cart = useAppSelector((state) => state.cart.goods);
-  const ordersStutus = useAppSelector((state) => state.orders.status);
+  const ordersStatus = useAppSelector((state) => state.orders.status);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     dispatch(
@@ -45,7 +45,7 @@ const CheckoutMain = () => {
         order: cart,
       })
     );
-    if (ordersStutus === 'success') {
+    if (ordersStatus === 'success') {
       const ids = cart.reduce((acc: string[], item: ICart) => {
         acc = [...acc, item._id];
         return acc;

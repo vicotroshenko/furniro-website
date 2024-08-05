@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router-dom';
 
-import { IModalCartContainProps } from '../../../types/types';
 import './ModalLinks.css';
 
-const ModalLinks: React.FC<IModalCartContainProps> = ({ onClick }) => {
+interface ModalLinksProps {
+  onClick: () => void;
+}
+
+const ModalLinks: React.FC<ModalLinksProps> = ({ onClick }) => {
   return (
     <div className="mc-c-bottomLinksWrapper">
       <div

@@ -19,7 +19,7 @@ const FooterMain = () => {
           </div>
         </div>
         <div className="fotterBottom">
-          <p>2023 furino. All rights reverved</p>
+          <p>2023 furniro. All rights reserved</p>
         </div>
       </div>
     </footer>
