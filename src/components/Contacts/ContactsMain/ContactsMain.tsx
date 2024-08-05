@@ -8,7 +8,7 @@ const ContactsMain = () => {
     <section className="contacts-main-section">
       <div>
         <ContactsTitle />
-        <div className="contacts-m-doubl">
+        <div className="contacts-m-double">
           <ContactsData />
           <ContactsForm />
         </div>

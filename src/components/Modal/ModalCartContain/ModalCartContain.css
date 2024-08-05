@@ -24,6 +24,11 @@
   box-shadow: var(--hover-second-btn);
 }
 
+.mc-c-icon-close-button {
+  width: 100%;
+  height: 100%;
+}
+
 .mc-c-list {
   display: flex;
   flex-direction: column;

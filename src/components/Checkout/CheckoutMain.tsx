@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
+import { RoutKey, Status } from '../../constants';
 import { getSumPrice } from '../../helpers/getSumPrice';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { useAppSelector } from '../../hooks/useAppSelector';
@@ -45,14 +46,14 @@ const CheckoutMain = () => {
         order: cart,
       })
     );
-    if (ordersStatus === 'success') {
+    if (ordersStatus === Status.success) {
       const ids = cart.reduce((acc: string[], item: ICart) => {
         acc = [...acc, item._id];
         return acc;
       }, []);
 
       dispatch(deleteCartItem([...ids]));
-      navigate('/checkout/order');
+      navigate(RoutKey.CHECKOUT_ORDER);
     }
   };
 

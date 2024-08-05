@@ -73,9 +73,7 @@ const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
                   className="mf-deleteButton"
                   onClick={() => deleteFavorite(item)}
                 >
-                  <IoIosCloseCircle
-                    style={{ width: '20px', height: '20px', fill: '#9F9F9F' }}
-                  />
+                  <IoIosCloseCircle />
                 </button>
               </Tooltip>
             </li>

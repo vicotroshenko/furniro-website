@@ -18,7 +18,7 @@ const ItemDescribe: React.FC<IItemDescribe> = ({
 }) => {
   const [value, setValue] = useState<number | null>(null);
   return (
-    <div className="itemDescribeContaner">
+    <div className="itemDescribeContainer">
       <h1>{title}</h1>
       <p className="itemDescSubtitle">${price}</p>
       <div className="itemRatingRow">
@@ -29,7 +29,7 @@ const ItemDescribe: React.FC<IItemDescribe> = ({
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
-          style={{ margin: '0 18px 0 0' }}
+          className="itemRatingRow_rating"
         />
         <div className="divider"></div>
         <button

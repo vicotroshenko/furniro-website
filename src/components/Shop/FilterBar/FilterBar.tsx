@@ -1,12 +1,21 @@
+import classNames from 'classnames';
 import { useEffect, useMemo, useState } from 'react';
 import { BsGridFill } from 'react-icons/bs';
 import { TbLayoutDistributeHorizontal } from 'react-icons/tb';
 import { VscSettings } from 'react-icons/vsc';
 import { useSearchParams } from 'react-router-dom';
 
+import { ViewParam } from '../../../constants';
 import { useAppSelector } from '../../../hooks/useAppSelector';
 import './FilterBar.css';
 import FilterConfig from './FilterConfig/FilterConfig';
+
+enum SortName {
+  DEFAULT = 'default',
+  PRICE = 'price',
+  DISCOUNT = 'discount',
+  NEW = 'new',
+}
 
 const removeParameter = (
   params: { [x: string]: string },
@@ -41,11 +50,11 @@ const FilterBar = () => {
   const handleChangeSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
     let params = {};
-    if (value === 'price') {
+    if (value === SortName.PRICE) {
       params = removeParameter({ ...allParams, page: '1', price: '-1' }, [
         'status',
       ]);
-    } else if (value === 'new' || value === 'discount') {
+    } else if (value === SortName.NEW || value === SortName.DISCOUNT) {
       params = removeParameter({ ...allParams, page: '1', status: value }, [
         'price',
       ]);
@@ -62,10 +71,10 @@ const FilterBar = () => {
   const setUpListView = (event: React.MouseEvent<HTMLButtonElement>) => {
     const { name } = event.currentTarget;
     let params = {};
-    if (name === 'line') {
-      params = { view: 'line' };
+    if (name === ViewParam.LINE) {
+      params = { view: ViewParam.LINE };
     } else {
-      params = { view: 'grid' };
+      params = { view: ViewParam.GRID };
     }
 
     setSearchParams({ ...allParams, ...params });
@@ -104,28 +113,24 @@ const FilterBar = () => {
 
           <button
             type="button"
-            name="grid"
+            name={ViewParam.GRID}
             onClick={setUpListView}
             aria-label="gid view"
-            className={
-              allParams.view === 'grid'
-                ? 'filterBar-gridBtn headerIconButtons filterBtnActive'
-                : 'filterBar-gridBtn headerIconButtons'
-            }
+            className={classNames('filterBar-gridBtn headerIconButtons', {
+              filterBtnActive: allParams.view === ViewParam.GRID,
+            })}
           >
             <BsGridFill className="fiterBar-icon" />
           </button>
 
           <button
             type="button"
-            name="line"
+            name={ViewParam.LINE}
             onClick={setUpListView}
             aria-label="one item in line view"
-            className={
-              allParams.view === 'line'
-                ? 'headerIconButtons filterBtnActive'
-                : 'headerIconButtons'
-            }
+            className={classNames('headerIconButtons', {
+              filterBtnActive: allParams.view === ViewParam.LINE,
+            })}
           >
             <TbLayoutDistributeHorizontal className="fiterBar-icon" />
           </button>
@@ -154,10 +159,10 @@ const FilterBar = () => {
               className="filterBar-select"
               onChange={handleChangeSort}
             >
-              <option value="default">Default</option>
-              <option value="price">Price</option>
-              <option value="new">New</option>
-              <option value="discount">Discount</option>
+              <option value={SortName.DEFAULT}>Default</option>
+              <option value={SortName.PRICE}>Price</option>
+              <option value={SortName.NEW}>New</option>
+              <option value={SortName.DISCOUNT}>Discount</option>
             </select>
           </div>
         </div>

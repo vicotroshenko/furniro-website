@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
+import { RoutKey } from '../../../constants';
 import './ModalLinks.css';
 
 interface ModalLinksProps {
@@ -13,9 +14,9 @@ const ModalLinks: React.FC<ModalLinksProps> = ({ onClick }) => {
         className="mc-c-bottomLinks mc-c-flex"
         onClick={onClick}
       >
-        <NavLink to={'/cart'}>Cart</NavLink>
-        <NavLink to={'/checkout'}>Checkout</NavLink>
-        <NavLink to={'/comparison'}>Comparison</NavLink>
+        <NavLink to={RoutKey.CART}>Cart</NavLink>
+        <NavLink to={RoutKey.CHECKOUT}>Checkout</NavLink>
+        <NavLink to={RoutKey.COMPARISON}>Comparison</NavLink>
       </div>
     </div>
   );

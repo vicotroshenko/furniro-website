@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid';
 import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
+import { RoutKey, ViewParam } from '../../constants';
 import { getPriceOfItem } from '../../helpers/getPriceOfItem';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import { addToCart } from '../../redux/cart/cartSlice';
@@ -15,7 +16,7 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ items }) => {
   const location = useLocation();
-  const path = location.pathname === '/' ? '/shop/' : '';
+  const path = location.pathname === RoutKey.HOME ? RoutKey.SHOP + '/' : '';
   const dispatch = useAppDispatch();
 
   const [searchParams] = useSearchParams();
@@ -38,7 +39,9 @@ const ProductList: React.FC<ProductListProps> = ({ items }) => {
 
   return (
     <ul
-      className={view === 'grid' || !view ? 'productsList' : 'productsListLine'}
+      className={
+        view === ViewParam.GRID || !view ? 'productsList' : 'productsListLine'
+      }
     >
       {items.length !== 0 &&
         items.map(

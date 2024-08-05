@@ -12,3 +12,8 @@
   padding: 63px 100px 85px 100px;
   overflow: hidden;
 }
+
+.shopProducts_pagination {
+  margin: 0 auto;
+  padding-top: 22px;
+}

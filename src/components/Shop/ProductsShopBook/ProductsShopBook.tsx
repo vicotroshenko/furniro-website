@@ -26,7 +26,7 @@ const ProductsShopBook = () => {
     <section className="shopProductsSection">
       <div className="shopProductsContainer">
         <ProductList items={items} />
-        <div style={{ margin: '0 auto', paddingTop: '22px' }}>
+        <div className="shopProducts_pagination">
           <Pagination
             count={pages}
             page={+allParams.page}

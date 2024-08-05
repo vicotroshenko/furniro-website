@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -32,7 +33,10 @@ const Modal: React.FC<IModal> = ({ visible = false, children, toggle }) => {
 
   return createPortal(
     <div
-      className={visible ? 'backdrop show' : 'backdrop hide'}
+      className={classNames('backdrop', {
+        show: visible,
+        hide: !visible,
+      })}
       onClick={handleBackdropClick}
     >
       <div className="modal-container">{children}</div>

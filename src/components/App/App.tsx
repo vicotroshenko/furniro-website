@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
+import { RoutKey } from '../../constants';
 import {
   Cart,
   Checkout,
@@ -16,7 +17,7 @@ function App() {
   return (
     <Routes>
       <Route
-        path="/"
+        path={RoutKey.HOME}
         element={<SharedLayout />}
       >
         <Route
@@ -24,31 +25,31 @@ function App() {
           element={<Main />}
         />
         <Route
-          path="shop"
+          path={RoutKey.SHOP}
           element={<Shop />}
         />
         <Route
-          path="shop/:id"
+          path={RoutKey.SHOP_ID}
           element={<ItemPage />}
         />
         <Route
-          path="contacts"
+          path={RoutKey.CONTACTS}
           element={<Contacts />}
         />
         <Route
-          path="cart"
+          path={RoutKey.CART}
           element={<Cart />}
         />
         <Route
-          path="checkout"
+          path={RoutKey.CHECKOUT}
           element={<Checkout />}
         />
         <Route
-          path="checkout/order"
+          path={RoutKey.CHECKOUT_ORDER}
           element={<Order />}
         />
         <Route
-          path="*"
+          path={RoutKey.NOT_FOUND}
           element={<NotFound />}
         />
       </Route>

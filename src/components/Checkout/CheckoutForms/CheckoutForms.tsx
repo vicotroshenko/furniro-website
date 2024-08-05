@@ -4,47 +4,41 @@ import { useMemo, useState } from 'react';
 import CheckoutFormsSelect from '../CheckoutFormsSelect/CheckoutFormsSelect';
 import './CheckoutForms.css';
 
-const conuntries = Country.getAllCountries();
-
-const getListOfStates = (isoCode: string): any[] => {
-  return State.getStatesOfCountry(isoCode);
-};
-
-const getListOfCities = (isoCode: string, regionCode: string): any[] => {
-  return City.getCitiesOfState(isoCode, regionCode);
-};
+const countries = Country.getAllCountries();
 
 interface IReactHookProps {
   register: any;
   errors: any;
 }
 
-interface ICheckoutFormValues {
-  firstName: string;
-  lastName: string;
-  company: string;
-  country: string;
-  region: string;
-  city: string;
-  zip: string;
-  phone: string;
-  email: string;
-  additional: string;
+enum InitialValue {
+  firstName = 'firstName',
+  lastName = 'lastName',
+  company = 'company',
+  country = 'country',
+  region = 'region',
+  city = 'city',
+  zip = 'zip',
+  phone = 'phone',
+  email = 'email',
+  additional = 'additional',
 }
 
+const initialValues: Record<InitialValue, string> = {
+  firstName: '',
+  lastName: '',
+  company: '',
+  country: '',
+  region: '',
+  city: '',
+  zip: '',
+  phone: '',
+  email: '',
+  additional: '',
+};
+
 const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
-  const [values, setValues] = useState<ICheckoutFormValues>({
-    firstName: '',
-    lastName: '',
-    company: '',
-    country: '',
-    region: '',
-    city: '',
-    zip: '',
-    phone: '',
-    email: '',
-    additional: '',
-  });
+  const [values, setValues] = useState(initialValues);
 
   const handleFormValues = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -54,12 +48,12 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
   };
 
   const states = useMemo(
-    () => getListOfStates(values.country),
+    () => State.getStatesOfCountry(values.country),
     [values.country]
   );
 
   const cities = useMemo(
-    () => getListOfCities(values.country, values.region),
+    () => City.getCitiesOfState(values.country, values.region),
     [values.country, values.region]
   );
 
@@ -73,7 +67,7 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
               <span>First Name*</span>
               <input
                 type="text"
-                {...register('firstName', {
+                {...register(InitialValue.firstName, {
                   required: true,
                   onChange: () => handleFormValues,
                 })}
@@ -88,7 +82,7 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
               <span>last Name*</span>
               <input
                 type="text"
-                {...register('lastName', {
+                {...register(InitialValue.lastName, {
                   required: true,
                   onChange: () => handleFormValues,
                 })}
@@ -104,7 +98,9 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
             <span>Company Name (Optional)</span>
             <input
               type="text"
-              {...register('company', { onChange: () => handleFormValues })}
+              {...register(InitialValue.company, {
+                onChange: () => handleFormValues,
+              })}
               defaultValue={values.company}
               className="checkoutField"
             />
@@ -113,8 +109,8 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
             <span>Country*</span>
             <CheckoutFormsSelect
               onChange={handleFormValues}
-              countries={conuntries}
-              nameList="country"
+              countries={countries}
+              nameList={InitialValue.country}
               value={values.country}
               register={register}
               errors={errors}
@@ -125,7 +121,7 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
             <CheckoutFormsSelect
               onChange={handleFormValues}
               states={states}
-              nameList="region"
+              nameList={InitialValue.region}
               value={values.region}
               register={register}
               errors={errors}
@@ -136,7 +132,7 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
             <CheckoutFormsSelect
               onChange={handleFormValues}
               cities={cities}
-              nameList="city"
+              nameList={InitialValue.city}
               value={values.city}
               register={register}
               errors={errors}
@@ -146,7 +142,9 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
             <span>ZIP code</span>
             <input
               type="text"
-              {...register('zip', { onChange: () => handleFormValues })}
+              {...register(InitialValue.zip, {
+                onChange: () => handleFormValues,
+              })}
               defaultValue={values.zip}
               className="checkoutField"
             />
@@ -155,7 +153,7 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
             <span>phone*</span>
             <input
               type="tel"
-              {...register('phone', {
+              {...register(InitialValue.phone, {
                 required: true,
                 onChange: () => handleFormValues,
               })}
@@ -170,7 +168,7 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
             <span>email address*</span>
             <input
               type="email"
-              {...register('email', {
+              {...register(InitialValue.email, {
                 required: true,
                 onChange: () => handleFormValues,
               })}
@@ -184,7 +182,9 @@ const CheckoutForms: React.FC<IReactHookProps> = ({ register, errors }) => {
           <label className="checkoutLabel">
             <input
               type="text"
-              {...register('additional', { onChange: () => handleFormValues })}
+              {...register(InitialValue.additional, {
+                onChange: () => handleFormValues,
+              })}
               defaultValue={values.additional}
               className="checkoutField"
               placeholder="Additional information"

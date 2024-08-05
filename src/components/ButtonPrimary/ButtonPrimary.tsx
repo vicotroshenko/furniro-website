@@ -1,6 +1,10 @@
 import './ButtonPrimary.css';
 
-export interface IButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'style' | 'className'> {
+export interface IButtonProps
+  extends Omit<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    'style' | 'className'
+  > {
   width: number;
   height: number;
   text: string;

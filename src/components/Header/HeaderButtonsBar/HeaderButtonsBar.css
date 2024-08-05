@@ -6,6 +6,11 @@
   padding: 10px 0;
 }
 
+.headerButtons_icon-size {
+  width: 100%;
+  height: 100%;
+}
+
 .hidden {
   display: none;
 }

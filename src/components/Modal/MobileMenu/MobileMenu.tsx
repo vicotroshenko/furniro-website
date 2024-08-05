@@ -1,11 +1,12 @@
 import { GrClose } from 'react-icons/gr';
 import { Link, useLocation } from 'react-router-dom';
 
+import { RoutKey, ViewParam } from '../../../constants';
+import { createUrl } from '../../../helpers';
 import HeaderButtonsBar from '../../Header/HeaderButtonsBar/HeaderButtonsBar';
 import HeaderLogo from '../../Header/HeaderLogo/HeaderLogo';
 import ModalLinks from '../../Header/ModalLinks/ModalLinks';
 import './MobileMenu.css';
-
 
 interface IMobileModal {
   onClick: () => void;
@@ -26,7 +27,7 @@ const MobileMenu: React.FC<IMobileModal> = ({
 
   return (
     <div className="mobilMenu-container">
-      <div className="mobiuleMenu-top-container">
+      <div className="mobileMenu-top-container">
         <HeaderLogo />
         <button
           type="button"
@@ -34,7 +35,7 @@ const MobileMenu: React.FC<IMobileModal> = ({
           className="mobile-button-close"
           onClick={onClick}
         >
-          <GrClose style={{ width: '100%', height: '100%' }} />
+          <GrClose />
         </button>
       </div>
       <nav className="mobil-nav">
@@ -44,24 +45,28 @@ const MobileMenu: React.FC<IMobileModal> = ({
         >
           <li>
             <Link
-              to={'/'}
-              className={pathname === '/' ? 'active' : ''}
+              to={RoutKey.HOME}
+              className={pathname === RoutKey.HOME ? 'active' : ''}
             >
               home
             </Link>
           </li>
           <li>
             <Link
-              to={'/shop?view=grid&page=1&limit=9'}
-              className={pathname === '/shop' ? 'active' : ''}
+              to={createUrl({
+                view: ViewParam.GRID,
+                page: 1,
+                limit: 9,
+              })}
+              className={pathname === RoutKey.SHOP ? 'active' : ''}
             >
               shop
             </Link>
           </li>
           <li>
             <Link
-              to={'/contacts'}
-              className={pathname === '/contacts' ? 'active' : ''}
+              to={RoutKey.CONTACTS}
+              className={pathname === RoutKey.CONTACTS ? 'active' : ''}
             >
               contact
             </Link>

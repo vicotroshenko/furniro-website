@@ -2,7 +2,8 @@ import React from 'react';
 
 import './ButtonSecondary.css';
 
-export interface IButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
+export interface IButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'style'> {
   width: number;
   height: number;
   text: string;
@@ -17,8 +18,8 @@ const ButtonSecondary: React.FC<IButtonProps> = ({
 }) => {
   const handleMouseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    onClick?.(e)
-  }
+    onClick?.(e);
+  };
   return (
     <button
       className="buttonSecondary"

@@ -41,7 +41,8 @@ const ItemTopInform: React.FC<IItemInnerProps> = ({ item }) => {
 
   const handleAddToCard = (item: ICart) => {
     if (isInCollection(item._id, cart)) {
-      dispatch(deleteCartItem({ id: item._id }));
+      const id = item._id;
+      dispatch(deleteCartItem([id]));
       return;
     }
     const { _id, title, price, amount, pictures, discount } = item;

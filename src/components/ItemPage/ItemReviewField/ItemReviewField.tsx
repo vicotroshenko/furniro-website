@@ -2,6 +2,11 @@ import { useAppDispatch } from '../../../hooks/useAppDispatch';
 import { addReview } from '../../../redux/goods/operations';
 import './ItemReviewField.css';
 
+enum ReviewName {
+  AUTHOR = 'author',
+  REVIEW = 'review',
+}
+
 interface ItemReviewFieldProps {
   id: string;
 }
@@ -38,7 +43,7 @@ const ItemReviewField: React.FC<ItemReviewFieldProps> = ({ id }) => {
           Author
           <input
             type="text"
-            name="author"
+            name={ReviewName.AUTHOR}
             className="itemReviewField"
             required
           />
@@ -54,7 +59,7 @@ const ItemReviewField: React.FC<ItemReviewFieldProps> = ({ id }) => {
       <label className="itemReviewLabelArea">
         Review
         <textarea
-          name="review"
+          name={ReviewName.REVIEW}
           className="itemReviewFieldArea"
           wrap="soft"
           required

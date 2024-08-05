@@ -7,7 +7,7 @@ const FooterMain = () => {
   return (
     <footer className="footer">
       <div className="footerContainer">
-        <div className="fotterTop">
+        <div className="footerTop">
           <div>
             <FooterContacts />
           </div>
@@ -18,7 +18,7 @@ const FooterMain = () => {
             <FooterSubscribe />
           </div>
         </div>
-        <div className="fotterBottom">
+        <div className="footerBottom">
           <p>2023 furniro. All rights reserved</p>
         </div>
       </div>

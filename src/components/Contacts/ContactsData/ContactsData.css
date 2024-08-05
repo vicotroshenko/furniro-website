@@ -3,3 +3,8 @@
   flex-direction: column;
   gap: 42px;
 }
+
+.cont-d-icon-sizes {
+  width: 30px;
+  height: 30px;
+}

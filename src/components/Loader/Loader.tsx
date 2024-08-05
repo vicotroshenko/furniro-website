@@ -1,10 +1,11 @@
+import { Status } from '../../constants';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import './Loader.css';
 
 const Loader = () => {
   const { status } = useAppSelector((state) => state.goods);
 
-  if (status === 'loading') {
+  if (status === Status.loading) {
     return (
       <div className="spinner-wrapper">
         <div className="spinner">

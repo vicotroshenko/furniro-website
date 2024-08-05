@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { DynamicParam, Status } from '../../constants';
 import { IDataSlice } from '../../types/types';
 import {
   addReview,
@@ -10,7 +11,7 @@ import {
 
 interface IProductsInitialState {
   allGoods: IDataSlice[];
-  status: 'loading' | 'success' | 'error';
+  status: keyof typeof Status;
   favorite: IDataSlice[];
   comparison: IDataSlice[];
   itemById: IDataSlice;
@@ -21,7 +22,7 @@ interface IProductsInitialState {
 
 const initialState: IProductsInitialState = {
   allGoods: [],
-  status: 'success',
+  status: Status.success,
   favorite: [],
   comparison: [],
   itemById: {
@@ -62,47 +63,50 @@ const goodsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getAllGoods.pending, (state, _action) => {
-      state.status = 'loading';
+      state.status = Status.loading;
     });
     builder.addCase(getAllGoods.fulfilled, (state, action) => {
       state.allGoods = action.payload.result;
       state.stats = action.payload.summary;
-      state.status = 'success';
+      state.status = Status.success;
     });
     builder.addCase(getAllGoods.rejected, (state, _action) => {
-      state.status = 'error';
+      state.status = Status.error;
     });
     builder.addCase(getOneById.pending, (state, _action) => {
-      state.status = 'loading';
+      state.status = Status.loading;
     });
     builder.addCase(getOneById.fulfilled, (state, action) => {
       state.itemById = action.payload;
-      state.status = 'success';
+      state.status = Status.success;
     });
     builder.addCase(getOneById.rejected, (state, _action) => {
-      state.status = 'error';
+      state.status = Status.error;
     });
     builder.addCase(getAllTagsCategories.pending, (state, _action) => {
-      state.status = 'loading';
+      state.status = Status.loading;
     });
     builder.addCase(getAllTagsCategories.fulfilled, (state, action) => {
-      const name = action.payload.name === 'tags' ? 'tags' : 'category';
+      const name =
+        action.payload.name === DynamicParam.TAGS
+          ? DynamicParam.TAGS
+          : DynamicParam.CATEGORY;
       state[name] = action.payload.data;
-      state.status = 'success';
+      state.status = Status.success;
     });
     builder.addCase(getAllTagsCategories.rejected, (state, _action) => {
-      state.status = 'error';
+      state.status = Status.error;
     });
 
     builder.addCase(addReview.pending, (state, _action) => {
-      state.status = 'loading';
+      state.status = Status.loading;
     });
     builder.addCase(addReview.fulfilled, (state, action) => {
       state.itemById.reviews?.push(action.payload);
-      state.status = 'success';
+      state.status = Status.success;
     });
     builder.addCase(addReview.rejected, (state, _action) => {
-      state.status = 'error';
+      state.status = Status.error;
     });
   },
 });

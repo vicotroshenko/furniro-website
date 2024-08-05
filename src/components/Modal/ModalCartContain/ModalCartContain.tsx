@@ -11,7 +11,6 @@ import { ICart } from '../../../types/types';
 import ModalLinks from '../../Header/ModalLinks/ModalLinks';
 import './ModalCartContain.css';
 
-
 export interface IModalCartContainProps {
   onClick: () => void;
 }
@@ -38,8 +37,9 @@ const ModalCartContain: React.FC<IModalCartContainProps> = ({ onClick }) => {
             <button
               type="button"
               onClick={onClick}
+              aria-label="close modal"
             >
-              <BsBagX style={{ width: '100%', height: '100%' }} />
+              <BsBagX className="mc-c-icon-close-button" />
             </button>
           </Tooltip>
         </div>

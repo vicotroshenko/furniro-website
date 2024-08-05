@@ -1,6 +1,7 @@
 import { IoIosArrowForward } from 'react-icons/io';
 import { Link, useLocation } from 'react-router-dom';
 
+import { RoutKey } from '../../constants';
 import logo from '../../images/svg/logo.svg';
 import './NavigationScreen.css';
 
@@ -20,7 +21,7 @@ const NavigationScreen = () => {
           </div>
           <h1>{currentPlace}</h1>
           <div className="navigationScreenHistory">
-            <Link to={'/'}>home</Link>
+            <Link to={RoutKey.HOME}>home</Link>
             <IoIosArrowForward />
             <Link to={pathname}>{currentPlace}</Link>
           </div>

@@ -1,7 +1,7 @@
 import './AdvantagesItem.css';
 
 interface IAdvantagesItemProps {
-  icon:string;
+  icon: string;
   title: string;
   text: string;
 }

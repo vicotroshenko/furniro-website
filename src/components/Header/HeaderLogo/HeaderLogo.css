@@ -15,3 +15,8 @@
   font-family: 'Montserrat', sans-serif;
   text-transform: capitalize;
 }
+
+.headerLogo_link {
+  text-decoration: none;
+  color: inherit;
+}

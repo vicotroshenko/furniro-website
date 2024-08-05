@@ -6,7 +6,6 @@ import { ICart } from '../../../types/types';
 import PlaceOrderBlank from '../PlaceOrderBlank/PlaceOrderBlank';
 import './CheckoutOrder.css';
 
-
 interface IReactHookProps {
   register: any;
   errors: any;

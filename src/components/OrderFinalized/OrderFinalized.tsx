@@ -24,7 +24,7 @@ const OrderFinalized = () => {
           to={'/shop'}
           className="orderFinalLink"
         >
-          Continue shoping
+          Continue shopping
         </NavLink>
       </div>
     </section>

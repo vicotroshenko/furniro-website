@@ -27,23 +27,17 @@ const ItemShortDesc: React.FC<IItemShortDesc> = ({ tags = [], category }) => {
       <li>
         <p>Share</p>
         <p>:</p>
-        <p className="itemShortNetworks">
+        <div className="itemShortNetworks">
           <a href="http://www.facebook.com">
-            <FaFacebook
-              style={{ fill: 'black', width: '100%', height: '100%' }}
-            />
+            <FaFacebook className="itemShortNetworks_links" />
           </a>
           <a href="http://www.linkedin.com">
-            <FaLinkedin
-              style={{ fill: 'black', width: '100%', height: '100%' }}
-            />
+            <FaLinkedin className="itemShortNetworks_links" />
           </a>
           <a href="https://twitter.com/">
-            <FaSquareXTwitter
-              style={{ fill: 'black', width: '100%', height: '100%' }}
-            />
+            <FaSquareXTwitter className="itemShortNetworks_links" />
           </a>
-        </p>
+        </div>
       </li>
     </ul>
   );
