@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { RoutKey } from '../../../constants';
@@ -7,7 +8,7 @@ interface ModalLinksProps {
   onClick: () => void;
 }
 
-const ModalLinks: React.FC<ModalLinksProps> = ({ onClick }) => {
+const ModalLinks: React.FC<ModalLinksProps> = memo(({ onClick }) => {
   return (
     <div className="mc-c-bottomLinksWrapper">
       <div
@@ -20,6 +21,6 @@ const ModalLinks: React.FC<ModalLinksProps> = ({ onClick }) => {
       </div>
     </div>
   );
-};
+});
 
 export default ModalLinks;

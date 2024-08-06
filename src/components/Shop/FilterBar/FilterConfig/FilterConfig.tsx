@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { nanoid } from 'nanoid';
-import { useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { DynamicParam } from '../../../../constants';
@@ -11,7 +11,7 @@ interface FilterConfigProps {
   visible: boolean;
 }
 
-const FilterConfig: React.FC<FilterConfigProps> = ({ visible }) => {
+const FilterConfig: React.FC<FilterConfigProps> = memo(({ visible }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const allParams = useMemo(
     () => Object.fromEntries([...searchParams]),
@@ -34,23 +34,24 @@ const FilterConfig: React.FC<FilterConfigProps> = ({ visible }) => {
     });
   }, [setSearchParams, tagsCheck, categoriesCheck, allParams]);
 
-  const handleCheckItem = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, checked, name } = e.target;
-    if (name === DynamicParam.CATEGORY) {
-      if (checked) {
-        setCategoriesCheck([...categoriesCheck, value]);
-      } else {
-        setCategoriesCheck(categoriesCheck.filter((item) => item !== value));
+  const handleCheckItem = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value, checked, name } = e.target;
+      if (name === DynamicParam.CATEGORY) {
+        checked
+          ? setCategoriesCheck([...categoriesCheck, value])
+          : setCategoriesCheck(
+              categoriesCheck.filter((item) => item !== value)
+            );
       }
-    }
-    if (name === DynamicParam.TAGS) {
-      if (checked) {
-        setTagsCheck([...tagsCheck, value]);
-      } else {
-        setTagsCheck(tagsCheck.filter((item) => item !== value));
+      if (name === DynamicParam.TAGS) {
+        checked
+          ? setTagsCheck([...tagsCheck, value])
+          : setTagsCheck(tagsCheck.filter((item) => item !== value));
       }
-    }
-  };
+    },
+    [categoriesCheck, tagsCheck]
+  );
 
   return (
     <div
@@ -98,6 +99,6 @@ const FilterConfig: React.FC<FilterConfigProps> = ({ visible }) => {
       </ul>
     </div>
   );
-};
+});
 
 export default FilterConfig;

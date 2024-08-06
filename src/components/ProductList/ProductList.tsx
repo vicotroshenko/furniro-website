@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { useMemo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
 import { RoutKey, ViewParam } from '../../constants';
@@ -14,7 +14,7 @@ interface ProductListProps {
   items: IDataSlice[] | [];
 }
 
-const ProductList: React.FC<ProductListProps> = ({ items }) => {
+const ProductList: React.FC<ProductListProps> = memo(({ items }) => {
   const location = useLocation();
   const path = location.pathname === RoutKey.HOME ? RoutKey.SHOP + '/' : '';
   const dispatch = useAppDispatch();
@@ -26,16 +26,19 @@ const ProductList: React.FC<ProductListProps> = ({ items }) => {
     [searchParams]
   );
 
-  const handleAddToCard = (item: ICart) => {
-    const date = new Date();
-    const newCardItem = {
-      ...item,
-      buyAmount: 1,
-      date: date.toString(),
-      price: getPriceOfItem(item.price, item.discount),
-    };
-    dispatch(addToCart(newCardItem));
-  };
+  const handleAddToCard = useCallback(
+    (item: ICart) => {
+      const date = new Date();
+      const newCardItem = {
+        ...item,
+        buyAmount: 1,
+        date: date.toString(),
+        price: getPriceOfItem(item.price, item.discount),
+      };
+      dispatch(addToCart(newCardItem));
+    },
+    [dispatch]
+  );
 
   return (
     <ul
@@ -75,6 +78,6 @@ const ProductList: React.FC<ProductListProps> = ({ items }) => {
         )}
     </ul>
   );
-};
+});
 
 export default ProductList;

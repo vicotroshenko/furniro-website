@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { useAppSelector } from '../../../hooks/useAppSelector';
 import MobileMenu from '../../Modal/MobileMenu/MobileMenu';
@@ -33,8 +33,11 @@ const HeaderMain = () => {
 
   const cart = useAppSelector((state) => state.cart.goods);
 
-  const toggle = (name: ModalToggleType) =>
-    setVisible({ ...initialState, [name]: !visible[name] });
+  const toggle = useCallback(
+    (name: ModalToggleType) =>
+      setVisible({ ...initialState, [name]: !visible[name] }),
+    [visible]
+  );
 
   return (
     <header className="header">

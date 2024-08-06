@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './RangeItem.css';
@@ -8,7 +9,7 @@ interface IRangeItemProps {
   link: string;
 }
 
-const RangeItem: React.FC<IRangeItemProps> = ({ image, text, link }) => {
+const RangeItem: React.FC<IRangeItemProps> = memo(({ image, text, link }) => {
   return (
     <li className="rangeItem">
       <NavLink to={link}>
@@ -22,6 +23,6 @@ const RangeItem: React.FC<IRangeItemProps> = ({ image, text, link }) => {
       </NavLink>
     </li>
   );
-};
+});
 
 export default RangeItem;

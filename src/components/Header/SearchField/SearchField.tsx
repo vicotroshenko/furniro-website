@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { useMemo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 
 import { useAppSelector } from '../../../hooks/useAppSelector';
@@ -16,7 +16,7 @@ const getSearchedData = (items: IDataSlice[], value: string) => {
 interface SearchFieldProps {
   onClick: () => void;
 }
-const SearchField: React.FC<SearchFieldProps> = ({ onClick }) => {
+const SearchField: React.FC<SearchFieldProps> = memo(({ onClick }) => {
   const [value, setValue] = useState<string>('');
 
   const goods = useAppSelector((state) => state.goods.allGoods);
@@ -41,7 +41,7 @@ const SearchField: React.FC<SearchFieldProps> = ({ onClick }) => {
         className="headerIconButtons searchCloseBtn"
         onClick={onClick}
       >
-        <IoMdClose style={{ width: '100%', height: '100%' }} />
+        <IoMdClose />
       </button>
       {searchedData.length !== 0 && (
         <ul className="searchedResult">
@@ -57,6 +57,6 @@ const SearchField: React.FC<SearchFieldProps> = ({ onClick }) => {
       )}
     </div>
   );
-};
+});
 
 export default SearchField;

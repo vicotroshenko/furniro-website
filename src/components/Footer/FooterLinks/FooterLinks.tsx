@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { RoutKey, ViewParam } from '../../../constants';
@@ -9,7 +10,7 @@ export interface IFooterLinksProps {
   links?: string[];
 }
 
-const FooterLinks: React.FC<IFooterLinksProps> = ({ title }) => {
+const FooterLinks: React.FC<IFooterLinksProps> = memo(({ title }) => {
   return (
     <ul className="footerList">
       <li className="footerItem linkTitle">{title}</li>
@@ -26,6 +27,6 @@ const FooterLinks: React.FC<IFooterLinksProps> = ({ title }) => {
       </li>
     </ul>
   );
-};
+});
 
 export default FooterLinks;

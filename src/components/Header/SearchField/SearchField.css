@@ -19,6 +19,11 @@
   transform: translateY(-50%);
 }
 
+.searchCloseBtn svg {
+  width: 100%;
+  height: 100%;
+}
+
 .searchedResult {
   position: absolute;
   top: 140%;
@@ -40,6 +45,7 @@
   0% {
     transform: scaleX(0);
   }
+
   100% {
     transform: scaleX(1);
   }

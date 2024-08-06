@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import { useCallback } from 'react';
 
 import { useAppDispatch } from '../../../hooks/useAppDispatch';
 import { useAppSelector } from '../../../hooks/useAppSelector';
@@ -15,8 +16,11 @@ const CartList = () => {
 
   const handleDeleteItem = (id: string) => dispatch(deleteCartItem({ id }));
 
-  const getTotalPrice = (buyAmount: number, price: string) =>
-    (buyAmount * +price).toFixed(2).toString();
+  const getTotalPrice = useCallback(
+    (buyAmount: number, price: string) =>
+      (buyAmount * +price).toFixed(2).toString(),
+    []
+  );
 
   return (
     <section className="cartListSection">

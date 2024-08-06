@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import './FooterSubscribe.css';
 
@@ -9,6 +9,14 @@ const FooterSubscribe = () => {
     e.preventDefault();
     console.log(e);
   };
+
+  const handleChangeField = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setEmail(value);
+    },
+    []
+  );
 
   return (
     <>
@@ -22,7 +30,7 @@ const FooterSubscribe = () => {
           name="email"
           defaultValue={email}
           placeholder="Enter Your Email Address"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleChangeField}
           className="footerEmailField"
         />
         <button

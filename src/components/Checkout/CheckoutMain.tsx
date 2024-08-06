@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
@@ -27,35 +28,38 @@ type Inputs = {
 };
 
 const CheckoutMain = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const cart = useAppSelector((state) => state.cart.goods);
+  const ordersStatus = useAppSelector((state) => state.orders.status);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
 
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const cart = useAppSelector((state) => state.cart.goods);
-  const ordersStatus = useAppSelector((state) => state.orders.status);
+  const onSubmit: SubmitHandler<Inputs> = useCallback(
+    (data) => {
+      dispatch(
+        addOrder({
+          ...data,
+          totalPrice: getSumPrice(cart).toString(),
+          order: cart,
+        })
+      );
+      if (ordersStatus === Status.success) {
+        const ids = cart.reduce((acc: string[], item: ICart) => {
+          acc = [...acc, item._id];
+          return acc;
+        }, []);
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    dispatch(
-      addOrder({
-        ...data,
-        totalPrice: getSumPrice(cart).toString(),
-        order: cart,
-      })
-    );
-    if (ordersStatus === Status.success) {
-      const ids = cart.reduce((acc: string[], item: ICart) => {
-        acc = [...acc, item._id];
-        return acc;
-      }, []);
-
-      dispatch(deleteCartItem([...ids]));
-      navigate(RoutKey.CHECKOUT_ORDER);
-    }
-  };
+        dispatch(deleteCartItem([...ids]));
+        navigate(RoutKey.CHECKOUT_ORDER);
+      }
+    },
+    [cart, ordersStatus, dispatch, navigate]
+  );
 
   return (
     <section className="checkout-section">

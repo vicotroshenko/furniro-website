@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 import { IDataSlice, IGoodData, IReview } from '../../../types/types';
 import ItemReviewField from '../ItemReviewField/ItemReviewField';
@@ -15,7 +15,7 @@ interface IItemInnerProps {
   item: IDataSlice;
 }
 
-const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
+const ItemBottomInform: React.FC<IItemInnerProps> = memo(({ item }) => {
   const [infoType, setInfoType] = useState<string>('description');
   const [reviewAction, setReviewAction] = useState<string>('read');
 
@@ -155,6 +155,6 @@ const ItemBottomInform: React.FC<IItemInnerProps> = ({ item }) => {
       </div>
     </section>
   );
-};
+});
 
 export default ItemBottomInform;

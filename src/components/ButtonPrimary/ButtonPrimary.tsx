@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import './ButtonPrimary.css';
 
 export interface IButtonProps
@@ -10,21 +12,18 @@ export interface IButtonProps
   text: string;
 }
 
-const ButtonPrimary: React.FC<IButtonProps> = ({
-  width,
-  height,
-  text,
-  ...props
-}) => {
-  return (
-    <button
-      style={{ maxWidth: width, height: height }}
-      className="buttonPrimary"
-      {...props}
-    >
-      {text}
-    </button>
-  );
-};
+const ButtonPrimary: React.FC<IButtonProps> = memo(
+  ({ width, height, text, ...props }) => {
+    return (
+      <button
+        style={{ maxWidth: width, height: height }}
+        className="buttonPrimary"
+        {...props}
+      >
+        {text}
+      </button>
+    );
+  }
+);
 
 export default ButtonPrimary;

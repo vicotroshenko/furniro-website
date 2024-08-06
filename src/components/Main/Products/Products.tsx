@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useAppDispatch } from '../../../hooks/useAppDispatch';
 import { useAppSelector } from '../../../hooks/useAppSelector';
@@ -17,12 +17,12 @@ const Products = () => {
     dispatch(getAllGoods({ page: '1', limit: showCount }));
   }, [dispatch, showCount]);
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     if (showCount > items.length) {
       return;
     }
     setShowCount((prev) => prev + step);
-  };
+  }, [items.length, showCount]);
 
   return (
     <section className="productsSection">

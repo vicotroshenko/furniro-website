@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, memo } from 'react';
 
 import './ContactsDataItem.css';
 
@@ -9,22 +9,19 @@ interface IContactsDataItemProps {
   text2?: string;
 }
 
-const ContactsDataItem: React.FC<IContactsDataItemProps> = ({
-  children,
-  title,
-  text1,
-  text2,
-}) => {
-  return (
-    <div className="cont-di-container">
-      <div>{children}</div>
-      <div className="cont-di-contacts">
-        <h3>{title}</h3>
-        <p>{text1}</p>
-        {text2 && <p>{text2}</p>}
+const ContactsDataItem: React.FC<IContactsDataItemProps> = memo(
+  ({ children, title, text1, text2 }) => {
+    return (
+      <div className="cont-di-container">
+        <div>{children}</div>
+        <div className="cont-di-contacts">
+          <h3>{title}</h3>
+          <p>{text1}</p>
+          {text2 && <p>{text2}</p>}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
 
 export default ContactsDataItem;
