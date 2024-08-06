@@ -1,5 +1,5 @@
 import { Pagination } from '@mui/material';
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { useAppSelector } from '../../../hooks/useAppSelector';
@@ -16,9 +16,12 @@ const ProductsShopBook = () => {
     [searchParams]
   );
 
-  const changePage = (e: any, page: number) => {
-    setSearchParams({ ...allParams, page: page.toString() });
-  };
+  const changePage = useCallback(
+    (e: any, page: number) => {
+      setSearchParams({ ...allParams, page: page.toString() });
+    },
+    [allParams, setSearchParams]
+  );
 
   const pages = Math.ceil(stats / +allParams.limit);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import './ButtonSecondary.css';
 
@@ -9,27 +9,23 @@ export interface IButtonProps
   text: string;
 }
 
-const ButtonSecondary: React.FC<IButtonProps> = ({
-  width,
-  height,
-  text,
-  onClick,
-  ...props
-}) => {
-  const handleMouseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    onClick?.(e);
-  };
-  return (
-    <button
-      className="buttonSecondary"
-      style={{ maxWidth: width, height }}
-      onClick={handleMouseClick}
-      {...props}
-    >
-      {text}
-    </button>
-  );
-};
+const ButtonSecondary: React.FC<IButtonProps> = memo(
+  ({ width, height, text, onClick, ...props }) => {
+    const handleMouseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      onClick?.(e);
+    };
+    return (
+      <button
+        className="buttonSecondary"
+        style={{ maxWidth: width, height }}
+        onClick={handleMouseClick}
+        {...props}
+      >
+        {text}
+      </button>
+    );
+  }
+);
 
 export default ButtonSecondary;

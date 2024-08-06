@@ -1,11 +1,12 @@
 import { Tooltip } from '@mui/material';
 import { nanoid } from 'nanoid';
+import { memo } from 'react';
 import { IoIosCloseCircle } from 'react-icons/io';
 import { MdOutlineClose } from 'react-icons/md';
 
 import { useAppDispatch } from '../../../hooks/useAppDispatch';
 import { useAppSelector } from '../../../hooks/useAppSelector';
-import { deletFromFavotite } from '../../../redux/goods/goodsSlice';
+import { deleteFromFavorite } from '../../../redux/goods/goodsSlice';
 import { IDataSlice } from '../../../types/types';
 import './ModalFavorite.css';
 
@@ -13,13 +14,13 @@ interface IModalFavoriteProps {
   onClick: () => void;
 }
 
-const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
+const ModalFavorite: React.FC<IModalFavoriteProps> = memo(({ onClick }) => {
   const favorite = useAppSelector((state) => state.goods.favorite);
 
   const dispatch = useAppDispatch();
 
   const deleteFavorite = (item: IDataSlice) => {
-    dispatch(deletFromFavotite({ id: item._id }));
+    dispatch(deleteFromFavorite({ id: item._id }));
   };
 
   return (
@@ -84,6 +85,6 @@ const ModalFavorite: React.FC<IModalFavoriteProps> = ({ onClick }) => {
       )}
     </div>
   );
-};
+});
 
 export default ModalFavorite;

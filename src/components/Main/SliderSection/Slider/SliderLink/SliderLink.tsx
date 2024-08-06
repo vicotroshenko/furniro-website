@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
 import { RoutKey } from '../../../../../constants';
@@ -10,25 +11,27 @@ interface ISliderLink {
   link: string;
 }
 
-const SliderLink: React.FC<ISliderLink> = ({
-  number = '01',
-  place = 'unknown',
-  name = 'unknown',
-  link = RoutKey.HOME,
-}) => {
-  return (
-    <div className="sliderItemIntro">
-      <div className="slideUpperText">
-        <p className="slideNumber">{number}</p>
-        <div className="textDivider"></div>
-        <p>{place}</p>
+const SliderLink: React.FC<ISliderLink> = memo(
+  ({
+    number = '01',
+    place = 'unknown',
+    name = 'unknown',
+    link = RoutKey.HOME,
+  }) => {
+    return (
+      <div className="sliderItemIntro">
+        <div className="slideUpperText">
+          <p className="slideNumber">{number}</p>
+          <div className="textDivider"></div>
+          <p>{place}</p>
+        </div>
+        <p>{name}</p>
+        <a href={link}>
+          <IoIosArrowRoundForward className="sliderArrow" />
+        </a>
       </div>
-      <p>{name}</p>
-      <a href={link}>
-        <IoIosArrowRoundForward className="sliderArrow" />
-      </a>
-    </div>
-  );
-};
+    );
+  }
+);
 
 export default SliderLink;

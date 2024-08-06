@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 import './ItemColorBar.css';
 
@@ -7,7 +7,7 @@ interface IItemColorBar {
   colors: string[];
 }
 
-const ItemColorBar: React.FC<IItemColorBar> = ({ colors = [] }) => {
+const ItemColorBar: React.FC<IItemColorBar> = memo(({ colors = [] }) => {
   const [colorItem, setColorItem] = useState<string>('');
 
   return (
@@ -37,6 +37,6 @@ const ItemColorBar: React.FC<IItemColorBar> = ({ colors = [] }) => {
       </div>
     </div>
   );
-};
+});
 
 export default ItemColorBar;

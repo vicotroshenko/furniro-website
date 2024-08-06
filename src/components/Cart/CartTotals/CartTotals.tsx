@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { RoutKey } from '../../../constants';
@@ -9,7 +10,7 @@ interface ICartTotals {
   goods: ICart[];
 }
 
-const CartTotals: React.FC<ICartTotals> = ({ goods }) => {
+const CartTotals: React.FC<ICartTotals> = memo(({ goods }) => {
   const sumPrice = getSumPrice(goods);
   return (
     <div className="cartTotalsContainer">
@@ -32,6 +33,6 @@ const CartTotals: React.FC<ICartTotals> = ({ goods }) => {
       </NavLink>
     </div>
   );
-};
+});
 
 export default CartTotals;

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { memo, useCallback, useRef } from 'react';
 
 import { isInCollection } from '../../../helpers/isInCollection';
 import { useAppDispatch } from '../../../hooks/useAppDispatch';
@@ -6,7 +6,7 @@ import { useAppSelector } from '../../../hooks/useAppSelector';
 import { addToCart, deleteCartItem } from '../../../redux/cart/cartSlice';
 import {
   addToComparison,
-  deletFromComparison,
+  deleteFromComparison,
 } from '../../../redux/goods/goodsSlice';
 import { ICart, IDataSlice } from '../../../types/types';
 import ItemButtons from './ItemButtons/ItemButtons';
@@ -20,51 +20,57 @@ import './ItemTopInform.css';
 interface IItemInnerProps {
   item: IDataSlice;
 }
-const ItemTopInform: React.FC<IItemInnerProps> = ({ item }) => {
+const ItemTopInform: React.FC<IItemInnerProps> = memo(({ item }) => {
   const amountRef = useRef<number>();
   const dispatch = useAppDispatch();
 
   const { comparison } = useAppSelector((state) => state.goods);
   const cart = useAppSelector((state) => state.cart.goods);
 
-  const addToCompareItem = (item: ICart) => {
-    if (isInCollection(item._id, comparison)) {
-      dispatch(deletFromComparison({ id: item._id }));
-      return;
-    }
-    dispatch(addToComparison(item));
-  };
+  const addToCompareItem = useCallback(
+    (item: ICart) => {
+      if (isInCollection(item._id, comparison)) {
+        dispatch(deleteFromComparison({ id: item._id }));
+        return;
+      }
+      dispatch(addToComparison(item));
+    },
+    [comparison, dispatch]
+  );
 
   const getAmountFromUser = (amount: number) => {
     amountRef.current = amount;
   };
 
-  const handleAddToCard = (item: ICart) => {
-    if (isInCollection(item._id, cart)) {
-      const id = item._id;
-      dispatch(deleteCartItem([id]));
-      return;
-    }
-    const { _id, title, price, amount, pictures, discount } = item;
-    const buyAmount = amountRef.current;
-    const date = new Date();
-    if (buyAmount) {
-      const totalPrice = (+price * buyAmount).toFixed(2);
-      dispatch(
-        addToCart({
-          _id,
-          title,
-          price,
-          amount,
-          pictures,
-          discount,
-          buyAmount,
-          date: date.getDate(),
-          totalPrice,
-        })
-      );
-    }
-  };
+  const handleAddToCard = useCallback(
+    (item: ICart) => {
+      if (isInCollection(item._id, cart)) {
+        const id = item._id;
+        dispatch(deleteCartItem([id]));
+        return;
+      }
+      const { _id, title, price, amount, pictures, discount } = item;
+      const buyAmount = amountRef.current;
+      const date = new Date();
+      if (buyAmount) {
+        const totalPrice = (+price * buyAmount).toFixed(2);
+        dispatch(
+          addToCart({
+            _id,
+            title,
+            price,
+            amount,
+            pictures,
+            discount,
+            buyAmount,
+            date: date.getDate(),
+            totalPrice,
+          })
+        );
+      }
+    },
+    [cart, dispatch]
+  );
 
   return (
     <div className="it-wrapper">
@@ -96,6 +102,6 @@ const ItemTopInform: React.FC<IItemInnerProps> = ({ item }) => {
       </div>
     </div>
   );
-};
+});
 
 export default ItemTopInform;

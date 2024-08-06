@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { BsGridFill } from 'react-icons/bs';
 import { TbLayoutDistributeHorizontal } from 'react-icons/tb';
 import { VscSettings } from 'react-icons/vsc';
@@ -47,48 +47,57 @@ const FilterBar = () => {
     setSearchParams({ ...allParams, limit });
   }, [allParams, setSearchParams, allParams.limit, stats]);
 
-  const handleChangeSort = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = event.target;
-    let params = {};
-    if (value === SortName.PRICE) {
-      params = removeParameter({ ...allParams, page: '1', price: '-1' }, [
-        'status',
-      ]);
-    } else if (value === SortName.NEW || value === SortName.DISCOUNT) {
-      params = removeParameter({ ...allParams, page: '1', status: value }, [
-        'price',
-      ]);
-    } else {
-      params = removeParameter({ ...allParams, page: '1' }, [
-        'price',
-        'status',
-      ]);
-    }
+  const handleChangeSort = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      const { value } = event.target;
+      let params = {};
+      if (value === SortName.PRICE) {
+        params = removeParameter({ ...allParams, page: '1', price: '-1' }, [
+          'status',
+        ]);
+      } else if (value === SortName.NEW || value === SortName.DISCOUNT) {
+        params = removeParameter({ ...allParams, page: '1', status: value }, [
+          'price',
+        ]);
+      } else {
+        params = removeParameter({ ...allParams, page: '1' }, [
+          'price',
+          'status',
+        ]);
+      }
 
-    setSearchParams(params);
-  };
+      setSearchParams(params);
+    },
+    [allParams, setSearchParams]
+  );
 
-  const setUpListView = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const { name } = event.currentTarget;
-    let params = {};
-    if (name === ViewParam.LINE) {
-      params = { view: ViewParam.LINE };
-    } else {
-      params = { view: ViewParam.GRID };
-    }
+  const setUpListView = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      const { name } = event.currentTarget;
+      let params = {};
+      if (name === ViewParam.LINE) {
+        params = { view: ViewParam.LINE };
+      } else {
+        params = { view: ViewParam.GRID };
+      }
 
-    setSearchParams({ ...allParams, ...params });
-  };
+      setSearchParams({ ...allParams, ...params });
+    },
+    [allParams, setSearchParams]
+  );
 
   const configToggle = () => {
     setShowFilter((prev) => !prev);
   };
 
-  const configPageLimit = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    let limit = stats < value ? stats : value;
-    setSearchParams({ ...allParams, limit });
-  };
+  const configPageLimit = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = e.target;
+      let limit = stats < value ? stats : value;
+      setSearchParams({ ...allParams, limit });
+    },
+    [allParams, stats, setSearchParams]
+  );
 
   return (
     <section className="filterBar-section">
